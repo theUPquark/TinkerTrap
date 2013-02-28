@@ -18,7 +18,7 @@ namespace AssemblyCSharp
 		
 		public Obstacle (int a, GameObject b)
 		{
-			currDir = 3;
+			setDir(3);
 			type = a;
 			gfx = b;
 		}
@@ -44,11 +44,31 @@ namespace AssemblyCSharp
 			//update tob position
 			Vector2 pos = new Vector2(xiso, yiso);
 			os.position = pos;
-			//face the direction
-			//tob.setFacing(dirx+diry*2+3);
 			//calculate the tile where tobs center is
 			xtile = -Math.Floor((posX/(os.size.x/2)));
 			ytile = -Math.Floor((posY/(os.size.x/2)));
+		}
+		
+		public void setDir(int dir)
+		{
+			currDir = dir;
+			if (gfx != null) {
+				OTSprite os = gfx.GetComponent<OTSprite>();
+				switch (currDir) {
+				case 0:
+					os.frameIndex = 2;
+					break;
+				case 3:
+					os.frameIndex = 0;
+					break;
+				case 2:
+					os.frameIndex = 1;
+					break;
+				case 1:
+					os.frameIndex = 3;
+					break;
+				}
+			}
 		}
 	}
 }

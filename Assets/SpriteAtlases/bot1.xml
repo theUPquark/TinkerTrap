@@ -30,6 +30,32 @@
                 <key>sourceSize</key>
                 <string>{64,128}</string>
             </dict>
+            <key>Bot1UpLft.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{134,2},{64,128}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{64,128}}</string>
+                <key>sourceSize</key>
+                <string>{64,128}</string>
+            </dict>
+            <key>Bot1UpRt.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,132},{64,128}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{64,128}}</string>
+                <key>sourceSize</key>
+                <string>{64,128}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -38,9 +64,9 @@
             <key>realTextureFileName</key>
             <string>bot1.png</string>
             <key>size</key>
-            <string>{256,256}</string>
+            <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:21cf502daaf55641f2eab72fad7f8a69$</string>
+            <string>$TexturePacker:SmartUpdate:574655987c87c0274d01635d7d4a581f$</string>
             <key>textureFileName</key>
             <string>bot1.png</string>
         </dict>

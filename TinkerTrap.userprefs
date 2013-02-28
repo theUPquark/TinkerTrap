@@ -1,10 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LevelLoader.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Obstacle.cs">
     <Files>
-      <File FileName="Assets/LevelLoader.cs" Line="13" Column="505" />
+      <File FileName="Assets/LevelLoader.cs" Line="162" Column="1" />
       <File FileName="Assets/Tile.cs" Line="25" Column="12" />
-      <File FileName="Assets/Obstacle.cs" Line="50" Column="13" />
+      <File FileName="Assets/Obstacle.cs" Line="67" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

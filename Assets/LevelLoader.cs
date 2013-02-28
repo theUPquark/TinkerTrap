@@ -138,23 +138,23 @@ public class LevelLoader : MonoBehaviour {
 		if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) 
 		{
 			moveChar(player, 5.0, -1, 0);
-			player.currDir = 3;
+			player.setDir(3);
 		}
 		if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) 
 		{
 			moveChar(player, 5.0, 1, 0);
-			player.currDir = 1;
+			player.setDir(1);
 		}
 
 		if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) 
 		{
 			moveChar(player, 5.0, 0, -1);
-			player.currDir = 0;
+			player.setDir(0);
 		}
 		if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) 
 		{
 			moveChar(player, 5.0, 0, 1);
-			player.currDir = 2;
+			player.setDir(2);
 		}
 	}
 	
