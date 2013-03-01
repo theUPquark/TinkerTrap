@@ -7,10 +7,10 @@ public class LevelLoader : MonoBehaviour {
 	public Transform prefab;
 	public int numberOfObjects;
 	
-	private float tileW = 32;
+	private float tileW = 64;
 	
-	private int[,] map = new int[,] {{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 8, 8, 8, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 7}, {1, 1, 1, 1, 1, 5, 1, 1, 3, 1, 1, 7}, {1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 7}, {1, 1, 1, 0, 1, 1, 1, 1, 2, 1, 1, 7}, {1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 7}, {1, 1, 1, 0, 4, 0, 0, 0, 0, 1, 1, 7}, {1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 7}, {1, 1, 1, 2, 1, 1, 1, 1, 5, 1, 1, 7}, {1, 1, 1, 0, 0, 4, 0, 0, 0, 1, 1, 7}, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}};
-	private int[,] obsMap = new int[,] {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+	private int[,] map = new int[,] {{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 8, 8, 8, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 5, 5, 5, 5, 0, 5, 5, 5, 5, 5, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 7}, {1, 1, 1, 1, 1, 0, 1, 1, 3, 1, 1, 7}, {1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 7}, {1, 1, 1, 0, 1, 1, 1, 1, 2, 1, 1, 7}, {1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 7}, {1, 1, 1, 0, 4, 0, 0, 0, 0, 1, 1, 7}, {1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 7}, {1, 1, 1, 2, 1, 1, 1, 1, 5, 1, 1, 7}, {1, 1, 1, 0, 0, 4, 0, 0, 0, 1, 1, 7}, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}};
+	private int[,] obsMap = new int[,] {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 	private int[,][] connectionMap = new int[,][]
 	{
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
@@ -35,6 +35,7 @@ public class LevelLoader : MonoBehaviour {
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}}
 	};
 	private Dictionary<string, AssemblyCSharp.Tile> gameB = new Dictionary<string, AssemblyCSharp.Tile>();
+	private Dictionary<int, List<AssemblyCSharp.Tile>> gameCons = new Dictionary<int, List<AssemblyCSharp.Tile>>();
 	
 	private AssemblyCSharp.Obstacle player;
 	
@@ -66,6 +67,12 @@ public class LevelLoader : MonoBehaviour {
 				case 1:
 					os.frameName = "Wall0";
 					break;
+				case 2:
+					os.frameName = "WallB";
+					break;
+				case 3:
+					os.frameName = "WallX";
+					break;
 				}
 				os.position = pos;
 				
@@ -74,17 +81,20 @@ public class LevelLoader : MonoBehaviour {
 				else
 					os.depth = -1;
 				
-				/*for (k = 0; k < connectionMap[i][j].length; k++) {
-				    if (connectionMap[i][j][0] != 0) {
-                        if (gameBCon[String(connectionMap[i][j][k])] == null) {
-                            gameBCon[String(connectionMap[i][j][k])] = new Array();
-                        }
-                        gameBCon[String(connectionMap[i][j][k])].push(gameB[squareName]);
+				foreach (int k in connectionMap[j,i]) {
+					List<AssemblyCSharp.Tile> tilelist;
+					if (!gameCons.ContainsKey(k)) {
+						tilelist = new List<AssemblyCSharp.Tile>();
+						tilelist.Add(gameB[squareName]);
+						gameCons.Add(k, tilelist);
+					} else {
+						tilelist = gameCons[k];
+						tilelist.Add(gameB[squareName]);
 					}
-                    gameB[squareName].setConnection(connectionMap[i][j][k]);
+					gameB[squareName].addConnection(k, gameCons[k]);
 				}
 				
-				for (k = 0; k < locksMap[i][j].length; k++) {
+				/*for (k = 0; k < locksMap[i][j].length; k++) {
 				    if (locksMap[i][j][0] != 0) {
                         if (gameBLock[String(locksMap[i][j][k])] == null) {
                             gameBLock[String(locksMap[i][j][k])] = new Array();
@@ -122,8 +132,8 @@ public class LevelLoader : MonoBehaviour {
 		pos = new Vector2(player.xiso, player.yiso);
 		os.position = pos;
 		//calculate the tile where players center is
-		player.xtile = -Math.Floor((player.posX)/tileW);
-		player.ytile = -Math.Floor((player.posY)/tileW);
+		player.xtile = -Math.Floor((player.posX)/tileW+4);
+		player.ytile = -Math.Floor((player.posY)/tileW+4);
 		
 		foreach (var i in gameB) {
 			OTSprite tos = i.Value.gfx.GetComponent<OTSprite>();
@@ -179,10 +189,10 @@ public class LevelLoader : MonoBehaviour {
 	
 	private void getMyCorners(AssemblyCSharp.Obstacle tob, double px, double py)
 	{
-		tob.downYPos = py;
-		tob.upYPos = py+32-1;
+		tob.downYPos = py+32;
+		tob.upYPos = py+64;
 		tob.leftXPos = px;
-		tob.rightXPos = px+32-1;
+		tob.rightXPos = px+32;
 		//find corner points
 		tob.downY = -Math.Floor(tob.downYPos/tileW);
 		tob.upY = -Math.Floor(tob.upYPos/tileW);
@@ -235,7 +245,7 @@ public class LevelLoader : MonoBehaviour {
 			else
 			{
 				//hit the wall, place tob near the wall
-				tob.setY(-((float)((tob.ytile-1)*tileW+1)));
+				tob.setY(-((float)((tob.ytile-1)*tileW/2+2)));
 				speedAdj = 0;
 			}
 		}
@@ -258,7 +268,7 @@ public class LevelLoader : MonoBehaviour {
 			}
 			else
 			{
-				tob.setY(-((float)((tob.ytile)*tileW)));
+				tob.setY(-((float)((tob.ytile)*tileW/2-2)));
 				speedAdj = 0;
 			}
 		}
@@ -284,7 +294,7 @@ public class LevelLoader : MonoBehaviour {
 			}
 			else
 			{
-				tob.setX(-((float)((tob.xtile)*tileW-1)));
+				tob.setX(-((float)((tob.xtile)*tileW/2)));
 				speedAdj = 0;
 			}
 		}
@@ -307,7 +317,7 @@ public class LevelLoader : MonoBehaviour {
 			}
 			else
 			{
-				tob.setX(-((float)((tob.xtile-1)*tileW+1)));
+				tob.setX(-((float)((tob.xtile-1)*tileW/2+4)));
 				speedAdj = 0;
 			}
 		}

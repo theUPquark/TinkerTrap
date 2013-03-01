@@ -7,28 +7,54 @@
             <key>Ground0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{64,128}}</string>
+                <string>{{2,2},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{64,128}}</string>
+                <string>{{0,0},{128,256}}</string>
                 <key>sourceSize</key>
-                <string>{64,128}</string>
+                <string>{128,256}</string>
             </dict>
             <key>Wall0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{68,2},{64,128}}</string>
+                <string>{{132,2},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{64,128}}</string>
+                <string>{{0,0},{128,256}}</string>
                 <key>sourceSize</key>
-                <string>{64,128}</string>
+                <string>{128,256}</string>
+            </dict>
+            <key>WallB.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{262,2},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>WallX.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,260},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -38,9 +64,9 @@
             <key>realTextureFileName</key>
             <string>level.png</string>
             <key>size</key>
-            <string>{256,256}</string>
+            <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:9a5eff2515e339168d1129282208f15d$</string>
+            <string>$TexturePacker:SmartUpdate:e234289d578dd405bcbeb5bb8ba760c3$</string>
             <key>textureFileName</key>
             <string>level.png</string>
         </dict>
