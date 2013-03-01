@@ -22,11 +22,10 @@ namespace AssemblyCSharp
 		private Dictionary<int,List<AssemblyCSharp.Tile>> connections = new Dictionary<int, List<AssemblyCSharp.Tile>>();
 		
 		public Tile (int t, int gx, int gy, GameObject g) {
-			type = t;
 			gridx = gx;
 			gridy = gy;
 			gfx = g;
-			switch (type) {
+			switch (t) {
 	/*			case 2:
 					locked = true;
 				case 0:

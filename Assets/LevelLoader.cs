@@ -9,7 +9,7 @@ public class LevelLoader : MonoBehaviour {
 	
 	private float tileW = 64;
 	
-	private int[,] map = new int[,] {{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 8, 8, 8, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 5, 5, 5, 5, 0, 5, 5, 5, 5, 5, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 7}, {1, 1, 1, 1, 1, 0, 1, 1, 3, 1, 1, 7}, {1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 7}, {1, 1, 1, 0, 1, 1, 1, 1, 2, 1, 1, 7}, {1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 7}, {1, 1, 1, 0, 4, 0, 0, 0, 0, 1, 1, 7}, {1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 7}, {1, 1, 1, 2, 1, 1, 1, 1, 5, 1, 1, 7}, {1, 1, 1, 0, 0, 4, 0, 0, 0, 1, 1, 7}, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}};
+	private int[,] map = new int[,] {{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 8, 8, 8, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 7}, {1, 1, 1, 1, 1, 5, 1, 1, 3, 1, 1, 7}, {1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 7}, {1, 1, 1, 0, 1, 1, 1, 1, 2, 1, 1, 7}, {1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 7}, {1, 1, 1, 0, 4, 0, 0, 0, 0, 1, 1, 7}, {1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 7}, {1, 1, 1, 2, 1, 1, 1, 1, 5, 1, 1, 7}, {1, 1, 1, 0, 0, 4, 0, 0, 0, 1, 1, 7}, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}};
 	private int[,] obsMap = new int[,] {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 	private int[,][] connectionMap = new int[,][]
 	{
@@ -132,8 +132,8 @@ public class LevelLoader : MonoBehaviour {
 		pos = new Vector2(player.xiso, player.yiso);
 		os.position = pos;
 		//calculate the tile where players center is
-		player.xtile = -Math.Floor((player.posX)/tileW+4);
-		player.ytile = -Math.Floor((player.posY)/tileW+4);
+		player.xtile = -Math.Floor((player.posX)/32);
+		player.ytile = -Math.Floor((player.posY)/32);
 		
 		foreach (var i in gameB) {
 			OTSprite tos = i.Value.gfx.GetComponent<OTSprite>();
@@ -168,6 +168,10 @@ public class LevelLoader : MonoBehaviour {
 		}
 	}
 	
+	// Standard Unity Late Update, occurs after Update
+	// Using this to redraw tile depths after positions are adjusted in the main Update
+	// Also moves the LevelLoader object to remain centered on the player, which moves the child camera as well
+	
 	void LateUpdate() {
 		OTSprite p = player.gfx.GetComponent<OTSprite>();
 		Vector3 posUp = new Vector3(p.position.x, p.position.y, transform.localPosition.z);
@@ -176,6 +180,9 @@ public class LevelLoader : MonoBehaviour {
 		
 		OTSprite os = player.gfx.GetComponent<OTSprite>();
 		OTSprite tos;
+		// Since Orthello automatically adjusts z depth based on y position for objects on the same layer,
+		// all we have to do is make sure walls in front of the player are on a higher layer and walls behind the player are on a lower layer.
+		// This may need some tweaking for movable obstacles, which use the same base class as the player (Obstacle).
 		foreach (var i in gameB) {
 			if (i.Value.gfx != null) {
 				tos = i.Value.gfx.GetComponent<OTSprite>();
@@ -187,11 +194,14 @@ public class LevelLoader : MonoBehaviour {
 		}
 	}
 	
+	// getMyCorners is called to detect the player position and dimensions, checking if movement will carry the player into a new tile.
+	// This data is used by the moveChar function to decide where to move the player.
+	
 	private void getMyCorners(AssemblyCSharp.Obstacle tob, double px, double py)
 	{
-		tob.downYPos = py+32;
+		tob.downYPos = py+32-5;
 		tob.upYPos = py+64;
-		tob.leftXPos = px;
+		tob.leftXPos = px-5;
 		tob.rightXPos = px+32;
 		//find corner points
 		tob.downY = -Math.Floor(tob.downYPos/tileW);
@@ -200,32 +210,37 @@ public class LevelLoader : MonoBehaviour {
 		tob.rightX = -Math.Floor(tob.rightXPos/tileW);
 		//check if they are walls
 		Console.WriteLine("{0}, {1}, {2}, {3}", tob.downY, tob.upY, tob.rightX, tob.leftX);
-		if (tob.downY >= 0 || tob.upY < map.GetLength(0) ||
-			tob.leftX >= 0 || tob.rightX < map.GetLength(1)) {
+		if (tob.upY >= 0 || tob.downY < map.GetLength(1) ||
+			tob.rightX >= 0 || tob.leftX < map.GetLength(0)) {
 			tob.upleft = gameB["tile_"+tob.leftX+"_"+tob.upY].walkable;
 			tob.downleft = gameB["tile_"+tob.leftX+"_"+tob.downY].walkable;
 			tob.upright = gameB["tile_"+tob.rightX+"_"+tob.upY].walkable;
 			tob.downright = gameB["tile_"+tob.rightX+"_"+tob.downY].walkable;
 		}
-		if (tob.downY < 0)
-			tob.downleft = tob.downright = false;
-		if (tob.upY >= map.GetLength(0))
+		if (tob.upY < 0)
 			tob.upleft = tob.upright = false;
-		if (tob.leftX < 0)
-			tob.upleft = tob.downleft = false;
-		if (tob.rightX >= map.GetLength(1))
+		if (tob.downY >= map.GetLength(1))
+			tob.downleft = tob.downright = false;
+		if (tob.rightX < 0)
 			tob.upright = tob.downright = false;
+		if (tob.leftX >= map.GetLength(0))
+			tob.upleft = tob.downleft = false;
 		
 	}
+	
+	// Move char handles all Obstacle movement. Currently this only means the player, but it is designed to pass a final speed backwards.
+	// This is so that Obstacles can chain movement and reduce speed depending on the number of stacked Obstacles being pushed.
 	
 	private double moveChar(AssemblyCSharp.Obstacle tob, double speed, int dirx, int diry)
 	{
 		
 		double speedAdj = speed;
 		
+		//vert movement
+		//changing y with speed and taking old x
 		getMyCorners(tob, tob.posX, tob.posY-speed*diry);
 		
-		
+		//if going up
 		if (diry == -1)
 		{
 			if (tob.upleft && tob.upright)
@@ -245,7 +260,7 @@ public class LevelLoader : MonoBehaviour {
 			else
 			{
 				//hit the wall, place tob near the wall
-				tob.setY(-((float)((tob.ytile-1)*tileW/2+2)));
+				tob.setY(-((float)((tob.ytile-1)*tileW/2+1)));
 				speedAdj = 0;
 			}
 		}
@@ -268,7 +283,7 @@ public class LevelLoader : MonoBehaviour {
 			}
 			else
 			{
-				tob.setY(-((float)((tob.ytile)*tileW/2-2)));
+				tob.setY(-((float)((tob.ytile-1)*tileW/2+27)));
 				speedAdj = 0;
 			}
 		}
@@ -294,7 +309,7 @@ public class LevelLoader : MonoBehaviour {
 			}
 			else
 			{
-				tob.setX(-((float)((tob.xtile)*tileW/2)));
+				tob.setX(-((float)(tob.xtile*tileW/2-5)));
 				speedAdj = 0;
 			}
 		}
@@ -317,7 +332,7 @@ public class LevelLoader : MonoBehaviour {
 			}
 			else
 			{
-				tob.setX(-((float)((tob.xtile-1)*tileW/2+4)));
+				tob.setX(-((float)((tob.xtile)*tileW/2-31)));
 				speedAdj = 0;
 			}
 		}
