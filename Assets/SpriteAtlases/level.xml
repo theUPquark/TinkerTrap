@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>Ground0.png</key>
+            <key>Door0.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,2},{128,256}}</string>
@@ -17,7 +17,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Wall0.png</key>
+            <key>Door1.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{132,2},{128,256}}</string>
@@ -30,7 +30,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>WallB.png</key>
+            <key>Ground0.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{262,2},{128,256}}</string>
@@ -43,10 +43,36 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>WallX.png</key>
+            <key>Wall0.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,260},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>WallB.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{132,260},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>WallX.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{262,260},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -66,7 +92,7 @@
             <key>size</key>
             <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:e234289d578dd405bcbeb5bb8ba760c3$</string>
+            <string>$TexturePacker:SmartUpdate:de6d51b27d41c0f3986a281df3be87cb$</string>
             <key>textureFileName</key>
             <string>level.png</string>
         </dict>

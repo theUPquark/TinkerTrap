@@ -64,14 +64,17 @@ public class LevelLoader : MonoBehaviour {
 				os = gameB[squareName].gfx.GetComponent<OTSprite>();
 				os.frameIndex = gameB[squareName].type;
 				switch (os.frameIndex) {
-				case 1:
+				case 3:
 					os.frameName = "Wall0";
 					break;
-				case 2:
+				case 4:
 					os.frameName = "WallB";
 					break;
-				case 3:
+				case 5:
 					os.frameName = "WallX";
+					break;
+				case 1:
+					os.frameName = "Door0";
 					break;
 				}
 				os.position = pos;
@@ -166,6 +169,10 @@ public class LevelLoader : MonoBehaviour {
 			moveChar(player, 5.0, 0, 1);
 			player.setDir(2);
 		}
+		if (Input.GetKey(KeyCode.Space))
+		{
+			interact();
+		}
 	}
 	
 	// Standard Unity Late Update, occurs after Update
@@ -192,6 +199,35 @@ public class LevelLoader : MonoBehaviour {
 					tos.depth = -1;
 			}
 		}
+	}
+		
+	private void interact() {
+		AssemblyCSharp.Tile atTile = null;
+		
+		if (player.currDir == 0) {
+			atTile = gameB["tile_"+(player.ytile-1).ToString() +"_"+(player.xtile).ToString()];
+		}
+		if (player.currDir == 1) {
+			atTile = gameB["tile_"+(player.ytile).ToString()+"_"+(player.xtile+1).ToString()];
+		}
+		if (player.currDir == 2) {
+			atTile = gameB["tile_"+(player.ytile+1).ToString()+"_"+(player.xtile).ToString()];
+		}
+		if (player.currDir == 3) {
+			atTile = gameB["tile_"+(player.ytile).ToString()+"_"+(player.xtile-1).ToString()];
+		}
+		
+		/*if (atTile.lockGroup[0] != 0) {
+			for (var i: int = 0; i < atTile.lockGroup.length; i++) {
+				for (var j: int = 0; j < gameBLock[String(atTile.lockGroup[i])].length; j++) {
+					if (gameBLock[String(atTile.lockGroup[i])][j].locked)
+						return;
+				}
+			}
+		}*/
+		
+		if (atTile != null)
+			atTile.interact();
 	}
 	
 	// getMyCorners is called to detect the player position and dimensions, checking if movement will carry the player into a new tile.
