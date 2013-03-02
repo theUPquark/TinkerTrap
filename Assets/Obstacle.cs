@@ -26,7 +26,7 @@ namespace AssemblyCSharp
 		
 		public Obstacle (int a, GameObject b, double x, double y)
 		{
-			currDir = 3;
+			setDir(3);
 			type = a;
 			gfx = b;
 			xtile = x;
@@ -59,8 +59,8 @@ namespace AssemblyCSharp
 			Vector2 pos = new Vector2(xiso, yiso);
 			os.position = pos;
 			//calculate the tile where tobs center is
-			xtile = -Math.Floor((posX/(os.size.x/2)));
-			ytile = -Math.Floor((posY/(os.size.x/2)));
+			xtile = -Math.Floor((posX/(os.size.x)));
+			ytile = -Math.Floor((posY/(os.size.x)));
 		}
 		
 		public void setDir(int dir)

@@ -36,6 +36,7 @@ public class LevelLoader : MonoBehaviour {
 	};
 	private Dictionary<string, AssemblyCSharp.Tile> gameB = new Dictionary<string, AssemblyCSharp.Tile>();
 	private Dictionary<int, List<AssemblyCSharp.Tile>> gameCons = new Dictionary<int, List<AssemblyCSharp.Tile>>();
+	private List<AssemblyCSharp.Obstacle> gameObs = new List<AssemblyCSharp.Obstacle>();
 	
 	private AssemblyCSharp.Obstacle player;
 	
@@ -62,21 +63,7 @@ public class LevelLoader : MonoBehaviour {
 				
 				pos = new Vector2 (gameB[squareName].xiso, gameB[squareName].yiso);
 				os = gameB[squareName].gfx.GetComponent<OTSprite>();
-				os.frameIndex = gameB[squareName].type;
-				switch (os.frameIndex) {
-				case 3:
-					os.frameName = "Wall0";
-					break;
-				case 4:
-					os.frameName = "WallB";
-					break;
-				case 5:
-					os.frameName = "WallX";
-					break;
-				case 1:
-					os.frameName = "Door0";
-					break;
-				}
+				os.frameName = gameB[squareName].frameName;
 				os.position = pos;
 				
 				if (gameB[squareName].walkable)
@@ -111,43 +98,22 @@ public class LevelLoader : MonoBehaviour {
 					switch (obsMap[j,i]) {
 						case 1:
 							player = new AssemblyCSharp.Obstacle(0,OT.CreateObject("Bot1"), j, i); //Creates and sets player on tile
+							gameObs.Add (player);
 							break;
 						/*case 2:
-							gameBObs.push(new obstacle(2));
-							gameBObs[gameBObs.length-1].xtile = i;
-							gameBObs[gameBObs.length-1].ytile = j;
+							gameBObs.Add (new AssemblyCSharp.Obstacle(2,OT.CreateObject("Box1"), j, i);
 							break;*/
 					}
-//					player.setDepth (gameB);
 				}
 				
 			}
 		}
-		//add the playeracter mc and insert at correct layer
-//		os = player.gfx.GetComponent<OTSprite>();
-//		
-//		player.posX = -player.xtile*tileW;
-//		player.posY = -player.ytile*tileW;
-//		//calculate position in isometric view
-//		player.xiso = (float)(player.posX-player.posY);
-//		player.yiso = (float)((player.posX+player.posY)/2);
-//		
-//		pos = new Vector2(player.xiso, player.yiso);
-//		os.position = pos;
-//		//calculate the tile where players center is
-//		player.xtile = -Math.Floor((player.posX)/32);
-//		player.ytile = -Math.Floor((player.posY)/32);
-		
-//		foreach (var i in gameB) {
-//			OTSprite tos = i.Value.gfx.GetComponent<OTSprite>();
-//			if (tos.position.y > os.position.y || i.Value.walkable)
-//				tos.depth = 1;
-//			else
-//				tos.depth = -1;
-//		}
 	}
 	
 	void Update() {
+		
+		//Directional movement. Should this be limited to one direction at a time?
+		
 		if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) 
 		{
 			moveChar(player, 5.0, -1, 0);
@@ -169,9 +135,17 @@ public class LevelLoader : MonoBehaviour {
 			moveChar(player, 5.0, 0, 1);
 			player.setDir(2);
 		}
+		
+		// Scan for player interaction. This probably needs updating for different bot abilites.
+		
 		if (Input.GetKey(KeyCode.Space))
 		{
 			interact();
+		}
+		
+		// Do round 1 of Tile updates. Final 'act' method called in LateUpdate();
+		foreach (AssemblyCSharp.Tile t in gameB.Values) {
+			t.update();
 		}
 	}
 	
@@ -184,6 +158,10 @@ public class LevelLoader : MonoBehaviour {
 		Vector3 posUp = new Vector3(p.position.x, p.position.y, transform.localPosition.z);
 		transform.localPosition = posUp;
 		
+		// Do round 2 of Tile updates. Initial 'update' method called in Update();
+		foreach (AssemblyCSharp.Tile t in gameB.Values) {
+			t.act(gameObs);
+		}
 		
 		OTSprite os = player.gfx.GetComponent<OTSprite>();
 		OTSprite tos;
@@ -206,18 +184,18 @@ public class LevelLoader : MonoBehaviour {
 	
 	private void interact() {
 		AssemblyCSharp.Tile atTile = null;
-		
+		string tarTile = "";
 		if (player.currDir == 0) {
-			atTile = gameB["tile_"+(player.ytile-1).ToString() +"_"+(player.xtile).ToString()];
+			tarTile = "tile_"+(int)(player.xtile)+"_"+(int)(player.ytile-1);
 		}
 		if (player.currDir == 1) {
-			atTile = gameB["tile_"+(player.ytile).ToString()+"_"+(player.xtile+1).ToString()];
+			tarTile = "tile_"+(int)(player.xtile-1)+"_"+(int)(player.ytile);
 		}
 		if (player.currDir == 2) {
-			atTile = gameB["tile_"+(player.ytile+1).ToString()+"_"+(player.xtile).ToString()];
+			tarTile = "tile_"+(int)(player.xtile)+"_"+(int)(player.ytile+1);
 		}
 		if (player.currDir == 3) {
-			atTile = gameB["tile_"+(player.ytile).ToString()+"_"+(player.xtile-1).ToString()];
+			tarTile = "tile_"+(int)(player.xtile+1)+"_"+(int)(player.ytile);
 		}
 		
 		/*if (atTile.lockGroup[0] != 0) {
@@ -228,6 +206,9 @@ public class LevelLoader : MonoBehaviour {
 				}
 			}
 		}*/
+		Console.WriteLine(tarTile);
+		
+		atTile = gameB[tarTile];
 		
 		if (atTile != null)
 			atTile.interact();
@@ -299,7 +280,7 @@ public class LevelLoader : MonoBehaviour {
 			else
 			{
 				//hit the wall, place tob near the wall
-				tob.setY(-((float)((tob.ytile-1)*tileW/2+1)));
+				tob.setY(-((float)((tob.ytile-1)*tileW+1)));
 				speedAdj = 0;
 			}
 		}
@@ -322,7 +303,7 @@ public class LevelLoader : MonoBehaviour {
 			}
 			else
 			{
-				tob.setY(-((float)((tob.ytile-1)*tileW/2+27)));
+				tob.setY(-((float)((tob.ytile-1)*tileW+27)));
 				speedAdj = 0;
 			}
 		}
@@ -348,7 +329,7 @@ public class LevelLoader : MonoBehaviour {
 			}
 			else
 			{
-				tob.setX(-((float)(tob.xtile*tileW/2-5)));
+				tob.setX(-((float)(tob.xtile*tileW-5)));
 				speedAdj = 0;
 			}
 		}
@@ -371,7 +352,7 @@ public class LevelLoader : MonoBehaviour {
 			}
 			else
 			{
-				tob.setX(-((float)((tob.xtile)*tileW/2-31)));
+				tob.setX(-((float)((tob.xtile)*tileW-31)));
 				speedAdj = 0;
 			}
 		}
