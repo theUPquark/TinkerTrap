@@ -10,7 +10,7 @@
         <key>autoSDSettings</key>
         <array/>
         <key>allowRotation</key>
-        <false/>
+        <true/>
         <key>quiet</key>
         <false/>
         <key>premultiplyAlpha</key>
@@ -22,7 +22,7 @@
         <key>dataFormat</key>
         <string>cocos2d</string>
         <key>textureFileName</key>
-        <filename>../SpriteAtlases/level.png</filename>
+        <filename>../SpriteAtlases/box1.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -76,7 +76,7 @@
             <key>sizeConstraints</key>
             <enum type="AlgorithmSettings::SizeConstraints">POT</enum>
             <key>forceSquared</key>
-            <false/>
+            <true/>
             <key>forceWordAligned</key>
             <false/>
             <key>maxRects</key>
@@ -99,7 +99,7 @@
             <key>packageName</key>
             <string>Texture</string>
             <key>javaFileName</key>
-            <filename>TinkerTrap/Assets/SpriteAtlases/level.java</filename>
+            <filename>box1_texpack.java</filename>
             <key>wrap</key>
             <struct type="AndEngineWrap">
                 <key>s</key>
@@ -111,7 +111,7 @@
             <enum type="AndEngine::MagFilter">MagLinear</enum>
         </struct>
         <key>dataFileName</key>
-        <filename>../SpriteAtlases/level.xml</filename>
+        <filename>../SpriteAtlases/box1.xml</filename>
         <key>mainExtension</key>
         <string></string>
         <key>forceIdenticalLayout</key>
@@ -119,7 +119,7 @@
         <key>outputFormat</key>
         <enum type="SettingsBase::OutputFormat">RGBA8888</enum>
         <key>autoAliasEnabled</key>
-        <true/>
+        <false/>
         <key>trimSpriteNames</key>
         <false/>
         <key>globalSpriteSettings</key>
@@ -141,28 +141,7 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>Ground0.png</filename>
-            <filename>Wall0.png</filename>
-            <filename>WallX.png</filename>
-            <filename>WallB.png</filename>
-            <filename>Door1.png</filename>
-            <filename>Door0.png</filename>
-            <filename>Door2.png</filename>
-            <filename>Door3.png</filename>
-            <filename>Plate0.png</filename>
-            <filename>Plate1.png</filename>
-            <filename>Door2.png</filename>
-            <filename>Door3.png</filename>
-            <filename>Plate0.png</filename>
-            <filename>Plate1.png</filename>
-            <filename>Door2.png</filename>
-            <filename>Door3.png</filename>
-            <filename>Plate0.png</filename>
-            <filename>Plate1.png</filename>
-            <filename>Door2.png</filename>
-            <filename>Door3.png</filename>
-            <filename>Plate0.png</filename>
-            <filename>Plate1.png</filename>
+            <filename>Box0.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
