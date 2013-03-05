@@ -7,54 +7,54 @@
             <key>Bot1DnLft.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{64,128}}</string>
+                <string>{{0,0},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{64,128}}</string>
+                <string>{{0,0},{128,256}}</string>
                 <key>sourceSize</key>
-                <string>{64,128}</string>
+                <string>{128,256}</string>
             </dict>
             <key>Bot1DnRt.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{68,2},{64,128}}</string>
+                <string>{{128,0},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{64,128}}</string>
+                <string>{{0,0},{128,256}}</string>
                 <key>sourceSize</key>
-                <string>{64,128}</string>
+                <string>{128,256}</string>
             </dict>
             <key>Bot1UpLft.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{134,2},{64,128}}</string>
+                <string>{{0,256},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{64,128}}</string>
+                <string>{{0,0},{128,256}}</string>
                 <key>sourceSize</key>
-                <string>{64,128}</string>
+                <string>{128,256}</string>
             </dict>
             <key>Bot1UpRt.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,132},{64,128}}</string>
+                <string>{{128,256},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{64,128}}</string>
+                <string>{{0,0},{128,256}}</string>
                 <key>sourceSize</key>
-                <string>{64,128}</string>
+                <string>{128,256}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -66,7 +66,7 @@
             <key>size</key>
             <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:574655987c87c0274d01635d7d4a581f$</string>
+            <string>$TexturePacker:SmartUpdate:f9d89b9995c5ed4f285453d11af96148$</string>
             <key>textureFileName</key>
             <string>bot1.png</string>
         </dict>

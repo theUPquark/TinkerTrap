@@ -7,7 +7,7 @@
             <key>Door0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{128,256}}</string>
+                <string>{{0,0},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +20,33 @@
             <key>Door1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{132,2},{128,256}}</string>
+                <string>{{128,0},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Door2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{256,0},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Door3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{384,0},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,7 +59,33 @@
             <key>Ground0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{262,2},{128,256}}</string>
+                <string>{{0,256},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Plate0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{128,256},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Plate1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{256,256},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,7 +98,7 @@
             <key>Wall0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,260},{128,256}}</string>
+                <string>{{384,256},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +111,7 @@
             <key>WallB.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{132,260},{128,256}}</string>
+                <string>{{0,512},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +124,7 @@
             <key>WallX.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{262,260},{128,256}}</string>
+                <string>{{128,512},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -92,7 +144,7 @@
             <key>size</key>
             <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:de6d51b27d41c0f3986a281df3be87cb$</string>
+            <string>$TexturePacker:SmartUpdate:c8834a85fa87eed6311133d0e3ccf9f4$</string>
             <key>textureFileName</key>
             <string>level.png</string>
         </dict>
