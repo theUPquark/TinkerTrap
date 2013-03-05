@@ -90,32 +90,25 @@ public class Tile {
 		// Also add loop to check locks here. All tiles within a lock group must be 'unlocked' for those tiles
 		// to remain 'powered,' whereas only one member of a connection group must be active to power the rest.
 		
-		foreach (List<Tile> conList in locks.Values) {
-			foreach (Tile t in conList) {
-				if (t.locked) {
+		foreach (List<Tile> conList in locks.Values)
+			foreach (Tile t in conList)
+				if (t.locked && t != this)
 					return false;
-				}
-			}
-		}
-		foreach (List<Tile> conList in connections.Values) {
-			foreach (Tile t in conList) {
-				if (t.powered) {
+		foreach (List<Tile> conList in connections.Values)
+			foreach (Tile t in conList)
+				if (t.powered)
 					return true;
-				}
-			}
-		}
 		return false;
 	}
 	
 	// Called to update status when activated by the player.
 	public void interact() {
 		switch (type) {
-			case 3:
-			case 6:
-				used = true;
-				break;
+		case 3:
+		case 6:
+			used = true;
+			break;
 		}
-		Console.WriteLine ("Tile {0},{1} was just used!",gridx,gridy);
 	}
 	
 	// Called to update status when acted upon by another object.
@@ -123,10 +116,11 @@ public class Tile {
 		switch (type) {
 		case 4:
 		case 5:
-			if (isActivated())
+			if (isActivated()) {
 				used = true;
-			else
+			} else {
 				used = false;
+			}
 			break;
 		}
 	}
@@ -165,14 +159,12 @@ public class Tile {
 					//Button off state graphic goes here.
 				else
 					//Button on state graphic goes here.*/
-				Console.WriteLine ("Button at {0},{1} was pushed!",gridx,gridy);
 				powered = !powered;
 				used = false;
 			}
 			break;
 		case 4: //Is there an easy way to consolidate 4 & 5? Maybe an AnimationSprite with frames?
 			if (used && !walkable) {
-				Console.WriteLine ("Door used!");
                 os.frameName = "Door3";
 				walkable = true;
 				powered = true;
@@ -184,7 +176,6 @@ public class Tile {
 			break;
 		case 5:
 			if (used && !walkable) {
-				Console.WriteLine ("Door used!");
                 os.frameName = "Door1";
 				walkable = true;
 				powered = true;

@@ -17,9 +17,9 @@ public class LevelLoader : MonoBehaviour {
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
-		{new int[] {0}, new int[] {13}, new int[] {12,13}, new int[] {11,12}, new int[] {10,11}, new int[] {9,10}, new int[] {8,9}, new int[] {7,8}, new int[] {6,7}, new int[] {5,6}, new int[] {4,5}, new int[] {0}},
+		{new int[] {0}, new int[] {13,14}, new int[] {12,13}, new int[] {11,12}, new int[] {10,11}, new int[] {9,10}, new int[] {8,9}, new int[] {7,8}, new int[] {6,7}, new int[] {5,6}, new int[] {4,5}, new int[] {0}},
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
-		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {4}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
+		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {4}, new int[] {0}, new int[] {4}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
@@ -40,9 +40,9 @@ public class LevelLoader : MonoBehaviour {
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
-		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {3}, new int[] {0}},
+		{new int[] {0}, new int[] {3}, new int[] {3}, new int[] {3}, new int[] {3}, new int[] {3}, new int[] {3}, new int[] {3}, new int[] {3}, new int[] {3}, new int[] {3}, new int[] {0}},
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
-		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {3}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
+		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {3}, new int[] {0}, new int[] {3}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
@@ -98,28 +98,32 @@ public class LevelLoader : MonoBehaviour {
 				
 				foreach (int k in connectionMap[j,i]) {
 					List<Tile> tilelist;
-					if (!gameCons.ContainsKey(k)) {
-						tilelist = new List<Tile>();
-						tilelist.Add(gameB[squareName]);
-						gameCons.Add(k, tilelist);
-					} else {
-						tilelist = gameCons[k];
-						tilelist.Add(gameB[squareName]);
+					if (k != 0) {
+						if (!gameCons.ContainsKey(k)) {
+							tilelist = new List<Tile>();
+							tilelist.Add(gameB[squareName]);
+							gameCons.Add(k, tilelist);
+						} else {
+							tilelist = gameCons[k];
+							tilelist.Add(gameB[squareName]);
+						}
+						gameB[squareName].addConnection(k, gameCons[k]);
 					}
-					gameB[squareName].addConnection(k, gameCons[k]);
 				}
 				
 				foreach (int k in locksMap[j,i]) {
 					List<Tile> tilelist;
-					if (!gameLocks.ContainsKey(k)) {
-						tilelist = new List<Tile>();
-						tilelist.Add(gameB[squareName]);
-						gameLocks.Add(k, tilelist);
-					} else {
-						tilelist = gameLocks[k];
-						tilelist.Add(gameB[squareName]);
+					if (k != 0) {
+						if (!gameLocks.ContainsKey(k)) {
+							tilelist = new List<Tile>();
+							tilelist.Add(gameB[squareName]);
+							gameLocks.Add(k, tilelist);
+						} else {
+							tilelist = gameLocks[k];
+							tilelist.Add(gameB[squareName]);
+						}
+						gameB[squareName].addLock(k, gameLocks[k]);
 					}
-					gameB[squareName].addLock(k, gameLocks[k]);
 				}
 				
 				if (obsMap[j,i] != 0) {
@@ -140,10 +144,6 @@ public class LevelLoader : MonoBehaviour {
 	
 	void OnGUI () {
 		GUI.Box(new Rect(10,10,150,40), "Player tile: "+player.onTile());
-		GUI.Box(new Rect(150,10,290,40), "Tile up: tile_"+player.leftX+"_"+player.upY);
-		GUI.Box(new Rect(10,40,150,70), "Tile down: tile_"+player.leftX+"_"+player.downY);
-		GUI.Box(new Rect(150,40,290,70), "Tile left: tile_"+player.rightX+"_"+player.upY);
-		GUI.Box(new Rect(10,70,150,100), "Tile right: tile_"+player.rightX+"_"+player.downY);
 	}
 	
 	void Update() {
@@ -207,7 +207,7 @@ public class LevelLoader : MonoBehaviour {
 		foreach (var i in gameB) {
 			if (i.Value.gfx != null) {
 				tos = i.Value.gfx.GetComponent<OTSprite>();
-				if (tos.position.y > ps.position.y-player.width/2 || i.Value.walkable)
+				if (tos.position.y > ps.position.y+player.width/4 || i.Value.walkable)
 					tos.depth = 2;
 				else
 					tos.depth = -1;
@@ -216,7 +216,7 @@ public class LevelLoader : MonoBehaviour {
 		foreach (Obstacle i in gameObs) {
 			if (i.gfx != null && i != player) {
 				tos = i.gfx.GetComponent<OTSprite>();
-				if (tos.position.y > ps.position.y-player.width/2)
+				if (tos.position.y > ps.position.y+player.width/4)
 					tos.depth = 1;
 				else
 					tos.depth = -1;
