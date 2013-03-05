@@ -145,6 +145,14 @@
             <filename>Bot1DnRt.png</filename>
             <filename>Bot1UpLft.png</filename>
             <filename>Bot1UpRt.png</filename>
+            <filename>Bot2DnLft.png</filename>
+            <filename>Bot2DnRt.png</filename>
+            <filename>Bot2UpLft.png</filename>
+            <filename>Bot2UpRt.png</filename>
+            <filename>Bot3DnLft.png</filename>
+            <filename>Bot3DnRt.png</filename>
+            <filename>Bot3UpLft.png</filename>
+            <filename>Bot3UpRt.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

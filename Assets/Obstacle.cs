@@ -16,20 +16,8 @@ public class Obstacle
 	public int type, width, currDir;
 	public GameObject gfx;
 	
-	public Obstacle (int a)
+	public Obstacle (int a): this(a, -100, -100)
 	{
-		type = a;
-		switch(type) {
-		case 1:
-			setDir(3);
-			gfx = OT.CreateObject("Bot1");
-			width = 63;
-			break;
-		case 2:
-			gfx = OT.CreateObject("Box1");
-			width = 70;
-			break;
-		}
 	}
 	
 	public Obstacle (int a, double x, double y)
@@ -37,22 +25,18 @@ public class Obstacle
 		type = a;
 		switch(type) {
 		case 1:
-			setDir(3);
+		case 2:
+		case 3:
 			gfx = OT.CreateObject("Bot1");
+			setDir(3);
 			width = 63;
 			break;
-		case 2:
+		case 4:
 			gfx = OT.CreateObject("Box1");
 			width = 70;
 			break;
 		}
-		
-		xtile = x;
-		ytile = y;
-		
-		posX = xtile * LevelLoader.getTileW ();
-		posY = ytile * LevelLoader.getTileW ();
-		setPos();
+		setXY(x,y);
 	}
 	
 	// Returns the name of the Tile currently occupied by the Obstacle
@@ -60,16 +44,25 @@ public class Obstacle
 		string tileName = "tile_"+xtile+"_"+ytile;
 		return tileName;
 	}
-
-	public void setX (float x)
+	
+	public void setXY(double x, double y) {
+		xtile = x;
+		ytile = y;
+		
+		posX = xtile * GameManager.getTileW ();
+		posY = ytile * GameManager.getTileW ();
+		setPos();
+	}
+	
+	public void setX (double x)
 	{
-		posX = (double)x;
+		posX = x;
 		setPos();
 	}
 
-	public void setY (float y)
+	public void setY (double y)
 	{
-		posY = (double)y;
+		posY = y;
 		setPos();
 	}
 	
@@ -83,8 +76,8 @@ public class Obstacle
 		Vector2 pos = new Vector2(xiso, yiso);
 		os.position = pos;
 		//calculate the tile where tobs center is
-		xtile = Math.Floor((posX/LevelLoader.getTileW ()));
-		ytile = Math.Floor((posY/LevelLoader.getTileW ()));
+		xtile = Math.Floor((posX/GameManager.getTileW ()));
+		ytile = Math.Floor((posY/GameManager.getTileW ()));
 	}
 	
 	public void setDir(int dir)
@@ -94,16 +87,16 @@ public class Obstacle
 			OTSprite os = gfx.GetComponent<OTSprite>();
 			switch (currDir) {
 			case 0:
-				os.frameName = "Bot1UpRt";
+				os.frameName = "Bot"+type+"UpRt";
 				break;
 			case 3:
-				os.frameName = "Bot1UpLft";
+				os.frameName = "Bot"+type+"UpLft";
 				break;
 			case 2:
-				os.frameName = "Bot1DnLft";
+				os.frameName = "Bot"+type+"DnLft";
 				break;
 			case 1:
-				os.frameName = "Bot1DnRt";
+				os.frameName = "Bot"+type+"DnRt";
 				break;
 			}
 		}
