@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
 	private static float tileW = 64;
 	
 	private int[,] map = new int[,] {{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 8, 8, 8, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 7}, {1, 1, 1, 1, 1, 5, 1, 1, 3, 1, 1, 7}, {1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 7}, {1, 1, 1, 0, 1, 1, 1, 1, 2, 1, 1, 7}, {1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 7}, {1, 1, 1, 0, 4, 0, 0, 0, 0, 1, 1, 7}, {1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 7}, {1, 1, 1, 2, 1, 1, 1, 1, 5, 1, 1, 7}, {1, 1, 1, 0, 0, 4, 0, 0, 0, 1, 1, 7}, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}};
-	private int[,] obsMap = new int[,] {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+	private int[,] obsMap = new int[,] {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 	private int[,][] connectionMap = new int[,][]
 	{
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
@@ -217,8 +217,6 @@ public class GameManager : MonoBehaviour {
 				
 				if (gameB[squareName].walkable)
 					os.depth = 1;
-				else
-					os.depth = -1;
 				
 				foreach (int k in connectionMap[j,i]) {
 					List<Tile> tilelist;
@@ -292,6 +290,11 @@ public class GameManager : MonoBehaviour {
 			if (!paused) {
 				
 				//Directional movement. Should this be limited to one direction at a time?
+				if (Input.GetKeyDown (KeyCode.E) && !players[activeBot-1].grabbing) {
+					TryGrab();
+				} else if (Input.GetKeyDown (KeyCode.E) && players[activeBot-1].grabbing) {
+					players[activeBot-1].Release();
+				}
 				
 				if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) 
 				{
@@ -320,11 +323,14 @@ public class GameManager : MonoBehaviour {
 				if (Input.GetKeyDown(KeyCode.Space))
 				{	interact();	}
 				
+				// Bot selection... eventually this will only be if you have multiple robots active!
+				
 				if (Input.GetKeyDown (KeyCode.Alpha1)) {
 					if (activeBot != 1) {
 						players[0].setX (players[activeBot-1].posX);
 						players[0].setY (players[activeBot-1].posY);
 						players[activeBot-1].setXY (-100,-100);
+						players[0].setDir (players[activeBot-1].currDir);
 						gameObs.Remove (players[activeBot-1]);
 						gameObs.Add (players[0]);
 						activeBot = 1;
@@ -335,6 +341,7 @@ public class GameManager : MonoBehaviour {
 						players[1].setX (players[activeBot-1].posX);
 						players[1].setY (players[activeBot-1].posY);
 						players[activeBot-1].setXY (-100,-100);
+						players[1].setDir (players[activeBot-1].currDir);
 						gameObs.Remove (players[activeBot-1]);
 						gameObs.Add (players[1]);
 						activeBot = 2;
@@ -345,6 +352,7 @@ public class GameManager : MonoBehaviour {
 						players[2].setX (players[activeBot-1].posX);
 						players[2].setY (players[activeBot-1].posY);
 						players[activeBot-1].setXY (-100,-100);
+						players[2].setDir (players[activeBot-1].currDir);
 						gameObs.Remove (players[activeBot-1]);
 						gameObs.Add (players[2]);
 						activeBot = 3;
@@ -381,28 +389,8 @@ public class GameManager : MonoBehaviour {
 			}
 			
 			OTSprite ps = players[activeBot-1].gfx.GetComponent<OTSprite>();
-			OTSprite tos;
-			// Since Orthello automatically adjusts z depth based on y position for objects on the same layer,
-			// all we have to do is make sure walls in front of the player are on a higher layer and walls behind the player are on a lower layer.
-			// This may need some tweaking for movable obstacles, which use the same base class as the player (Obstacle).
-			foreach (var i in gameB) {
-				if (i.Value.gfx != null) {
-					tos = i.Value.gfx.GetComponent<OTSprite>();
-					if (tos.position.y > ps.position.y+players[activeBot-1].width/4 || i.Value.walkable)
-						tos.depth = 2;
-					else
-						tos.depth = -1;
-				}
-			}
-			foreach (Obstacle i in gameObs) {
-				if (i.gfx != null && i != players[activeBot-1]) {
-					tos = i.gfx.GetComponent<OTSprite>();
-					if (tos.position.y > ps.position.y+players[activeBot-1].width/4)
-						tos.depth = 1;
-					else
-						tos.depth = -1;
-				}
-			}
+			OTSprite iSp;
+			OTSprite jSp;
 		}
 	}
 	
@@ -438,6 +426,51 @@ public class GameManager : MonoBehaviour {
 		
 		if (atTile != null)
 			atTile.interact();
+	}
+	
+	// Check if the active player can grab an obstacle,
+	// if so, grab it!
+	
+	private void TryGrab() {
+		getMyCorners(players[activeBot-1], players[activeBot-1].posX, players[activeBot-1].posY);
+		foreach (Obstacle iob in gameObs) {
+			if (iob != players[activeBot-1]) {
+				switch(players[activeBot-1].currDir) {
+				case 0:
+					getMyCorners (iob,iob.posX,iob.posY+5);
+					if ( players[activeBot-1].upYPos < iob.downYPos && players[activeBot-1].downYPos > iob.upYPos &&
+						players[activeBot-1].leftXPos < iob.rightXPos && players[activeBot-1].rightXPos > iob.leftXPos) {
+						players[activeBot-1].Grab(iob);
+						return;
+					}
+					break;
+				case 1:
+					getMyCorners (iob,iob.posX-5,iob.posY);
+					if ( players[activeBot-1].rightXPos > iob.leftXPos && players[activeBot-1].leftXPos < iob.rightXPos &&
+						players[activeBot-1].upYPos < iob.downYPos && players[activeBot-1].downYPos > iob.upYPos) {
+						players[activeBot-1].Grab(iob);
+						return;
+					}
+					break;
+				case 2:
+					getMyCorners (iob,iob.posX,iob.posY-5);
+					if ( players[activeBot-1].downYPos > iob.upYPos && players[activeBot-1].upYPos < iob.downYPos &&
+						players[activeBot-1].leftXPos < iob.rightXPos && players[activeBot-1].rightXPos > iob.leftXPos) {
+						players[activeBot-1].Grab(iob);
+						return;
+					}
+					break;
+				case 3:
+					getMyCorners (iob,iob.posX+5,iob.posY);
+					if ( players[activeBot-1].leftXPos < iob.rightXPos && players[activeBot-1].rightXPos > iob.leftXPos &&
+						players[activeBot-1].upYPos < iob.downYPos && players[activeBot-1].downYPos > iob.upYPos) {
+						players[activeBot-1].Grab(iob);
+						return;
+					}
+					break;
+				}
+			}
+		}
 	}
 	
 	// getMyCorners is called to detect the player position and dimensions, checking if movement will carry the player into a new tile.
@@ -491,22 +524,26 @@ public class GameManager : MonoBehaviour {
 			if (tob.upleft && tob.upright)
 			{
 				foreach (Obstacle iob in gameObs) {
-					if (iob != tob) {
+					if (iob != tob && iob != players[activeBot-1]) {
 						getMyCorners(iob, iob.posX, iob.posY);
 						if ( tob.upYPos < iob.downYPos && tob.downYPos > iob.upYPos &&
 							tob.leftXPos < iob.rightXPos && tob.rightXPos > iob.leftXPos) {
-							Console.WriteLine (tob.type + ": thisdowny: " + tob.downYPos + " | thatupy:" + iob.upYPos);
-							Console.WriteLine (tob.type + ": thisrightx: " + tob.rightXPos + " | thatleftx:" + iob.leftXPos);
-							speedAdj = moveChar(iob, speed/2, dirx, diry);
+							speedAdj = moveChar(iob, speedAdj/2, dirx, diry);
 						}
 					}
 				}
+				if (tob.grabbing)
+					speedAdj = moveChar (tob.grabbed, speedAdj/2, dirx, diry);
 				tob.setY((float)(tob.posY+speedAdj*diry));
 			}
 			else
 			{
 				//hit the wall, place tob near the wall
+				double yStart = tob.posY;
 				tob.setY(((float)((tob.ytile)*tileW)));
+				double yShift = yStart-tob.posY;
+				if (tob.grabbing)
+					moveChar (tob.grabbed, yShift, dirx, diry);
 				speedAdj = 0;
 			}
 		}
@@ -516,21 +553,25 @@ public class GameManager : MonoBehaviour {
 			if (tob.downleft && tob.downright)
 			{
 				foreach (Obstacle iob in gameObs) {
-					if (iob != tob) {
+					if (iob != tob && iob != players[activeBot-1]) {
 						getMyCorners(iob, iob.posX, iob.posY);
 						if ( tob.downYPos > iob.upYPos && tob.upYPos < iob.downYPos &&
 							tob.leftXPos < iob.rightXPos && tob.rightXPos > iob.leftXPos) {
-							Console.WriteLine (tob.type + ": thisdowny: " + tob.downYPos + " | thatupy:" + iob.upYPos);
-							Console.WriteLine (tob.type + ": thisrightx: " + tob.rightXPos + " | thatleftx:" + iob.leftXPos);
-							speedAdj = moveChar(iob, speed/2, dirx, diry);
+							speedAdj = moveChar(iob, speedAdj/2, dirx, diry);
 						}
 					}
 				}
+				if (tob.grabbing)
+					speedAdj = moveChar (tob.grabbed, speedAdj/2, dirx, diry);
 				tob.setY((float)(tob.posY+speedAdj*diry));
 			}
 			else
 			{
+				double yStart = tob.posY;
 				tob.setY(((float)((tob.ytile+1)*tileW-(tob.width/2))));
+				double yShift = tob.posY-yStart;
+				if (tob.grabbing)
+					moveChar (tob.grabbed, yShift, dirx, diry);
 				speedAdj = 0;
 			}
 		}
@@ -543,21 +584,25 @@ public class GameManager : MonoBehaviour {
 			if (tob.downleft && tob.upleft)
 			{
 				foreach (Obstacle iob in gameObs) {
-					if (iob != tob) {
+					if (iob != tob && iob != players[activeBot-1]) {
 						getMyCorners(iob, iob.posX, iob.posY);
 						if ( tob.leftXPos < iob.rightXPos && tob.rightXPos > iob.leftXPos &&
 							tob.upYPos < iob.downYPos && tob.downYPos > iob.upYPos) {
-							Console.WriteLine (tob.type + ": thisdowny: " + tob.downYPos + " | thatupy:" + iob.upYPos);
-							Console.WriteLine (tob.type + ": thisrightx: " + tob.rightXPos + " | thatleftx:" + iob.leftXPos);
-							speedAdj = moveChar(iob, speed/2, dirx, diry);
+							speedAdj = moveChar(iob, speedAdj/2, dirx, diry);
 						}
 					}
 				}
+				if (tob.grabbing)
+					speedAdj = moveChar (tob.grabbed, speedAdj/2, dirx, diry);
 				tob.setX((float)(tob.posX+speedAdj*dirx));
 			}
 			else
 			{
+				double xStart = tob.posX;
 				tob.setX(((float)(tob.xtile*tileW)));
+				double xShift = xStart-tob.posX;
+				if (tob.grabbing)
+					moveChar (tob.grabbed, xShift, dirx, diry);
 				speedAdj = 0;
 			}
 		}
@@ -567,21 +612,25 @@ public class GameManager : MonoBehaviour {
 			if (tob.upright && tob.downright)
 			{
 				foreach (Obstacle iob in gameObs) {
-					if (iob != tob) {
+					if (iob != tob && iob != players[activeBot-1]) {
 						getMyCorners(iob, iob.posX, iob.posY);
 						if ( tob.rightXPos > iob.leftXPos && tob.leftXPos < iob.rightXPos &&
 							tob.upYPos < iob.downYPos && tob.downYPos > iob.upYPos) {
-							Console.WriteLine (tob.type + ": thisdowny: " + tob.downYPos + " | thatupy:" + iob.upYPos);
-							Console.WriteLine (tob.type + ": thisrightx: " + tob.rightXPos + " | thatleftx:" + iob.leftXPos);
-							speedAdj = moveChar(iob, speed/2, dirx, diry);
+							speedAdj = moveChar(iob, speedAdj/2, dirx, diry);
 						}
 					}
 				}
+				if (tob.grabbing)
+					speedAdj = moveChar (tob.grabbed, speedAdj/2, dirx, diry);
 				tob.setX((float)(tob.posX+speedAdj*dirx));
 			}
 			else
 			{
+				double xStart = tob.posX;
 				tob.setX(((float)((tob.xtile+1)*tileW-(tob.width/2))));
+				double xShift = tob.posX-xStart;
+				if (tob.grabbing)
+					moveChar (tob.grabbed, xShift, dirx, diry);
 				speedAdj = 0;
 			}
 		}
