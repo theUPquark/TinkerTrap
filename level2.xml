@@ -1,0 +1,935 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<document>
+  <width>10</width>
+  <height>15</height>
+  <y>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>4</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>7</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>2</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>2</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>7</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>4</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>5</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>3</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>3</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>5</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>7</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>2</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>2</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>7</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>5</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>5</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>0</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+    <x>
+      <type>1</type>
+      <obs>0</obs>
+      <connections />
+      <locks />
+    </x>
+  </y>
+</document>

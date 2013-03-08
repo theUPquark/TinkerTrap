@@ -15,21 +15,11 @@ public class Obstacle
 	public bool upleft, downleft, upright, downright;
 	public int type, width, currDir;
 	public GameObject gfx;
+	public bool grabbing = false;
+	public Obstacle grabbed;
 	
-	public Obstacle (int a)
+	public Obstacle (int a): this(a, -100, -100)
 	{
-		type = a;
-		switch(type) {
-		case 1:
-			setDir(3);
-			gfx = OT.CreateObject("Bot1");
-			width = 63;
-			break;
-		case 2:
-			gfx = OT.CreateObject("Box1");
-			width = 70;
-			break;
-		}
 	}
 	
 	public Obstacle (int a, double x, double y)
@@ -37,22 +27,18 @@ public class Obstacle
 		type = a;
 		switch(type) {
 		case 1:
-			setDir(3);
+		case 2:
+		case 3:
 			gfx = OT.CreateObject("Bot1");
+			setDir(3);
 			width = 63;
 			break;
-		case 2:
+		case 4:
 			gfx = OT.CreateObject("Box1");
 			width = 70;
 			break;
 		}
-		
-		xtile = x;
-		ytile = y;
-		
-		posX = xtile * LevelLoader.getTileW ();
-		posY = ytile * LevelLoader.getTileW ();
-		setPos();
+		setXY(x,y);
 	}
 	
 	// Returns the name of the Tile currently occupied by the Obstacle
@@ -60,16 +46,25 @@ public class Obstacle
 		string tileName = "tile_"+xtile+"_"+ytile;
 		return tileName;
 	}
-
-	public void setX (float x)
+	
+	public void setXY(double x, double y) {
+		xtile = x;
+		ytile = y;
+		
+		posX = xtile * GameManager.getTileW ();
+		posY = ytile * GameManager.getTileW ();
+		setPos();
+	}
+	
+	public void setX (double x)
 	{
-		posX = (double)x;
+		posX = x;
 		setPos();
 	}
 
-	public void setY (float y)
+	public void setY (double y)
 	{
-		posY = (double)y;
+		posY = y;
 		setPos();
 	}
 	
@@ -82,9 +77,10 @@ public class Obstacle
 		//update tob position
 		Vector2 pos = new Vector2(xiso, yiso);
 		os.position = pos;
+		os.position = pos;
 		//calculate the tile where tobs center is
-		xtile = Math.Floor((posX/LevelLoader.getTileW ()));
-		ytile = Math.Floor((posY/LevelLoader.getTileW ()));
+		xtile = Math.Floor((posX/GameManager.getTileW ()));
+		ytile = Math.Floor((posY/GameManager.getTileW ()));
 	}
 	
 	public void setDir(int dir)
@@ -92,19 +88,21 @@ public class Obstacle
 		currDir = dir;
 		if (gfx != null) {
 			OTSprite os = gfx.GetComponent<OTSprite>();
-			switch (currDir) {
-			case 0:
-				os.frameName = "Bot1UpRt";
-				break;
-			case 3:
-				os.frameName = "Bot1UpLft";
-				break;
-			case 2:
-				os.frameName = "Bot1DnLft";
-				break;
-			case 1:
-				os.frameName = "Bot1DnRt";
-				break;
+			if (!grabbing) {
+				switch (currDir) {
+				case 0:
+					os.frameName = "Bot"+type+"UpRt";
+					break;
+				case 3:
+					os.frameName = "Bot"+type+"UpLft";
+					break;
+				case 2:
+					os.frameName = "Bot"+type+"DnLft";
+					break;
+				case 1:
+					os.frameName = "Bot"+type+"DnRt";
+					break;
+				}
 			}
 		}
 	}
@@ -120,6 +118,16 @@ public class Obstacle
 		else
 			tos.depth = -1;
 		}
+	}
+	
+	public void Grab(Obstacle a) {
+		grabbing = true;
+		grabbed = a;
+	}
+	
+	public void Release() {
+		grabbing = false;
+		grabbed = null;
 	}
 }
 

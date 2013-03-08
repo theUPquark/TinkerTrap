@@ -22,7 +22,7 @@
         <key>dataFormat</key>
         <string>cocos2d</string>
         <key>textureFileName</key>
-        <filename>../SpriteAtlases/bot1.png</filename>
+        <filename>../../SpriteAtlases/builder.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -99,7 +99,7 @@
             <key>packageName</key>
             <string>Texture</string>
             <key>javaFileName</key>
-            <filename>TinkerTrap/Assets/SpriteAtlases/bot1.java</filename>
+            <filename>../../SpriteAtlases/builder.java</filename>
             <key>wrap</key>
             <struct type="AndEngineWrap">
                 <key>s</key>
@@ -111,7 +111,7 @@
             <enum type="AndEngine::MagFilter">MagLinear</enum>
         </struct>
         <key>dataFileName</key>
-        <filename>../SpriteAtlases/bot1.xml</filename>
+        <filename>../../SpriteAtlases/builder.xml</filename>
         <key>mainExtension</key>
         <string></string>
         <key>forceIdenticalLayout</key>
@@ -141,18 +141,15 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>Bot1DnLft.png</filename>
-            <filename>Bot1DnRt.png</filename>
-            <filename>Bot1UpLft.png</filename>
-            <filename>Bot1UpRt.png</filename>
-            <filename>Bot2DnLft.png</filename>
-            <filename>Bot2DnRt.png</filename>
-            <filename>Bot2UpLft.png</filename>
-            <filename>Bot2UpRt.png</filename>
-            <filename>Bot3DnLft.png</filename>
-            <filename>Bot3DnRt.png</filename>
-            <filename>Bot3UpLft.png</filename>
-            <filename>Bot3UpRt.png</filename>
+            <filename>box.png</filename>
+            <filename>button.png</filename>
+            <filename>dangerFloor.png</filename>
+            <filename>doorRL.png</filename>
+            <filename>doorUD.png</filename>
+            <filename>floor.png</filename>
+            <filename>plate.png</filename>
+            <filename>player.png</filename>
+            <filename>wall.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
