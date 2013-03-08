@@ -98,8 +98,11 @@ public class GameManager : MonoBehaviour {
 	    if(GUI.Button(new Rect(55, 100, 180, 40), "Start game")) {
 			selection = true;
 	    }
+	    if(GUI.Button(new Rect(55, 150, 180, 40), "Editor")) {
+			Application.LoadLevel (1);
+	    }
 	    //quit button
-	    if(GUI.Button(new Rect(55, 150, 180, 40), "Quit")) {
+	    if(GUI.Button(new Rect(55, 200, 180, 40), "Quit")) {
 	    	Application.Quit();
 	    }
 	   
@@ -167,8 +170,12 @@ public class GameManager : MonoBehaviour {
 	    if(GUI.Button(new Rect(55, 100, 180, 40), "Resume Game")) {
 			paused = false;
 	    }
+		//gogo editor
+	    if(GUI.Button(new Rect(55, 150, 180, 40), "Editor")) {
+			Application.LoadLevel (1);
+	    }
 	    //quit button
-	    if(GUI.Button(new Rect(55, 150, 180, 40), "Quit")) {
+	    if(GUI.Button(new Rect(55, 200, 180, 40), "Quit")) {
 	    	Application.Quit();
 	    }
 	   

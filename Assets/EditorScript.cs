@@ -1,6 +1,8 @@
 using UnityEngine;
+using UnityEditor;
 using System;
 using System.Collections.Generic;
+using System.Xml;
 
 public class EditorScript : MonoBehaviour {
 	
@@ -57,42 +59,8 @@ public class EditorScript : MonoBehaviour {
 			int selectX = (int)(Math.Floor (mouseLocation.x/32));
 			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
 			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
-				switch (activeSelection) {
-				case 0:
-					map[selectY][selectX].GetComponent<EditorTile>().obsType = 0;
-					map[selectY][selectX].GetComponent<OTSprite>().frameName = "wall";
-					break;
-				case 1:
-					map[selectY][selectX].GetComponent<EditorTile>().obsType = 1;
-					map[selectY][selectX].GetComponent<OTSprite>().frameName = "floor";
-					break;
-				case 2:
-					map[selectY][selectX].GetComponent<EditorTile>().obsType = 3;
-					map[selectY][selectX].GetComponent<OTSprite>().frameName = "button";
-					break;
-				case 3:
-					map[selectY][selectX].GetComponent<EditorTile>().obsType = 2;
-					map[selectY][selectX].GetComponent<OTSprite>().frameName = "plate";
-					break;
-				case 4:
-					map[selectY][selectX].GetComponent<EditorTile>().obsType = 4;
-					map[selectY][selectX].GetComponent<OTSprite>().frameName = "doorRL";
-					break;
-				case 5:
-					map[selectY][selectX].GetComponent<EditorTile>().obsType = 5;
-					map[selectY][selectX].GetComponent<OTSprite>().frameName = "doorUD";
-					break;
-				case 6:
-					map[selectY][selectX].GetComponent<EditorTile>().obsType = 7;
-					map[selectY][selectX].GetComponent<OTSprite>().frameName = "dangerFloor";
-					break;
-				case 7:
-					map[selectY][selectX].GetComponent<EditorTile>().obsType = 1;
-					break;
-				case 8:
-					map[selectY][selectX].GetComponent<EditorTile>().obsType = 4;
-					break;
-				}
+				SetTypeByUI(map[selectY][selectX]);
+				SetGraphics(map[selectY][selectX]);
 			}
 		}
 	}
@@ -101,26 +69,151 @@ public class EditorScript : MonoBehaviour {
 			transform.position = new Vector3(camera.orthographicSize*((float)(Screen.width)/(float)(Screen.height))-20, -camera.orthographicSize*(1-150f/Screen.height), transform.position.z);
 	}
 	
-	/*private void WriteXML()
+	private void SetTypeByUI(GameObject a)
+	{
+		switch (activeSelection) {
+		case 0:
+			a.GetComponent<EditorTile>().tileType = 1;
+			break;
+		case 1:
+			a.GetComponent<EditorTile>().tileType = 0;
+			break;
+		case 2:
+			a.GetComponent<EditorTile>().tileType = 3;
+			break;
+		case 3:
+			a.GetComponent<EditorTile>().tileType = 2;
+			break;
+		case 4:
+			a.GetComponent<EditorTile>().tileType = 4;
+			break;
+		case 5:
+			a.GetComponent<EditorTile>().tileType = 5;
+			break;
+		case 6:
+			a.GetComponent<EditorTile>().tileType = 7;
+			break;
+		case 7:
+			a.GetComponent<EditorTile>().obsType = 1;
+			break;
+		case 8:
+			a.GetComponent<EditorTile>().obsType = 4;
+			break;
+		}
+	}
+	
+	private void SetGraphics(GameObject a)
+	{
+		switch (a.GetComponent<EditorTile>().tileType) {
+		case 1:
+			a.GetComponent<OTSprite>().frameName = "wall";
+			break;
+		case 0:
+			a.GetComponent<OTSprite>().frameName = "floor";
+			break;
+		case 3:
+			a.GetComponent<OTSprite>().frameName = "button";
+			break;
+		case 2:
+			a.GetComponent<OTSprite>().frameName = "plate";
+			break;
+		case 4:
+			a.GetComponent<OTSprite>().frameName = "doorRL";
+			break;
+		case 5:
+			a.GetComponent<OTSprite>().frameName = "doorUD";
+			break;
+		case 7:
+			a.GetComponent<OTSprite>().frameName = "dangerFloor";
+			break;
+		}
+	}
+	
+	private void WriteXML()
     {
-        // Transfer multidimensional array to reg array, because XML doesn't support it otherwise. >:(
-        ButtonAndTile.variables[] tempArray = new ButtonAndTile.variables[columns * rows];
-        int step = 0;
-        for (int j = 0; j < columns; j++)
-        {
-            for (int i = 0; i < rows; i++)
-            {
-                tempArray[step++] = new ButtonAndTile.variables(tileSheet[j, i].tileData);
-            }
-        }
-
-        string fileName = textBoxFileName.Text + ".xml" ;
-        System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(ButtonAndTile.variables[]));
-        System.IO.StreamWriter file = new System.IO.StreamWriter(fileName);
-
-        writer.Serialize(file, tempArray);
-        file.Close();
-    }*/
+		XmlWriterSettings settings = new XmlWriterSettings();
+		settings.Indent = true;
+		using (XmlWriter writer = XmlWriter.Create(EditorUtility.SaveFilePanel("Save the level where?", "", "level#.xml", "xml"),settings)) {
+			writer.WriteStartDocument ();
+			writer.WriteStartElement ("document");
+			writer.WriteElementString ("width", gridW.ToString ());
+			writer.WriteElementString ("height", gridH.ToString ());
+			foreach (List<GameObject> i in map) {
+				writer.WriteStartElement ("y");
+				foreach (GameObject j in i) {
+					writer.WriteStartElement ("x");
+					writer.WriteElementString ("type",j.GetComponent<EditorTile>().tileType.ToString ());
+					writer.WriteElementString ("obs",j.GetComponent<EditorTile>().obsType.ToString ());
+					writer.WriteStartElement ("connections");
+					foreach (int cons in j.GetComponent<EditorTile>().consList) {
+						writer.WriteValue (cons);
+					}
+					writer.WriteEndElement ();
+					writer.WriteStartElement ("locks");
+					foreach (int locks in j.GetComponent<EditorTile>().locksList) {
+						writer.WriteValue (locks);
+					}
+					writer.WriteEndElement ();
+					writer.WriteEndElement ();
+				}
+				writer.WriteEndElement();
+			}
+			writer.WriteEndElement();
+			writer.WriteEndDocument ();
+		}
+    }
+	
+	private void LoadLevel(string path)
+	{
+		XmlReaderSettings settings = new XmlReaderSettings();
+		settings.IgnoreWhitespace = true;
+		using (XmlReader read = XmlReader.Create (path, settings)) {
+			int i = -1;
+			int j = -1;
+			while (read.Read ()) {
+				if (read.IsStartElement ())
+				{
+					switch (read.Name)
+					{
+					case "width":
+						read.Read ();
+						tempW = read.Value;
+						gridW = int.Parse (tempW);
+						break;
+					case "height":
+						read.Read ();
+						tempH = read.Value;
+						gridH = int.Parse (tempH);
+						SetGrid();
+						break;
+					case "y":
+						j++;
+						i = -1;
+						Console.WriteLine (j.ToString());
+						break;
+					case "x":
+						if (i >= 0)
+							SetGraphics(map[j][i]);
+						else
+							SetGraphics(map[j][gridW-1]);
+						Console.WriteLine (i.ToString());
+						i++;
+						break;
+					case "type":
+						read.Read ();
+						map[j][i].GetComponent<EditorTile>().tileType = int.Parse (read.Value);
+						break;
+					case "obs":
+						read.Read ();
+						map[j][i].GetComponent<EditorTile>().obsType = int.Parse (read.Value);
+						break;
+					//case "connections":
+					//case "locks":
+					}
+				}
+			}
+		}
+	}
 	
 	void OnGUI () {
 		GUI.skin = mainSkin;
@@ -168,7 +261,7 @@ public class EditorScript : MonoBehaviour {
 				buttonStyle = activeButton;
 			else
 				buttonStyle = passiveButton;
-			if (GUI.Button (new Rect(Screen.width-(32*(2-i%2))-10,(32+5)*(i/2)+40,32,32), buttonGfx[i], buttonStyle) == true) {
+			if (GUI.Button (new Rect(Screen.width-(32*(2-i%2))-10,(32+5)*(i/2)+40,32,32), buttonGfx[i], buttonStyle)) {
 				activeSelection = i;
 			}
 		}
@@ -180,10 +273,23 @@ public class EditorScript : MonoBehaviour {
 				buttonStyle = activeButton;
 			else
 				buttonStyle = passiveButton;
-			if (GUI.Button (new Rect(Screen.width-(32*(2-(i+3)%2))-10,(32+5)*((i+3)/2)+40,32,32), buttonGfx[i], buttonStyle) == true) {
+			if (GUI.Button (new Rect(Screen.width-(32*(2-(i+3)%2))-10,(32+5)*((i+3)/2)+40,32,32), buttonGfx[i], buttonStyle)) {
 				activeSelection = i;
 			}
 		}
+		
+		if (GUI.Button (new Rect(200,5,90,60), "Save")) {
+			WriteXML ();
+		}
+		
+		if (GUI.Button (new Rect(295,5,90,60), "Load")) {
+			LoadLevel (EditorUtility.OpenFilePanel ("What level do you wish to load?", "", "xml"));
+		}
+		
+		if (GUI.Button (new Rect(390,5,90,60), "Return to Game")) {
+			Application.LoadLevel (0);
+		}
+		
 		GUI.EndGroup ();
 	}
 }

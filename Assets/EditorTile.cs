@@ -68,14 +68,11 @@ public class EditorTile : MonoBehaviour
 		get { return tileData.y; }
 		set { tileData.y = value; }
 	}
-
-    public string getAllConnections()
-    {
-        string all = null;
-        foreach (int s in tileData.connections)
-            all = all + " " + Convert.ToString(s);
-        return all;
-    }
+	
+	public List<int> consList {
+		get { return tileData.connections; }
+	}
+	
     public void setConnections(string text)
     {
         string[] splitText = text.Split(null);
@@ -86,13 +83,10 @@ public class EditorTile : MonoBehaviour
                 tileData.connections.Add(int.Parse(str));
     }
 
-    public string getAllLockGroups()
-    {
-        string all = null;
-        foreach (int s in tileData.lockGroups)
-            all = all + " " + Convert.ToString(s);
-        return all;
-    }
+	public List<int> locksList {
+		get { return tileData.lockGroups; }
+	}
+	
     public void setLockGroups(string text)
     {
         string[] splitText = text.Split(null);
