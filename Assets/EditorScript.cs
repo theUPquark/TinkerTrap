@@ -31,7 +31,8 @@ public class EditorScript : MonoBehaviour {
 				if (map[i].Count == j) {
 					map[i].Add(OT.CreateObject ("builderSprite"));
 					map[i][j].AddComponent<EditorTile>();
-					map[i][j].GetComponent<OTSprite>().position = new Vector2(34F*j,-34F*i);
+					map[i][j].GetComponent<OTSprite>().position = new Vector2(j*32f,i*-32f);
+					map[i][j].GetComponent<OTSprite>().frameName = "wall";
 				}
 			}
 			if (gridW < map[i].Count) {
@@ -49,8 +50,55 @@ public class EditorScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		//transform.localPosition = new Vector3(0+Screen.width/2F, 0+Screen.height/2-40, transform.localPosition.z);
+	void Update() {
+		if (Input.GetMouseButton (0))
+		{
+			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
+			int selectX = (int)(Math.Floor (mouseLocation.x/32));
+			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
+			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+				switch (activeSelection) {
+				case 0:
+					map[selectY][selectX].GetComponent<EditorTile>().obsType = 0;
+					map[selectY][selectX].GetComponent<OTSprite>().frameName = "wall";
+					break;
+				case 1:
+					map[selectY][selectX].GetComponent<EditorTile>().obsType = 1;
+					map[selectY][selectX].GetComponent<OTSprite>().frameName = "floor";
+					break;
+				case 2:
+					map[selectY][selectX].GetComponent<EditorTile>().obsType = 3;
+					map[selectY][selectX].GetComponent<OTSprite>().frameName = "button";
+					break;
+				case 3:
+					map[selectY][selectX].GetComponent<EditorTile>().obsType = 2;
+					map[selectY][selectX].GetComponent<OTSprite>().frameName = "plate";
+					break;
+				case 4:
+					map[selectY][selectX].GetComponent<EditorTile>().obsType = 4;
+					map[selectY][selectX].GetComponent<OTSprite>().frameName = "doorRL";
+					break;
+				case 5:
+					map[selectY][selectX].GetComponent<EditorTile>().obsType = 5;
+					map[selectY][selectX].GetComponent<OTSprite>().frameName = "doorUD";
+					break;
+				case 6:
+					map[selectY][selectX].GetComponent<EditorTile>().obsType = 7;
+					map[selectY][selectX].GetComponent<OTSprite>().frameName = "dangerFloor";
+					break;
+				case 7:
+					map[selectY][selectX].GetComponent<EditorTile>().obsType = 1;
+					break;
+				case 8:
+					map[selectY][selectX].GetComponent<EditorTile>().obsType = 4;
+					break;
+				}
+			}
+		}
+	}
+	
+	void LateUpdate () {
+			transform.position = new Vector3(camera.orthographicSize*((float)(Screen.width)/(float)(Screen.height))-20, -camera.orthographicSize*(1-150f/Screen.height), transform.position.z);
 	}
 	
 	/*private void WriteXML()
@@ -139,3 +187,4 @@ public class EditorScript : MonoBehaviour {
 		GUI.EndGroup ();
 	}
 }
+

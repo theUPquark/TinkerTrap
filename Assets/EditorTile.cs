@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 
 public class EditorTile : MonoBehaviour
 {
-    public struct variables
+    private struct variables
     {
         public int x;
         public int y;
@@ -23,6 +23,7 @@ public class EditorTile : MonoBehaviour
             connections = new List<int>();
             lockGroups = new List<int>();
         }
+		
         public variables(variables source) //copy constructor
         {
             x = source.x;
@@ -34,41 +35,39 @@ public class EditorTile : MonoBehaviour
         }
     }
 	
-    public variables tileData;
+    private variables tileData;
+	
+	void Start() {
+		createTile();
+	}
 
-    public EditorTile() : this(0, 0) { } //Might not need after adding getter/setters
-
-    public EditorTile(int a, int b) //: base()
+    private void createTile() //: base()
     {
-        tileData = new variables(a, b);
-
+        tileData = new variables(0, 0);
+		
         /*this.SetBounds(25 + a * 25, 40 + b * 25, 25, 25); // Location on window and size
         this.Text = tileData.tileType.ToString();*/
     }
-
-    public void setTileType(int t)   {
-        tileData.tileType = t;
-    }
-    public int getTileType()   {
-        return tileData.tileType;
-    }
-
-    public void setObsType(int t)
-    {
-        tileData.obsType = t;
-    }
-    public int getObsType()
-    {
-        return tileData.obsType;
-    }
-    public int getTileX()
-    {
-        return tileData.x;
-    }
-    public int getTileY()
-    {
-        return tileData.y;
-    }
+	
+	public int tileType {
+		get { return tileData.tileType; }
+		set { tileData.tileType = value; }
+	}
+	
+	public int obsType {
+		get { return tileData.obsType; }
+		set { tileData.obsType = value; }
+	}
+	
+	public int xPos {
+		get { return tileData.x; }
+		set { tileData.x = value; }
+	}
+	
+	public int yPos {
+		get { return tileData.y; }
+		set { tileData.y = value; }
+	}
 
     public string getAllConnections()
     {
