@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEditor;
 using System;
 using System.Collections.Generic;
 using System.Xml;
@@ -13,7 +12,12 @@ public class EditorScript : MonoBehaviour {
 	private string tempW = "10";
 	private string tempH = "10";
 	private bool guiError = false;
+	private bool loadFile = false;
+	private bool saveFile = false;
+	private FileBrowser browser;
 	private string guiErS = "";
+	protected string filePath;
+	protected string fileName = "level";
 	
 	public GUIStyle activeButton;
 	public GUIStyle passiveButton;
@@ -129,11 +133,43 @@ public class EditorScript : MonoBehaviour {
 		}
 	}
 	
+	private FileBrowser BrowserSetup()
+	{
+		FileBrowser browser;
+		if (loadFile) {
+			browser = new FileBrowser(
+				new Rect(Screen.width/2-300, 100, 600, 300),
+				"Choose XML File",
+				ReturnLoadPath
+			);
+			browser.SelectionPattern = "*.xml";
+			browser.BrowserType = FileBrowserType.File;
+		} else {
+			browser = new FileBrowser(
+				new Rect(Screen.width/2-300, 200, 600, 300),
+				"Choose Location and Name",
+				ReturnSavePath
+			);
+			browser.BrowserType = FileBrowserType.Directory;
+		}
+		return browser;
+	}
+	
+	private void ReturnLoadPath(string path)
+	{
+		filePath = path;
+	}
+	
+	private void ReturnSavePath(string path)
+	{
+		filePath = path + "/" + fileName + ".xml";
+	}
+	
 	private void WriteXML()
     {
 		XmlWriterSettings settings = new XmlWriterSettings();
 		settings.Indent = true;
-		using (XmlWriter writer = XmlWriter.Create(EditorUtility.SaveFilePanel("Save the level where?", "", "level#.xml", "xml"),settings)) {
+		using (XmlWriter writer = XmlWriter.Create(filePath,settings)) {
 			writer.WriteStartDocument ();
 			writer.WriteStartElement ("document");
 			writer.WriteElementString ("width", gridW.ToString ());
@@ -161,13 +197,14 @@ public class EditorScript : MonoBehaviour {
 			writer.WriteEndElement();
 			writer.WriteEndDocument ();
 		}
+		filePath = null;
     }
 	
-	private void LoadLevel(string path)
+	private void LoadLevel()
 	{
 		XmlReaderSettings settings = new XmlReaderSettings();
 		settings.IgnoreWhitespace = true;
-		using (XmlReader read = XmlReader.Create (path, settings)) {
+		using (XmlReader read = XmlReader.Create (filePath, settings)) {
 			int i = -1;
 			int j = -1;
 			while (read.Read ()) {
@@ -187,6 +224,8 @@ public class EditorScript : MonoBehaviour {
 						SetGrid();
 						break;
 					case "y":
+						if (j >= 0)
+							SetGraphics(map[j][i]);
 						j++;
 						i = -1;
 						Console.WriteLine (j.ToString());
@@ -212,6 +251,7 @@ public class EditorScript : MonoBehaviour {
 					}
 				}
 			}
+			filePath = null;
 		}
 	}
 	
@@ -278,12 +318,33 @@ public class EditorScript : MonoBehaviour {
 			}
 		}
 		
-		if (GUI.Button (new Rect(200,5,90,60), "Save")) {
-			WriteXML ();
+		if (GUI.Button (new Rect(200,5,90,60), "Save") && (!saveFile || !loadFile) ) {
+			saveFile = true;
+			browser = BrowserSetup ();
 		}
 		
-		if (GUI.Button (new Rect(295,5,90,60), "Load")) {
-			LoadLevel (EditorUtility.OpenFilePanel ("What level do you wish to load?", "", "xml"));
+		if (GUI.Button (new Rect(295,5,90,60), "Load") && (!saveFile || !loadFile) ) {
+			loadFile = true;
+			browser = BrowserSetup ();
+		}
+		
+		if (loadFile) {
+			browser.OnGUI ();
+			GUI.TextField (new Rect(Screen.width/2-300, 410, 500, 30), browser.CurrentDirectory);
+			if (filePath != null) {
+				loadFile = false;
+				LoadLevel();
+			}
+		}
+		
+		if (saveFile) {
+			browser.OnGUI ();
+			fileName = GUI.TextField (new Rect(Screen.width/2-300, 510, 300, 30), fileName);
+			GUI.Label (new Rect(Screen.width/2, 510, 40, 30), ".xml");
+			if (filePath != null) {
+				saveFile = false;
+				WriteXML ();
+			}
 		}
 		
 		if (GUI.Button (new Rect(390,5,90,60), "Return to Game")) {
