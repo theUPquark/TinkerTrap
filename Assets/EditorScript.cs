@@ -139,7 +139,6 @@ public class EditorScript : MonoBehaviour {
 		}
 	}
 	
-<<<<<<< HEAD
 	private FileBrowser BrowserSetup()
 	{
 		FileBrowser browser;
@@ -170,7 +169,8 @@ public class EditorScript : MonoBehaviour {
 	private void ReturnSavePath(string path)
 	{
 		filePath = path + "/" + fileName + ".xml";
-=======
+	}
+	
 	private void SetConnections (GameObject a){
 	
 		if (connections.Length > 0)
@@ -181,7 +181,6 @@ public class EditorScript : MonoBehaviour {
 	
 		if (lockGroups.Length > 0)
 			a.GetComponent<EditorTile>().setLockGroups(lockGroups);	
->>>>>>> 92b41dd0ab4760b5f0421f9b76d02efc3e7c8cac
 	}
 	
 	private void WriteXML()
@@ -343,7 +342,6 @@ public class EditorScript : MonoBehaviour {
 			}
 		}
 		
-<<<<<<< HEAD
 		if (GUI.Button (new Rect(200,5,90,60), "Save") && (!saveFile || !loadFile) ) {
 			saveFile = true;
 			browser = BrowserSetup ();
@@ -352,7 +350,8 @@ public class EditorScript : MonoBehaviour {
 		if (GUI.Button (new Rect(295,5,90,60), "Load") && (!saveFile || !loadFile) ) {
 			loadFile = true;
 			browser = BrowserSetup ();
-=======
+		}
+		
 		GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+200,90,30), "Connections:");
 		connections = GUI.TextField(new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+240,90,30),connections);
 		connections = Regex.Replace(connections, @"[^,0-9]", "");
@@ -360,11 +359,6 @@ public class EditorScript : MonoBehaviour {
 		GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+280,150,30), "Lock Groups:");
 		lockGroups = GUI.TextField(new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+320,90,30),lockGroups);
 		lockGroups = Regex.Replace(lockGroups, @"[^,0-9]", "");
-		
-		if (GUI.Button (new Rect(200,5,90,60), "Save")) {
-			WriteXML ();
->>>>>>> 92b41dd0ab4760b5f0421f9b76d02efc3e7c8cac
-		}
 		
 		if (loadFile) {
 			browser.OnGUI ();
