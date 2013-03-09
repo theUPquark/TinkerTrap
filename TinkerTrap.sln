@@ -1,13 +1,9 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{3445D153-9B3B-B917-D0D7-AE2AE8A3F3C2}") = "TinkerTrap", "Assembly-CSharp-firstpass.csproj", "{EC6E5098-75C9-42CE-7F54-9B1E5E771713}"
-EndProject
 Project("{3445D153-9B3B-B917-D0D7-AE2AE8A3F3C2}") = "TinkerTrap", "Assembly-CSharp.csproj", "{CFC401FA-D656-B539-6437-5734F8A60055}"
 EndProject
 Project("{3445D153-9B3B-B917-D0D7-AE2AE8A3F3C2}") = "TinkerTrap", "Assembly-CSharp-Editor.csproj", "{F92402B3-0C21-1AA0-84D4-8DAD39C4B3CE}"
-EndProject
-Project("{3445D153-9B3B-B917-D0D7-AE2AE8A3F3C2}") = "TinkerTrap", "Assembly-UnityScript-firstpass.unityproj", "{EF3EE9C6-E6E5-E576-F560-5852C42E2A9A}"
 EndProject
 Project("{3445D153-9B3B-B917-D0D7-AE2AE8A3F3C2}") = "TinkerTrap", "Assembly-UnityScript.unityproj", "{7FC5E36E-717C-84F2-C4E4-FE9B9267E8A6}"
 EndProject
@@ -17,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EC6E5098-75C9-42CE-7F54-9B1E5E771713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC6E5098-75C9-42CE-7F54-9B1E5E771713}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC6E5098-75C9-42CE-7F54-9B1E5E771713}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC6E5098-75C9-42CE-7F54-9B1E5E771713}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CFC401FA-D656-B539-6437-5734F8A60055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CFC401FA-D656-B539-6437-5734F8A60055}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFC401FA-D656-B539-6437-5734F8A60055}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,10 +21,6 @@ Global
 		{F92402B3-0C21-1AA0-84D4-8DAD39C4B3CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F92402B3-0C21-1AA0-84D4-8DAD39C4B3CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F92402B3-0C21-1AA0-84D4-8DAD39C4B3CE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF3EE9C6-E6E5-E576-F560-5852C42E2A9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF3EE9C6-E6E5-E576-F560-5852C42E2A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF3EE9C6-E6E5-E576-F560-5852C42E2A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF3EE9C6-E6E5-E576-F560-5852C42E2A9A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7FC5E36E-717C-84F2-C4E4-FE9B9267E8A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7FC5E36E-717C-84F2-C4E4-FE9B9267E8A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FC5E36E-717C-84F2-C4E4-FE9B9267E8A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,7 +29,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																GlobalSection(MonoDevelopProperties) = preSolution
+																												GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
