@@ -164,12 +164,12 @@ public class EditorScript : MonoBehaviour {
 					writer.WriteElementString ("obs",j.GetComponent<EditorTile>().obsType.ToString ());
 					writer.WriteStartElement ("connections");
 					foreach (int cons in j.GetComponent<EditorTile>().consList) {
-						writer.WriteValue (cons);
+						writer.WriteElementString ("int", cons.ToString());
 					}
 					writer.WriteEndElement ();
 					writer.WriteStartElement ("locks");
 					foreach (int locks in j.GetComponent<EditorTile>().locksList) {
-						writer.WriteValue (locks);
+						writer.WriteElementString ("int", locks.ToString());
 					}
 					writer.WriteEndElement ();
 					writer.WriteEndElement ();
@@ -225,8 +225,14 @@ public class EditorScript : MonoBehaviour {
 						read.Read ();
 						map[j][i].GetComponent<EditorTile>().obsType = int.Parse (read.Value);
 						break;
-					//case "connections":
-					//case "locks":
+					case "connections":
+						while (read.MoveToNextAttribute())
+							map[j][i].GetComponent<EditorTile>().setElementConnection(read.ReadContentAsInt());
+						break;
+					case "locks":
+						while (read.MoveToNextAttribute())
+							map[j][i].GetComponent<EditorTile>().setElementLock(read.ReadContentAsInt());
+						break;
 					}
 				}
 			}
