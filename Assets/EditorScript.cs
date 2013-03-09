@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 public class EditorScript : MonoBehaviour {
 	
 	private List<List<GameObject>> map = new List<List<GameObject>>();
+	private List<List<GameObject>> mapObs = new List<List<GameObject>>();
 	private int activeSelection = 0;
 	private int gridW = 10;
 	private int gridH = 10;
@@ -15,6 +16,7 @@ public class EditorScript : MonoBehaviour {
 	private bool guiError = false;
 	private bool loadFile = false;
 	private bool saveFile = false;
+	private bool guiInput = false;
 	private FileBrowser browser;
 	private string guiErS = "";
 	protected string filePath;
@@ -35,40 +37,60 @@ public class EditorScript : MonoBehaviour {
 	
 	private void SetGrid() {
 		for (int i = 0; i < gridH; i++) {
-			if (map.Count == i)
+			if (map.Count == i) {
 				map.Add (new List<GameObject>());
+				mapObs.Add (new List<GameObject>());
+			}
 			for (int j = 0; j < gridW; j++) {
 				if (map[i].Count == j) {
 					map[i].Add(OT.CreateObject ("builderSprite"));
+					mapObs[i].Add(OT.CreateObject ("builderSprite"));
 					map[i][j].AddComponent<EditorTile>();
 					map[i][j].GetComponent<OTSprite>().position = new Vector2(j*32f,i*-32f);
+					mapObs[i][j].GetComponent<OTSprite>().position = new Vector2(j*32f,i*-32f);
 					map[i][j].GetComponent<OTSprite>().frameName = "wall";
+					mapObs[i][j].GetComponent<OTSprite>().frameName = "empty";
+					mapObs[i][j].GetComponent<OTSprite>().depth = -1;
 				}
 			}
 			if (gridW < map[i].Count) {
 				foreach (GameObject t in map[i].GetRange (gridW,map[i].Count-gridW))
 					Destroy (t);
+				foreach (GameObject o in mapObs[i].GetRange (gridW,map[i].Count-gridW))
+					Destroy (o);
 				map[i].RemoveRange (gridW,map[i].Count-gridW);
+				mapObs[i].RemoveRange (gridW,mapObs[i].Count-gridW);
 			}
 		}
 		if (gridH < map.Count) {
 			foreach (List<GameObject> l in map.GetRange (gridH,map.Count-gridH))
 				foreach (GameObject t in l)
 					Destroy (t);
+			foreach (List<GameObject> l in mapObs.GetRange (gridH,map.Count-gridH))
+				foreach (GameObject o in l)
+					Destroy (o);
 			map.RemoveRange (gridH,map.Count-gridH);
+			mapObs.RemoveRange (gridH,map.Count-gridH);
 		}
 	}
 	
 	// Update is called once per frame
 	void Update() {
-		if (Input.GetMouseButton (0))
+		if (Input.GetMouseButton (0) && !guiError && !loadFile && !saveFile && !guiInput)
 		{
 			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
 			int selectX = (int)(Math.Floor (mouseLocation.x/32));
 			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
 			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+<<<<<<< HEAD
 				SetTypeByUI(map[selectY][selectX]);
 				SetGraphics(map[selectY][selectX]);
+=======
+				SetTypeByDraw(map[selectY][selectX]);
+				SetGraphics(map[selectY][selectX], mapObs[selectY][selectX]);
+				SetConnections(map[selectY][selectX]);
+				SetLockGroups(map[selectY][selectX]);
+>>>>>>> Fixing Connections/Locks Reader (Somewhat) & Obs Display
 			}
 		}
 	}
@@ -77,7 +99,7 @@ public class EditorScript : MonoBehaviour {
 			transform.position = new Vector3(camera.orthographicSize*((float)(Screen.width)/(float)(Screen.height))-20, -camera.orthographicSize*(1-150f/Screen.height), transform.position.z);
 	}
 	
-	private void SetTypeByUI(GameObject a)
+	private void SetTypeByDraw(GameObject a)
 	{
 		switch (activeSelection) {
 		case 0:
@@ -107,16 +129,21 @@ public class EditorScript : MonoBehaviour {
 		case 8:
 			a.GetComponent<EditorTile>().obsType = 4;
 			break;
+<<<<<<< HEAD
 		case 20:
 			a.GetComponent<EditorTile>().setConnections(connections);
 			break;
 		case 21:
 			a.GetComponent<EditorTile>().setLockGroups(lockGroups);
+=======
+		case 9:
+			a.GetComponent<EditorTile>().obsType = 0;
+>>>>>>> Fixing Connections/Locks Reader (Somewhat) & Obs Display
 			break;
 		}
 	}
 	
-	private void SetGraphics(GameObject a)
+	private void SetGraphics(GameObject a, GameObject b)
 	{
 		switch (a.GetComponent<EditorTile>().tileType) {
 		case 1:
@@ -139,6 +166,17 @@ public class EditorScript : MonoBehaviour {
 			break;
 		case 7:
 			a.GetComponent<OTSprite>().frameName = "dangerFloor";
+			break;
+		}
+		switch (a.GetComponent<EditorTile>().obsType) {
+		case 0:
+			b.GetComponent<OTSprite>().frameName = "empty";
+			break;
+		case 1:
+			b.GetComponent<OTSprite>().frameName = "player";
+			break;
+		case 4:
+			b.GetComponent<OTSprite>().frameName = "box";
 			break;
 		}
 	}
@@ -236,16 +274,16 @@ public class EditorScript : MonoBehaviour {
 						break;
 					case "y":
 						if (j >= 0)
-							SetGraphics(map[j][i]);
+							SetGraphics(map[j][i],mapObs[j][i]);
 						j++;
 						i = -1;
 						Console.WriteLine (j.ToString());
 						break;
 					case "x":
 						if (i >= 0)
-							SetGraphics(map[j][i]);
+							SetGraphics(map[j][i],mapObs[j][i]);
 						else
-							SetGraphics(map[j][gridW-1]);
+							SetGraphics(map[j][gridW-1],mapObs[j][gridW-1]);
 						Console.WriteLine (i.ToString());
 						i++;
 						break;
@@ -257,6 +295,7 @@ public class EditorScript : MonoBehaviour {
 						read.Read ();
 						map[j][i].GetComponent<EditorTile>().obsType = int.Parse (read.Value);
 						break;
+<<<<<<< HEAD
 					case "connections":	
 						break;
 					case "conn":
@@ -268,15 +307,48 @@ public class EditorScript : MonoBehaviour {
 					case "lock":
 						read.Read ();
 						map[j][i].GetComponent<EditorTile>().setElementLock(read.ReadContentAsInt());
+=======
+					case "connections":
+						read.Read ();
+						if (read.Name.Equals ("int")) {
+							read.Read ();
+							int val = read.ReadContentAsInt ();
+							map[j][i].GetComponent<EditorTile>().setElementConnection(val);
+							Console.WriteLine ("Connection Found: {0}", val);
+							while (read.ReadToNextSibling ("int")) {
+								read.Read ();
+								val = read.ReadContentAsInt ();
+								map[j][i].GetComponent<EditorTile>().setElementConnection(val);
+								Console.WriteLine ("Connection Found: {0}", val);
+							}
+						}
+						break;
+					case "locks":
+						read.Read ();
+						if (read.Name.Equals ("int")) {
+							read.Read ();
+							int val = read.ReadContentAsInt ();
+							map[j][i].GetComponent<EditorTile>().setElementLock(val);
+							Console.WriteLine ("Lock Found: {0}", val);
+							while (read.ReadToNextSibling ("int")) {
+								read.Read ();
+								val = read.ReadContentAsInt ();
+								map[j][i].GetComponent<EditorTile>().setElementLock(val);
+								Console.WriteLine ("Lock Found: {0}", val);
+							}
+						}
+>>>>>>> Fixing Connections/Locks Reader (Somewhat) & Obs Display
 						break;
 					}
 				}
 			}
+			read.Close ();
 			filePath = null;
 		}
 	}
 	
 	void OnGUI () {
+		guiInput = false;
 		GUI.skin = mainSkin;
 		GUI.BeginGroup (new Rect(0,0,Screen.width,Screen.height));
 		GUI.Label (new Rect(5,5,60,30), "Width:");
@@ -284,6 +356,7 @@ public class EditorScript : MonoBehaviour {
 		tempW = GUI.TextField (new Rect(5,35,30,30), tempW, 2);
 		tempH = GUI.TextField (new Rect(70,35,30,30), tempH, 2);
 		if (GUI.Button (new Rect(135,35,60,30), "Apply")) {
+			guiInput = true;
 			int intTempH = 0;
 			int intTempW = 0;
 			try {
@@ -310,6 +383,7 @@ public class EditorScript : MonoBehaviour {
 		if (guiError) {
 			GUI.Label (new Rect (5, 70, 100, 60), guiErS);
 			if (GUI.Button (new Rect(5, 135, 60, 30), "Okay.")) {
+				guiInput = true;
 				guiError = false;
 				guiErS = "";
 			}
@@ -323,6 +397,7 @@ public class EditorScript : MonoBehaviour {
 			else
 				buttonStyle = passiveButton;
 			if (GUI.Button (new Rect(Screen.width-(32*(2-i%2))-10,(32+5)*(i/2)+40,32,32), buttonGfx[i], buttonStyle)) {
+				guiInput = true;
 				activeSelection = i;
 			}
 		}
@@ -335,16 +410,27 @@ public class EditorScript : MonoBehaviour {
 			else
 				buttonStyle = passiveButton;
 			if (GUI.Button (new Rect(Screen.width-(32*(2-(i+3)%2))-10,(32+5)*((i+3)/2)+40,32,32), buttonGfx[i], buttonStyle)) {
+				guiInput = true;
 				activeSelection = i;
 			}
 		}
 		
+<<<<<<< HEAD
 		if (GUI.Button (new Rect(200,5,90,60), "Save") && (!saveFile && !loadFile) ) { // Changed '||' to '&&' so filebrower won't open both load and save windows
+=======
+		if (GUI.Button (new Rect(200,5,90,60), "Save") && (!saveFile || !loadFile) ) {
+			guiInput = true;
+>>>>>>> Fixing Connections/Locks Reader (Somewhat) & Obs Display
 			saveFile = true;
 			browser = BrowserSetup ();
 		}
 		
+<<<<<<< HEAD
 		if (GUI.Button (new Rect(295,5,90,60), "Load") && (!saveFile && !loadFile) ) { // Changed '||' to '&&' so filebrower won't open both load and save windows
+=======
+		if (GUI.Button (new Rect(295,5,90,60), "Load") && (!saveFile || !loadFile) ) {
+			guiInput = true;
+>>>>>>> Fixing Connections/Locks Reader (Somewhat) & Obs Display
 			loadFile = true;
 			browser = BrowserSetup ();
 		}
@@ -381,6 +467,7 @@ public class EditorScript : MonoBehaviour {
 		}
 		
 		if (GUI.Button (new Rect(390,5,90,60), "Return to Game")) {
+			guiInput = true;
 			Application.LoadLevel (0);
 		}
 		
