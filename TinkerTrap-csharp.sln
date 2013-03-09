@@ -1,8 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{3445D153-9B3B-B917-D0D7-AE2AE8A3F3C2}") = "TinkerTrap", "Assembly-CSharp-firstpass-vs.csproj", "{EC6E5098-75C9-42CE-7F54-9B1E5E771713}"
-EndProject
 Project("{3445D153-9B3B-B917-D0D7-AE2AE8A3F3C2}") = "TinkerTrap", "Assembly-CSharp-vs.csproj", "{CFC401FA-D656-B539-6437-5734F8A60055}"
 EndProject
 Project("{3445D153-9B3B-B917-D0D7-AE2AE8A3F3C2}") = "TinkerTrap", "Assembly-CSharp-Editor-vs.csproj", "{F92402B3-0C21-1AA0-84D4-8DAD39C4B3CE}"
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EC6E5098-75C9-42CE-7F54-9B1E5E771713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC6E5098-75C9-42CE-7F54-9B1E5E771713}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC6E5098-75C9-42CE-7F54-9B1E5E771713}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC6E5098-75C9-42CE-7F54-9B1E5E771713}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CFC401FA-D656-B539-6437-5734F8A60055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CFC401FA-D656-B539-6437-5734F8A60055}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFC401FA-D656-B539-6437-5734F8A60055}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,7 +23,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																	GlobalSection(MonoDevelopProperties) = preSolution
+																													GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
