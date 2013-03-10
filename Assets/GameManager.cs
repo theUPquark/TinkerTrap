@@ -529,7 +529,7 @@ public class GameManager : MonoBehaviour {
 		tob.leftX = Math.Floor(tob.leftXPos/tileW);
 		tob.rightX = Math.Floor(tob.rightXPos/tileW);
 		//check if they are walls
-		if (tob.downY < mapHeight && tob.downY >= 0 &&
+		if (tob.downY < mapHeight && tob.upY >= 0 &&
 			tob.leftX >= 0 && tob.rightX < mapWidth) {
 			tob.upleft = gameB["tile_"+tob.leftX+"_"+tob.upY].walkable;
 			tob.downleft = gameB["tile_"+tob.leftX+"_"+tob.downY].walkable;
