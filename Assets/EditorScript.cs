@@ -82,15 +82,8 @@ public class EditorScript : MonoBehaviour {
 			int selectX = (int)(Math.Floor (mouseLocation.x/32));
 			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
 			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
-<<<<<<< HEAD
-				SetTypeByUI(map[selectY][selectX]);
-				SetGraphics(map[selectY][selectX]);
-=======
 				SetTypeByDraw(map[selectY][selectX]);
 				SetGraphics(map[selectY][selectX], mapObs[selectY][selectX]);
-				SetConnections(map[selectY][selectX]);
-				SetLockGroups(map[selectY][selectX]);
->>>>>>> Fixing Connections/Locks Reader (Somewhat) & Obs Display
 			}
 		}
 	}
@@ -129,16 +122,14 @@ public class EditorScript : MonoBehaviour {
 		case 8:
 			a.GetComponent<EditorTile>().obsType = 4;
 			break;
-<<<<<<< HEAD
+		case 9:
+			a.GetComponent<EditorTile>().obsType = 0;
+			break;
 		case 20:
 			a.GetComponent<EditorTile>().setConnections(connections);
 			break;
 		case 21:
 			a.GetComponent<EditorTile>().setLockGroups(lockGroups);
-=======
-		case 9:
-			a.GetComponent<EditorTile>().obsType = 0;
->>>>>>> Fixing Connections/Locks Reader (Somewhat) & Obs Display
 			break;
 		}
 	}
@@ -183,7 +174,6 @@ public class EditorScript : MonoBehaviour {
 	
 	private FileBrowser BrowserSetup()
 	{
-		activeSelection = 0; //Don't want tiles to change while file browser is up
 		FileBrowser browser;
 		if (loadFile) {
 			browser = new FileBrowser(
@@ -231,12 +221,12 @@ public class EditorScript : MonoBehaviour {
 					writer.WriteElementString ("obs",j.GetComponent<EditorTile>().obsType.ToString ());
 					writer.WriteStartElement ("connections");
 					foreach (int cons in j.GetComponent<EditorTile>().consList) {
-						writer.WriteElementString ("conn", cons.ToString());
+						writer.WriteElementString ("int", cons.ToString());
 					}
 					writer.WriteEndElement ();
 					writer.WriteStartElement ("locks");
 					foreach (int locks in j.GetComponent<EditorTile>().locksList) {
-						writer.WriteElementString ("lock", locks.ToString());
+						writer.WriteElementString ("int", locks.ToString());
 					}
 					writer.WriteEndElement ();
 					writer.WriteEndElement ();
@@ -256,6 +246,7 @@ public class EditorScript : MonoBehaviour {
 		using (XmlReader read = XmlReader.Create (filePath, settings)) {
 			int i = -1;
 			int j = -1;
+			bool consGroup = true;
 			while (read.Read ()) {
 				if (read.IsStartElement ())
 				{
@@ -280,7 +271,7 @@ public class EditorScript : MonoBehaviour {
 						Console.WriteLine (j.ToString());
 						break;
 					case "x":
-						if (i >= 0)
+						if (i >= 0 || (j == gridH-1 && i == gridW-1))
 							SetGraphics(map[j][i],mapObs[j][i]);
 						else
 							SetGraphics(map[j][gridW-1],mapObs[j][gridW-1]);
@@ -295,49 +286,18 @@ public class EditorScript : MonoBehaviour {
 						read.Read ();
 						map[j][i].GetComponent<EditorTile>().obsType = int.Parse (read.Value);
 						break;
-<<<<<<< HEAD
 					case "connections":	
-						break;
-					case "conn":
-						read.Read ();
-						map[j][i].GetComponent<EditorTile>().setElementConnection(read.ReadContentAsInt());
+						consGroup = true;
 						break;
 					case "locks":
+						consGroup = false;
 						break;
-					case "lock":
+					case "int":
 						read.Read ();
-						map[j][i].GetComponent<EditorTile>().setElementLock(read.ReadContentAsInt());
-=======
-					case "connections":
-						read.Read ();
-						if (read.Name.Equals ("int")) {
-							read.Read ();
-							int val = read.ReadContentAsInt ();
-							map[j][i].GetComponent<EditorTile>().setElementConnection(val);
-							Console.WriteLine ("Connection Found: {0}", val);
-							while (read.ReadToNextSibling ("int")) {
-								read.Read ();
-								val = read.ReadContentAsInt ();
-								map[j][i].GetComponent<EditorTile>().setElementConnection(val);
-								Console.WriteLine ("Connection Found: {0}", val);
-							}
-						}
-						break;
-					case "locks":
-						read.Read ();
-						if (read.Name.Equals ("int")) {
-							read.Read ();
-							int val = read.ReadContentAsInt ();
-							map[j][i].GetComponent<EditorTile>().setElementLock(val);
-							Console.WriteLine ("Lock Found: {0}", val);
-							while (read.ReadToNextSibling ("int")) {
-								read.Read ();
-								val = read.ReadContentAsInt ();
-								map[j][i].GetComponent<EditorTile>().setElementLock(val);
-								Console.WriteLine ("Lock Found: {0}", val);
-							}
-						}
->>>>>>> Fixing Connections/Locks Reader (Somewhat) & Obs Display
+						if (consGroup)
+							map[j][i].GetComponent<EditorTile>().setElementConnection(read.ReadContentAsInt());
+						else
+							map[j][i].GetComponent<EditorTile>().setElementLock(read.ReadContentAsInt());
 						break;
 					}
 				}
@@ -415,22 +375,14 @@ public class EditorScript : MonoBehaviour {
 			}
 		}
 		
-<<<<<<< HEAD
 		if (GUI.Button (new Rect(200,5,90,60), "Save") && (!saveFile && !loadFile) ) { // Changed '||' to '&&' so filebrower won't open both load and save windows
-=======
-		if (GUI.Button (new Rect(200,5,90,60), "Save") && (!saveFile || !loadFile) ) {
 			guiInput = true;
->>>>>>> Fixing Connections/Locks Reader (Somewhat) & Obs Display
 			saveFile = true;
 			browser = BrowserSetup ();
 		}
 		
-<<<<<<< HEAD
 		if (GUI.Button (new Rect(295,5,90,60), "Load") && (!saveFile && !loadFile) ) { // Changed '||' to '&&' so filebrower won't open both load and save windows
-=======
-		if (GUI.Button (new Rect(295,5,90,60), "Load") && (!saveFile || !loadFile) ) {
 			guiInput = true;
->>>>>>> Fixing Connections/Locks Reader (Somewhat) & Obs Display
 			loadFile = true;
 			browser = BrowserSetup ();
 		}

@@ -208,6 +208,7 @@ public class GameManager : MonoBehaviour {
 		using (XmlReader read = XmlReader.Create (map, settings)) {
 			int i = -1;
 			int j = -1;
+			bool consGroup = true;
 			string squareName = "";
 			while (read.Read ()) {
 				if (read.IsStartElement ())
@@ -228,8 +229,9 @@ public class GameManager : MonoBehaviour {
 						i++;
 						break;
 					case "type":
+						read.Read ();
 						squareName = "tile_"+i+"_"+j;
-						gameB.Add(squareName,new Tile(read.ReadElementContentAsInt(),i,j,OT.CreateObject ("WorldTiles")));	
+						gameB.Add(squareName,new Tile(read.ReadContentAsInt(),i,j,OT.CreateObject ("WorldTiles")));	
 						gameB[squareName].xiso = (-j+i)*tileW;
 						gameB[squareName].yiso = (-j-i)*tileW/2F;
 						
@@ -242,18 +244,29 @@ public class GameManager : MonoBehaviour {
 							os.depth = 1;
 						break;
 					case "obs":
-						switch (read.ReadElementContentAsInt ()) {
+						read.Read ();
+						Debug.Log ("Reading obstacles...");
+						switch (read.ReadContentAsInt()) {
 						case 1: // Player starting location, probably only for first level.
+							Debug.Log ("Player found!");
 							players[activeBot-1].setXY(i,j);
 							gameObs.Add (players[activeBot-1]);
 							break;
 						case 4:
+							Debug.Log ("Box found!");
 							gameObs.Add (new Obstacle(4, i, j));
 							break;
 						}
 						break;
-					case "connections":
-						while (read.MoveToNextAttribute()) {
+					case "connections":	
+						consGroup = true;
+						break;
+					case "locks":
+						consGroup = false;
+						break;
+					case "int":
+						read.Read ();
+						if (consGroup) {
 							List<Tile> tilelist;
 							int k = read.ReadContentAsInt();
 							if (k != 0) {
@@ -267,10 +280,7 @@ public class GameManager : MonoBehaviour {
 								}
 								gameB[squareName].addConnection(k, gameCons[k]);
 							}
-						}
-						break;
-					case "locks":
-						while (read.MoveToNextAttribute()) {
+						} else {
 							List<Tile> tilelist;
 							int k = read.ReadContentAsInt();
 							if (k != 0) {
@@ -289,6 +299,7 @@ public class GameManager : MonoBehaviour {
 					}
 				}
 			}
+			read.Close ();
 		}
 	}
 	

@@ -1338,14 +1338,12 @@
       <locks />
     </x>
     <x>
-      <type>4</type>
+      <type>5</type>
       <obs>0</obs>
       <connections>
         <int>3</int>
       </connections>
-      <locks>
-        <int>0</int>
-      </locks>
+      <locks />
     </x>
     <x>
       <type>1</type>
