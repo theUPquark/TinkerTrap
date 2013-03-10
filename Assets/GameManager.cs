@@ -29,10 +29,17 @@ public class GameManager : MonoBehaviour {
 	private bool paused = false;
 	private int level = 0;
 	
+	public  float updateInterval = 0.5F;
+	private float accum   = 0; // FPS accumulated over the interval
+	private int   frames  = 0; // Frames drawn over the interval
+	private float timeleft; // Left time for current interval
+	private float fps = 30;
+	
 	private List<Obstacle> players = new List<Obstacle>();
 	private int activeBot = 1;
 	
 	void Start () {
+		timeleft = updateInterval;
 		players.Add (new Obstacle(1)); // Webelo (Red, Lifter)
 		players.Add (new Obstacle(2)); // Hob (Yellow, Hoverer)
 		players.Add (new Obstacle(3)); // Hisco (Green, Wheelie)
@@ -46,18 +53,18 @@ public class GameManager : MonoBehaviour {
 	    GUI.Box(new Rect(0, 0, 300, 200), "");
 	   
 	    //title
-	    GUI.Label(new Rect(15, 10, 300, 68), "TinkerTrap");
+	    GUI.Label(new Rect(15, 10, 300, 38), "TinkerTrap");
 	   
 	    ///////main menu buttons
 	    //game start button
-	    if(GUI.Button(new Rect(55, 100, 180, 40), "Start game")) {
+	    if(GUI.Button(new Rect(55, 60, 180, 40), "Start game")) {
 			selection = true;
 	    }
-	    if(GUI.Button(new Rect(55, 150, 180, 40), "Editor")) {
+	    if(GUI.Button(new Rect(55, 110, 180, 40), "Editor")) {
 			Application.LoadLevel (1);
 	    }
 	    //quit button
-	    if(GUI.Button(new Rect(55, 200, 180, 40), "Quit")) {
+	    if(GUI.Button(new Rect(55, 160, 180, 40), "Quit")) {
 	    	Application.Quit();
 	    }
 	   
@@ -118,19 +125,19 @@ public class GameManager : MonoBehaviour {
 	    GUI.Box(new Rect(0, 0, 300, 200), "");
 	   
 	    //logo picture
-	    GUI.Label(new Rect(34, 10, 300, 68), "Game Paused!");
+	    GUI.Label(new Rect(34, 10, 300, 40), "Game Paused!");
 	   
 	    ///////main menu buttons
 	    //game start button
-	    if(GUI.Button(new Rect(55, 100, 180, 40), "Resume Game")) {
+	    if(GUI.Button(new Rect(55, 60, 180, 40), "Resume Game")) {
 			paused = false;
 	    }
 		//gogo editor
-	    if(GUI.Button(new Rect(55, 150, 180, 40), "Editor")) {
+	    if(GUI.Button(new Rect(55, 110, 180, 40), "Editor")) {
 			Application.LoadLevel (1);
 	    }
 	    //quit button
-	    if(GUI.Button(new Rect(55, 200, 180, 40), "Quit")) {
+	    if(GUI.Button(new Rect(55, 160, 180, 40), "Quit")) {
 	    	Application.Quit();
 	    }
 	   
@@ -280,6 +287,20 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void Update() {
+		
+		// track fps to adjust player movement speed
+	    timeleft -= Time.deltaTime;
+	    accum += Time.timeScale/Time.deltaTime;
+	    ++frames;
+		if( timeleft <= 0.0 ) {
+		    // display two fractional digits (f2 format)
+			float fps = accum/frames;
+			//	DebugConsole.Log(format,level);
+	        timeleft = updateInterval;
+	        accum = 0.0F;
+	        frames = 0;
+    	}
+		
 		if (running && !selection) {
 			if (!paused) {
 				
@@ -506,7 +527,7 @@ public class GameManager : MonoBehaviour {
 	private double moveChar(Obstacle tob, double speed, int dirx, int diry)
 	{
 		
-		double speedAdj = speed;
+		double speedAdj = 30/fps*speed;
 		
 		//vert movement
 		//changing y with speed and taking old x
