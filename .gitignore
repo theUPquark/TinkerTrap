@@ -26,3 +26,5 @@ Library/ScriptAssemblies/CompilationCompleted.txt
 *.sln
 
 .DS_Store
+
+*.userprefs
