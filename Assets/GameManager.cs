@@ -216,10 +216,12 @@ public class GameManager : MonoBehaviour {
 					switch (read.Name)
 					{
 					case "width":
-						mapWidth = read.ReadElementContentAsInt();
+						read.Read ();
+						mapWidth = read.ReadContentAsInt();
 						break;
 					case "height":
-						mapHeight = read.ReadElementContentAsInt();
+						read.Read ();
+						mapHeight = read.ReadContentAsInt();
 						break;
 					case "y":
 						j++;
@@ -527,21 +529,21 @@ public class GameManager : MonoBehaviour {
 		tob.leftX = Math.Floor(tob.leftXPos/tileW);
 		tob.rightX = Math.Floor(tob.rightXPos/tileW);
 		//check if they are walls
-		if (tob.upY >= 0 || tob.downY < mapWidth ||
-			tob.rightX >= 0 || tob.leftX < mapHeight) {
+		if (tob.downY < mapHeight && tob.downY >= 0 &&
+			tob.leftX >= 0 && tob.rightX < mapWidth) {
 			tob.upleft = gameB["tile_"+tob.leftX+"_"+tob.upY].walkable;
 			tob.downleft = gameB["tile_"+tob.leftX+"_"+tob.downY].walkable;
 			tob.upright = gameB["tile_"+tob.rightX+"_"+tob.upY].walkable;
 			tob.downright = gameB["tile_"+tob.rightX+"_"+tob.downY].walkable;
 		}
+		if (tob.downY >= mapHeight)
+			tob.downleft = tob.downright = false;
 		if (tob.upY < 0)
 			tob.upleft = tob.upright = false;
-		if (tob.downY >= mapWidth)
-			tob.downleft = tob.downright = false;
-		if (tob.rightX < 0)
-			tob.upright = tob.downright = false;
-		if (tob.leftX >= mapHeight)
+		if (tob.leftX < 0)
 			tob.upleft = tob.downleft = false;
+		if (tob.rightX >= mapWidth)
+			tob.upright = tob.downright = false;
 		
 	}
 	
