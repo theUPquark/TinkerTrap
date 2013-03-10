@@ -13,9 +13,12 @@ public class GameManager : MonoBehaviour {
 	public Texture2D bot2Texture;
 	public Texture2D bot3Texture;
 	
+	
+	private int mapWidth = 0;
+	private int mapHeight = 0;
 	private static float tileW = 64;
 	
-	private int[,] map = new int[,] {{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 8, 8, 8, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 7}, {1, 1, 1, 1, 1, 5, 1, 1, 3, 1, 1, 7}, {1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 7}, {1, 1, 1, 0, 1, 1, 1, 1, 2, 1, 1, 7}, {1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 7}, {1, 1, 1, 0, 4, 0, 0, 0, 0, 1, 1, 7}, {1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 7}, {1, 1, 1, 2, 1, 1, 1, 1, 5, 1, 1, 7}, {1, 1, 1, 0, 0, 4, 0, 0, 0, 1, 1, 7}, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}};
+	/*private int[,] map = new int[,] {{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 8, 8, 8, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 7}, {1, 1, 1, 1, 1, 5, 1, 1, 3, 1, 1, 7}, {1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 7}, {1, 1, 1, 0, 1, 1, 1, 1, 2, 1, 1, 7}, {1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 7}, {1, 1, 1, 0, 4, 0, 0, 0, 0, 1, 1, 7}, {1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 7}, {1, 1, 1, 2, 1, 1, 1, 1, 5, 1, 1, 7}, {1, 1, 1, 0, 0, 4, 0, 0, 0, 1, 1, 7}, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}};
 	private int[,] obsMap = new int[,] {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 	private int[,][] connectionMap = new int[,][]
 	{
@@ -62,7 +65,7 @@ public class GameManager : MonoBehaviour {
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {1}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}},
 		{new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}, new int[] {0}}
-	};
+	};*/
 																					
 	private Dictionary<string, Tile> gameB = new Dictionary<string, Tile>();
 	private Dictionary<int, List<Tile>> gameCons = new Dictionary<int, List<Tile>>();
@@ -128,21 +131,21 @@ public class GameManager : MonoBehaviour {
 				selection = false;
 				activeBot = 1;
 				level++;
-				BuildLevel ();
+				BuildLevel ("level1.xml");
 		    }
 		    if(GUI.Button(new Rect(55, 150, 180, 40), "Hob")) {
 				running = true;
 				selection = false;
 				activeBot = 2;
 				level++;
-				BuildLevel ();
+				BuildLevel ("level1.xml");
 		    }
 		    if(GUI.Button(new Rect(55, 200, 180, 40), "Hisco")) {
 				running = true;
 				selection = false;
 				activeBot = 3;
 				level++;
-				BuildLevel ();
+				BuildLevel ("level1.xml");
 		    }
 		    //return to main menu
 		    if(GUI.Button(new Rect(55, 250, 180, 40), "Return")) {
@@ -196,78 +199,107 @@ public class GameManager : MonoBehaviour {
 		GUI.EndGroup ();
 	}
 	
-	void BuildLevel() {
-		numberOfObjects = map.Length;
-		
-		int mapWidth = map.GetLength(0);
-		int mapHeight = map.GetLength(1);
-
+	void BuildLevel(string map)
+	{
 		OTSprite os;
 		Vector2 pos;
-		
-		//loop to place tiles on stage
-		for (int i = 0; i<mapHeight; ++i)
-		{
-			for (int j = 0; j<mapWidth; ++j)
-			{	
-				string squareName = "tile_"+i+"_"+j;
-				
-				gameB.Add(squareName, new Tile(map[j,i], i, j, OT.CreateObject("WorldTiles")));
-					
-				gameB[squareName].xiso = (-j+i)*tileW;
-				gameB[squareName].yiso = (-j-i)*tileW/2F;
-				
-				pos = new Vector2 (gameB[squareName].xiso, gameB[squareName].yiso);
-				os = gameB[squareName].gfx.GetComponent<OTSprite>();
-				os.frameName = gameB[squareName].frameName;
-				os.position = pos;
-				
-				if (gameB[squareName].walkable)
-					os.depth = 1;
-				
-				foreach (int k in connectionMap[j,i]) {
-					List<Tile> tilelist;
-					if (k != 0) {
-						if (!gameCons.ContainsKey(k)) {
-							tilelist = new List<Tile>();
-							tilelist.Add(gameB[squareName]);
-							gameCons.Add(k, tilelist);
-						} else {
-							tilelist = gameCons[k];
-							tilelist.Add(gameB[squareName]);
-						}
-						gameB[squareName].addConnection(k, gameCons[k]);
-					}
-				}
-				
-				foreach (int k in locksMap[j,i]) {
-					List<Tile> tilelist;
-					if (k != 0) {
-						if (!gameLocks.ContainsKey(k)) {
-							tilelist = new List<Tile>();
-							tilelist.Add(gameB[squareName]);
-							gameLocks.Add(k, tilelist);
-						} else {
-							tilelist = gameLocks[k];
-							tilelist.Add(gameB[squareName]);
-						}
-						gameB[squareName].addLock(k, gameLocks[k]);
-					}
-				}
-				
-				if (obsMap[j,i] != 0) {
-					switch (obsMap[j,i]) {
-					case 1: // Player starting location, probably only for first level.
-						players[activeBot-1].setXY(i,j);
-						gameObs.Add (players[activeBot-1]);
+		XmlReaderSettings settings = new XmlReaderSettings();
+		settings.IgnoreWhitespace = true;
+		using (XmlReader read = XmlReader.Create (map, settings)) {
+			int i = -1;
+			int j = -1;
+			bool consGroup = true;
+			string squareName = "";
+			while (read.Read ()) {
+				if (read.IsStartElement ())
+				{
+					switch (read.Name)
+					{
+					case "width":
+						mapWidth = read.ReadElementContentAsInt();
 						break;
-					case 4:
-						gameObs.Add (new Obstacle(4, i, j));
+					case "height":
+						mapHeight = read.ReadElementContentAsInt();
+						break;
+					case "y":
+						j++;
+						i = -1;
+						break;
+					case "x":
+						i++;
+						break;
+					case "type":
+						read.Read ();
+						squareName = "tile_"+i+"_"+j;
+						gameB.Add(squareName,new Tile(read.ReadContentAsInt(),i,j,OT.CreateObject ("WorldTiles")));	
+						gameB[squareName].xiso = (-j+i)*tileW;
+						gameB[squareName].yiso = (-j-i)*tileW/2F;
+						
+						pos = new Vector2 (gameB[squareName].xiso, gameB[squareName].yiso);
+						os = gameB[squareName].gfx.GetComponent<OTSprite>();
+						os.frameName = gameB[squareName].frameName;
+						os.position = pos;
+						
+						if (gameB[squareName].walkable)
+							os.depth = 1;
+						break;
+					case "obs":
+						read.Read ();
+						Debug.Log ("Reading obstacles...");
+						switch (read.ReadContentAsInt()) {
+						case 1: // Player starting location, probably only for first level.
+							Debug.Log ("Player found!");
+							players[activeBot-1].setXY(i,j);
+							gameObs.Add (players[activeBot-1]);
+							break;
+						case 4:
+							Debug.Log ("Box found!");
+							gameObs.Add (new Obstacle(4, i, j));
+							break;
+						}
+						break;
+					case "connections":	
+						consGroup = true;
+						break;
+					case "locks":
+						consGroup = false;
+						break;
+					case "int":
+						read.Read ();
+						if (consGroup) {
+							List<Tile> tilelist;
+							int k = read.ReadContentAsInt();
+							if (k != 0) {
+								if (!gameCons.ContainsKey(k)) {
+									tilelist = new List<Tile>();
+									tilelist.Add(gameB[squareName]);
+									gameCons.Add(k, tilelist);
+								} else {
+									tilelist = gameCons[k];
+									tilelist.Add(gameB[squareName]);
+								}
+								gameB[squareName].addConnection(k, gameCons[k]);
+							}
+						} else {
+							List<Tile> tilelist;
+							int k = read.ReadContentAsInt();
+							if (k != 0) {
+								if (!gameLocks.ContainsKey(k)) {
+									tilelist = new List<Tile>();
+									tilelist.Add(gameB[squareName]);
+									gameLocks.Add(k, tilelist);
+								} else {
+									tilelist = gameLocks[k];
+									tilelist.Add(gameB[squareName]);
+								}
+								gameB[squareName].addLock(k, gameLocks[k]);
+							}
+						}
 						break;
 					}
 				}
-				
 			}
+			read.Close ();
 		}
 	}
 	
@@ -495,8 +527,8 @@ public class GameManager : MonoBehaviour {
 		tob.leftX = Math.Floor(tob.leftXPos/tileW);
 		tob.rightX = Math.Floor(tob.rightXPos/tileW);
 		//check if they are walls
-		if (tob.upY >= 0 || tob.downY < map.GetLength(0) ||
-			tob.rightX >= 0 || tob.leftX < map.GetLength(1)) {
+		if (tob.upY >= 0 || tob.downY < mapWidth ||
+			tob.rightX >= 0 || tob.leftX < mapHeight) {
 			tob.upleft = gameB["tile_"+tob.leftX+"_"+tob.upY].walkable;
 			tob.downleft = gameB["tile_"+tob.leftX+"_"+tob.downY].walkable;
 			tob.upright = gameB["tile_"+tob.rightX+"_"+tob.upY].walkable;
@@ -504,11 +536,11 @@ public class GameManager : MonoBehaviour {
 		}
 		if (tob.upY < 0)
 			tob.upleft = tob.upright = false;
-		if (tob.downY >= map.GetLength(0))
+		if (tob.downY >= mapWidth)
 			tob.downleft = tob.downright = false;
 		if (tob.rightX < 0)
 			tob.upright = tob.downright = false;
-		if (tob.leftX >= map.GetLength(1))
+		if (tob.leftX >= mapHeight)
 			tob.upleft = tob.downleft = false;
 		
 	}

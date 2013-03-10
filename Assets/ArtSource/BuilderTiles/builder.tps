@@ -150,6 +150,7 @@
             <filename>plate.png</filename>
             <filename>player.png</filename>
             <filename>wall.png</filename>
+            <filename>empty.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

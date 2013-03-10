@@ -22,3 +22,7 @@ Library/metadata/
 *.dmg
 
 Library/ScriptAssemblies/CompilationCompleted.txt
+
+*.sln
+
+.DS_Store
