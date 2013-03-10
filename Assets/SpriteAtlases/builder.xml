@@ -69,7 +69,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>floor.png</key>
+            <key>empty.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{32,32},{32,32}}</string>
@@ -82,7 +82,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>plate.png</key>
+            <key>floor.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{64,32},{32,32}}</string>
@@ -95,7 +95,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>player.png</key>
+            <key>plate.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{96,32},{32,32}}</string>
@@ -108,10 +108,23 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>wall.png</key>
+            <key>player.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,64},{32,32}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{32,32}}</string>
+                <key>sourceSize</key>
+                <string>{32,32}</string>
+            </dict>
+            <key>wall.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{32,64},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -131,7 +144,7 @@
             <key>size</key>
             <string>{128,128}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:88a6b34840567340364610803cdf93e3$</string>
+            <string>$TexturePacker:SmartUpdate:b93294e768da3793fe6b6de623ecc197$</string>
             <key>textureFileName</key>
             <string>builder.png</string>
         </dict>
