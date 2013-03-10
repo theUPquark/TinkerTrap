@@ -30,9 +30,28 @@ public class EditorScript : MonoBehaviour {
 	public string connections;
 	public string lockGroups;
 	
+	private bool validAnchor = false; // Control variable to help set tracer line
+	private Vector3 anchor;
+	
 	// Use this for initialization
 	void Start () {
 		SetGrid();
+	}
+	
+	private Vector3 ReturnTileCenter (Vector3 v)
+	{
+		Vector3 change = new Vector3(v.x+16,v.y-16,v.z);
+		return change;
+	}
+	
+	private void DrawVerticies(Vector3 a, Vector3 b)
+	{
+		// Needs to delete old line when vectors change
+		var go = new GameObject();
+        var lr = go.AddComponent<LineRenderer>();
+		
+		lr.SetPosition(0, a);
+		lr.SetPosition(1, b);
 	}
 	
 	private void SetGrid() {
@@ -85,6 +104,26 @@ public class EditorScript : MonoBehaviour {
 				SetTypeByDraw(map[selectY][selectX]);
 				SetGraphics(map[selectY][selectX], mapObs[selectY][selectX]);
 			}
+		}
+		if (Input.GetMouseButtonDown (1) && !guiError && !loadFile && !saveFile && !guiInput)
+		{
+			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
+			int selectX = (int)(Math.Floor (mouseLocation.x/32));
+			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
+			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+				validAnchor = true;
+				anchor = new Vector3();
+				anchor = ReturnTileCenter(map[selectY][selectX].transform.position);
+			}
+		}
+		if (Input.GetMouseButton (1) && !guiError && !loadFile && !saveFile && !guiInput && validAnchor == true)
+		{
+			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
+			DrawVerticies(anchor,mouseLocation);
+		}
+		if (Input.GetMouseButtonUp (1) && !guiError && !loadFile && !saveFile && !guiInput)
+		{
+			validAnchor = false;
 		}
 	}
 	
