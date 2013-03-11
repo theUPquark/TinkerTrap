@@ -125,12 +125,6 @@ public class EditorScript : MonoBehaviour {
 		case 9:
 			a.GetComponent<EditorTile>().obsType = 0;
 			break;
-		case 20:
-			a.GetComponent<EditorTile>().setConnections(connections);
-			break;
-		case 21:
-			a.GetComponent<EditorTile>().setLockGroups(lockGroups);
-			break;
 		}
 	}
 	
@@ -220,13 +214,19 @@ public class EditorScript : MonoBehaviour {
 					writer.WriteElementString ("type",j.GetComponent<EditorTile>().tileType.ToString ());
 					writer.WriteElementString ("obs",j.GetComponent<EditorTile>().obsType.ToString ());
 					writer.WriteStartElement ("connections");
-					foreach (int cons in j.GetComponent<EditorTile>().consList) {
-						writer.WriteElementString ("int", cons.ToString());
+					foreach (int cons in j.GetComponent<EditorTile>().consIn) {
+						writer.WriteElementString ("in", cons.ToString());
+					}
+					foreach (int cons in j.GetComponent<EditorTile>().consOut) {
+						writer.WriteElementString ("out", cons.ToString());
 					}
 					writer.WriteEndElement ();
 					writer.WriteStartElement ("locks");
-					foreach (int locks in j.GetComponent<EditorTile>().locksList) {
-						writer.WriteElementString ("int", locks.ToString());
+					foreach (int locks in j.GetComponent<EditorTile>().locksIn) {
+						writer.WriteElementString ("in", locks.ToString());
+					}
+					foreach (int locks in j.GetComponent<EditorTile>().locksOut) {
+						writer.WriteElementString ("out", locks.ToString());
 					}
 					writer.WriteEndElement ();
 					writer.WriteEndElement ();
@@ -292,12 +292,19 @@ public class EditorScript : MonoBehaviour {
 					case "locks":
 						consGroup = false;
 						break;
-					case "int":
+					case "in":
 						read.Read ();
 						if (consGroup)
-							map[j][i].GetComponent<EditorTile>().setElementConnection(read.ReadContentAsInt());
+							map[j][i].GetComponent<EditorTile>().consIn.Add(read.ReadContentAsInt());
 						else
-							map[j][i].GetComponent<EditorTile>().setElementLock(read.ReadContentAsInt());
+							map[j][i].GetComponent<EditorTile>().locksIn.Add(read.ReadContentAsInt());
+						break;
+					case "out":
+						read.Read ();
+						if (consGroup)
+							map[j][i].GetComponent<EditorTile>().consOut.Add(read.ReadContentAsInt());
+						else
+							map[j][i].GetComponent<EditorTile>().locksOut.Add(read.ReadContentAsInt());
 						break;
 					}
 				}
