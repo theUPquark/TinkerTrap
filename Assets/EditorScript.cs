@@ -42,7 +42,7 @@ public class EditorScript : MonoBehaviour {
 	
 	private Vector3 ReturnTileCenter (Vector3 v)
 	{
-		Vector3 change = new Vector3(v.x+16,v.y-16,v.z);
+		Vector3 change = new Vector3(v.x+16,v.y-16,v.z-10);
 		return change;
 	}
 	
@@ -110,7 +110,7 @@ public class EditorScript : MonoBehaviour {
 			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
 			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
 				validAnchor = true;
-				anchor = new Vector3();
+//				anchor = new Vector3();
 				anchor = ReturnTileCenter(map[selectY][selectX].transform.position);
 			}
 		}
@@ -121,7 +121,13 @@ public class EditorScript : MonoBehaviour {
 		}
 		if (Input.GetMouseButtonUp (1) && !guiError && !loadFile && !saveFile && !guiInput)
 		{
+			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
+			int selectX = (int)(Math.Floor (mouseLocation.x/32));
+			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
 			validAnchor = false;
+			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+			DrawVerticies(anchor,ReturnTileCenter(map[selectY][selectX].transform.position));
+			}
 		}
 	}
 	
