@@ -2,28 +2,10 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 
-public class Tile {
-		
-	public bool walkable;
-	public bool powered = false;
-	public bool locked = false;
-	public bool used = false;
-	public int wait = 0;
-	public bool hold = false;
-	public int nextWait;
-	public float xiso, yiso;
-	public int[] lockGroup;
-	public int type, gridx, gridy;
-	public string frameName;
-	public GameObject gfx;
-	private Dictionary<int,List<Tile>> connections = new Dictionary<int, List<Tile>>();
-	private Dictionary<int,List<Tile>> locks = new Dictionary<int, List<Tile>>();
+public interface Tile {
 	
-	public Tile (int t, int gx, int gy, GameObject g) {
-		type = t;
-		gridx = gx;
-		gridy = gy;
-		gfx = g;
+	/*public Tile (int t, int gx, int gy) {
+		
 		switch (type) {
 		case 2: // Pressure floor tile.
 			locked = true;
@@ -61,131 +43,27 @@ public class Tile {
 			frameName = "WallX";
 			break;
 		}
+	}*/
+	
+	bool walkable {
+		get;
 	}
 	
-	// Returns the name of the tile
-	public string myName()	{
-		string tileName = "tile_"+gridx+"_"+gridy;
-		return tileName;
+	OTSprite graphic {
+		get;
 	}
 
-	public void addConnection(int k, List<Tile> l) {
-		if (!connections.ContainsKey(k))
-		connections.Add (k,l); 	//create key if it didn't exist
-		else 
-		connections[k] = l;		//replace list if key already exists
-	}
+	void addConnection(int k, List<Tile> l);
 	
-	public void addLock(int k, List<Tile> l) {
-		if (!locks.ContainsKey(k))
-		locks.Add (k,l); 	//create key if it didn't exist
-		else 
-		locks[k] = l;		//replace list if key already exists
-	}
-	
-	// This function detects if the tile is considered active by looking at the powered state of all 'connections'
-	// tiles in the group. Things like buttons and pressure plates provide power.
-	public bool isActivated() {
-		
-		// Also add loop to check locks here. All tiles within a lock group must be 'unlocked' for those tiles
-		// to remain 'powered,' whereas only one member of a connection group must be active to power the rest.
-		
-		foreach (List<Tile> conList in locks.Values)
-			foreach (Tile t in conList)
-				if (t.locked && t != this)
-					return false;
-		foreach (List<Tile> conList in connections.Values)
-			foreach (Tile t in conList)
-				if (t.powered)
-					return true;
-		return false;
-	}
+	void addLock(int k, List<Tile> l);
 	
 	// Called to update status when activated by the player.
-	public void interact() {
-		switch (type) {
-		case 3:
-		case 6:
-			used = true;
-			break;
-		}
-	}
+	void interact();
 	
 	// Called to update status when acted upon by another object.
-	public void update() {
-		switch (type) {
-		case 4:
-		case 5:
-			if (isActivated()) {
-				used = true;
-			} else {
-				used = false;
-			}
-			break;
-		}
-	}
+	void update();
 	
 	// Called with the game Update function.
-	public void act(List<Obstacle> objs) {
-		
-		OTSprite os = gfx.GetComponent<OTSprite>();
-		switch (type) {
-		default:
-			break;
-		case 2:
-			bool occupied = false;
-			foreach (Obstacle i in objs)	
-				if (i.xtile == gridx && i.ytile == gridy)	{
-					occupied = true;
-					break;	//stop once any Obstacle matches Tile
-				}
-			if (locked == occupied) {
-				switch (locked) {
-					case true:
-						os.frameName = "Plate1";
-						break;
-					case false:
-						os.frameName = "Plate0";
-						break;
-				}
-				locked = !locked;
-				powered = !powered;
-			}
-			break;
-		case 3:
-		case 6:
-			if (used) {
-				/*if (active)
-					//Button off state graphic goes here.
-				else
-					//Button on state graphic goes here.*/
-				powered = !powered;
-				used = false;
-			}
-			break;
-		case 4: //Is there an easy way to consolidate 4 & 5? Maybe an AnimationSprite with frames?
-			if (used && !walkable) {
-                os.frameName = "Door3";
-				walkable = true;
-				powered = true;
-			} else if (!used && walkable) {
-                os.frameName = "Door2";
-				walkable = false;
-				powered = false;
-			}
-			break;
-		case 5:
-			if (used && !walkable) {
-                os.frameName = "Door1";
-				walkable = true;
-				powered = true;
-			} else if (!used && walkable) {
-                os.frameName = "Door0";
-				walkable = false;
-				powered = false;
-			}
-			break;
-		}
-	}
+	void act(List<Obstacle> objs);
 }
 
