@@ -129,7 +129,7 @@ public class EditorScript : MonoBehaviour {
 				DrawVerticies(anchor,ReturnTileCenter(map[selectY][selectX].transform.position));
 			}
 			else{
-				DrawVerticies(anchor,anchor);
+				DrawVerticies(anchor,anchor); // Removing line from view
 			}
 		}
 	}
