@@ -52,6 +52,42 @@ public class EditorScript : MonoBehaviour {
 		line.GetComponent<LineRenderer>().SetPosition(1, b);
 	}
 	
+	
+	private void DrawConnections(int num)
+	{
+		foreach (List<GameObject> g in map)
+		{
+			foreach (GameObject o in g)
+			{
+				// Checking all tiles for num, using consList
+				if ( o.GetComponent<EditorTile>().consList.Contains(num))
+				{
+					int count = 0;
+					o.GetComponent<LineRenderer>().SetVertexCount(3);
+					o.GetComponent<LineRenderer>().SetPosition(count,ReturnTileCenter(o.transform.position));
+					foreach (List<GameObject> g2 in map)
+					{
+						foreach (GameObject o2 in g2)
+						{
+							// Check all tiles again for num, using consList
+							if (o2.GetComponent<EditorTile>().consList.Contains(num))
+							{
+								// With another matching tile, set another LineRender point, and then return to source tile again
+								o.GetComponent<LineRenderer>().SetVertexCount(count + 3);
+								o.GetComponent<LineRenderer>().SetPosition(++count,ReturnTileCenter(o2.transform.position));
+								o.GetComponent<LineRenderer>().SetPosition(++count,ReturnTileCenter(o.transform.position));
+							}
+						}
+					}
+				}
+				else {
+					o.GetComponent<LineRenderer>().SetVertexCount(1);
+					o.GetComponent<LineRenderer>().SetPosition(0,o.transform.position);
+				}
+			}
+		}
+	}
+	
 	private void SetGrid() {
 		for (int i = 0; i < gridH; i++) {
 			if (map.Count == i) {
@@ -63,6 +99,7 @@ public class EditorScript : MonoBehaviour {
 					map[i].Add(OT.CreateObject ("builderSprite"));
 					mapObs[i].Add(OT.CreateObject ("builderSprite"));
 					map[i][j].AddComponent<EditorTile>();
+					map[i][j].AddComponent<LineRenderer>();
 					map[i][j].GetComponent<OTSprite>().position = new Vector2(j*32f,i*-32f);
 					mapObs[i][j].GetComponent<OTSprite>().position = new Vector2(j*32f,i*-32f);
 					map[i][j].GetComponent<OTSprite>().frameName = "wall";
@@ -110,8 +147,8 @@ public class EditorScript : MonoBehaviour {
 			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
 			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
 				validAnchor = true;
-//				anchor = new Vector3();
 				anchor = ReturnTileCenter(map[selectY][selectX].transform.position);
+				DrawConnections(1); //Test tiles with connection 1
 			}
 		}
 		if (Input.GetMouseButton (1) && !guiError && !loadFile && !saveFile && !guiInput && validAnchor == true)
