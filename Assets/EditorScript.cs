@@ -350,7 +350,7 @@ public class EditorScript : MonoBehaviour {
 		}
 		
 		GUI.Label (new Rect(Screen.width-(32*2)-10,5,50,30), "Tiles:");
-		for (int i = 0; i < buttonGfx.Length-2; i++) {
+		for (int i = 0; i < buttonGfx.Length-3; i++) {
 			GUIStyle buttonStyle;
 			if (i == activeSelection)
 				buttonStyle = activeButton;
@@ -362,8 +362,8 @@ public class EditorScript : MonoBehaviour {
 			}
 		}
 		
-		GUI.Label (new Rect(Screen.width-(32*2)-10,(32+5)*(buttonGfx.Length/2)+40,70,30), "Spawns:");
-		for (int i = buttonGfx.Length-2; i < buttonGfx.Length; i++) {
+		GUI.Label (new Rect(Screen.width-(32*2)-10,(32+5)*(buttonGfx.Length/2-1)+40,70,30), "Spawns:");
+		for (int i = buttonGfx.Length-3; i < buttonGfx.Length; i++) {
 			GUIStyle buttonStyle;
 			if (i == activeSelection)
 				buttonStyle = activeButton;

@@ -193,17 +193,28 @@ public class GameManager : MonoBehaviour {
 					case "type":
 						read.Read ();
 						squareName = "tile_"+i+"_"+j;
-						gameB.Add(squareName,new Tile(read.ReadContentAsInt(),i,j,OT.CreateObject ("WorldTiles")));	
-						gameB[squareName].xiso = (-j+i)*tileW;
-						gameB[squareName].yiso = (-j-i)*tileW/2F;
-						
-						pos = new Vector2 (gameB[squareName].xiso, gameB[squareName].yiso);
-						os = gameB[squareName].gfx.GetComponent<OTSprite>();
-						os.frameName = gameB[squareName].frameName;
-						os.position = pos;
-						
-						if (gameB[squareName].walkable)
-							os.depth = 1;
+						switch (read.ReadContentAsInt ()) {
+						case 0:
+							gameB.Add(squareName,(Tile)(new Floor(i,j)));
+							break;
+						case 1:
+						case 7:
+							gameB.Add (squareName, (Tile)(new Wall(i,j)));
+							break;
+						case 2:
+							gameB.Add (squareName, (Tile)(new Plate(i,j)));
+							break;
+						case 3:
+						case 6:
+							gameB.Add (squareName, (Tile)(new Button(i,j)));
+							break;
+						case 4:
+							gameB.Add (squareName, (Tile)(new Door(i,j,2)));
+							break;
+						case 5:
+							gameB.Add (squareName, (Tile)(new Door(i,j,0)));
+							break;
+						}
 						break;
 					case "obs":
 						read.Read ();
