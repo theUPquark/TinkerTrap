@@ -126,7 +126,10 @@ public class EditorScript : MonoBehaviour {
 			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
 			validAnchor = false;
 			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
-			DrawVerticies(anchor,ReturnTileCenter(map[selectY][selectX].transform.position));
+				DrawVerticies(anchor,ReturnTileCenter(map[selectY][selectX].transform.position));
+			}
+			else{
+				DrawVerticies(anchor,anchor);
 			}
 		}
 	}
