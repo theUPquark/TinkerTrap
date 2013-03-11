@@ -33,8 +33,10 @@ public class EditorScript : MonoBehaviour {
 	private bool validAnchor = false; // Control variable to help set tracer line
 	private Vector3 anchor;
 	
+	private GameObject line;
 	// Use this for initialization
 	void Start () {
+		line = GameObject.Find ("mouseLine");
 		SetGrid();
 	}
 	
@@ -46,12 +48,8 @@ public class EditorScript : MonoBehaviour {
 	
 	private void DrawVerticies(Vector3 a, Vector3 b)
 	{
-		// Needs to delete old line when vectors change
-		var go = new GameObject();
-        var lr = go.AddComponent<LineRenderer>();
-		
-		lr.SetPosition(0, a);
-		lr.SetPosition(1, b);
+		line.GetComponent<LineRenderer>().SetPosition(0, a);
+		line.GetComponent<LineRenderer>().SetPosition(1, b);
 	}
 	
 	private void SetGrid() {
