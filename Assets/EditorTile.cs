@@ -11,11 +11,6 @@ public class EditorTile : MonoBehaviour
     private Dictionary<string,List<int>> connections = new Dictionary<string,List<int>>();
     private Dictionary<string,List<int>> lockGroups = new Dictionary<string,List<int>>();
 	
-	void Start() {
-		connections.Add("in",new List<int>());
-		connections.Add("out",new List<int>());
-	}
-	
 	public int tileType {
 		get { return tile; }
 		set { tile = value; }
@@ -27,18 +22,34 @@ public class EditorTile : MonoBehaviour
 	}
 	
 	public List<int> consIn {
-		get { return connections["in"]; }
+		get {
+			if (!connections.ContainsKey ("in"))
+				connections.Add("in",new List<int>());
+			return connections["in"];
+		}
 	}
 	
 	public List<int> consOut {
-		get { return connections["out"]; }
+		get {
+			if (!connections.ContainsKey ("out"))
+				connections.Add("out",new List<int>());
+			return connections["out"];
+		}
 	}
 
 	public List<int> locksIn {
-		get { return lockGroups["in"]; }
+		get {
+			if (!lockGroups.ContainsKey ("in"))
+				lockGroups.Add("in",new List<int>());
+			return lockGroups["in"];
+		}
 	}
 	
 	public List<int> locksOut {
-		get { return lockGroups["out"]; }
+		get {
+			if (!lockGroups.ContainsKey ("out"))
+				lockGroups.Add("out",new List<int>());
+			return lockGroups["out"];
+		}
 	}
 }

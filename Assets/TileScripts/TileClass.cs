@@ -16,8 +16,12 @@ public abstract class TileClass : Tile
 	public string frameName;
 	public GameObject gfx;
 	protected OTSprite os;
-	private Dictionary<int,List<Tile>> connections = new Dictionary<int, List<Tile>>();
-	private Dictionary<int,List<Tile>> locks = new Dictionary<int, List<Tile>>();
+	protected Dictionary<int, List<Tile>>[] connections = new []
+	{	new Dictionary<int, List<Tile>>(),
+		new Dictionary<int, List<Tile>>()	};
+	protected Dictionary<int,List<Tile>>[] locks = new []
+	{	new Dictionary<int, List<Tile>>(),
+		new Dictionary<int, List<Tile>>()	};
 	
 	public TileClass (int gx, int gy)
 	{
@@ -47,46 +51,61 @@ public abstract class TileClass : Tile
 		return tileName;
 	}
 	
-	public void addConnection(int k, List<Tile> l)
+	public void addConnection(int k, List<Tile> l, bool isSource)
 	{
-		if (!connections.ContainsKey(k))
-		connections.Add (k,l); 	//create key if it didn't exist
-		else 
-		connections[k] = l;		//replace list if key already exists
+		if (isSource) {
+			if (!connections[0].ContainsKey(k))	//this is an out node
+				connections[0].Add (k,l); 		//create key if it didn't exist
+			else 
+				connections[0][k] = l;			//replace list if key already exists
+		} else {
+			if (!connections[1].ContainsKey(k))	//this is an in node
+				connections[1].Add (k,l);
+			else 
+				connections[1][k] = l;
+		}
 	}
 	
-	public void addLock(int k, List<Tile> l) {
-		if (!locks.ContainsKey(k))
-		locks.Add (k,l); 	//create key if it didn't exist
-		else 
-		locks[k] = l;		//replace list if key already exists
+	public void addLock(int k, List<Tile> l, bool isSource)
+	{
+		if (isSource) {					//this is an out node
+			if (!locks[0].ContainsKey(k))
+				locks[0].Add (k,l); 	//create key if it didn't exist
+			else 
+				locks[0][k] = l;		//replace list if key already exists
+		} else {						//this is an in node
+			if (!locks[1].ContainsKey(k))
+				locks[1].Add (k,l);
+			else 
+				locks[1][k] = l;
+		}
 	}
 	
 	// This function detects if the tile is considered active by looking at the powered state of all 'connections'
 	// tiles in the group. Things like buttons and pressure plates provide power.
-	public bool isActivated() {
+	public virtual bool isActivated() {
 		
 		// Also add loop to check locks here. All tiles within a lock group must be 'unlocked' for those tiles
 		// to remain 'powered,' whereas only one member of a connection group must be active to power the rest.
 		
-		foreach (List<Tile> conList in locks.Values)
+		foreach (List<Tile> conList in locks[1].Values)
 			foreach (Tile t in conList)
 				if (((TileClass)t).locked && t != this)
 					return false;
-		foreach (List<Tile> conList in connections.Values)
+		foreach (List<Tile> conList in connections[1].Values)
 			foreach (Tile t in conList)
 				if (((TileClass)t).powered)
 					return true;
 		return false;
 	}
 	
-	public void interact() {
+	public virtual void interact() {
 	}
 	
-	public void update() {
+	public virtual void update() {
 	}
 	
-	public void act(List<Obstacle> objs) {
+	public virtual void act(List<Obstacle> objs) {
 	}
 }
 

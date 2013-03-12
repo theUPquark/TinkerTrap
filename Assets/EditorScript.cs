@@ -6,6 +6,8 @@ using System.Text.RegularExpressions;
 
 public class EditorScript : MonoBehaviour {
 	
+	// Main display and storage
+	
 	private List<List<GameObject>> map = new List<List<GameObject>>();
 	private List<List<GameObject>> mapObs = new List<List<GameObject>>();
 	private int activeSelection = 0;
@@ -13,6 +15,12 @@ public class EditorScript : MonoBehaviour {
 	private int gridH = 10;
 	private string tempW = "10";
 	private string tempH = "10";
+	private List<int> activeCons = new List<int>();
+	private List<int> activeLocks = new List<int>();
+	
+	
+	// For GUI display/control
+	
 	private bool guiError = false;
 	private bool loadFile = false;
 	private bool saveFile = false;
@@ -21,14 +29,27 @@ public class EditorScript : MonoBehaviour {
 	private string guiErS = "";
 	protected string filePath;
 	protected string fileName = "level";
+	private double fileVersion;
+	
+	// Set up basic GUI
 	
 	public GUIStyle activeButton;
 	public GUIStyle passiveButton;
 	public GUISkin mainSkin;
 	public Texture2D[] buttonGfx;
 	
-	public string connections;
-	public string lockGroups;
+	// For connection/lock selection dropdowns
+	
+	private bool showConList = false;
+	private bool showLockList = false;
+	private int connectionEntry = 0;
+	private int lockEntry = 0;
+	private GUIContent[] consDropdown;
+	private GUIContent[] locksDropdown;
+	private bool conPicked = false;
+	private bool lockPicked = false;
+	
+	// Drawing lines
 	
 	private bool validAnchor = false; // Control variable to help set tracer line
 	private Vector3 anchor;
@@ -38,6 +59,11 @@ public class EditorScript : MonoBehaviour {
 	void Start () {
 		line = GameObject.Find ("mouseLine");
 		SetGrid();
+		
+		// Make some content for the popup list
+		consDropdown = new GUIContent[0];
+		
+		locksDropdown = new GUIContent[0];
 	}
 	
 	private Vector3 ReturnTileCenter (Vector3 v)
@@ -60,7 +86,7 @@ public class EditorScript : MonoBehaviour {
 			foreach (GameObject o in g)
 			{
 				// Checking all tiles for num, using consList
-				if ( o.GetComponent<EditorTile>().consList.Contains(num))
+				if ( o.GetComponent<EditorTile>().consOut.Contains(num))
 				{
 					int count = 0;
 					o.GetComponent<LineRenderer>().SetVertexCount(3);
@@ -70,7 +96,7 @@ public class EditorScript : MonoBehaviour {
 						foreach (GameObject o2 in g2)
 						{
 							// Check all tiles again for num, using consList
-							if (o2.GetComponent<EditorTile>().consList.Contains(num))
+							if (o2.GetComponent<EditorTile>().consIn.Contains(num))
 							{
 								// With another matching tile, set another LineRender point, and then return to source tile again
 								o.GetComponent<LineRenderer>().SetVertexCount(count + 3);
@@ -130,7 +156,7 @@ public class EditorScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
-		if (Input.GetMouseButton (0) && !guiError && !loadFile && !saveFile && !guiInput)
+		if (activeSelection < 20 && Input.GetMouseButton (0) && !guiError && !loadFile && !saveFile && !guiInput)
 		{
 			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
 			int selectX = (int)(Math.Floor (mouseLocation.x/32));
@@ -139,7 +165,17 @@ public class EditorScript : MonoBehaviour {
 				SetTypeByDraw(map[selectY][selectX]);
 				SetGraphics(map[selectY][selectX], mapObs[selectY][selectX]);
 			}
-		}
+		}/* else if (Input.GetMouseButtonDown (0) && !guiError && !loadFile && !saveFile && !guiInput) {
+			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
+			int selectX = (int)(Math.Floor (mouseLocation.x/32));
+			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
+			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+				validAnchor = true;
+				
+				anchor = ReturnTileCenter(map[selectY][selectX].transform.position);
+				DrawConnections(1); //Test tiles with connection 1
+			}
+		}*/
 		if (Input.GetMouseButtonDown (1) && !guiError && !loadFile && !saveFile && !guiInput)
 		{
 			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
@@ -273,11 +309,15 @@ public class EditorScript : MonoBehaviour {
 	
 	private void ReturnLoadPath(string path)
 	{
+		if (filePath == null)
+			loadFile = false;
 		filePath = path;
 	}
 	
 	private void ReturnSavePath(string path)
 	{
+		if (filePath == null)
+			saveFile = false;
 		filePath = path + "/" + fileName + ".xml";
 	}
 	
@@ -288,6 +328,7 @@ public class EditorScript : MonoBehaviour {
 		using (XmlWriter writer = XmlWriter.Create(filePath,settings)) {
 			writer.WriteStartDocument ();
 			writer.WriteStartElement ("document");
+			writer.WriteElementString ("version", "2.0");
 			writer.WriteElementString ("width", gridW.ToString ());
 			writer.WriteElementString ("height", gridH.ToString ());
 			foreach (List<GameObject> i in map) {
@@ -323,6 +364,110 @@ public class EditorScript : MonoBehaviour {
     }
 	
 	private void LoadLevel()
+	{
+		XmlReaderSettings settings = new XmlReaderSettings();
+		settings.IgnoreWhitespace = true;
+		activeCons.Clear ();
+		activeLocks.Clear ();
+		foreach (List<GameObject> t in map) {
+			foreach (GameObject i in t) {
+				i.GetComponent<EditorTile>().consIn.Clear ();
+				i.GetComponent<EditorTile>().consOut.Clear ();
+				i.GetComponent<EditorTile>().locksIn.Clear ();
+				i.GetComponent<EditorTile>().locksOut.Clear ();
+			}
+		}
+		using (XmlReader read = XmlReader.Create (filePath, settings)) {
+			int i = -1;
+			int j = -1;
+			bool consGroup = true;
+			if (!read.ReadToFollowing ("version")) {
+				read.Close ();
+				LoadOldLevel ();
+			} else
+				fileVersion = read.ReadElementContentAsDouble ();
+			while (read.Read ()) {
+				if (read.IsStartElement ())
+				{
+					switch (read.Name)
+					{
+					case "width":
+						read.Read ();
+						tempW = read.Value;
+						gridW = int.Parse (tempW);
+						break;
+					case "height":
+						read.Read ();
+						tempH = read.Value;
+						gridH = int.Parse (tempH);
+						SetGrid();
+						break;
+					case "y":
+						if (j >= 0)
+							SetGraphics(map[j][i],mapObs[j][i]);
+						j++;
+						i = -1;
+						Console.WriteLine (j.ToString());
+						break;
+					case "x":
+						if (i >= 0 || (j == gridH-1 && i == gridW-1))
+							SetGraphics(map[j][i],mapObs[j][i]);
+						else
+							SetGraphics(map[j][gridW-1],mapObs[j][gridW-1]);
+						Console.WriteLine (i.ToString());
+						i++;
+						break;
+					case "type":
+						read.Read ();
+						map[j][i].GetComponent<EditorTile>().tileType = int.Parse (read.Value);
+						break;
+					case "obs":
+						read.Read ();
+						map[j][i].GetComponent<EditorTile>().obsType = int.Parse (read.Value);
+						break;
+					case "connections":	
+						consGroup = true;
+						break;
+					case "locks":
+						consGroup = false;
+						break;
+					case "in":
+						read.Read ();
+						int node = read.ReadContentAsInt();
+						if (consGroup) {
+							map[j][i].GetComponent<EditorTile>().consIn.Add(node);
+							if (!activeCons.Contains (node))
+								activeCons.Add (node);
+						} else {
+							map[j][i].GetComponent<EditorTile>().locksIn.Add(node);
+							if (!activeLocks.Contains (node))
+								activeLocks.Add (node);
+						}
+						break;
+					case "out":
+						read.Read ();
+						node = read.ReadContentAsInt();
+						if (consGroup) {
+							map[j][i].GetComponent<EditorTile>().consOut.Add(node);
+							if (!activeCons.Contains (node))
+								activeCons.Add (node);
+						} else {
+							map[j][i].GetComponent<EditorTile>().locksOut.Add(node);
+							if (!activeLocks.Contains (node))
+								activeLocks.Add (node);
+						}
+						break;
+					}
+				}
+			}
+			read.Close ();
+			filePath = null;
+		}
+	}
+	
+	// Old level loader for conversion purposes
+	
+	private void LoadOldLevel()
 	{
 		XmlReaderSettings settings = new XmlReaderSettings();
 		settings.IgnoreWhitespace = true;
@@ -375,19 +520,20 @@ public class EditorScript : MonoBehaviour {
 					case "locks":
 						consGroup = false;
 						break;
-					case "in":
+					case "int":
 						read.Read ();
-						if (consGroup)
-							map[j][i].GetComponent<EditorTile>().consIn.Add(read.ReadContentAsInt());
-						else
-							map[j][i].GetComponent<EditorTile>().locksIn.Add(read.ReadContentAsInt());
-						break;
-					case "out":
-						read.Read ();
-						if (consGroup)
-							map[j][i].GetComponent<EditorTile>().consOut.Add(read.ReadContentAsInt());
-						else
-							map[j][i].GetComponent<EditorTile>().locksOut.Add(read.ReadContentAsInt());
+						int node = read.ReadContentAsInt();
+						if (consGroup) {
+							map[j][i].GetComponent<EditorTile>().consIn.Add(node);
+							map[j][i].GetComponent<EditorTile>().consOut.Add(node);
+							if (!activeCons.Contains (node))
+								activeCons.Add (node);
+						} else {
+							map[j][i].GetComponent<EditorTile>().locksIn.Add(node);
+							map[j][i].GetComponent<EditorTile>().locksOut.Add(node);
+							if (!activeLocks.Contains (node))
+								activeLocks.Add (node);
+						}
 						break;
 					}
 				}
@@ -478,15 +624,23 @@ public class EditorScript : MonoBehaviour {
 		}
 		
 		GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+200,90,30), "Connections:");
-		connections = GUI.TextField(new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+240,90,30),connections);
-		connections = Regex.Replace(connections, @"[^,0-9]", "");
-		if (GUI.Button (new Rect(Screen.width-(32*2)-80,(32+5)*(buttonGfx.Length/2)+240,40,30), "Set"))
+	
+		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+240,90,30), ref showConList, ref connectionEntry, new GUIContent("Select one!"), consDropdown, activeButton))
+			conPicked = true;
+		else
+			conPicked = false;
+			
+		if (GUI.Button (new Rect(Screen.width-(32*2)-80,(32+5)*(buttonGfx.Length/2)+240,40,30), "Add"))
 			activeSelection = 20;
 		
 		GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+280,150,30), "Lock Groups:");
-		lockGroups = GUI.TextField(new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+320,90,30),lockGroups);
-		lockGroups = Regex.Replace(lockGroups, @"[^,0-9]", "");
-		if (GUI.Button (new Rect(Screen.width-(32*2)-80,(32+5)*(buttonGfx.Length/2)+320,40,30), "Set"))
+		
+		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+320,90,30), ref showLockList, ref lockEntry, new GUIContent("Select one!"), locksDropdown, activeButton))
+			lockPicked = true;
+		else
+			lockPicked = false;
+		
+		if (GUI.Button (new Rect(Screen.width-(32*2)-80,(32+5)*(buttonGfx.Length/2)+320,40,30), "Add"))
 			activeSelection = 21;
 		
 		if (loadFile) {
@@ -495,6 +649,14 @@ public class EditorScript : MonoBehaviour {
 			if (filePath != null) {
 				loadFile = false;
 				LoadLevel();
+				
+				consDropdown = new GUIContent[activeCons.Count];
+				for (int i = 0; i < consDropdown.Length; i++)
+					consDropdown[i] = new GUIContent(activeCons[i].ToString());
+			
+				locksDropdown = new GUIContent[activeLocks.Count];
+				for (int i = 0; i < locksDropdown.Length; i++)
+					locksDropdown[i] = new GUIContent(activeLocks[i].ToString());
 			}
 		}
 		
