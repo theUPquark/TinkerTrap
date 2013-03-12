@@ -382,17 +382,22 @@ public class EditorScript : MonoBehaviour {
 			int i = -1;
 			int j = -1;
 			bool consGroup = true;
-			if (!read.ReadToFollowing ("version")) {
-				read.Close ();
-				LoadOldLevel ();
-			} else
-				fileVersion = read.ReadElementContentAsDouble ();
 			while (read.Read ()) {
 				if (read.IsStartElement ())
 				{
 					switch (read.Name)
 					{
+					case "version":
+						read.Read ();
+						fileVersion = read.ReadContentAsDouble ();
+						break;
 					case "width":
+						if (fileVersion == 0) {
+							read.Close ();
+							LoadOldLevel ();
+							break;
+						}
+						Debug.Log ("This is a new save file!");
 						read.Read ();
 						tempW = read.Value;
 						gridW = int.Parse (tempW);
