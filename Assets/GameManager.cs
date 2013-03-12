@@ -237,7 +237,7 @@ public class GameManager : MonoBehaviour {
 					case "locks":
 						consGroup = false;
 						break;
-					case "int":
+					case "in":
 						read.Read ();
 						if (consGroup) {
 							List<Tile> tilelist;
@@ -251,7 +251,7 @@ public class GameManager : MonoBehaviour {
 									tilelist = gameCons[k];
 									tilelist.Add(gameB[squareName]);
 								}
-								gameB[squareName].addConnection(k, gameCons[k]);
+								gameB[squareName].addConnection(k, gameCons[k], false);
 							}
 						} else {
 							List<Tile> tilelist;
@@ -265,7 +265,39 @@ public class GameManager : MonoBehaviour {
 									tilelist = gameLocks[k];
 									tilelist.Add(gameB[squareName]);
 								}
-								gameB[squareName].addLock(k, gameLocks[k]);
+								gameB[squareName].addLock(k, gameLocks[k], false);
+							}
+						}
+						break;
+					case "out":
+						read.Read ();
+						if (consGroup) {
+							List<Tile> tilelist;
+							int k = read.ReadContentAsInt();
+							if (k != 0) {
+								if (!gameCons.ContainsKey(k)) {
+									tilelist = new List<Tile>();
+									tilelist.Add(gameB[squareName]);
+									gameCons.Add(k, tilelist);
+								} else {
+									tilelist = gameCons[k];
+									tilelist.Add(gameB[squareName]);
+								}
+								gameB[squareName].addConnection(k, gameCons[k], true);
+							}
+						} else {
+							List<Tile> tilelist;
+							int k = read.ReadContentAsInt();
+							if (k != 0) {
+								if (!gameLocks.ContainsKey(k)) {
+									tilelist = new List<Tile>();
+									tilelist.Add(gameB[squareName]);
+									gameLocks.Add(k, tilelist);
+								} else {
+									tilelist = gameLocks[k];
+									tilelist.Add(gameB[squareName]);
+								}
+								gameB[squareName].addLock(k, gameLocks[k], true);
 							}
 						}
 						break;

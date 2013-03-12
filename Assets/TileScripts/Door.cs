@@ -18,7 +18,7 @@ public class Door : TileClass, Tile {
 		get { return open; }
 	}
 	
-	public void update() {
+	public override void update() {
 		if (isActivated()) {
 			used = true;
 		} else {
@@ -26,7 +26,7 @@ public class Door : TileClass, Tile {
 		}
 	}
 	
-	public void act(List<Obstacle> objs) {
+	public override void act(List<Obstacle> objs) {
 		if (used && !open) {
             os.frameName = "Door"+(setBase+1).ToString ();
 			open = true;

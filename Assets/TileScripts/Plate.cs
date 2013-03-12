@@ -11,7 +11,7 @@ public class Plate : Floor, Tile {
 		gfx.GetComponent<OTSprite>().frameName = frameName;
 	}
 	
-	public void act(List<Obstacle> objs) {
+	public override void act(List<Obstacle> objs) {
 		bool occupied = false;
 		foreach (Obstacle i in objs)	
 			if (i.xtile == gridx && i.ytile == gridy)	{

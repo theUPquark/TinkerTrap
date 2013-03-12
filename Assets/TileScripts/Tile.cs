@@ -53,9 +53,9 @@ public interface Tile {
 		get;
 	}
 
-	void addConnection(int k, List<Tile> l);
+	void addConnection(int k, List<Tile> l, bool isSource);
 	
-	void addLock(int k, List<Tile> l);
+	void addLock(int k, List<Tile> l, bool isSource);
 	
 	// Called to update status when activated by the player.
 	void interact();
