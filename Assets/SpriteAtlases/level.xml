@@ -1,152 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-    <dict>
-        <key>frames</key>
-        <dict>
-            <key>Door0.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{0,0},{128,256}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{128,256}}</string>
-                <key>sourceSize</key>
-                <string>{128,256}</string>
-            </dict>
-            <key>Door1.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{128,0},{128,256}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{128,256}}</string>
-                <key>sourceSize</key>
-                <string>{128,256}</string>
-            </dict>
-            <key>Door2.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{256,0},{128,256}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{128,256}}</string>
-                <key>sourceSize</key>
-                <string>{128,256}</string>
-            </dict>
-            <key>Door3.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{384,0},{128,256}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{128,256}}</string>
-                <key>sourceSize</key>
-                <string>{128,256}</string>
-            </dict>
-            <key>Ground0.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{0,256},{128,256}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{128,256}}</string>
-                <key>sourceSize</key>
-                <string>{128,256}</string>
-            </dict>
-            <key>Plate0.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{128,256},{128,256}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{128,256}}</string>
-                <key>sourceSize</key>
-                <string>{128,256}</string>
-            </dict>
-            <key>Plate1.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{256,256},{128,256}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{128,256}}</string>
-                <key>sourceSize</key>
-                <string>{128,256}</string>
-            </dict>
-            <key>Wall0.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{384,256},{128,256}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{128,256}}</string>
-                <key>sourceSize</key>
-                <string>{128,256}</string>
-            </dict>
-            <key>WallB.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{0,512},{128,256}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{128,256}}</string>
-                <key>sourceSize</key>
-                <string>{128,256}</string>
-            </dict>
-            <key>WallX.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{128,512},{128,256}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{128,256}}</string>
-                <key>sourceSize</key>
-                <string>{128,256}</string>
-            </dict>
-        </dict>
-        <key>metadata</key>
-        <dict>
-            <key>format</key>
-            <integer>2</integer>
-            <key>realTextureFileName</key>
-            <string>level.png</string>
-            <key>size</key>
-            <string>{512,1024}</string>
-            <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:c8834a85fa87eed6311133d0e3ccf9f4$</string>
-            <key>textureFileName</key>
-            <string>level.png</string>
-        </dict>
-    </dict>
-</plist>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:fc743869ab97320572cfc7338a6b40f4$ -->
+<TextureAtlas imagePath="level.png">
+    <SubTexture name="Button0" x="0" y="0" width="128" height="256"/>
+    <SubTexture name="Door0_cl" x="128" y="0" width="128" height="256"/>
+    <SubTexture name="Door0_op" x="256" y="0" width="128" height="256"/>
+    <SubTexture name="Door1_cl" x="384" y="0" width="128" height="256"/>
+    <SubTexture name="Door1_op" x="512" y="0" width="128" height="256"/>
+    <SubTexture name="Ground0" x="640" y="0" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0000" x="768" y="0" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0001" x="896" y="0" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0002" x="1024" y="0" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0003" x="1152" y="0" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0004" x="1280" y="0" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0005" x="1408" y="0" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0006" x="1536" y="0" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0007" x="1664" y="0" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0008" x="1792" y="0" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0009" x="1920" y="0" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0010" x="0" y="256" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0011" x="128" y="256" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0012" x="256" y="256" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0013" x="384" y="256" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0014" x="512" y="256" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0015" x="640" y="256" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0016" x="768" y="256" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0017" x="896" y="256" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0018" x="1024" y="256" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0019" x="1152" y="256" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0020" x="1280" y="256" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0021" x="1408" y="256" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0022" x="1536" y="256" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0023" x="1664" y="256" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0024" x="1792" y="256" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0025" x="1920" y="256" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0026" x="0" y="512" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0027" x="128" y="512" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0028" x="256" y="512" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0029" x="384" y="512" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0030" x="512" y="512" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0031" x="640" y="512" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0032" x="768" y="512" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0033" x="896" y="512" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0034" x="1024" y="512" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0035" x="1152" y="512" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0036" x="1280" y="512" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0037" x="1408" y="512" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0038" x="1536" y="512" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0039" x="1664" y="512" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0040" x="1792" y="512" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0041" x="1920" y="512" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0042" x="0" y="768" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0043" x="128" y="768" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0044" x="256" y="768" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0045" x="384" y="768" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0046" x="512" y="768" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0047" x="640" y="768" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0048" x="768" y="768" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0049" x="896" y="768" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0050" x="1024" y="768" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0051" x="1152" y="768" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0052" x="1280" y="768" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0053" x="1408" y="768" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0054" x="1536" y="768" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0055" x="1664" y="768" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0056" x="1792" y="768" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0057" x="1920" y="768" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0058" x="0" y="1024" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0059" x="128" y="1024" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0060" x="256" y="1024" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0061" x="384" y="1024" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0062" x="512" y="1024" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0063" x="640" y="1024" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0064" x="768" y="1024" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0065" x="896" y="1024" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0066" x="1024" y="1024" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0067" x="1152" y="1024" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0068" x="1280" y="1024" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0069" x="1408" y="1024" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0070" x="1536" y="1024" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0071" x="1664" y="1024" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0072" x="1792" y="1024" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0073" x="1920" y="1024" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0074" x="0" y="1280" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0075" x="128" y="1280" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0076" x="256" y="1280" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0077" x="384" y="1280" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0078" x="512" y="1280" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0079" x="640" y="1280" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0080" x="768" y="1280" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0081" x="896" y="1280" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0082" x="1024" y="1280" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0083" x="1152" y="1280" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0084" x="1280" y="1280" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0085" x="1408" y="1280" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0086" x="1536" y="1280" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0087" x="1664" y="1280" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0088" x="1792" y="1280" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0089" x="1920" y="1280" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0090" x="0" y="1536" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0091" x="128" y="1536" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0092" x="256" y="1536" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0093" x="384" y="1536" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0094" x="512" y="1536" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0095" x="640" y="1536" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0096" x="768" y="1536" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0097" x="896" y="1536" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0098" x="1024" y="1536" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0099" x="1152" y="1536" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0100" x="1280" y="1536" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0101" x="1408" y="1536" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0102" x="1536" y="1536" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0103" x="1664" y="1536" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0104" x="1792" y="1536" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0105" x="1920" y="1536" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0106" x="0" y="1792" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0107" x="128" y="1792" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0108" x="256" y="1792" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0109" x="384" y="1792" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0110" x="512" y="1792" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0111" x="640" y="1792" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0112" x="768" y="1792" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0113" x="896" y="1792" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0114" x="1024" y="1792" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0115" x="1152" y="1792" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0116" x="1280" y="1792" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0117" x="1408" y="1792" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0118" x="1536" y="1792" width="128" height="256"/>
+    <SubTexture name="Plate0_off_0119" x="1664" y="1792" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0000" x="1792" y="1792" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0001" x="1920" y="1792" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0002" x="0" y="2048" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0003" x="128" y="2048" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0004" x="256" y="2048" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0005" x="384" y="2048" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0006" x="512" y="2048" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0007" x="640" y="2048" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0008" x="768" y="2048" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0009" x="896" y="2048" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0010" x="1024" y="2048" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0011" x="1152" y="2048" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0012" x="1280" y="2048" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0013" x="1408" y="2048" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0014" x="1536" y="2048" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0015" x="1664" y="2048" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0016" x="1792" y="2048" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0017" x="1920" y="2048" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0018" x="0" y="2304" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0019" x="128" y="2304" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0020" x="256" y="2304" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0021" x="384" y="2304" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0022" x="512" y="2304" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0023" x="640" y="2304" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0024" x="768" y="2304" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0025" x="896" y="2304" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0026" x="1024" y="2304" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0027" x="1152" y="2304" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0028" x="1280" y="2304" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0029" x="1408" y="2304" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0030" x="1536" y="2304" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0031" x="1664" y="2304" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0032" x="1792" y="2304" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0033" x="1920" y="2304" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0034" x="0" y="2560" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0035" x="128" y="2560" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0036" x="256" y="2560" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0037" x="384" y="2560" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0038" x="512" y="2560" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0039" x="640" y="2560" width="128" height="256"/>
+    <SubTexture name="Plate0_on_0040" x="768" y="2560" width="128" height="256"/>
+    <SubTexture name="Wall0" x="896" y="2560" width="128" height="256"/>
+</TextureAtlas>

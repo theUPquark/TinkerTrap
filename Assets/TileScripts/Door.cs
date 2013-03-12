@@ -5,17 +5,13 @@ using System.Collections.Generic;
 public class Door : TileClass, Tile {
 
 	private bool open = false;
-	private int setBase;
 	
-	public Door(int gx, int gy, int tSet) : base(gx, gy)
-	{
-		setBase = tSet;
-		frameName = "Door"+setBase.ToString ();
-		gfx.GetComponent<OTSprite>().frameName = frameName;
+	public Door(int gx, int gy, int tSet) : base(gx, gy, tSet) {
+		os.PlayOnce("Door"+tSet.ToString ()+"_cl");
 	}
 	
-	public override bool walkable {
-		get { return open; }
+	public override bool walkable() {
+		return open;
 	}
 	
 	public override void update() {
@@ -28,11 +24,11 @@ public class Door : TileClass, Tile {
 	
 	public override void act(List<Obstacle> objs) {
 		if (used && !open) {
-            os.frameName = "Door"+(setBase+1).ToString ();
+			os.PlayOnce("Door"+tileSet.ToString ()+"_op");
 			open = true;
 			powered = true;
-		} else if (!used && walkable) {
-            os.frameName = "Door"+(setBase).ToString ();
+		} else if (!used && open) {
+			os.PlayOnce("Door"+tileSet.ToString ()+"_cl");
 			open = false;
 			powered = false;
 		}

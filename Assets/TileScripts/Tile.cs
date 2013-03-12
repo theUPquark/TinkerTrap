@@ -45,9 +45,9 @@ public interface Tile {
 		}
 	}*/
 	
-	bool walkable {
-		get;
-	}
+	bool walkable ();
+	
+	bool walkable (Obstacle o);
 	
 	OTSprite graphic {
 		get;

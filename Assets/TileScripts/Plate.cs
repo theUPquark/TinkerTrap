@@ -4,11 +4,10 @@ using System.Collections.Generic;
 
 public class Plate : Floor, Tile {
 
-	public Plate(int gx, int gy) : base(gx, gy)
+	public Plate(int gx, int gy, int tSet) : base(gx, gy, tSet)
 	{
-		frameName = "Plate0";
+		os.PlayLoop ("Plate"+tSet.ToString()+"_off");
 		locked = true;
-		gfx.GetComponent<OTSprite>().frameName = frameName;
 	}
 	
 	public override void act(List<Obstacle> objs) {
@@ -21,10 +20,10 @@ public class Plate : Floor, Tile {
 		if (locked == occupied) {
 			switch (locked) {
 				case true:
-					os.frameName = "Plate1";
+					os.PlayLoop ("Plate"+tileSet.ToString()+"_on");
 					break;
 				case false:
-					os.frameName = "Plate0";
+					os.PlayLoop ("Plate"+tileSet.ToString()+"_off");
 					break;
 			}
 			locked = !locked;

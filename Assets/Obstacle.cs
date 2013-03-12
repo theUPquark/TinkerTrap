@@ -112,7 +112,7 @@ public class Obstacle
 		OTSprite os = this.gfx.GetComponent<OTSprite>();
 		
 		foreach (var i in tileSheet) {
-			if (i.Value.graphic.position.y > os.position.y || i.Value.walkable)
+			if (i.Value.graphic.position.y > os.position.y || i.Value.walkable(this))
 				i.Value.graphic.depth = 1;
 			else
 				i.Value.graphic.depth = -1;
