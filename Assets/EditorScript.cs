@@ -175,7 +175,7 @@ public class EditorScript : MonoBehaviour {
 				anchor = ReturnTileCenter(map[selectY][selectX].transform.position);
 				DrawConnections(1); //Test tiles with connection 1
 			}
-		}*/
+		}
 		if (Input.GetMouseButtonDown (1) && !guiError && !loadFile && !saveFile && !guiInput)
 		{
 			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
@@ -184,7 +184,8 @@ public class EditorScript : MonoBehaviour {
 			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
 				validAnchor = true;
 				anchor = ReturnTileCenter(map[selectY][selectX].transform.position);
-				DrawConnections(1); //Test tiles with connection 1
+				if (connectionEntry != null)
+					DrawConnections(connectionEntry); //Test tiles with connection 1
 			}
 		}
 		if (Input.GetMouseButton (1) && !guiError && !loadFile && !saveFile && !guiInput && validAnchor == true)
@@ -204,7 +205,7 @@ public class EditorScript : MonoBehaviour {
 			else{
 				DrawVerticies(anchor,anchor); // Removing line from view
 			}
-		}
+		}*/
 	}
 	
 	void LateUpdate () {
@@ -625,9 +626,11 @@ public class EditorScript : MonoBehaviour {
 		
 		GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+200,90,30), "Connections:");
 	
-		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+240,90,30), ref showConList, ref connectionEntry, new GUIContent("Select one!"), consDropdown, activeButton))
+		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+240,90,30), ref showConList, ref connectionEntry, new GUIContent("Select one!"), consDropdown, activeButton)) {
 			conPicked = true;
-		else
+			connectionEntry = int.Parse (consDropdown[connectionEntry].text);
+			DrawConnections (connectionEntry);
+		} else
 			conPicked = false;
 			
 		if (GUI.Button (new Rect(Screen.width-(32*2)-80,(32+5)*(buttonGfx.Length/2)+240,40,30), "Add"))
@@ -635,9 +638,10 @@ public class EditorScript : MonoBehaviour {
 		
 		GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+280,150,30), "Lock Groups:");
 		
-		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+320,90,30), ref showLockList, ref lockEntry, new GUIContent("Select one!"), locksDropdown, activeButton))
+		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+320,90,30), ref showLockList, ref lockEntry, new GUIContent("Select one!"), locksDropdown, activeButton)) {
 			lockPicked = true;
-		else
+			lockEntry = int.Parse (locksDropdown[lockEntry].text);
+		} else
 			lockPicked = false;
 		
 		if (GUI.Button (new Rect(Screen.width-(32*2)-80,(32+5)*(buttonGfx.Length/2)+320,40,30), "Add"))
