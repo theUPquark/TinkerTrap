@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
@@ -7,11 +8,8 @@ public class EditorTile : MonoBehaviour
 {
     private int tile = 1;
     private int obs = 0;
-    private List<int> connections = new List<int>();
-    private List<int> lockGroups = new List<int>();
-	
-	void Start() {
-	}
+    private Dictionary<string,List<int>> connections = new Dictionary<string,List<int>>();
+    private Dictionary<string,List<int>> lockGroups = new Dictionary<string,List<int>>();
 	
 	public int tileType {
 		get { return tile; }
@@ -23,43 +21,35 @@ public class EditorTile : MonoBehaviour
 		set { obs = value; }
 	}
 	
-	public List<int> consList {
-		get { return connections; }
+	public List<int> consIn {
+		get {
+			if (!connections.ContainsKey ("in"))
+				connections.Add("in",new List<int>());
+			return connections["in"];
+		}
 	}
 	
-	public void setElementConnection (int i) {
-		//if (tileData.connections == null)
-		//	tileData.connections = new List<int>();
-		connections.Add(i);
+	public List<int> consOut {
+		get {
+			if (!connections.ContainsKey ("out"))
+				connections.Add("out",new List<int>());
+			return connections["out"];
+		}
 	}
-	
-    public void setConnections(string text)
-    {
-        string[] splitText = text.Split(',');
-        if (text.Length > 0)
-            connections.Clear();
-        foreach (string str in splitText)
-            if (str.Length > 0)
-                connections.Add(int.Parse(str));
-    }
 
-	public List<int> locksList {
-		get { return lockGroups; }
+	public List<int> locksIn {
+		get {
+			if (!lockGroups.ContainsKey ("in"))
+				lockGroups.Add("in",new List<int>());
+			return lockGroups["in"];
+		}
 	}
 	
-	public void setElementLock (int i) {
-		//if (tileData.lockGroups == null)
-		//	tileData.lockGroups = new List<int>();
-		lockGroups.Add(i);
+	public List<int> locksOut {
+		get {
+			if (!lockGroups.ContainsKey ("out"))
+				lockGroups.Add("out",new List<int>());
+			return lockGroups["out"];
+		}
 	}
-	
-    public void setLockGroups(string text)
-    {
-        string[] splitText = text.Split(',');
-        if (text.Length > 0)
-            lockGroups.Clear();
-        foreach (string str in splitText)
-            if (str.Length > 0)
-                lockGroups.Add(int.Parse(str));
-    }
 }
