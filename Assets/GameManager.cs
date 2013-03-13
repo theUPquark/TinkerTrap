@@ -195,21 +195,21 @@ public class GameManager : MonoBehaviour {
 						squareName = "tile_"+i+"_"+j;
 						switch (read.ReadContentAsInt ()) {
 						case 0:
-							gameB.Add(squareName,(Tile)(new Floor(i,j)));
+							gameB.Add(squareName,(Tile)(new Floor(i,j,0)));
 							break;
 						case 1:
 						case 7:
-							gameB.Add (squareName, (Tile)(new Wall(i,j)));
+							gameB.Add (squareName, (Tile)(new Wall(i,j,0)));
 							break;
 						case 2:
-							gameB.Add (squareName, (Tile)(new Plate(i,j)));
+							gameB.Add (squareName, (Tile)(new Plate(i,j,0)));
 							break;
 						case 3:
 						case 6:
-							gameB.Add (squareName, (Tile)(new Button(i,j)));
+							gameB.Add (squareName, (Tile)(new Button(i,j,0)));
 							break;
 						case 4:
-							gameB.Add (squareName, (Tile)(new Door(i,j,2)));
+							gameB.Add (squareName, (Tile)(new Door(i,j,1)));
 							break;
 						case 5:
 							gameB.Add (squareName, (Tile)(new Door(i,j,0)));
@@ -548,10 +548,10 @@ public class GameManager : MonoBehaviour {
 		//check if they are walls
 		if (tob.downY < mapHeight && tob.upY >= 0 &&
 			tob.leftX >= 0 && tob.rightX < mapWidth) {
-			tob.upleft = gameB["tile_"+tob.leftX+"_"+tob.upY].walkable;
-			tob.downleft = gameB["tile_"+tob.leftX+"_"+tob.downY].walkable;
-			tob.upright = gameB["tile_"+tob.rightX+"_"+tob.upY].walkable;
-			tob.downright = gameB["tile_"+tob.rightX+"_"+tob.downY].walkable;
+			tob.upleft = gameB["tile_"+tob.leftX+"_"+tob.upY].walkable();
+			tob.downleft = gameB["tile_"+tob.leftX+"_"+tob.downY].walkable();
+			tob.upright = gameB["tile_"+tob.rightX+"_"+tob.upY].walkable();
+			tob.downright = gameB["tile_"+tob.rightX+"_"+tob.downY].walkable();
 		}
 		if (tob.downY >= mapHeight)
 			tob.downleft = tob.downright = false;

@@ -4,13 +4,9 @@ using System.Collections.Generic;
 
 public class Floor : TileClass, Tile {
 
-	public Floor(int gx, int gy) : base(gx, gy)
-	{
-		frameName = "Ground0";
-		os.frameName = frameName;
-	}
+	public Floor(int gx, int gy, int tSet) : base(gx, gy, tSet) {}
 	
-	public override bool walkable {
-		get { return true; }
+	public override bool walkable() {
+		return true;
 	}
 }
