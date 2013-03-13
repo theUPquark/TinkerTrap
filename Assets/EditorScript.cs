@@ -86,7 +86,7 @@ public class EditorScript : MonoBehaviour {
 			foreach (GameObject o in g)
 			{
 				// Checking all tiles for num, using consOut
-				if ( o.GetComponent<EditorTile>().consOut.Contains(num))
+				if ( o.GetComponent<EditorTile>().consIn.Contains(num))
 				{
 					int count = 0;
 					o.GetComponent<LineRenderer>().SetVertexCount(3);
@@ -96,7 +96,7 @@ public class EditorScript : MonoBehaviour {
 						foreach (GameObject o2 in g2)
 						{
 							// Check all tiles again for num, using consIn
-							if (o2.GetComponent<EditorTile>().consIn.Contains(num))
+							if (o2.GetComponent<EditorTile>().consOut.Contains(num))
 							{
 								// With another matching tile, set another LineRender point, and then return to source tile again
 								o.GetComponent<LineRenderer>().SetVertexCount(count + 3);
@@ -121,7 +121,7 @@ public class EditorScript : MonoBehaviour {
 			foreach (GameObject o in g)
 			{
 				// Checking all tiles for num, using locksOut
-				if ( o.GetComponent<EditorTile>().locksOut.Contains(num))
+				if ( o.GetComponent<EditorTile>().locksIn.Contains(num))
 				{
 					int count = 0;
 					o.GetComponent<LineRenderer>().SetVertexCount(3);
@@ -131,7 +131,7 @@ public class EditorScript : MonoBehaviour {
 						foreach (GameObject o2 in g2)
 						{
 							// Check all tiles again for num, using locksin
-							if (o2.GetComponent<EditorTile>().locksIn.Contains(num))
+							if (o2.GetComponent<EditorTile>().locksOut.Contains(num))
 							{
 								// With another matching tile, set another LineRender point, and then return to source tile again
 								o.GetComponent<LineRenderer>().SetVertexCount(count + 3);
@@ -146,6 +146,22 @@ public class EditorScript : MonoBehaviour {
 					o.GetComponent<LineRenderer>().SetPosition(0,o.transform.position);
 				}
 			}
+		}
+	}
+	
+	private void checkLooseEnds()
+	{
+		if (activeSelection == 20)
+		{
+			
+		}
+		else if (activeSelection == 21)
+		{
+			
+			
+		}
+		foreach (List<GameObject> g in map) {
+		
 		}
 	}
 	
@@ -208,24 +224,33 @@ public class EditorScript : MonoBehaviour {
 				validAnchor = true;
 				anchorYX = map[selectY][selectX];
 				anchor = ReturnTileCenter(map[selectY][selectX].transform.position);
-				if (activeSelection == 20 && connectionEntry != 0)
-					DrawConnections(connectionEntry);
-				else if (activeSelection == 21 && lockEntry != 0)
-					DrawLocks(lockEntry);
+//				if (activeSelection == 20 && connectionEntry != 0)
+//					DrawConnections(connectionEntry);
+//				else if (activeSelection == 21 && lockEntry != 0)
+//					DrawLocks(lockEntry);
 			}
 		}
-//		if (Input.GetMouseButtonDown (1) && !guiError && !loadFile && !saveFile && !guiInput)
-//		{
-//			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
-//			int selectX = (int)(Math.Floor (mouseLocation.x/32));
-//			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
-//			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
-//				validAnchor = true;
-//				anchor = ReturnTileCenter(map[selectY][selectX].transform.position);
-//				if (connectionEntry != 0)
-//					DrawConnections(connectionEntry); //Test tiles with connection 1
-//			}
-//		}
+		if (activeSelection >= 20 && Input.GetMouseButtonDown (1) && !guiError && !loadFile && !saveFile && !guiInput)
+		{
+			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
+			int selectX = (int)(Math.Floor (mouseLocation.x/32));
+			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
+			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+				if (activeSelection == 20) {
+					if (map[selectY][selectX].GetComponent<EditorTile>().consIn.Contains(connectionEntry))
+						map[selectY][selectX].GetComponent<EditorTile>().consIn.Remove(connectionEntry);
+					if (map[selectY][selectX].GetComponent<EditorTile>().consOut.Contains(connectionEntry))
+						map[selectY][selectX].GetComponent<EditorTile>().consOut.Remove(connectionEntry);
+					DrawConnections(connectionEntry);
+				} else {
+					if (map[selectY][selectX].GetComponent<EditorTile>().locksIn.Contains(lockEntry))
+						map[selectY][selectX].GetComponent<EditorTile>().locksIn.Remove(lockEntry);
+					if (map[selectY][selectX].GetComponent<EditorTile>().locksOut.Contains(lockEntry))
+						map[selectY][selectX].GetComponent<EditorTile>().locksOut.Remove(lockEntry);
+					DrawLocks(lockEntry);
+				}
+			}
+		}
 		if (activeSelection >= 20 && Input.GetMouseButton (0) && !guiError && !loadFile && !saveFile && !guiInput && validAnchor == true)
 		{
 			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
@@ -241,17 +266,24 @@ public class EditorScript : MonoBehaviour {
 				DrawVerticies(anchor,ReturnTileCenter(map[selectY][selectX].transform.position));
 				//Set the connection (20) or lockgroup (21)
 				if (activeSelection == 20 && map[selectY][selectX] != anchorYX)
-				{	map[selectY][selectX].GetComponent<EditorTile>().consIn.Add(connectionEntry);
-					anchorYX.GetComponent<EditorTile>().consOut.Add (connectionEntry);
+				{	if (!map[selectY][selectX].GetComponent<EditorTile>().consIn.Contains(connectionEntry))
+						map[selectY][selectX].GetComponent<EditorTile>().consIn.Add(connectionEntry);
+					if (!anchorYX.GetComponent<EditorTile>().consOut.Contains(connectionEntry))
+						anchorYX.GetComponent<EditorTile>().consOut.Add(connectionEntry);
+					DrawConnections(connectionEntry);
 				} 
 				else if (activeSelection == 21 && map[selectY][selectX] != anchorYX)
-				{	map[selectY][selectX].GetComponent<EditorTile>().locksIn.Add(connectionEntry);
-					anchorYX.GetComponent<EditorTile>().locksOut.Add (connectionEntry);	
+				{	if (!map[selectY][selectX].GetComponent<EditorTile>().locksIn.Contains(lockEntry))
+						map[selectY][selectX].GetComponent<EditorTile>().locksIn.Add(lockEntry);
+					if (!anchorYX.GetComponent<EditorTile>().locksOut.Contains(lockEntry))
+						anchorYX.GetComponent<EditorTile>().locksOut.Add (lockEntry);
+					
+					DrawLocks(lockEntry);
 				}
 			}
-			else{
-				DrawVerticies(anchor,anchor); // Removing line from view
-			}
+//			else{
+				DrawVerticies(anchor,anchor); // Removing mouse line from view
+//			}
 		}
 	}
 	
