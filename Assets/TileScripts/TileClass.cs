@@ -13,9 +13,10 @@ public abstract class TileClass : Tile
 	public float xiso, yiso;
 	public int[] lockGroup;
 	public int gridx, gridy;
-	public string frameName;
 	public GameObject gfx;
-	protected OTSprite os;
+	
+	protected int tileSet;
+	protected OTAnimatingSprite os;
 	protected Dictionary<int, List<Tile>>[] connections = new []
 	{	new Dictionary<int, List<Tile>>(),
 		new Dictionary<int, List<Tile>>()	};
@@ -23,22 +24,28 @@ public abstract class TileClass : Tile
 	{	new Dictionary<int, List<Tile>>(),
 		new Dictionary<int, List<Tile>>()	};
 	
-	public TileClass (int gx, int gy)
+	public TileClass (int gx, int gy, int tSet)
 	{
 		gridx = gx;
 		gridy = gy;
+		tileSet = tSet;
 		gfx = OT.CreateObject("WorldTiles");
-		os = gfx.GetComponent<OTSprite>();
+		os = gfx.GetComponent<OTAnimatingSprite>();
 		xiso = (-gy+gx)*GameManager.getTileW();
 		yiso = (-gy-gx)*GameManager.getTileW()/2F;
 		os.position = new Vector2 (xiso, yiso);
+		os.PlayOnce (this.GetType().Name+tSet.ToString());
 		
-		if (walkable)
+		if (walkable())
 			os.depth = 1;
 	}
 	
-	public virtual bool walkable {
-		get { return false; }
+	public virtual bool walkable () {
+		return false;
+	}
+	
+	public virtual bool walkable (Obstacle o) {
+		return walkable ();
 	}
 	
 	public OTSprite graphic {

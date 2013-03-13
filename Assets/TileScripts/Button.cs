@@ -4,11 +4,10 @@ using System.Collections.Generic;
 
 public class Button : TileClass, Tile {
 
-	public Button(int gx, int gy) : base(gx, gy)
+	public Button(int gx, int gy, int tSet) : base(gx, gy, tSet)
 	{
-		frameName = "WallB";
+		os.PlayOnce(this.GetType ().Name+tSet.ToString());
 		locked = true;
-		os.frameName = frameName;
 	}
 	
 	public override void interact()
