@@ -16254,6 +16254,11 @@
             <filename>PlateAnimFrames/Plate0_on_0039.png</filename>
             <filename>PlateAnimFrames/Plate0_on_0040.png</filename>
             <filename>ElecAnimFrames</filename>
+            <filename>Electrified0_off.png</filename>
+            <filename>Generator0_off.png</filename>
+            <filename>Generator0_on.png</filename>
+            <filename>Generator1_off.png</filename>
+            <filename>Generator1_on.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

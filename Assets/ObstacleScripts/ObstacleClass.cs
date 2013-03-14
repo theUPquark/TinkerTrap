@@ -23,9 +23,9 @@ public abstract class ObstacleClass
 	{
 		type = a;
 		if (this.GetType ().IsSubclassOf (typeof(Player)))
-			gfx = OT.CreateObject ("Bot1");
+			gfx = OT.CreateObject ("Bots");
 		else
-			gfx = OT.CreateObject ("Box1");
+			gfx = OT.CreateObject ("Obs");
 		os = gfx.GetComponent<OTSprite>();
 		setXY(x,y);
 	}

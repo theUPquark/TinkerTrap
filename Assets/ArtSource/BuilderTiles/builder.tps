@@ -151,6 +151,10 @@
             <filename>ed_Spawn0.png</filename>
             <filename>ed_Wall0.png</filename>
             <filename>ed_Floor0.png</filename>
+            <filename>ed_Generator0.png</filename>
+            <filename>ed_Source0.png</filename>
+            <filename>ed_Battery0.png</filename>
+            <filename>ed_Generator1.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

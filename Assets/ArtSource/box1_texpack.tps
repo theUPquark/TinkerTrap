@@ -142,6 +142,7 @@
         <key>fileList</key>
         <array>
             <filename>Box0.png</filename>
+            <filename>Battery0.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

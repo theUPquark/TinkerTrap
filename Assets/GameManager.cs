@@ -206,13 +206,14 @@ public class GameManager : MonoBehaviour {
 						Debug.Log ("Reading obstacles...");
 						switch (read.ReadContentAsString()) {
 						case "Spawn": // Player starting location, probably only for first level.
-							Debug.Log ("Player found!");
 							players[activeBot-1].setXY(i,j);
 							gameObs.Add (players[activeBot-1]);
 							break;
 						case "Box":
-							Debug.Log ("Box found!");
 							gameObs.Add (new Box(4, i, j));
+							break;
+						case "Battery":
+							gameObs.Add (new Battery(4, i, j));
 							break;
 						}
 						break;
@@ -586,6 +587,8 @@ public class GameManager : MonoBehaviour {
 				if (tob.GetType () == typeof(Bot1))
 					if (((Bot1)tob).grabbing)
 						moveChar (((Bot1)tob).grabbed, yShift, dirx, diry);
+				string tarTile = "tile_"+(int)(tob.xtile)+"_"+(int)(tob.ytile-1);
+				gameB[tarTile].interact (tob);
 				speedAdj = 0;
 			}
 		}
@@ -616,6 +619,8 @@ public class GameManager : MonoBehaviour {
 				if (tob.GetType () == typeof(Bot1))
 					if (((Bot1)tob).grabbing)
 						moveChar (((Bot1)tob).grabbed, yShift, dirx, diry);
+				string tarTile = "tile_"+(int)(tob.xtile)+"_"+(int)(tob.ytile+1);
+				gameB[tarTile].interact (tob);
 				speedAdj = 0;
 			}
 		}
@@ -649,6 +654,8 @@ public class GameManager : MonoBehaviour {
 				if (tob.GetType () == typeof(Bot1))
 					if (((Bot1)tob).grabbing)
 						moveChar (((Bot1)tob).grabbed, xShift, dirx, diry);
+				string tarTile = "tile_"+(int)(tob.xtile-1)+"_"+(int)(tob.ytile);
+				gameB[tarTile].interact (tob);
 				speedAdj = 0;
 			}
 		}
@@ -679,6 +686,8 @@ public class GameManager : MonoBehaviour {
 				if (tob.GetType () == typeof(Bot1))
 					if (((Bot1)tob).grabbing)
 						moveChar (((Bot1)tob).grabbed, xShift, dirx, diry);
+				string tarTile = "tile_"+(int)(tob.xtile+1)+"_"+(int)(tob.ytile);
+				gameB[tarTile].interact (tob);
 				speedAdj = 0;
 			}
 		}

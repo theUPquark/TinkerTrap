@@ -60,6 +60,9 @@ public interface Tile {
 	// Called to update status when activated by the player.
 	void interact();
 	
+	// Called when requires activation by a specific Obs...
+	void interact(Obstacle a);
+	
 	// Called to update status when acted upon by another object.
 	void update();
 	

@@ -1024,8 +1024,8 @@
       <locks />
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Generator</type>
+      <tset>1</tset>
       <obs />
       <connections />
       <locks />
@@ -1461,7 +1461,7 @@
     <x>
       <type>Floor</type>
       <tset>0</tset>
-      <obs />
+      <obs>Battery</obs>
       <connections />
       <locks />
     </x>
