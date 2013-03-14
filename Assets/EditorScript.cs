@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Xml;
 using System.Text.RegularExpressions;
@@ -10,7 +11,10 @@ public class EditorScript : MonoBehaviour {
 	
 	private List<List<GameObject>> map = new List<List<GameObject>>();
 	private List<List<GameObject>> mapObs = new List<List<GameObject>>();
-	private int activeSelection = 0;
+	private string[] tileList = new string[] {"Wall","Floor","Door","Button","Plate"};
+	private string[] obsList = new string[] {"Spawn", "Box"};
+	private string activeSelection = "";
+	private int activeSet = 0;
 	private int gridW = 10;
 	private int gridH = 10;
 	private string tempW = "10";
@@ -36,7 +40,6 @@ public class EditorScript : MonoBehaviour {
 	public GUIStyle activeButton;
 	public GUIStyle passiveButton;
 	public GUISkin mainSkin;
-	public Texture2D[] buttonGfx;
 	
 	// For connection/lock selection dropdowns
 	
@@ -85,6 +88,7 @@ public class EditorScript : MonoBehaviour {
 		{
 			foreach (GameObject o in g)
 			{
+				o.GetComponent<LineRenderer>().SetColors (new Color(197f/255f,244f/255f,184f/255f), new Color(22f/255f,148f/255f,64f/255f));
 				// Checking all tiles for num, using consOut
 				if ( o.GetComponent<EditorTile>().consIn.Contains(num))
 				{
@@ -120,6 +124,7 @@ public class EditorScript : MonoBehaviour {
 		{
 			foreach (GameObject o in g)
 			{
+				o.GetComponent<LineRenderer>().SetColors (new Color(236f/255f,243f/255f,183f/255f,255f/255f), new Color(106f/255f,58f/255f,32f/255f,255f/255f));
 				// Checking all tiles for num, using locksOut
 				if ( o.GetComponent<EditorTile>().locksIn.Contains(num))
 				{
@@ -161,9 +166,11 @@ public class EditorScript : MonoBehaviour {
 					mapObs[i].Add(OT.CreateObject ("builderSprite"));
 					map[i][j].AddComponent<EditorTile>();
 					map[i][j].AddComponent<LineRenderer>();
+    				map[i][j].GetComponent<LineRenderer>().material = new Material (Shader.Find("Particles/Additive"));
+					map[i][j].GetComponent<LineRenderer>().SetWidth (6f, 2f);
 					map[i][j].GetComponent<OTSprite>().position = new Vector2(j*32f,i*-32f);
 					mapObs[i][j].GetComponent<OTSprite>().position = new Vector2(j*32f,i*-32f);
-					map[i][j].GetComponent<OTSprite>().frameName = "wall";
+					map[i][j].GetComponent<OTSprite>().frameName = "ed_Wall0";
 					mapObs[i][j].GetComponent<OTSprite>().frameName = "empty";
 					mapObs[i][j].GetComponent<OTSprite>().depth = -1;
 				}
@@ -191,13 +198,29 @@ public class EditorScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
-		if (activeSelection < 20 && Input.GetMouseButton (0) && !guiError && !loadFile && !saveFile && !guiInput)
+		if (tileList.Contains (activeSelection) && Input.GetMouseButton (0) && !guiError && !loadFile && !saveFile && !guiInput)
 		{
 			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
 			int selectX = (int)(Math.Floor (mouseLocation.x/32));
 			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
 			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
 				SetTypeByDraw(map[selectY][selectX]);
+				SetGraphics(map[selectY][selectX], mapObs[selectY][selectX]);
+			}
+		} else if (obsList.Contains (activeSelection) && Input.GetMouseButton (0) && !guiError && !loadFile && !saveFile && !guiInput) {
+			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
+			int selectX = (int)(Math.Floor (mouseLocation.x/32));
+			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
+			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+				SetObsByDraw(map[selectY][selectX]);
+				SetGraphics(map[selectY][selectX], mapObs[selectY][selectX]);
+			}
+		} else if (activeSelection == "empty" && Input.GetMouseButton (0) && !guiError && !loadFile && !saveFile && !guiInput) {
+			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
+			int selectX = (int)(Math.Floor (mouseLocation.x/32));
+			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
+			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+				SetObsByDraw(map[selectY][selectX]);
 				SetGraphics(map[selectY][selectX], mapObs[selectY][selectX]);
 			}
 		} else if (Input.GetMouseButtonDown (0) && !guiError && !loadFile && !saveFile && !guiInput) {
@@ -209,59 +232,60 @@ public class EditorScript : MonoBehaviour {
 				anchorYX = map[selectY][selectX];
 				anchor = ReturnTileCenter(map[selectY][selectX].transform.position);
 			}
-		}
-		// Deletes node on right click. Lone nodes remain.
-		if (activeSelection >= 20 && Input.GetMouseButtonDown (1) && !guiError && !loadFile && !saveFile && !guiInput)
-		{
-			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
-			int selectX = (int)(Math.Floor (mouseLocation.x/32));
-			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
-			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
-				if (activeSelection == 20) {
-					if (map[selectY][selectX].GetComponent<EditorTile>().consIn.Contains(connectionEntry))
-						map[selectY][selectX].GetComponent<EditorTile>().consIn.Remove(connectionEntry);
-					if (map[selectY][selectX].GetComponent<EditorTile>().consOut.Contains(connectionEntry))
-						map[selectY][selectX].GetComponent<EditorTile>().consOut.Remove(connectionEntry);
-					DrawConnections(connectionEntry);
-				} else {
-					if (map[selectY][selectX].GetComponent<EditorTile>().locksIn.Contains(lockEntry))
-						map[selectY][selectX].GetComponent<EditorTile>().locksIn.Remove(lockEntry);
-					if (map[selectY][selectX].GetComponent<EditorTile>().locksOut.Contains(lockEntry))
-						map[selectY][selectX].GetComponent<EditorTile>().locksOut.Remove(lockEntry);
-					DrawLocks(lockEntry);
+		} else {
+			// Deletes node on right click. Lone nodes remain.
+			if (Input.GetMouseButtonDown (1) && !guiError && !loadFile && !saveFile && !guiInput)
+			{
+				Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
+				int selectX = (int)(Math.Floor (mouseLocation.x/32));
+				int selectY = (int)(Math.Floor (mouseLocation.y/-32));
+				if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+					if (activeSelection == "conn") {
+						if (map[selectY][selectX].GetComponent<EditorTile>().consIn.Contains(connectionEntry))
+							map[selectY][selectX].GetComponent<EditorTile>().consIn.Remove(connectionEntry);
+						if (map[selectY][selectX].GetComponent<EditorTile>().consOut.Contains(connectionEntry))
+							map[selectY][selectX].GetComponent<EditorTile>().consOut.Remove(connectionEntry);
+						DrawConnections(connectionEntry);
+					} else {
+						if (map[selectY][selectX].GetComponent<EditorTile>().locksIn.Contains(lockEntry))
+							map[selectY][selectX].GetComponent<EditorTile>().locksIn.Remove(lockEntry);
+						if (map[selectY][selectX].GetComponent<EditorTile>().locksOut.Contains(lockEntry))
+							map[selectY][selectX].GetComponent<EditorTile>().locksOut.Remove(lockEntry);
+						DrawLocks(lockEntry);
+					}
 				}
 			}
-		}
-		if (activeSelection >= 20 && Input.GetMouseButton (0) && !guiError && !loadFile && !saveFile && !guiInput && validAnchor == true)
-		{
-			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
-			DrawVerticies(anchor,mouseLocation);
-		}
-		if (activeSelection >= 20 && Input.GetMouseButtonUp (0) && !guiError && !loadFile && !saveFile && !guiInput)
-		{
-			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
-			int selectX = (int)(Math.Floor (mouseLocation.x/32));
-			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
-			validAnchor = false;
-			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
-				// Set the connection (20) or lockgroup (21)
-				if (activeSelection == 20 && map[selectY][selectX] != anchorYX) // Don't add nodes if they start/end on same tile
-				{	if (!map[selectY][selectX].GetComponent<EditorTile>().consIn.Contains(connectionEntry)) //Don't add node if it already exists
-						map[selectY][selectX].GetComponent<EditorTile>().consIn.Add(connectionEntry);
-					if (!anchorYX.GetComponent<EditorTile>().consOut.Contains(connectionEntry))
-						anchorYX.GetComponent<EditorTile>().consOut.Add(connectionEntry);
-					DrawConnections(connectionEntry);
-				} 
-				else if (activeSelection == 21 && map[selectY][selectX] != anchorYX)
-				{	if (!map[selectY][selectX].GetComponent<EditorTile>().locksIn.Contains(lockEntry))
-						map[selectY][selectX].GetComponent<EditorTile>().locksIn.Add(lockEntry);
-					if (!anchorYX.GetComponent<EditorTile>().locksOut.Contains(lockEntry))
-						anchorYX.GetComponent<EditorTile>().locksOut.Add (lockEntry);
-					
-					DrawLocks(lockEntry);
-				}
+			if (Input.GetMouseButton (0) && !guiError && !loadFile && !saveFile && !guiInput && validAnchor == true)
+			{
+				Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
+				DrawVerticies(anchor,mouseLocation);
 			}
-			DrawVerticies(anchor,anchor); // Removing mouse line from view
+			if (Input.GetMouseButtonUp (0) && !guiError && !loadFile && !saveFile && !guiInput)
+			{
+				Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
+				int selectX = (int)(Math.Floor (mouseLocation.x/32));
+				int selectY = (int)(Math.Floor (mouseLocation.y/-32));
+				validAnchor = false;
+				if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+					// Set the connection (20) or lockgroup (21)
+					if (activeSelection == "conn" && map[selectY][selectX] != anchorYX) // Don't add nodes if they start/end on same tile
+					{	if (!map[selectY][selectX].GetComponent<EditorTile>().consIn.Contains(connectionEntry)) //Don't add node if it already exists
+							map[selectY][selectX].GetComponent<EditorTile>().consIn.Add(connectionEntry);
+						if (!anchorYX.GetComponent<EditorTile>().consOut.Contains(connectionEntry))
+							anchorYX.GetComponent<EditorTile>().consOut.Add(connectionEntry);
+						DrawConnections(connectionEntry);
+					} 
+					else if (activeSelection == "lock" && map[selectY][selectX] != anchorYX)
+					{	if (!map[selectY][selectX].GetComponent<EditorTile>().locksIn.Contains(lockEntry))
+							map[selectY][selectX].GetComponent<EditorTile>().locksIn.Add(lockEntry);
+						if (!anchorYX.GetComponent<EditorTile>().locksOut.Contains(lockEntry))
+							anchorYX.GetComponent<EditorTile>().locksOut.Add (lockEntry);
+						
+						DrawLocks(lockEntry);
+					}
+				}
+				DrawVerticies(anchor,anchor); // Removing mouse line from view
+			}
 		}
 	}
 	
@@ -271,75 +295,26 @@ public class EditorScript : MonoBehaviour {
 	
 	private void SetTypeByDraw(GameObject a)
 	{
-		switch (activeSelection) {
-		case 0:
-			a.GetComponent<EditorTile>().tileType = 1;
-			break;
-		case 1:
-			a.GetComponent<EditorTile>().tileType = 0;
-			break;
-		case 2:
-			a.GetComponent<EditorTile>().tileType = 3;
-			break;
-		case 3:
-			a.GetComponent<EditorTile>().tileType = 2;
-			break;
-		case 4:
-			a.GetComponent<EditorTile>().tileType = 4;
-			break;
-		case 5:
-			a.GetComponent<EditorTile>().tileType = 5;
-			break;
-		case 6:
-			a.GetComponent<EditorTile>().tileType = 7;
-			break;
-		case 7:
-			a.GetComponent<EditorTile>().obsType = 1;
-			break;
-		case 8:
-			a.GetComponent<EditorTile>().obsType = 4;
-			break;
-		case 9:
-			a.GetComponent<EditorTile>().obsType = 0;
-			break;
-		}
+		a.GetComponent<EditorTile>().tileType = activeSelection;
+		a.GetComponent<EditorTile>().tileSet = activeSet;
+	}
+	
+	private void SetObsByDraw(GameObject a)
+	{
+		a.GetComponent<EditorTile>().obsType = activeSelection;
 	}
 	
 	private void SetGraphics(GameObject a, GameObject b)
 	{
-		switch (a.GetComponent<EditorTile>().tileType) {
-		case 1:
-			a.GetComponent<OTSprite>().frameName = "wall";
-			break;
-		case 0:
-			a.GetComponent<OTSprite>().frameName = "floor";
-			break;
-		case 3:
-			a.GetComponent<OTSprite>().frameName = "button";
-			break;
-		case 2:
-			a.GetComponent<OTSprite>().frameName = "plate";
-			break;
-		case 4:
-			a.GetComponent<OTSprite>().frameName = "doorRL";
-			break;
-		case 5:
-			a.GetComponent<OTSprite>().frameName = "doorUD";
-			break;
-		case 7:
-			a.GetComponent<OTSprite>().frameName = "dangerFloor";
-			break;
-		}
-		switch (a.GetComponent<EditorTile>().obsType) {
-		case 0:
+		a.GetComponent<OTSprite>().frameName =
+			"ed_"+a.GetComponent<EditorTile>().tileType+
+			a.GetComponent<EditorTile>().tileSet.ToString ();
+		
+		if (a.GetComponent<EditorTile>().obsType == "")
 			b.GetComponent<OTSprite>().frameName = "empty";
-			break;
-		case 1:
-			b.GetComponent<OTSprite>().frameName = "player";
-			break;
-		case 4:
-			b.GetComponent<OTSprite>().frameName = "box";
-			break;
+		else {
+			b.GetComponent<OTSprite>().frameName =
+				"ed_"+a.GetComponent<EditorTile>().obsType+"0";
 		}
 	}
 	
@@ -386,15 +361,16 @@ public class EditorScript : MonoBehaviour {
 		using (XmlWriter writer = XmlWriter.Create(filePath,settings)) {
 			writer.WriteStartDocument ();
 			writer.WriteStartElement ("document");
-			writer.WriteElementString ("version", "2.0");
+			writer.WriteElementString ("version", "3.0");
 			writer.WriteElementString ("width", gridW.ToString ());
 			writer.WriteElementString ("height", gridH.ToString ());
 			foreach (List<GameObject> i in map) {
 				writer.WriteStartElement ("y");
 				foreach (GameObject j in i) {
 					writer.WriteStartElement ("x");
-					writer.WriteElementString ("type",j.GetComponent<EditorTile>().tileType.ToString ());
-					writer.WriteElementString ("obs",j.GetComponent<EditorTile>().obsType.ToString ());
+					writer.WriteElementString ("type",j.GetComponent<EditorTile>().tileType);
+					writer.WriteElementString ("tset",j.GetComponent<EditorTile>().tileSet.ToString ());
+					writer.WriteElementString ("obs",j.GetComponent<EditorTile>().obsType);
 					writer.WriteStartElement ("connections");
 					foreach (int cons in j.GetComponent<EditorTile>().consIn) {
 						writer.WriteElementString ("in", cons.ToString());
@@ -449,12 +425,11 @@ public class EditorScript : MonoBehaviour {
 						fileVersion = read.ReadContentAsDouble ();
 						break;
 					case "width":
-						if (fileVersion == 0) {
+						if (fileVersion <= 2.0) {
 							read.Close ();
 							LoadOldLevel ();
 							break;
 						}
-						Debug.Log ("This is a new save file!");
 						read.Read ();
 						tempW = read.Value;
 						gridW = int.Parse (tempW);
@@ -482,11 +457,15 @@ public class EditorScript : MonoBehaviour {
 						break;
 					case "type":
 						read.Read ();
-						map[j][i].GetComponent<EditorTile>().tileType = int.Parse (read.Value);
+						map[j][i].GetComponent<EditorTile>().tileType = read.Value;
+						break;
+					case "tset":
+						read.Read ();
+						map[j][i].GetComponent<EditorTile>().tileSet = int.Parse (read.Value);
 						break;
 					case "obs":
 						read.Read ();
-						map[j][i].GetComponent<EditorTile>().obsType = int.Parse (read.Value);
+						map[j][i].GetComponent<EditorTile>().obsType = read.Value;
 						break;
 					case "connections":	
 						consGroup = true;
@@ -571,11 +550,45 @@ public class EditorScript : MonoBehaviour {
 						break;
 					case "type":
 						read.Read ();
-						map[j][i].GetComponent<EditorTile>().tileType = int.Parse (read.Value);
+						int type = int.Parse (read.Value);
+						string tstr = "Wall";
+						int tset = 0;
+						switch (type) {
+						case 0:
+							tstr = "Floor";
+							break;
+						case 2:
+							tstr = "Plate";
+							break;
+						case 3:
+						case 6:
+							tstr = "Button";
+							break;
+						case 4:
+							tstr = "Door";
+							tset = 1;
+							break;
+						case 5:
+							tstr = "Door";
+							break;
+						}
+						map[j][i].GetComponent<EditorTile>().tileType = tstr;
+						map[j][i].GetComponent<EditorTile>().tileSet = tset;
 						break;
 					case "obs":
 						read.Read ();
-						map[j][i].GetComponent<EditorTile>().obsType = int.Parse (read.Value);
+						type = int.Parse (read.Value);
+						tstr = "";
+						tset = 0;
+						switch (type) {
+						case 1:
+							tstr = "Spawn";
+							break;
+						case 4:
+							tstr = "Box";
+							break;
+						}
+						map[j][i].GetComponent<EditorTile>().obsType = tstr;
 						break;
 					case "connections":	
 						consGroup = true;
@@ -593,6 +606,32 @@ public class EditorScript : MonoBehaviour {
 								activeCons.Add (node);
 						} else {
 							map[j][i].GetComponent<EditorTile>().locksIn.Add(node);
+							map[j][i].GetComponent<EditorTile>().locksOut.Add(node);
+							if (!activeLocks.Contains (node))
+								activeLocks.Add (node);
+						}
+						break;
+					case "in":
+						read.Read ();
+						node = read.ReadContentAsInt();
+						if (consGroup) {
+							map[j][i].GetComponent<EditorTile>().consIn.Add(node);
+							if (!activeCons.Contains (node))
+								activeCons.Add (node);
+						} else {
+							map[j][i].GetComponent<EditorTile>().locksIn.Add(node);
+							if (!activeLocks.Contains (node))
+								activeLocks.Add (node);
+						}
+						break;
+					case "out":
+						read.Read ();
+						node = read.ReadContentAsInt();
+						if (consGroup) {
+							map[j][i].GetComponent<EditorTile>().consOut.Add(node);
+							if (!activeCons.Contains (node))
+								activeCons.Add (node);
+						} else {
 							map[j][i].GetComponent<EditorTile>().locksOut.Add(node);
 							if (!activeLocks.Contains (node))
 								activeLocks.Add (node);
@@ -649,28 +688,59 @@ public class EditorScript : MonoBehaviour {
 		}
 		
 		GUI.Label (new Rect(Screen.width-(32*2)-10,5,50,30), "Tiles:");
-		for (int i = 0; i < buttonGfx.Length-3; i++) {
+		for (int i = 0; i < tileList.Length; i++) {
 			GUIStyle buttonStyle;
-			if (i == activeSelection)
+			if (tileList[i] == activeSelection)
 				buttonStyle = activeButton;
 			else
 				buttonStyle = passiveButton;
-			if (GUI.Button (new Rect(Screen.width-(32*(2-i%2))-10,(32+5)*(i/2)+40,32,32), buttonGfx[i], buttonStyle)) {
+			Texture tex;
+			int tSet = 0;
+			if (activeSelection.Equals(tileList[i])) {
+				if (Resources.Load ("Editor/ed_"+tileList[i]+(activeSet+1).ToString ()) == null) {
+					tex = (Texture) Resources.Load ("Editor/ed_"+tileList[i]+0.ToString (), typeof(Texture));
+				} else {
+					tex = (Texture) Resources.Load ("Editor/ed_"+tileList[i]+(activeSet+1).ToString (), typeof(Texture));
+					tSet = activeSet+1;
+				}
+			} else
+				tex = (Texture) Resources.Load ("Editor/ed_"+tileList[i]+0.ToString (), typeof(Texture));
+			if (GUI.Button (new Rect(Screen.width-(32*(2-i%2))-10,(32+5)*(i/2)+40,32,32), tex, buttonStyle)) {
 				guiInput = true;
-				activeSelection = i;
+				activeSelection = tileList[i];
+				activeSet = tSet;
 			}
 		}
 		
-		GUI.Label (new Rect(Screen.width-(32*2)-10,(32+5)*(buttonGfx.Length/2-1)+40,70,30), "Spawns:");
-		for (int i = buttonGfx.Length-3; i < buttonGfx.Length; i++) {
+		GUI.Label (new Rect(Screen.width-(32*2)-10,(32+5)*(tileList.Length/2+1)+40,70,30), "Spawns:");
+		for (int i = 0; i < obsList.Length+1; i++) {
+			Texture tex;
+			int oSet = 0;
 			GUIStyle buttonStyle;
-			if (i == activeSelection)
-				buttonStyle = activeButton;
-			else
+			if (i == obsList.Length) {
 				buttonStyle = passiveButton;
-			if (GUI.Button (new Rect(Screen.width-(32*(2-(i+3)%2))-10,(32+5)*((i+3)/2)+40,32,32), buttonGfx[i], buttonStyle)) {
-				guiInput = true;
-				activeSelection = i;
+				tex = (Texture) Resources.Load ("empty", typeof(Texture));
+				if (GUI.Button (new Rect(Screen.width-(32*(2-(i+3)%2))-10,(32+5)*((i+3)/2)+40,32,32), tex, buttonStyle)) {
+					guiInput = true;
+					activeSelection = "empty";
+				}
+			} else {
+				if (obsList[i].Equals (activeSelection))
+					buttonStyle = activeButton;
+				else
+					buttonStyle = passiveButton;
+				if (activeSelection.Equals(obsList[i])) {
+					if (Resources.Load ("Editor/ed_"+obsList[i]+(activeSet+1).ToString ()) == null)
+						tex = (Texture) Resources.Load ("Editor/ed_"+obsList[i]+activeSet.ToString (), typeof(Texture));
+					else
+						tex = (Texture) Resources.Load ("Editor/ed_"+obsList[i]+(activeSet+1).ToString (), typeof(Texture));
+				} else
+					tex = (Texture) Resources.Load ("Editor/ed_"+obsList[i]+0.ToString (), typeof(Texture));
+				if (GUI.Button (new Rect(Screen.width-(32*(2-(i+3)%2))-10,(32+5)*((tileList.Length+i+3)/2)+40,32,32), tex, buttonStyle)) {
+					guiInput = true;
+					activeSelection = obsList[i];
+					activeSet = oSet;
+				}
 			}
 		}
 		
@@ -686,33 +756,36 @@ public class EditorScript : MonoBehaviour {
 			browser = BrowserSetup ();
 		}
 		
-		GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+200,90,30), "Connections:");
+		GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+200,90,30), "Connections:");
 	
-		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+240,90,30), ref showConList, ref connectionEntry, new GUIContent(connectionEntry.ToString()), consDropdown, activeButton)) {
+		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+240,90,30), ref showConList, ref connectionEntry, new GUIContent(connectionEntry.ToString()), consDropdown, activeButton)) {
 			conPicked = true;
 			connectionEntry = int.Parse (consDropdown[connectionEntry].text);
 			DrawConnections (connectionEntry);
-			activeSelection = 20;
+			activeSelection = "conn";
 		} else
 			conPicked = false;
 	
-		if (GUI.Button (new Rect(Screen.width-(32*2)-80,(32+5)*(buttonGfx.Length/2)+240,40,30), "Add")) {
+		if (GUI.Button (new Rect(Screen.width-(32*2)-80,(32+5)*(tileList.Length/2+obsList.Length/2)+240,40,30), "Add")) {
 //			activeSelection = 20;
 		}
-		GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+280,150,30), "Lock Groups:");
 		
-		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(buttonGfx.Length/2)+320,90,30), ref showLockList, ref lockEntry, new GUIContent(lockEntry.ToString()), locksDropdown, activeButton)) {
+		GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+280,150,30), "Lock Groups:");
+		
+		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+320,90,30), ref showLockList, ref lockEntry, new GUIContent(lockEntry.ToString()), locksDropdown, activeButton)) {
 			lockPicked = true;
 			lockEntry = int.Parse (locksDropdown[lockEntry].text);
 			DrawLocks(lockEntry);
-			activeSelection = 21;
+			activeSelection = "lock";
 		} else
 			lockPicked = false;
 		
-		if (GUI.Button (new Rect(Screen.width-(32*2)-80,(32+5)*(buttonGfx.Length/2)+320,40,30), "Add"))
+		if (GUI.Button (new Rect(Screen.width-(32*2)-80,(32+5)*(tileList.Length/2+obsList.Length/2)+320,40,30), "Add")) {
 //			activeSelection = 21;
+		}
 		
 		if (loadFile) {
+			Debug.Log ("Trying to load file loader window...");
 			browser.OnGUI ();
 			GUI.TextField (new Rect(Screen.width/2-300, 410, 500, 30), browser.CurrentDirectory);
 			if (filePath != null) {
