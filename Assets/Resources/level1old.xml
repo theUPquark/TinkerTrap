@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <document>
+  <version>2.0</version>
   <width>13</width>
   <height>19</height>
   <y>
@@ -253,121 +254,154 @@
       <type>5</type>
       <obs>0</obs>
       <connections>
-        <int>14</int>
-        <int>15</int>
+        <in>14</in>
+        <in>15</in>
+        <out>14</out>
+        <out>15</out>
       </connections>
       <locks>
-        <int>3</int>
+        <in>3</in>
+        <out>3</out>
       </locks>
     </x>
     <x>
       <type>5</type>
       <obs>0</obs>
       <connections>
-        <int>13</int>
-        <int>14</int>
+        <in>13</in>
+        <in>14</in>
+        <out>13</out>
+        <out>14</out>
       </connections>
       <locks>
-        <int>3</int>
+        <in>3</in>
+        <out>3</out>
       </locks>
     </x>
     <x>
       <type>5</type>
       <obs>0</obs>
       <connections>
-        <int>12</int>
-        <int>13</int>
+        <in>12</in>
+        <in>13</in>
+        <out>12</out>
+        <out>13</out>
       </connections>
       <locks>
-        <int>3</int>
+        <in>3</in>
+        <out>3</out>
       </locks>
     </x>
     <x>
       <type>5</type>
       <obs>0</obs>
       <connections>
-        <int>11</int>
-        <int>12</int>
+        <in>11</in>
+        <in>12</in>
+        <out>11</out>
+        <out>12</out>
       </connections>
       <locks>
-        <int>3</int>
+        <in>3</in>
+        <out>3</out>
       </locks>
     </x>
     <x>
       <type>5</type>
       <obs>0</obs>
       <connections>
-        <int>10</int>
-        <int>11</int>
+        <in>10</in>
+        <in>11</in>
+        <out>10</out>
+        <out>11</out>
       </connections>
       <locks>
-        <int>3</int>
+        <in>3</in>
+        <out>3</out>
       </locks>
     </x>
     <x>
       <type>5</type>
       <obs>0</obs>
       <connections>
-        <int>9</int>
-        <int>10</int>
+        <in>9</in>
+        <in>10</in>
+        <out>9</out>
+        <out>10</out>
       </connections>
       <locks>
-        <int>3</int>
+        <in>3</in>
+        <out>3</out>
       </locks>
     </x>
     <x>
       <type>5</type>
       <obs>0</obs>
       <connections>
-        <int>8</int>
-        <int>9</int>
+        <in>8</in>
+        <in>9</in>
+        <out>8</out>
+        <out>9</out>
       </connections>
       <locks>
-        <int>3</int>
+        <in>3</in>
+        <out>3</out>
       </locks>
     </x>
     <x>
       <type>5</type>
       <obs>0</obs>
       <connections>
-        <int>7</int>
-        <int>8</int>
+        <in>7</in>
+        <in>8</in>
+        <out>7</out>
+        <out>8</out>
       </connections>
       <locks>
-        <int>3</int>
+        <in>3</in>
+        <out>3</out>
       </locks>
     </x>
     <x>
       <type>5</type>
       <obs>0</obs>
       <connections>
-        <int>6</int>
-        <int>7</int>
+        <in>6</in>
+        <in>7</in>
+        <out>6</out>
+        <out>7</out>
       </connections>
       <locks>
-        <int>3</int>
+        <in>3</in>
+        <out>3</out>
       </locks>
     </x>
     <x>
       <type>5</type>
       <obs>0</obs>
       <connections>
-        <int>5</int>
-        <int>6</int>
+        <in>5</in>
+        <in>6</in>
+        <out>5</out>
+        <out>6</out>
       </connections>
       <locks>
-        <int>3</int>
+        <in>3</in>
+        <out>3</out>
       </locks>
     </x>
     <x>
       <type>5</type>
       <obs>0</obs>
       <connections>
-        <int>4</int>
-        <int>5</int>
+        <in>4</in>
+        <in>5</in>
+        <out>4</out>
+        <out>5</out>
       </connections>
       <locks>
-        <int>3</int>
+        <in>3</in>
+        <out>3</out>
       </locks>
     </x>
     <x>
@@ -492,10 +526,12 @@
       <type>2</type>
       <obs>0</obs>
       <connections>
-        <int>4</int>
+        <in>4</in>
+        <out>4</out>
       </connections>
       <locks>
-        <int>3</int>
+        <in>3</in>
+        <out>3</out>
       </locks>
     </x>
     <x>
@@ -508,10 +544,12 @@
       <type>2</type>
       <obs>0</obs>
       <connections>
-        <int>4</int>
+        <in>4</in>
+        <out>4</out>
       </connections>
       <locks>
-        <int>3</int>
+        <in>3</in>
+        <out>3</out>
       </locks>
     </x>
     <x>
@@ -906,10 +944,12 @@
       <type>5</type>
       <obs>0</obs>
       <connections>
-        <int>2</int>
+        <in>2</in>
+        <out>2</out>
       </connections>
       <locks>
-        <int>1</int>
+        <in>1</in>
+        <out>1</out>
       </locks>
     </x>
     <x>
@@ -928,10 +968,12 @@
       <type>3</type>
       <obs>0</obs>
       <connections>
-        <int>1</int>
+        <in>1</in>
+        <out>1</out>
       </connections>
       <locks>
-        <int>2</int>
+        <in>2</in>
+        <out>2</out>
       </locks>
     </x>
     <x>
@@ -1092,11 +1134,14 @@
       <type>2</type>
       <obs>0</obs>
       <connections>
-        <int>3</int>
+        <in>3</in>
+        <out>3</out>
       </connections>
       <locks>
-        <int>1</int>
-        <int>2</int>
+        <in>1</in>
+        <in>2</in>
+        <out>1</out>
+        <out>2</out>
       </locks>
     </x>
     <x>
@@ -1239,10 +1284,12 @@
       <type>4</type>
       <obs>0</obs>
       <connections>
-        <int>1</int>
+        <in>1</in>
+        <out>1</out>
       </connections>
       <locks>
-        <int>0</int>
+        <in>0</in>
+        <out>0</out>
       </locks>
     </x>
     <x>
@@ -1341,7 +1388,8 @@
       <type>5</type>
       <obs>0</obs>
       <connections>
-        <int>3</int>
+        <in>3</in>
+        <out>3</out>
       </connections>
       <locks />
     </x>
@@ -1387,10 +1435,12 @@
       <type>2</type>
       <obs>0</obs>
       <connections>
-        <int>2</int>
+        <in>2</in>
+        <out>2</out>
       </connections>
       <locks>
-        <int>1</int>
+        <in>1</in>
+        <out>1</out>
       </locks>
     </x>
     <x>
@@ -1483,10 +1533,12 @@
       <type>4</type>
       <obs>0</obs>
       <connections>
-        <int>1</int>
+        <in>1</in>
+        <out>1</out>
       </connections>
       <locks>
-        <int>0</int>
+        <in>0</in>
+        <out>0</out>
       </locks>
     </x>
     <x>
