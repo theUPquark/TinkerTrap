@@ -6,19 +6,25 @@ using System.Xml.Serialization;
 
 public class EditorTile : MonoBehaviour
 {
-    private int tile = 1;
-    private int obs = 0;
+    private string tile = "Wall";
+	private int tset = 0;
+    private string obs = "";
     private Dictionary<string,List<int>> connections = new Dictionary<string,List<int>>();
     private Dictionary<string,List<int>> lockGroups = new Dictionary<string,List<int>>();
 	
-	public int tileType {
+	public string tileType {
 		get { return tile; }
 		set { tile = value; }
 	}
 	
-	public int obsType {
+	public string obsType {
 		get { return obs; }
 		set { obs = value; }
+	}
+	
+	public int tileSet {
+		get { return tset; }
+		set { tset = value; }
 	}
 	
 	public List<int> consIn {
