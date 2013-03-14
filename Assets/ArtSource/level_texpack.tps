@@ -16253,6 +16253,7 @@
             <filename>PlateAnimFrames/Plate0_on_0038.png</filename>
             <filename>PlateAnimFrames/Plate0_on_0039.png</filename>
             <filename>PlateAnimFrames/Plate0_on_0040.png</filename>
+            <filename>ElecAnimFrames</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
