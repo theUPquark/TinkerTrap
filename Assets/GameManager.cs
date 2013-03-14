@@ -170,6 +170,7 @@ public class GameManager : MonoBehaviour {
 			int j = -1;
 			bool consGroup = true;
 			string squareName = "";
+			string tileType = "Wall";
 			while (read.Read ()) {
 				if (read.IsStartElement ())
 				{
@@ -193,39 +194,23 @@ public class GameManager : MonoBehaviour {
 					case "type":
 						read.Read ();
 						squareName = "tile_"+i+"_"+j;
-						switch (read.ReadContentAsInt ()) {
-						case 0:
-							gameB.Add(squareName,(Tile)(new Floor(i,j,0)));
-							break;
-						case 1:
-						case 7:
-							gameB.Add (squareName, (Tile)(new Wall(i,j,0)));
-							break;
-						case 2:
-							gameB.Add (squareName, (Tile)(new Plate(i,j,0)));
-							break;
-						case 3:
-						case 6:
-							gameB.Add (squareName, (Tile)(new Button(i,j,0)));
-							break;
-						case 4:
-							gameB.Add (squareName, (Tile)(new Door(i,j,1)));
-							break;
-						case 5:
-							gameB.Add (squareName, (Tile)(new Door(i,j,0)));
-							break;
-						}
+						tileType = read.ReadContentAsString ();
+						break;
+					case "tset":
+						read.Read ();
+						var tempTile = Type.GetType (tileType);
+						gameB.Add (squareName, (Tile)Activator.CreateInstance(tempTile, new object[] {i,j,read.ReadContentAsInt ()}));
 						break;
 					case "obs":
 						read.Read ();
 						Debug.Log ("Reading obstacles...");
-						switch (read.ReadContentAsInt()) {
-						case 1: // Player starting location, probably only for first level.
+						switch (read.ReadContentAsString()) {
+						case "Spawn": // Player starting location, probably only for first level.
 							Debug.Log ("Player found!");
 							players[activeBot-1].setXY(i,j);
 							gameObs.Add (players[activeBot-1]);
 							break;
-						case 4:
+						case "Box":
 							Debug.Log ("Box found!");
 							gameObs.Add (new Box(4, i, j));
 							break;

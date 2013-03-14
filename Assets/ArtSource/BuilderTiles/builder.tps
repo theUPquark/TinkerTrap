@@ -141,16 +141,16 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>box.png</filename>
-            <filename>button.png</filename>
-            <filename>dangerFloor.png</filename>
-            <filename>doorRL.png</filename>
-            <filename>doorUD.png</filename>
-            <filename>floor.png</filename>
-            <filename>plate.png</filename>
-            <filename>player.png</filename>
-            <filename>wall.png</filename>
             <filename>empty.png</filename>
+            <filename>ed_Box0.png</filename>
+            <filename>ed_Button0.png</filename>
+            <filename>ed_Door0.png</filename>
+            <filename>ed_Door1.png</filename>
+            <filename>ed_Electrified0.png</filename>
+            <filename>ed_Plate0.png</filename>
+            <filename>ed_Spawn0.png</filename>
+            <filename>ed_Wall0.png</filename>
+            <filename>ed_Floor0.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
