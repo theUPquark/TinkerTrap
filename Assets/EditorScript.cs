@@ -47,8 +47,8 @@ public class EditorScript : MonoBehaviour {
 	private bool showLockList = false;
 	private int connectionEntry = 0;
 	private int lockEntry = 0;
-	private GUIContent[] consDropdown = {new GUIContent("1"),new GUIContent("2"),new GUIContent("3")};
-	private GUIContent[] locksDropdown = {new GUIContent("1"),new GUIContent("2"),new GUIContent("3")};
+	private GUIContent[] consDropdown = {new GUIContent("1")};
+	private GUIContent[] locksDropdown = {new GUIContent("1")};
 	private bool conPicked = false;
 	private bool lockPicked = false;
 	
@@ -66,10 +66,9 @@ public class EditorScript : MonoBehaviour {
 		line.GetComponent<LineRenderer>().SetColors(Color.white, Color.blue);
 		SetGrid();
 		
-		// Make some content for the popup list
-//		consDropdown = new GUIContent[0];
-//		
-//		locksDropdown = new GUIContent[0];
+		// Sync active lists to dropdown content
+		activeCons.Add(1);
+		activeLocks.Add(1);
 	}
 	
 	private Vector3 ReturnTileCenter (Vector3 v)
@@ -840,7 +839,10 @@ public class EditorScript : MonoBehaviour {
 			conPicked = false;
 	
 		if (GUI.Button (new Rect(Screen.width-(32*2)-80,(32+5)*(tileList.Length/2+obsList.Length/2)+240,40,30), "Add")) {
-//			activeSelection = 20;
+			activeCons.Add(activeCons.Count + 1);
+			consDropdown = new GUIContent[activeCons.Count];
+				for (int i = 0; i < consDropdown.Length; i++)
+					consDropdown[i] = new GUIContent(activeCons[i].ToString());
 		}
 		
 		GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+280,150,30), "Lock Groups:");
@@ -854,7 +856,10 @@ public class EditorScript : MonoBehaviour {
 			lockPicked = false;
 		
 		if (GUI.Button (new Rect(Screen.width-(32*2)-80,(32+5)*(tileList.Length/2+obsList.Length/2)+320,40,30), "Add")) {
-//			activeSelection = 21;
+			activeLocks.Add(activeLocks.Count + 1);
+			locksDropdown = new GUIContent[activeLocks.Count];
+				for (int i = 0; i < locksDropdown.Length; i++)
+					locksDropdown[i] = new GUIContent(activeLocks[i].ToString());
 		}
 		
 		if (loadFile) {
