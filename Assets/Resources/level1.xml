@@ -8,13 +8,8 @@
       <type>Wall</type>
       <tset>0</tset>
       <obs />
-      <connections>
-        <out>9</out>
-        <out>10</out>
-      </connections>
+      <connections />
       <locks>
-        <out>7</out>
-        <out>8</out>
         <out>9</out>
         <out>10</out>
       </locks>
@@ -23,13 +18,8 @@
       <type>Wall</type>
       <tset>0</tset>
       <obs />
-      <connections>
-        <in>9</in>
-        <in>10</in>
-      </connections>
+      <connections />
       <locks>
-        <in>7</in>
-        <in>8</in>
         <in>9</in>
         <in>10</in>
       </locks>
@@ -115,7 +105,9 @@
       <type>Generator</type>
       <tset>1</tset>
       <obs />
-      <connections />
+      <connections>
+        <out>9</out>
+      </connections>
       <locks />
     </x>
     <x>
@@ -271,11 +263,13 @@
       <locks />
     </x>
     <x>
-      <type>Electrified</type>
-      <tset>0</tset>
+      <type>Door</type>
+      <tset>1</tset>
       <obs />
       <connections>
-        <in>1</in>
+        <in>7</in>
+        <in>6</in>
+        <in>5</in>
       </connections>
       <locks />
     </x>
@@ -313,7 +307,9 @@
       <type>Door</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>0</in>
+      </connections>
       <locks>
         <in>5</in>
       </locks>
@@ -509,7 +505,7 @@
       <tset>0</tset>
       <obs />
       <connections>
-        <out>6</out>
+        <out>10</out>
       </connections>
       <locks />
     </x>
@@ -607,6 +603,7 @@
       <obs />
       <connections>
         <in>8</in>
+        <in>9</in>
       </connections>
       <locks />
     </x>
@@ -639,6 +636,8 @@
       <obs />
       <connections>
         <in>6</in>
+        <in>10</in>
+        <in>5</in>
       </connections>
       <locks />
     </x>
@@ -660,7 +659,9 @@
       <type>Floor</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <out>1</out>
+      </connections>
       <locks />
     </x>
     <x>
@@ -751,7 +752,7 @@
       <tset>0</tset>
       <obs />
       <connections>
-        <out>6</out>
+        <out>7</out>
       </connections>
       <locks />
     </x>
@@ -816,6 +817,7 @@
       <tset>0</tset>
       <obs />
       <connections>
+        <in>1</in>
         <out>8</out>
       </connections>
       <locks />
@@ -942,7 +944,9 @@
       <connections>
         <in>1</in>
       </connections>
-      <locks />
+      <locks>
+        <in>4</in>
+      </locks>
     </x>
     <x>
       <type>Floor</type>
@@ -1068,7 +1072,9 @@
       <connections>
         <in>1</in>
       </connections>
-      <locks />
+      <locks>
+        <in>4</in>
+      </locks>
     </x>
     <x>
       <type>Floor</type>
@@ -1155,6 +1161,9 @@
       <obs />
       <connections>
         <in>6</in>
+        <in>7</in>
+        <in>10</in>
+        <in>5</in>
       </connections>
       <locks />
     </x>
@@ -1188,7 +1197,9 @@
       <connections>
         <in>1</in>
       </connections>
-      <locks />
+      <locks>
+        <in>4</in>
+      </locks>
     </x>
     <x>
       <type>Wall</type>
@@ -1219,9 +1230,7 @@
       <type>Button</type>
       <tset>0</tset>
       <obs />
-      <connections>
-        <in>7</in>
-      </connections>
+      <connections />
       <locks>
         <in>4</in>
         <out>4</out>
@@ -1298,7 +1307,9 @@
       <type>Plate</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <out>0</out>
+      </connections>
       <locks>
         <out>5</out>
       </locks>
@@ -1314,7 +1325,9 @@
       <type>Plate</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <out>0</out>
+      </connections>
       <locks>
         <out>5</out>
       </locks>
@@ -1349,7 +1362,9 @@
       <connections>
         <in>1</in>
       </connections>
-      <locks />
+      <locks>
+        <in>7</in>
+      </locks>
     </x>
     <x>
       <type>Floor</type>
@@ -1469,7 +1484,9 @@
       <connections>
         <in>1</in>
       </connections>
-      <locks />
+      <locks>
+        <in>7</in>
+      </locks>
     </x>
     <x>
       <type>Electrified</type>
@@ -1478,7 +1495,9 @@
       <connections>
         <in>1</in>
       </connections>
-      <locks />
+      <locks>
+        <in>7</in>
+      </locks>
     </x>
     <x>
       <type>Wall</type>
@@ -1594,11 +1613,11 @@
     <x>
       <type>Plate</type>
       <tset>0</tset>
-      <obs>Box</obs>
-      <connections>
+      <obs />
+      <connections />
+      <locks>
         <out>7</out>
-      </connections>
-      <locks />
+      </locks>
     </x>
     <x>
       <type>Wall</type>
@@ -1870,6 +1889,7 @@
       </connections>
       <locks>
         <in>0</in>
+        <in>8</in>
       </locks>
     </x>
     <x>
@@ -1947,7 +1967,6 @@
       <tset>0</tset>
       <obs />
       <connections>
-        <in>1</in>
         <in>4</in>
       </connections>
       <locks />
@@ -2103,6 +2122,7 @@
       <connections />
       <locks>
         <out>0</out>
+        <out>8</out>
       </locks>
     </x>
     <x>
