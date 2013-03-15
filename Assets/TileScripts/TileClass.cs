@@ -108,7 +108,10 @@ public abstract class TileClass : Tile
 	
 	public virtual void interact() {}
 	
-	public virtual void interact(Obstacle a) {}
+	public virtual void interact(Obstacle a)
+	{
+		this.interact ();
+	}
 	
 	public virtual void update() {}
 	

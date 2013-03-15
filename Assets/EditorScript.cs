@@ -220,7 +220,7 @@ public class EditorScript : MonoBehaviour {
 			int selectX = (int)(Math.Floor (mouseLocation.x/32));
 			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
 			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
-				SetObsByDraw(map[selectY][selectX]);
+				map[selectY][selectX].GetComponent<EditorTile>().obsType = "";
 				SetGraphics(map[selectY][selectX], mapObs[selectY][selectX]);
 			}
 		} else if (Input.GetMouseButtonDown (0) && !guiError && !loadFile && !saveFile && !guiInput) {
@@ -727,8 +727,8 @@ public class EditorScript : MonoBehaviour {
 			GUIStyle buttonStyle;
 			if (i == obsList.Length) {
 				buttonStyle = passiveButton;
-				tex = (Texture) Resources.Load ("empty", typeof(Texture));
-				if (GUI.Button (new Rect(Screen.width-(32*(2-(i+3)%2))-10,(32+5)*((i+3)/2)+40,32,32), tex, buttonStyle)) {
+				tex = (Texture) Resources.Load ("Editor/empty", typeof(Texture));
+				if (GUI.Button (new Rect(Screen.width-(32*(2-(i+1)%2))-10,(32+5)*((tileList.Length+i+4)/2)+40,32,32), tex, buttonStyle)) {
 					guiInput = true;
 					activeSelection = "empty";
 				}
@@ -744,7 +744,7 @@ public class EditorScript : MonoBehaviour {
 						tex = (Texture) Resources.Load ("Editor/ed_"+obsList[i]+(activeSet+1).ToString (), typeof(Texture));
 				} else
 					tex = (Texture) Resources.Load ("Editor/ed_"+obsList[i]+0.ToString (), typeof(Texture));
-				if (GUI.Button (new Rect(Screen.width-(32*(2-(i+3)%2))-10,(32+5)*((tileList.Length+i+3)/2)+40,32,32), tex, buttonStyle)) {
+				if (GUI.Button (new Rect(Screen.width-(32*(2-(i+1)%2))-10,(32+5)*((tileList.Length+i+4)/2)+40,32,32), tex, buttonStyle)) {
 					guiInput = true;
 					activeSelection = obsList[i];
 					activeSet = oSet;
