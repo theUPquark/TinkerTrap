@@ -36,6 +36,9 @@ public interface Obstacle
 
 	void setY (double y);
 	
+	double getSpeed (double speed);
+	double getSpeed (double speed, Obstacle source);
+	
 	void setDepth(Dictionary<string, Tile> tileSheet);
 }
 
