@@ -22,6 +22,18 @@ public class Electrified : Floor, Tile {
 		return true;
 	}
 	
+	public virtual bool isActivated() {
+		foreach (List<Tile> conList in locks[1].Values)
+			foreach (Tile t in conList)
+				if (!((TileClass)t).locked && t != this)
+					return false;
+		foreach (List<Tile> conList in connections[1].Values)
+			foreach (Tile t in conList)
+				if (((TileClass)t).powered)
+					return true;
+		return false;
+	}
+	
 	public override void update ()
 	{
 		if (isActivated ())

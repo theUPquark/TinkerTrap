@@ -30,8 +30,10 @@ public class Generator : TileClass, Tile {
 	
 	public override void act(List<Obstacle> objs) {
 		if (botCharge == true) {
-			if (powered == false)
+			if (powered == false) {
 				os.PlayOnce(this.GetType ().Name+tileSet.ToString()+"_on");
+				powered = true;
+			}
 			if (Time.time >= endTime) {
 				endTime = 0;
 				botCharge = false;
