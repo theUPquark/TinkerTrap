@@ -79,8 +79,27 @@ public class EditorScript : MonoBehaviour {
 	
 	private void DrawVerticies(Vector3 a, Vector3 b)
 	{
+		line.GetComponent<LineRenderer>().SetVertexCount(2);
 		line.GetComponent<LineRenderer>().SetPosition(0, a);
 		line.GetComponent<LineRenderer>().SetPosition(1, b);
+	}
+	
+	private void DragBox(Vector3 a, Vector3 c)
+	{	/* a b
+		 * d c
+		 */
+		line.GetComponent<LineRenderer>().SetVertexCount(5);
+		line.GetComponent<LineRenderer>().SetPosition(0,a);
+		
+		Vector3 b = new Vector3(c.x,a.y,a.z);
+		line.GetComponent<LineRenderer>().SetPosition(1,b);
+		
+		line.GetComponent<LineRenderer>().SetPosition(2,c);
+		
+		Vector3 d = new Vector3(a.x,c.y,a.z);
+		line.GetComponent<LineRenderer>().SetPosition(3,d);
+		
+		line.GetComponent<LineRenderer>().SetPosition(4,a);
 	}
 	
 	private void DrawConnections(int num)
@@ -268,7 +287,6 @@ public class EditorScript : MonoBehaviour {
 				anchor = ReturnTileCenter(map[selectY][selectX].transform.position);
 			}
 		} else {
-			// Deletes node on right click. Lone nodes remain.
 			if (Input.GetMouseButtonDown (1) && !guiError && !loadFile && !saveFile && !guiInput)
 			{
 				Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
