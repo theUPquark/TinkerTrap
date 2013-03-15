@@ -50,6 +50,19 @@ public abstract class ObstacleClass
 	
 	public abstract int width { get; }
 	
+	
+	public virtual double getSpeed (double speed)
+	{
+		return Math.Floor (speed);
+	}
+	
+	public virtual double getSpeed (double speed, Obstacle source)
+	{
+		if (this.GetType ().IsSubclassOf (typeof(Player)))	// No pushing Players. 
+			return 0.0;
+		return Math.Floor (speed/2);						// Speed is always Floored. If the adjustment
+	}														// is lower than 1, no movement.
+	
 	// Returns the name of the Tile currently occupied by the Obstacle
 	public string onTile()	{
 		string tileName = "tile_"+xtile+"_"+ytile;

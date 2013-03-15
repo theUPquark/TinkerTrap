@@ -39,6 +39,9 @@ public abstract class Player : ObstacleClass, Obstacle
 	}
 	
 	public virtual void primary(Tile a) {}
-	public virtual void primary(Tile a, Obstacle b) {}
+	public virtual void primary(Tile a, Obstacle b)
+	{
+		this.primary(a);
+	}
 }
 

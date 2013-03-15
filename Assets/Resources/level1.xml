@@ -136,14 +136,18 @@
       <type>Electrified</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>1</in>
+      </connections>
       <locks />
     </x>
     <x>
       <type>Electrified</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>1</in>
+      </connections>
       <locks />
     </x>
     <x>
@@ -578,7 +582,9 @@
       <type>Electrified</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>1</in>
+      </connections>
       <locks />
     </x>
     <x>
@@ -913,7 +919,9 @@
       <type>Source</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <out>1</out>
+      </connections>
       <locks />
     </x>
     <x>
@@ -1106,7 +1114,9 @@
       <type>Electrified</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>1</in>
+      </connections>
       <locks />
     </x>
     <x>
@@ -1697,7 +1707,9 @@
       <type>Electrified</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>1</in>
+      </connections>
       <locks />
     </x>
     <x>

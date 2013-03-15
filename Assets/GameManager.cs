@@ -202,19 +202,21 @@ public class GameManager : MonoBehaviour {
 						gameB.Add (squareName, (Tile)Activator.CreateInstance(tempTile, new object[] {i,j,read.ReadContentAsInt ()}));
 						break;
 					case "obs":
-						read.Read ();
-						Debug.Log ("Reading obstacles...");
-						switch (read.ReadContentAsString()) {
-						case "Spawn": // Player starting location, probably only for first level.
-							players[activeBot-1].setXY(i,j);
-							gameObs.Add (players[activeBot-1]);
-							break;
-						case "Box":
-							gameObs.Add (new Box(4, i, j));
-							break;
-						case "Battery":
-							gameObs.Add (new Battery(4, i, j));
-							break;
+						if (!read.IsEmptyElement) {
+							read.Read ();
+							Debug.Log ("Reading obstacles...");
+							switch (read.ReadContentAsString()) {
+							case "Spawn": // Player starting location, probably only for first level.
+								players[activeBot-1].setXY(i,j);
+								gameObs.Add (players[activeBot-1]);
+								break;
+							case "Box":
+								gameObs.Add (new Box(4, i, j));
+								break;
+							case "Battery":
+								gameObs.Add (new Battery(4, i, j));
+								break;
+							}
 						}
 						break;
 					case "connections":	
@@ -316,20 +318,6 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void Update() {
-		
-		// track fps to adjust player movement speed
-	    timeleft -= Time.deltaTime;
-	    accum += Time.timeScale/Time.deltaTime;
-	    ++frames;
-		if( timeleft <= 0.0 ) {
-		    // display two fractional digits (f2 format)
-			float fps = accum/frames;
-			//	DebugConsole.Log(format,level);
-	        timeleft = updateInterval;
-	        accum = 0.0F;
-	        frames = 0;
-    	}
-		
 		if (running && !selection) {
 			if (!paused) {
 				
@@ -531,10 +519,10 @@ public class GameManager : MonoBehaviour {
 		//check if they are walls
 		if (tob.downY < mapHeight && tob.upY >= 0 &&
 			tob.leftX >= 0 && tob.rightX < mapWidth) {
-			tob.upleft = gameB["tile_"+tob.leftX+"_"+tob.upY].walkable();
-			tob.downleft = gameB["tile_"+tob.leftX+"_"+tob.downY].walkable();
-			tob.upright = gameB["tile_"+tob.rightX+"_"+tob.upY].walkable();
-			tob.downright = gameB["tile_"+tob.rightX+"_"+tob.downY].walkable();
+			tob.upleft = gameB["tile_"+tob.leftX+"_"+tob.upY].walkable(tob);
+			tob.downleft = gameB["tile_"+tob.leftX+"_"+tob.downY].walkable(tob);
+			tob.upright = gameB["tile_"+tob.rightX+"_"+tob.upY].walkable(tob);
+			tob.downright = gameB["tile_"+tob.rightX+"_"+tob.downY].walkable(tob);
 		}
 		if (tob.downY >= mapHeight)
 			tob.downleft = tob.downright = false;
@@ -553,11 +541,15 @@ public class GameManager : MonoBehaviour {
 	private double moveChar(Obstacle tob, double speed, int dirx, int diry)
 	{
 		
-		double speedAdj = 30/fps*speed;
+		double baseSpeed = tob.getSpeed (speed);
+		double speedAdj = baseSpeed;
+		
+		if (baseSpeed == 0)
+			return 0.0;
 		
 		//vert movement
 		//changing y with speed and taking old x
-		getMyCorners(tob, tob.posX, tob.posY+speed*diry);
+		getMyCorners(tob, tob.posX, tob.posY+baseSpeed*diry);
 		
 		//if going up
 		if (diry == -1)
@@ -569,13 +561,13 @@ public class GameManager : MonoBehaviour {
 						getMyCorners(iob, iob.posX, iob.posY);
 						if ( tob.upYPos < iob.downYPos && tob.downYPos > iob.upYPos &&
 							tob.leftXPos < iob.rightXPos && tob.rightXPos > iob.leftXPos) {
-							speedAdj = moveChar(iob, speedAdj/2, dirx, diry);
+							speedAdj = moveChar(iob, iob.getSpeed (speedAdj,tob), dirx, diry);
 						}
 					}
 				}
 				if (tob.GetType () == typeof(Bot1))
 					if (((Bot1)tob).grabbing)
-						speedAdj = moveChar (((Bot1)tob).grabbed, speedAdj/2, dirx, diry);
+						speedAdj = moveChar (((Bot1)tob).grabbed, ((Bot1)tob).grabbed.getSpeed (speedAdj,tob), dirx, diry);
 				tob.setY((float)(tob.posY+speedAdj*diry));
 			}
 			else
@@ -602,13 +594,13 @@ public class GameManager : MonoBehaviour {
 						getMyCorners(iob, iob.posX, iob.posY);
 						if ( tob.downYPos > iob.upYPos && tob.upYPos < iob.downYPos &&
 							tob.leftXPos < iob.rightXPos && tob.rightXPos > iob.leftXPos) {
-							speedAdj = moveChar(iob, speedAdj/2, dirx, diry);
+							speedAdj = moveChar(iob, iob.getSpeed (speedAdj,tob), dirx, diry);
 						}
 					}
 				}
 				if (tob.GetType () == typeof(Bot1))
 					if (((Bot1)tob).grabbing)
-						speedAdj = moveChar (((Bot1)tob).grabbed, speedAdj/2, dirx, diry);
+						speedAdj = moveChar (((Bot1)tob).grabbed, ((Bot1)tob).grabbed.getSpeed (speedAdj,tob), dirx, diry);
 				tob.setY((float)(tob.posY+speedAdj*diry));
 			}
 			else
@@ -626,7 +618,7 @@ public class GameManager : MonoBehaviour {
 		}
 		//horizontal movement
 		//changing x with speed and taking old y
-		getMyCorners(tob, tob.posX+speed*dirx, tob.posY);
+		getMyCorners(tob, tob.posX+baseSpeed*dirx, tob.posY);
 		//if going left
 		if (dirx == -1)
 		{
@@ -637,13 +629,13 @@ public class GameManager : MonoBehaviour {
 						getMyCorners(iob, iob.posX, iob.posY);
 						if ( tob.leftXPos < iob.rightXPos && tob.rightXPos > iob.leftXPos &&
 							tob.upYPos < iob.downYPos && tob.downYPos > iob.upYPos) {
-							speedAdj = moveChar(iob, speedAdj/2, dirx, diry);
+							speedAdj = moveChar(iob, iob.getSpeed (speedAdj,tob), dirx, diry);
 						}
 					}
 				}
 				if (tob.GetType () == typeof(Bot1))
 					if (((Bot1)tob).grabbing)
-						speedAdj = moveChar (((Bot1)tob).grabbed, speedAdj/2, dirx, diry);
+						speedAdj = moveChar (((Bot1)tob).grabbed, ((Bot1)tob).grabbed.getSpeed (speedAdj,tob), dirx, diry);
 				tob.setX((float)(tob.posX+speedAdj*dirx));
 			}
 			else
@@ -669,13 +661,13 @@ public class GameManager : MonoBehaviour {
 						getMyCorners(iob, iob.posX, iob.posY);
 						if ( tob.rightXPos > iob.leftXPos && tob.leftXPos < iob.rightXPos &&
 							tob.upYPos < iob.downYPos && tob.downYPos > iob.upYPos) {
-							speedAdj = moveChar(iob, speedAdj/2, dirx, diry);
+							speedAdj = moveChar(iob, iob.getSpeed (speedAdj,tob), dirx, diry);
 						}
 					}
 				}
 				if (tob.GetType () == typeof(Bot1))
 					if (((Bot1)tob).grabbing)
-						speedAdj = moveChar (((Bot1)tob).grabbed, speedAdj/2, dirx, diry);
+						speedAdj = moveChar (((Bot1)tob).grabbed, ((Bot1)tob).grabbed.getSpeed (speedAdj,tob), dirx, diry);
 				tob.setX((float)(tob.posX+speedAdj*dirx));
 			}
 			else

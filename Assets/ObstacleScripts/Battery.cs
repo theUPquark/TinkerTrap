@@ -19,6 +19,11 @@ public class Battery : ObstacleClass, Obstacle
 		get { return 42; }
 	}
 	
+	public override double getSpeed (double speed, Obstacle source)
+	{
+		return speed;
+	}
+	
 	private void onMove() {
 		if (gen != null) {
 			gen.interact (this);
