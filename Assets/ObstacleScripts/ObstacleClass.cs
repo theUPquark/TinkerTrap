@@ -23,9 +23,9 @@ public abstract class ObstacleClass
 	{
 		type = a;
 		if (this.GetType ().IsSubclassOf (typeof(Player)))
-			gfx = OT.CreateObject ("Bot1");
+			gfx = OT.CreateObject ("Bots");
 		else
-			gfx = OT.CreateObject ("Box1");
+			gfx = OT.CreateObject ("Obs");
 		os = gfx.GetComponent<OTSprite>();
 		setXY(x,y);
 	}
@@ -49,6 +49,19 @@ public abstract class ObstacleClass
 	public bool upleft { get {return canGo[3];} set {canGo[3] = value;} }
 	
 	public abstract int width { get; }
+	
+	
+	public virtual double getSpeed (double speed)
+	{
+		return Math.Floor (speed);
+	}
+	
+	public virtual double getSpeed (double speed, Obstacle source)
+	{
+		if (this.GetType ().IsSubclassOf (typeof(Player)))	// No pushing Players. 
+			return 0.0;
+		return Math.Floor (speed/2);						// Speed is always Floored. If the adjustment
+	}														// is lower than 1, no movement.
 	
 	// Returns the name of the Tile currently occupied by the Obstacle
 	public string onTile()	{

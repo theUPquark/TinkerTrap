@@ -4,10 +4,23 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>Box0.png</key>
+            <key>Battery0.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,0},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Box0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{128,0},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -27,7 +40,7 @@
             <key>size</key>
             <string>{256,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:cf020adc95848f81a367c4522ac26be3$</string>
+            <string>$TexturePacker:SmartUpdate:db99acb6d03644cd4779cd7387962fe0$</string>
             <key>textureFileName</key>
             <string>box1.png</string>
         </dict>

@@ -29,7 +29,7 @@ public class Bot1 : Player, Obstacle
 	
 	public override void primary(Tile a, Obstacle b)
 	{
-		if (!a.GetType ().IsSubclassOf (typeof(Player))) {
+		if (!b.GetType ().IsSubclassOf (typeof(Player))) {
 			if (!grabbing)
 				Grab (b);
 			else

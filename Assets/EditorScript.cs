@@ -11,8 +11,8 @@ public class EditorScript : MonoBehaviour {
 	
 	private List<List<GameObject>> map = new List<List<GameObject>>();
 	private List<List<GameObject>> mapObs = new List<List<GameObject>>();
-	private string[] tileList = new string[] {"Wall","Floor","Door","Button","Plate"};
-	private string[] obsList = new string[] {"Spawn", "Box"};
+	private string[] tileList = new string[] {"Wall","Floor","Door","Button","Plate","Electrified", "Generator", "Source"};
+	private string[] obsList = new string[] {"Spawn", "Box", "Battery"};
 	private string activeSelection = "";
 	private int activeSet = 0;
 	private int gridW = 10;
@@ -90,7 +90,7 @@ public class EditorScript : MonoBehaviour {
 			{
 				o.GetComponent<LineRenderer>().SetColors (new Color(197f/255f,244f/255f,184f/255f), new Color(22f/255f,148f/255f,64f/255f));
 				// Checking all tiles for num, using consOut
-				if ( o.GetComponent<EditorTile>().consIn.Contains(num))
+				if ( o.GetComponent<EditorTile>().consOut.Contains(num))
 				{
 					int count = 0;
 					o.GetComponent<LineRenderer>().SetVertexCount(3);
@@ -100,7 +100,7 @@ public class EditorScript : MonoBehaviour {
 						foreach (GameObject o2 in g2)
 						{
 							// Check all tiles again for num, using consIn
-							if (o2.GetComponent<EditorTile>().consOut.Contains(num))
+							if (o2.GetComponent<EditorTile>().consIn.Contains(num))
 							{
 								// With another matching tile, set another LineRender point, and then return to source tile again
 								o.GetComponent<LineRenderer>().SetVertexCount(count + 3);
@@ -126,7 +126,7 @@ public class EditorScript : MonoBehaviour {
 			{
 				o.GetComponent<LineRenderer>().SetColors (new Color(236f/255f,243f/255f,183f/255f,255f/255f), new Color(106f/255f,58f/255f,32f/255f,255f/255f));
 				// Checking all tiles for num, using locksOut
-				if ( o.GetComponent<EditorTile>().locksIn.Contains(num))
+				if ( o.GetComponent<EditorTile>().locksOut.Contains(num))
 				{
 					int count = 0;
 					o.GetComponent<LineRenderer>().SetVertexCount(3);
@@ -136,7 +136,7 @@ public class EditorScript : MonoBehaviour {
 						foreach (GameObject o2 in g2)
 						{
 							// Check all tiles again for num, using locksin
-							if (o2.GetComponent<EditorTile>().locksOut.Contains(num))
+							if (o2.GetComponent<EditorTile>().locksIn.Contains(num))
 							{
 								// With another matching tile, set another LineRender point, and then return to source tile again
 								o.GetComponent<LineRenderer>().SetVertexCount(count + 3);
@@ -220,7 +220,7 @@ public class EditorScript : MonoBehaviour {
 			int selectX = (int)(Math.Floor (mouseLocation.x/32));
 			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
 			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
-				SetObsByDraw(map[selectY][selectX]);
+				map[selectY][selectX].GetComponent<EditorTile>().obsType = "";
 				SetGraphics(map[selectY][selectX], mapObs[selectY][selectX]);
 			}
 		} else if (Input.GetMouseButtonDown (0) && !guiError && !loadFile && !saveFile && !guiInput) {
@@ -464,23 +464,29 @@ public class EditorScript : MonoBehaviour {
 						map[j][i].GetComponent<EditorTile>().tileSet = int.Parse (read.Value);
 						break;
 					case "obs":
-						read.Read ();
-						map[j][i].GetComponent<EditorTile>().obsType = read.Value;
+						if (!read.IsEmptyElement) {
+							read.Read ();
+							map[j][i].GetComponent<EditorTile>().obsType = read.Value;
+						}
 						break;
-					case "connections":	
+					case "connections":
+						Debug.Log ("This is a connection...");
 						consGroup = true;
 						break;
 					case "locks":
+						Debug.Log ("This is a lock...");
 						consGroup = false;
 						break;
 					case "in":
 						read.Read ();
 						int node = read.ReadContentAsInt();
 						if (consGroup) {
+							Debug.Log ("Writing in con...");
 							map[j][i].GetComponent<EditorTile>().consIn.Add(node);
 							if (!activeCons.Contains (node))
 								activeCons.Add (node);
 						} else {
+							Debug.Log ("Writing in lock...");
 							map[j][i].GetComponent<EditorTile>().locksIn.Add(node);
 							if (!activeLocks.Contains (node))
 								activeLocks.Add (node);
@@ -490,10 +496,12 @@ public class EditorScript : MonoBehaviour {
 						read.Read ();
 						node = read.ReadContentAsInt();
 						if (consGroup) {
+							Debug.Log ("Writing out con...");
 							map[j][i].GetComponent<EditorTile>().consOut.Add(node);
 							if (!activeCons.Contains (node))
 								activeCons.Add (node);
 						} else {
+							Debug.Log ("Writing out lock...");
 							map[j][i].GetComponent<EditorTile>().locksOut.Add(node);
 							if (!activeLocks.Contains (node))
 								activeLocks.Add (node);
@@ -719,8 +727,8 @@ public class EditorScript : MonoBehaviour {
 			GUIStyle buttonStyle;
 			if (i == obsList.Length) {
 				buttonStyle = passiveButton;
-				tex = (Texture) Resources.Load ("empty", typeof(Texture));
-				if (GUI.Button (new Rect(Screen.width-(32*(2-(i+3)%2))-10,(32+5)*((i+3)/2)+40,32,32), tex, buttonStyle)) {
+				tex = (Texture) Resources.Load ("Editor/empty", typeof(Texture));
+				if (GUI.Button (new Rect(Screen.width-(32*(2-(i+1)%2))-10,(32+5)*((tileList.Length+i+4)/2)+40,32,32), tex, buttonStyle)) {
 					guiInput = true;
 					activeSelection = "empty";
 				}
@@ -736,7 +744,7 @@ public class EditorScript : MonoBehaviour {
 						tex = (Texture) Resources.Load ("Editor/ed_"+obsList[i]+(activeSet+1).ToString (), typeof(Texture));
 				} else
 					tex = (Texture) Resources.Load ("Editor/ed_"+obsList[i]+0.ToString (), typeof(Texture));
-				if (GUI.Button (new Rect(Screen.width-(32*(2-(i+3)%2))-10,(32+5)*((tileList.Length+i+3)/2)+40,32,32), tex, buttonStyle)) {
+				if (GUI.Button (new Rect(Screen.width-(32*(2-(i+1)%2))-10,(32+5)*((tileList.Length+i+4)/2)+40,32,32), tex, buttonStyle)) {
 					guiInput = true;
 					activeSelection = obsList[i];
 					activeSet = oSet;
