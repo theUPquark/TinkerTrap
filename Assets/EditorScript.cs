@@ -185,7 +185,7 @@ public class EditorScript : MonoBehaviour {
 					}
 					if (count == 0) {
 						o.GetComponent<LineRenderer>().SetVertexCount(0);
-						o.GetComponent<EditorTile>().consOut.Remove(num); // Removes lone Outs
+						o.GetComponent<EditorTile>().locksOut.Remove(num); // Removes lone Outs
 					}
 				}
 				else {
@@ -199,8 +199,8 @@ public class EditorScript : MonoBehaviour {
 			{
 			foreach (GameObject o in g)
 				{
-					if (o.GetComponent<EditorTile>().consIn.Contains(num))
-						o.GetComponent<EditorTile>().consIn.Remove (num);
+					if (o.GetComponent<EditorTile>().locksIn.Contains(num))
+						o.GetComponent<EditorTile>().locksIn.Remove (num);
 				}
 			}
 		}
