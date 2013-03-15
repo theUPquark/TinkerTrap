@@ -133,17 +133,21 @@
       <locks />
     </x>
     <x>
-      <type>Floor</type>
+      <type>Electrified</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>1</in>
+      </connections>
       <locks />
     </x>
     <x>
-      <type>Floor</type>
+      <type>Electrified</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>1</in>
+      </connections>
       <locks />
     </x>
     <x>
@@ -575,10 +579,12 @@
       <locks />
     </x>
     <x>
-      <type>Floor</type>
+      <type>Electrified</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>1</in>
+      </connections>
       <locks />
     </x>
     <x>
@@ -910,10 +916,12 @@
       <locks />
     </x>
     <x>
-      <type>Wall</type>
+      <type>Source</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <out>1</out>
+      </connections>
       <locks />
     </x>
     <x>
@@ -1024,8 +1032,8 @@
       <locks />
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Generator</type>
+      <tset>1</tset>
       <obs />
       <connections />
       <locks />
@@ -1103,10 +1111,12 @@
       <locks />
     </x>
     <x>
-      <type>Floor</type>
+      <type>Electrified</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>1</in>
+      </connections>
       <locks />
     </x>
     <x>
@@ -1461,7 +1471,7 @@
     <x>
       <type>Floor</type>
       <tset>0</tset>
-      <obs />
+      <obs>Battery</obs>
       <connections />
       <locks />
     </x>
@@ -1694,10 +1704,12 @@
       <locks />
     </x>
     <x>
-      <type>Floor</type>
+      <type>Electrified</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>1</in>
+      </connections>
       <locks />
     </x>
     <x>

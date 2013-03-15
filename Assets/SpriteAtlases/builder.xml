@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>ed_Box0.png</key>
+            <key>ed_Battery0.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,0},{32,32}}</string>
@@ -17,7 +17,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Button0.png</key>
+            <key>ed_Box0.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{32,0},{32,32}}</string>
@@ -30,7 +30,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Door0.png</key>
+            <key>ed_Button0.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{64,0},{32,32}}</string>
@@ -43,7 +43,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Door1.png</key>
+            <key>ed_Door0.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{96,0},{32,32}}</string>
@@ -56,7 +56,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Electrified0.png</key>
+            <key>ed_Door1.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,32},{32,32}}</string>
@@ -69,7 +69,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Floor0.png</key>
+            <key>ed_Electrified0.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{32,32},{32,32}}</string>
@@ -82,7 +82,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Plate0.png</key>
+            <key>ed_Floor0.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{64,32},{32,32}}</string>
@@ -95,7 +95,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Spawn0.png</key>
+            <key>ed_Generator0.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{96,32},{32,32}}</string>
@@ -108,7 +108,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Wall0.png</key>
+            <key>ed_Generator1.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,64},{32,32}}</string>
@@ -121,10 +121,62 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>empty.png</key>
+            <key>ed_Plate0.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{32,64},{32,32}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{32,32}}</string>
+                <key>sourceSize</key>
+                <string>{32,32}</string>
+            </dict>
+            <key>ed_Source0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{64,64},{32,32}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{32,32}}</string>
+                <key>sourceSize</key>
+                <string>{32,32}</string>
+            </dict>
+            <key>ed_Spawn0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{96,64},{32,32}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{32,32}}</string>
+                <key>sourceSize</key>
+                <string>{32,32}</string>
+            </dict>
+            <key>ed_Wall0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0,96},{32,32}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{32,32}}</string>
+                <key>sourceSize</key>
+                <string>{32,32}</string>
+            </dict>
+            <key>empty.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{32,96},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -144,7 +196,7 @@
             <key>size</key>
             <string>{128,128}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:a6adcaaf48273d7e003774f9416c47e6$</string>
+            <string>$TexturePacker:SmartUpdate:825067f25aafd7094f671349e7e25da3$</string>
             <key>textureFileName</key>
             <string>builder.png</string>
         </dict>

@@ -106,13 +106,12 @@ public abstract class TileClass : Tile
 		return false;
 	}
 	
-	public virtual void interact() {
-	}
+	public virtual void interact() {}
 	
-	public virtual void update() {
-	}
+	public virtual void interact(Obstacle a) {}
 	
-	public virtual void act(List<Obstacle> objs) {
-	}
+	public virtual void update() {}
+	
+	public virtual void act(List<Obstacle> objs) {}
 }
 
