@@ -11,6 +11,10 @@ public class Bot3 : Player, Obstacle
 	{
 	}
 	
+	public override int width {
+		get { return 40; }
+	}
+	
 	public override double getSpeed (double speed)
 	{
 		return (Math.Floor (speed*1.5));

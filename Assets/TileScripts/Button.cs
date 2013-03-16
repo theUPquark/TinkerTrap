@@ -15,19 +15,28 @@ public class Button : TileClass, Tile {
 		used = true;
 	}
 	
+	public override bool isActivated() {
+		foreach (List<Tile> conList in locks[0].Values)
+			foreach (Tile t in conList)
+				if (!((TileClass)t).locked && t != this)
+					return false;
+		return true;
+	}
+	
 	public override void act(List<Obstacle> objs) {
 		if (used) {
 			/*if (active)
 				//Button off state graphic goes here.
 			else
 				//Button on state graphic goes here.*/
-			/*if (isActivated ()) {
-				foreach(List<Tile> i in connections[1].Values)
+			if (isActivated ()) {
+				foreach(List<Tile> i in connections[0].Values)
 					foreach(Tile j in i)
-						j.interact ();*/
-				used = false;
+						j.interact ();
 				powered = !powered;
-			//}
+				locked = !locked;
+			}
+			used = false;
 		}
 	}
 }

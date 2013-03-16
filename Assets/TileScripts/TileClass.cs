@@ -95,13 +95,13 @@ public abstract class TileClass : Tile
 		// Also add loop to check locks here. All tiles within a lock group must be 'unlocked' for those tiles
 		// to remain 'powered,' whereas only one member of a connection group must be active to power the rest.
 		
-		foreach (List<Tile> conList in locks[1].Values)
+		foreach (List<Tile> conList in locks[0].Values)
 			foreach (Tile t in conList)
 				if (((TileClass)t).locked && t != this)
 					return false;
-		foreach (List<Tile> conList in connections[1].Values)
+		foreach (List<Tile> conList in connections[0].Values)
 			foreach (Tile t in conList)
-				if (((TileClass)t).powered)
+				if (((TileClass)t).powered && t != this)
 					return true;
 		return false;
 	}

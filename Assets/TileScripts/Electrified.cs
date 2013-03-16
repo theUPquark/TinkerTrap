@@ -22,14 +22,21 @@ public class Electrified : Floor, Tile {
 		return true;
 	}
 	
-	public virtual bool isActivated() {
-		foreach (List<Tile> conList in locks[1].Values)
-			foreach (Tile t in conList)
+	public override bool isActivated() {
+		int count = 0;
+		int totalLocks = 0;
+		foreach (List<Tile> conList in locks[0].Values) {
+			totalLocks += conList.Count;
+			foreach (Tile t in conList) {
 				if (!((TileClass)t).locked && t != this)
-					return false;
-		foreach (List<Tile> conList in connections[1].Values)
+					count++;
+			}
+		}
+		if (count == totalLocks && totalLocks > 0)
+			return false;
+		foreach (List<Tile> conList in connections[0].Values)
 			foreach (Tile t in conList)
-				if (((TileClass)t).powered)
+				if (((TileClass)t).powered && t != this)
 					return true;
 		return false;
 	}
