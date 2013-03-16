@@ -31,17 +31,11 @@ public class GameManager : MonoBehaviour {
 	private bool paused = false;
 	private int level = 0;
 	
-	public  float updateInterval = 0.5F;
-	private float accum   = 0; // FPS accumulated over the interval
-	private int   frames  = 0; // Frames drawn over the interval
-	private float timeleft; // Left time for current interval
-	private float fps = 30;
-	
 	private List<Player> players = new List<Player>();
 	private int activeBot = 1;
 	
 	void Start () {
-		timeleft = updateInterval;
+		Time.fixedDeltaTime = 1/30f;
 		players.Add (new Bot1()); // Webelo (Red, Lifter)
 		players.Add (new Bot2()); // Hob (Yellow, Hoverer)
 		players.Add (new Bot3()); // Hisco (Green, Wheelie)
@@ -338,28 +332,6 @@ public class GameManager : MonoBehaviour {
 					DoPrimary ();
 				}
 				
-				if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) 
-				{
-					moveChar(players[activeBot-1], 5.0, -1, 0);
-					players[activeBot-1].setDir(3);
-				}
-				if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) 
-				{
-					moveChar(players[activeBot-1], 5.0, 1, 0);
-					players[activeBot-1].setDir(1);
-				}
-		
-				if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) 
-				{
-					moveChar(players[activeBot-1], 5.0, 0, -1);
-					players[activeBot-1].setDir(0);
-				}
-				if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) 
-				{
-					moveChar(players[activeBot-1], 5.0, 0, 1);
-					players[activeBot-1].setDir(2);
-				}
-				
 				// Scan for player interaction. This probably needs updating for different bot abilites.
 				
 				if (Input.GetKeyDown(KeyCode.Space))
@@ -400,17 +372,51 @@ public class GameManager : MonoBehaviour {
 						activeBot = 3;
 					}
 				}
-				
-				// Do round 1 of Tile updates. Final 'act' method called in LateUpdate();
-				foreach (Tile t in gameB.Values) {
-					t.update();
-				}
 			}
 			
 			// Bring up or close the pause menu!
 			if (Input.GetKeyDown (KeyCode.Escape))
 			{
 				paused = !paused;
+			}
+		}
+	}
+
+	void FixedUpdate() {
+		if (running && !selection) {
+			if (!paused) {
+				
+				//Directional movement. Should this be limited to one direction at a time?
+				if (Input.GetKeyDown (KeyCode.E)) {
+					DoPrimary ();
+				}
+				
+				if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) 
+				{
+					moveChar(players[activeBot-1], 5.0, -1, 0);
+					players[activeBot-1].setDir(3);
+				}
+				if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) 
+				{
+					moveChar(players[activeBot-1], 5.0, 1, 0);
+					players[activeBot-1].setDir(1);
+				}
+		
+				if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) 
+				{
+					moveChar(players[activeBot-1], 5.0, 0, -1);
+					players[activeBot-1].setDir(0);
+				}
+				if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) 
+				{
+					moveChar(players[activeBot-1], 5.0, 0, 1);
+					players[activeBot-1].setDir(2);
+				}
+				
+				// Do round 1 of Tile updates. Final 'act' method called in LateUpdate();
+				foreach (Tile t in gameB.Values) {
+					t.update();
+				}
 			}
 		}
 	}
