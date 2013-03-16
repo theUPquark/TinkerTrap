@@ -11,7 +11,7 @@ public class Source : TileClass, Tile {
 	
 	public override bool isActivated ()
 	{
-		foreach (List<Tile> conList in locks[1].Values)
+		foreach (List<Tile> conList in locks[0].Values)
 			foreach (Tile t in conList)
 				if (((TileClass)t).locked && t != this)
 					return false;

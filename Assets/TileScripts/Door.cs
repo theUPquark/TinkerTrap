@@ -14,6 +14,13 @@ public class Door : TileClass, Tile {
 		return open;
 	}
 	
+	public override bool walkable (Obstacle o)
+	{
+		if (o.GetType () == typeof(Box))
+			return false;
+		return this.walkable ();
+	}
+	
 	public override void update() {
 		if (isActivated()) {
 			used = true;

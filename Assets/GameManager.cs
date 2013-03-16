@@ -20,8 +20,10 @@ public class GameManager : MonoBehaviour {
 	private static float tileW = 64;
 																						
 	private Dictionary<string, Tile> gameB = new Dictionary<string, Tile>();
-	private Dictionary<int, List<Tile>> gameCons = new Dictionary<int, List<Tile>>();
-	private Dictionary<int, List<Tile>> gameLocks = new Dictionary<int, List<Tile>>();
+	private Dictionary<int, List<Tile>> gameConsOut = new Dictionary<int, List<Tile>>();
+	private Dictionary<int, List<Tile>> gameConsIn = new Dictionary<int, List<Tile>>();
+	private Dictionary<int, List<Tile>> gameLocksOut = new Dictionary<int, List<Tile>>();
+	private Dictionary<int, List<Tile>> gameLocksIn = new Dictionary<int, List<Tile>>();
 	private List<Obstacle> gameObs = new List<Obstacle>();
 	
 	private bool running = false;
@@ -231,29 +233,27 @@ public class GameManager : MonoBehaviour {
 							List<Tile> tilelist;
 							int k = read.ReadContentAsInt();
 							if (k != 0) {
-								if (!gameCons.ContainsKey(k)) {
+								if (!gameConsIn.ContainsKey(k)) {
 									tilelist = new List<Tile>();
 									tilelist.Add(gameB[squareName]);
-									gameCons.Add(k, tilelist);
+									gameConsIn.Add(k, tilelist);
 								} else {
-									tilelist = gameCons[k];
+									tilelist = gameConsIn[k];
 									tilelist.Add(gameB[squareName]);
 								}
-								gameB[squareName].addConnection(k, gameCons[k], false);
 							}
 						} else {
 							List<Tile> tilelist;
 							int k = read.ReadContentAsInt();
 							if (k != 0) {
-								if (!gameLocks.ContainsKey(k)) {
+								if (!gameLocksIn.ContainsKey(k)) {
 									tilelist = new List<Tile>();
 									tilelist.Add(gameB[squareName]);
-									gameLocks.Add(k, tilelist);
+									gameLocksIn.Add(k, tilelist);
 								} else {
-									tilelist = gameLocks[k];
+									tilelist = gameLocksIn[k];
 									tilelist.Add(gameB[squareName]);
 								}
-								gameB[squareName].addLock(k, gameLocks[k], false);
 							}
 						}
 						break;
@@ -263,29 +263,27 @@ public class GameManager : MonoBehaviour {
 							List<Tile> tilelist;
 							int k = read.ReadContentAsInt();
 							if (k != 0) {
-								if (!gameCons.ContainsKey(k)) {
+								if (!gameConsOut.ContainsKey(k)) {
 									tilelist = new List<Tile>();
 									tilelist.Add(gameB[squareName]);
-									gameCons.Add(k, tilelist);
+									gameConsOut.Add(k, tilelist);
 								} else {
-									tilelist = gameCons[k];
+									tilelist = gameConsOut[k];
 									tilelist.Add(gameB[squareName]);
 								}
-								gameB[squareName].addConnection(k, gameCons[k], true);
 							}
 						} else {
 							List<Tile> tilelist;
 							int k = read.ReadContentAsInt();
 							if (k != 0) {
-								if (!gameLocks.ContainsKey(k)) {
+								if (!gameLocksOut.ContainsKey(k)) {
 									tilelist = new List<Tile>();
 									tilelist.Add(gameB[squareName]);
-									gameLocks.Add(k, tilelist);
+									gameLocksOut.Add(k, tilelist);
 								} else {
-									tilelist = gameLocks[k];
+									tilelist = gameLocksOut[k];
 									tilelist.Add(gameB[squareName]);
 								}
-								gameB[squareName].addLock(k, gameLocks[k], true);
 							}
 						}
 						break;
@@ -293,6 +291,20 @@ public class GameManager : MonoBehaviour {
 				}
 			}
 			read.Close ();
+			foreach (int k in gameConsIn.Keys) {
+				foreach (Tile t in gameConsIn[k]) {
+					t.addConnection (k, gameConsIn[k], false);
+					if (gameConsOut.ContainsKey (k))
+						t.addConnection (k, gameConsOut[k], true);
+				}
+			}
+			foreach (int k in gameLocksIn.Keys) {
+				foreach (Tile t in gameLocksIn[k]) {
+					t.addLock (k, gameLocksIn[k], false);
+					if (gameLocksOut.ContainsKey (k))
+						t.addLock (k, gameLocksOut[k], true);
+				}
+			}
 		}
 	}
 	
