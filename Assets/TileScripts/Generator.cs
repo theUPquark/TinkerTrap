@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Generator : TileClass, Tile {
 	
-	private Battery bat;
+	private Battery bat = null;
 	private bool botCharge = false;
 	private double endTime = 0.0;
 	
