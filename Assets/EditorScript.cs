@@ -58,6 +58,7 @@ public class EditorScript : MonoBehaviour {
 	private bool validAnchor = false; // Control variable to help set tracer line
 	private Vector3 anchor;
 	private GameObject anchorYX;
+	private List<GameObject> lineList = new List<GameObject>();
 	
 	private GameObject line;
 	// Use this for initialization
@@ -69,6 +70,25 @@ public class EditorScript : MonoBehaviour {
 		// Sync active lists to dropdown content
 		activeCons.Add(1);
 		activeLocks.Add(1);
+	}
+	
+	private void AddLineObject (GameObject a, GameObject b)
+	{
+		lineList.Add (new GameObject(lineList.Count.ToString()));
+		lineList[lineList.Count - 1].AddComponent<LineRenderer>().SetVertexCount(2);
+		lineList[lineList.Count - 1].GetComponent<LineRenderer>().material = new Material (Shader.Find("Particles/Additive"));
+		lineList[lineList.Count - 1].GetComponent<LineRenderer>().SetWidth (6f, 2f);
+		lineList[lineList.Count - 1].GetComponent<LineRenderer>().SetPosition(0,ReturnTileCenter(a.transform.position));
+		lineList[lineList.Count - 1].GetComponent<LineRenderer>().SetPosition(1,ReturnTileCenter(b.transform.position));
+	}
+	
+	private void ClearLineObjects ()
+	{
+		while (lineList.Count > 0)
+		{
+			Destroy (lineList[lineList.Count - 1]);
+			lineList.RemoveAt(lineList.Count - 1);
+		}
 	}
 	
 	private Vector3 ReturnTileCenter (Vector3 v)
@@ -104,19 +124,20 @@ public class EditorScript : MonoBehaviour {
 	
 	private void DrawConnections(int num)
 	{
+		ClearLineObjects();
 		bool outFound = false;
 		foreach (List<GameObject> g in map)
 		{
 			foreach (GameObject o in g)
 			{
-				o.GetComponent<LineRenderer>().SetColors (new Color(197f/255f,244f/255f,184f/255f), new Color(22f/255f,148f/255f,64f/255f));
+//				o.GetComponent<LineRenderer>().SetColors (new Color(197f/255f,244f/255f,184f/255f), new Color(22f/255f,148f/255f,64f/255f));
 				// Checking all tiles for num, using consOut
 				if ( o.GetComponent<EditorTile>().consOut.Contains(num))
 				{
 					outFound = true;
-					int count = 0;
-					o.GetComponent<LineRenderer>().SetVertexCount(3);
-					o.GetComponent<LineRenderer>().SetPosition(count,ReturnTileCenter(o.transform.position));
+					bool inFound = false;
+//					o.GetComponent<LineRenderer>().SetVertexCount(3);
+//					o.GetComponent<LineRenderer>().SetPosition(count,ReturnTileCenter(o.transform.position));
 					foreach (List<GameObject> g2 in map)
 					{
 						foreach (GameObject o2 in g2)
@@ -125,20 +146,24 @@ public class EditorScript : MonoBehaviour {
 							if (o2.GetComponent<EditorTile>().consIn.Contains(num))
 							{
 								// With another matching tile, set another LineRender point, and then return to source tile again
-								o.GetComponent<LineRenderer>().SetVertexCount(count + 3);
-								o.GetComponent<LineRenderer>().SetPosition(++count,ReturnTileCenter(o2.transform.position));
-								o.GetComponent<LineRenderer>().SetPosition(++count,ReturnTileCenter(o.transform.position));
+//								o.GetComponent<LineRenderer>().SetVertexCount(count + 3);
+//								o.GetComponent<LineRenderer>().SetPosition(++count,ReturnTileCenter(o2.transform.position));
+//								o.GetComponent<LineRenderer>().SetPosition(++count,ReturnTileCenter(o.transform.position));
+								// !!- New object creating line between tiles
+								inFound = true;
+								AddLineObject(o,o2);
+								lineList[lineList.Count - 1].GetComponent<LineRenderer>().SetColors (new Color(197f/255f,244f/255f,184f/255f), new Color(22f/255f,148f/255f,64f/255f));
 							}
 						}
 					}
-					if (count == 0) {
-						o.GetComponent<LineRenderer>().SetVertexCount(0);
+					if (!inFound) {
+//						o.GetComponent<LineRenderer>().SetVertexCount(0);
 						o.GetComponent<EditorTile>().consOut.Remove(num); // Removes lone Outs
 					}
 				}
 				else {
-					o.GetComponent<LineRenderer>().SetVertexCount(1);
-					o.GetComponent<LineRenderer>().SetPosition(0,o.transform.position);
+//					o.GetComponent<LineRenderer>().SetVertexCount(1);
+//					o.GetComponent<LineRenderer>().SetPosition(0,o.transform.position);
 				}
 			}
 		}
@@ -156,19 +181,20 @@ public class EditorScript : MonoBehaviour {
 	
 	private void DrawLocks(int num)
 	{
+		ClearLineObjects();
 		bool outFound = false;
 		foreach (List<GameObject> g in map)
 		{
 			foreach (GameObject o in g)
 			{
-				o.GetComponent<LineRenderer>().SetColors (new Color(236f/255f,243f/255f,183f/255f,255f/255f), new Color(106f/255f,58f/255f,32f/255f,255f/255f));
+//				o.GetComponent<LineRenderer>().SetColors (new Color(236f/255f,243f/255f,183f/255f,255f/255f), new Color(106f/255f,58f/255f,32f/255f,255f/255f));
 				// Checking all tiles for num, using locksOut
 				if ( o.GetComponent<EditorTile>().locksOut.Contains(num))
 				{
 					outFound = true;
-					int count = 0;
-					o.GetComponent<LineRenderer>().SetVertexCount(3);
-					o.GetComponent<LineRenderer>().SetPosition(count,ReturnTileCenter(o.transform.position));
+					bool inFound = false;
+//					o.GetComponent<LineRenderer>().SetVertexCount(3);
+//					o.GetComponent<LineRenderer>().SetPosition(count,ReturnTileCenter(o.transform.position));
 					foreach (List<GameObject> g2 in map)
 					{
 						foreach (GameObject o2 in g2)
@@ -177,20 +203,24 @@ public class EditorScript : MonoBehaviour {
 							if (o2.GetComponent<EditorTile>().locksIn.Contains(num))
 							{
 								// With another matching tile, set another LineRender point, and then return to source tile again
-								o.GetComponent<LineRenderer>().SetVertexCount(count + 3);
-								o.GetComponent<LineRenderer>().SetPosition(++count,ReturnTileCenter(o2.transform.position));
-								o.GetComponent<LineRenderer>().SetPosition(++count,ReturnTileCenter(o.transform.position));
+//								o.GetComponent<LineRenderer>().SetVertexCount(count + 3);
+//								o.GetComponent<LineRenderer>().SetPosition(++count,ReturnTileCenter(o2.transform.position));
+//								o.GetComponent<LineRenderer>().SetPosition(++count,ReturnTileCenter(o.transform.position));
+								// !!- New object creating line between tiles
+								inFound = true;
+								AddLineObject(o,o2);
+								lineList[lineList.Count - 1].GetComponent<LineRenderer>().SetColors (new Color(236f/255f,243f/255f,183f/255f,255f/255f), new Color(106f/255f,58f/255f,32f/255f,255f/255f));
 							}
 						}
 					}
-					if (count == 0) {
-						o.GetComponent<LineRenderer>().SetVertexCount(0);
+					if (!inFound) {
+//						o.GetComponent<LineRenderer>().SetVertexCount(0);
 						o.GetComponent<EditorTile>().locksOut.Remove(num); // Removes lone Outs
 					}
 				}
 				else {
-					o.GetComponent<LineRenderer>().SetVertexCount(1);
-					o.GetComponent<LineRenderer>().SetPosition(0,o.transform.position);
+//					o.GetComponent<LineRenderer>().SetVertexCount(1);
+//					o.GetComponent<LineRenderer>().SetPosition(0,o.transform.position);
 				}
 			}
 		}
