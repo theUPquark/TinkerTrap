@@ -45,12 +45,16 @@ public class EditorScript : MonoBehaviour {
 	
 	private bool showConList = false;
 	private bool showLockList = false;
+	private bool showViewList = false;
 	private int connectionEntry = 0;
 	private int lockEntry = 0;
+	private int viewEntry = 0;
 	private GUIContent[] consDropdown = {new GUIContent("1")};
 	private GUIContent[] locksDropdown = {new GUIContent("1")};
+	private GUIContent[] viewDropdown = {new GUIContent("Show Active"), new GUIContent("Show All")};
 	private bool conPicked = false;
 	private bool lockPicked = false;
+	private bool viewPicked = false;
 	
 	// Drawing lines
 	
@@ -97,7 +101,7 @@ public class EditorScript : MonoBehaviour {
 		return change;
 	}
 	
-	private void DrawVerticies(Vector3 a, Vector3 b)
+	private void DrawMouse(Vector3 a, Vector3 b)
 	{
 		line.GetComponent<LineRenderer>().SetVertexCount(2);
 		line.GetComponent<LineRenderer>().SetPosition(0, a);
@@ -122,9 +126,27 @@ public class EditorScript : MonoBehaviour {
 		line.GetComponent<LineRenderer>().SetPosition(4,a);
 	}
 	
-	private void DrawConnections(int num)
+	private void DrawLinks()
 	{
 		ClearLineObjects();
+		if (viewEntry == 0) // "Show Active"
+		{
+			if (activeSelection == "conn")
+				DrawConnections(connectionEntry);
+			else if (activeSelection == "lock")
+				DrawLocks(lockEntry);
+		}
+		else if (viewEntry == 1) // "Show All"
+		{
+			foreach (int c in activeCons)
+				DrawConnections(c);
+			foreach (int l in activeLocks)
+				DrawLocks(l);
+		}
+	}
+	
+	private void DrawConnections(int num)
+	{
 		bool outFound = false;
 		foreach (List<GameObject> g in map)
 		{
@@ -181,7 +203,6 @@ public class EditorScript : MonoBehaviour {
 	
 	private void DrawLocks(int num)
 	{
-		ClearLineObjects();
 		bool outFound = false;
 		foreach (List<GameObject> g in map)
 		{
@@ -348,7 +369,7 @@ public class EditorScript : MonoBehaviour {
 			if ((Input.GetMouseButton (0) || Input.GetMouseButton(1)) && !guiError && !loadFile && !saveFile && !guiInput && validAnchor == true)
 			{
 				Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
-				DrawVerticies(anchor,mouseLocation);
+				DrawMouse(anchor,mouseLocation);
 			}
 			if (mouse0Active && Input.GetMouseButtonUp (0) && !guiError && !loadFile && !saveFile && !guiInput)
 			{
@@ -363,17 +384,19 @@ public class EditorScript : MonoBehaviour {
 							map[selectY][selectX].GetComponent<EditorTile>().consIn.Add(connectionEntry);
 						if (!anchorYX.GetComponent<EditorTile>().consOut.Contains(connectionEntry) && !anchorYX.GetComponent<EditorTile>().consIn.Contains(connectionEntry))
 							anchorYX.GetComponent<EditorTile>().consOut.Add(connectionEntry);
-						DrawConnections(connectionEntry);
+//						DrawConnections(connectionEntry);
+						DrawLinks();
 					} 
 					else if (activeSelection == "lock" && map[selectY][selectX] != anchorYX)
 					{	if (!map[selectY][selectX].GetComponent<EditorTile>().locksIn.Contains(lockEntry) && !map[selectY][selectX].GetComponent<EditorTile>().locksOut.Contains(lockEntry))
 							map[selectY][selectX].GetComponent<EditorTile>().locksIn.Add(lockEntry);
 						if (!anchorYX.GetComponent<EditorTile>().locksOut.Contains(lockEntry) && !anchorYX.GetComponent<EditorTile>().locksIn.Contains(lockEntry))
 							anchorYX.GetComponent<EditorTile>().locksOut.Add (lockEntry);
-						DrawLocks(lockEntry);
+//						DrawLocks(lockEntry);
+						DrawLinks();
 					}
 				}
-				DrawVerticies(anchor,anchor); // Removing mouse line from view
+				DrawMouse(anchor,anchor); // Removing mouse line from view
 			}
 			else if (!mouse0Active && Input.GetMouseButtonUp (1) && !guiError && !loadFile && !saveFile && !guiInput) 
 			{
@@ -387,16 +410,18 @@ public class EditorScript : MonoBehaviour {
 							map[selectY][selectX].GetComponent<EditorTile>().consIn.Remove(connectionEntry);
 						if (anchorYX.GetComponent<EditorTile>().consOut.Contains(connectionEntry))
 							anchorYX.GetComponent<EditorTile>().consOut.Remove(connectionEntry);
-						DrawConnections(connectionEntry);
+//						DrawConnections(connectionEntry);
+						DrawLinks();
 					} else if (activeSelection == "lock") {
 						if (map[selectY][selectX].GetComponent<EditorTile>().locksIn.Contains(lockEntry))
 							map[selectY][selectX].GetComponent<EditorTile>().locksIn.Remove(lockEntry);
 						if (anchorYX.GetComponent<EditorTile>().locksOut.Contains(lockEntry))
 							anchorYX.GetComponent<EditorTile>().locksOut.Remove(lockEntry);
-						DrawLocks(lockEntry);
+//						DrawLocks(lockEntry);
+						DrawLinks();
 					}							
 				}
-				DrawVerticies(anchor,anchor);
+				DrawMouse(anchor,anchor);
 			}
 		}
 	}
@@ -876,12 +901,22 @@ public class EditorScript : MonoBehaviour {
 			browser = BrowserSetup ();
 		}
 		
+		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+180,100,25), ref showViewList, ref viewEntry, viewDropdown[viewEntry], viewDropdown, activeButton)) {
+			viewPicked = true;
+//			viewEntry = int.Parse (viewDropdown[viewEntry].text);
+//			DrawConnections (connectionEntry);
+//			activeSelection = "conn";
+			DrawLinks();
+		} else
+			viewPicked = false;
+		
 		GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+200,90,30), "Connections:");
 	
 		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+240,90,30), ref showConList, ref connectionEntry, new GUIContent(connectionEntry.ToString()), consDropdown, activeButton)) {
 			conPicked = true;
 			connectionEntry = int.Parse (consDropdown[connectionEntry].text);
-			DrawConnections (connectionEntry);
+//			DrawConnections (connectionEntry);
+			DrawLinks();
 			activeSelection = "conn";
 		} else
 			conPicked = false;
@@ -898,7 +933,8 @@ public class EditorScript : MonoBehaviour {
 		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+320,90,30), ref showLockList, ref lockEntry, new GUIContent(lockEntry.ToString()), locksDropdown, activeButton)) {
 			lockPicked = true;
 			lockEntry = int.Parse (locksDropdown[lockEntry].text);
-			DrawLocks(lockEntry);
+//			DrawLocks(lockEntry);
+			DrawLinks();
 			activeSelection = "lock";
 		} else
 			lockPicked = false;
