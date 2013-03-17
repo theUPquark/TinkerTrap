@@ -13,7 +13,7 @@ public class EditorScript : MonoBehaviour {
 	private List<List<GameObject>> mapObs = new List<List<GameObject>>();
 	private string[] tileList = new string[] {"Wall","Floor","Door","Button","Plate","Electrified", "Generator", "Source"};
 	private string[] obsList = new string[] {"Spawn", "Box", "Battery"};
-	private string activeSelection = "";
+	private string activeSelection = "empty";
 	private int activeSet = 0;
 	private int gridW = 10;
 	private int gridH = 10;
@@ -345,21 +345,51 @@ public class EditorScript : MonoBehaviour {
 				int selectX = (int)(Math.Floor (mouseLocation.x/32));
 				int selectY = (int)(Math.Floor (mouseLocation.y/-32));
 				validAnchor = false;
-				if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
-					// Set the connection (20) or lockgroup (21)
-					if (activeSelection == "conn" && map[selectY][selectX] != anchorYX) // Don't add nodes if they start/end on same tile
-					{	if (!map[selectY][selectX].GetComponent<EditorTile>().consIn.Contains(connectionEntry)&& !map[selectY][selectX].GetComponent<EditorTile>().consOut.Contains(connectionEntry)) //Don't add node if one already exists
+				if (Input.GetKey(KeyCode.LeftControl)){ // Holding control creates new link in a new group
+					if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+						if (activeSelection == "conn" && map[selectY][selectX] != anchorYX){
+							// Add new connection group and make it the active entry
+							activeCons.Add(activeCons.Count + 1);
+							consDropdown = new GUIContent[activeCons.Count];
+							for (int i = 0; i < consDropdown.Length; i++)
+								consDropdown[i] = new GUIContent(activeCons[i].ToString());
+							connectionEntry = activeCons[activeCons.Count - 1];
+							// Set link
 							map[selectY][selectX].GetComponent<EditorTile>().consIn.Add(connectionEntry);
-						if (!anchorYX.GetComponent<EditorTile>().consOut.Contains(connectionEntry) && !anchorYX.GetComponent<EditorTile>().consIn.Contains(connectionEntry))
 							anchorYX.GetComponent<EditorTile>().consOut.Add(connectionEntry);
-						DrawLinks();
-					} 
-					else if (activeSelection == "lock" && map[selectY][selectX] != anchorYX)
-					{	if (!map[selectY][selectX].GetComponent<EditorTile>().locksIn.Contains(lockEntry) && !map[selectY][selectX].GetComponent<EditorTile>().locksOut.Contains(lockEntry))
+							DrawLinks();
+						}
+						else if (activeSelection == "lock" && map[selectY][selectX] != anchorYX) {
+							//Add new lock group and make it the active entry
+							activeLocks.Add(activeLocks.Count + 1);
+							locksDropdown = new GUIContent[activeLocks.Count];
+							for (int i = 0; i < locksDropdown.Length; i++)
+								locksDropdown[i] = new GUIContent(activeLocks[i].ToString());
+							lockEntry = activeLocks[activeLocks.Count - 1];
+							//Set link
 							map[selectY][selectX].GetComponent<EditorTile>().locksIn.Add(lockEntry);
-						if (!anchorYX.GetComponent<EditorTile>().locksOut.Contains(lockEntry) && !anchorYX.GetComponent<EditorTile>().locksIn.Contains(lockEntry))
 							anchorYX.GetComponent<EditorTile>().locksOut.Add (lockEntry);
-						DrawLinks();
+							DrawLinks();
+						}
+					}
+				}
+				else {
+					if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+						// Set the connection (20) or lockgroup (21)
+						if (activeSelection == "conn" && map[selectY][selectX] != anchorYX) // Don't add nodes if they start/end on same tile
+						{	if (!map[selectY][selectX].GetComponent<EditorTile>().consIn.Contains(connectionEntry)&& !map[selectY][selectX].GetComponent<EditorTile>().consOut.Contains(connectionEntry)) //Don't add node if one already exists
+								map[selectY][selectX].GetComponent<EditorTile>().consIn.Add(connectionEntry);
+							if (!anchorYX.GetComponent<EditorTile>().consOut.Contains(connectionEntry) && !anchorYX.GetComponent<EditorTile>().consIn.Contains(connectionEntry))
+								anchorYX.GetComponent<EditorTile>().consOut.Add(connectionEntry);
+							DrawLinks();
+						} 
+						else if (activeSelection == "lock" && map[selectY][selectX] != anchorYX)
+						{	if (!map[selectY][selectX].GetComponent<EditorTile>().locksIn.Contains(lockEntry) && !map[selectY][selectX].GetComponent<EditorTile>().locksOut.Contains(lockEntry))
+								map[selectY][selectX].GetComponent<EditorTile>().locksIn.Add(lockEntry);
+							if (!anchorYX.GetComponent<EditorTile>().locksOut.Contains(lockEntry) && !anchorYX.GetComponent<EditorTile>().locksIn.Contains(lockEntry))
+								anchorYX.GetComponent<EditorTile>().locksOut.Add (lockEntry);
+							DrawLinks();
+						}
 					}
 				}
 				DrawMouse(anchor,anchor); // Removing mouse line from view
@@ -371,6 +401,7 @@ public class EditorScript : MonoBehaviour {
 				int selectY = (int)(Math.Floor (mouseLocation.y/-32));
 				validAnchor = false;
 				if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+					// Remove connection or lockgroup
 					if (activeSelection == "conn") {
 						if (map[selectY][selectX].GetComponent<EditorTile>().consIn.Contains(connectionEntry))
 							map[selectY][selectX].GetComponent<EditorTile>().consIn.Remove(connectionEntry);
@@ -876,8 +907,8 @@ public class EditorScript : MonoBehaviour {
 		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+240,90,30), ref showConList, ref connectionEntry, new GUIContent(connectionEntry.ToString()), consDropdown, activeButton)) {
 			conPicked = true;
 			connectionEntry = int.Parse (consDropdown[connectionEntry].text);
-			DrawLinks();
 			activeSelection = "conn";
+			DrawLinks();
 		} else
 			conPicked = false;
 	
@@ -893,8 +924,8 @@ public class EditorScript : MonoBehaviour {
 		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+320,90,30), ref showLockList, ref lockEntry, new GUIContent(lockEntry.ToString()), locksDropdown, activeButton)) {
 			lockPicked = true;
 			lockEntry = int.Parse (locksDropdown[lockEntry].text);
-			DrawLinks();
 			activeSelection = "lock";
+			DrawLinks();
 		} else
 			lockPicked = false;
 		
