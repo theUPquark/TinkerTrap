@@ -81,7 +81,7 @@ public class EditorScript : MonoBehaviour {
 		lineList.Add (new GameObject(lineList.Count.ToString()));
 		lineList[lineList.Count - 1].AddComponent<LineRenderer>().SetVertexCount(2);
 		lineList[lineList.Count - 1].GetComponent<LineRenderer>().material = new Material (Shader.Find("Particles/Additive"));
-		lineList[lineList.Count - 1].GetComponent<LineRenderer>().SetWidth (6f, 2f);
+		lineList[lineList.Count - 1].GetComponent<LineRenderer>().SetWidth (4f, 2f);
 		lineList[lineList.Count - 1].GetComponent<LineRenderer>().SetPosition(0,ReturnTileCenter(a.transform.position));
 		lineList[lineList.Count - 1].GetComponent<LineRenderer>().SetPosition(1,ReturnTileCenter(b.transform.position));
 	}
@@ -152,14 +152,11 @@ public class EditorScript : MonoBehaviour {
 		{
 			foreach (GameObject o in g)
 			{
-//				o.GetComponent<LineRenderer>().SetColors (new Color(197f/255f,244f/255f,184f/255f), new Color(22f/255f,148f/255f,64f/255f));
 				// Checking all tiles for num, using consOut
 				if ( o.GetComponent<EditorTile>().consOut.Contains(num))
 				{
 					outFound = true;
 					bool inFound = false;
-//					o.GetComponent<LineRenderer>().SetVertexCount(3);
-//					o.GetComponent<LineRenderer>().SetPosition(count,ReturnTileCenter(o.transform.position));
 					foreach (List<GameObject> g2 in map)
 					{
 						foreach (GameObject o2 in g2)
@@ -167,25 +164,21 @@ public class EditorScript : MonoBehaviour {
 							// Check all tiles again for num, using consIn
 							if (o2.GetComponent<EditorTile>().consIn.Contains(num))
 							{
-								// With another matching tile, set another LineRender point, and then return to source tile again
-//								o.GetComponent<LineRenderer>().SetVertexCount(count + 3);
-//								o.GetComponent<LineRenderer>().SetPosition(++count,ReturnTileCenter(o2.transform.position));
-//								o.GetComponent<LineRenderer>().SetPosition(++count,ReturnTileCenter(o.transform.position));
-								// !!- New object creating line between tiles
 								inFound = true;
 								AddLineObject(o,o2);
-								lineList[lineList.Count - 1].GetComponent<LineRenderer>().SetColors (new Color(197f/255f,244f/255f,184f/255f), new Color(22f/255f,148f/255f,64f/255f));
+								if (num == connectionEntry) // Visual distinction for modifiable entry
+								{
+									lineList[lineList.Count - 1].GetComponent<LineRenderer>().SetColors(new Color(197f/255f,244f/255f,184f/255f),Color.green);
+									lineList[lineList.Count - 1].GetComponent<LineRenderer>().SetWidth(6f, 2f);
+								}
+								else
+									lineList[lineList.Count - 1].GetComponent<LineRenderer>().SetColors (new Color(197f/255f,244f/255f,184f/255f), new Color(22f/255f,148f/255f,64f/255f));
 							}
 						}
 					}
 					if (!inFound) {
-//						o.GetComponent<LineRenderer>().SetVertexCount(0);
 						o.GetComponent<EditorTile>().consOut.Remove(num); // Removes lone Outs
 					}
-				}
-				else {
-//					o.GetComponent<LineRenderer>().SetVertexCount(1);
-//					o.GetComponent<LineRenderer>().SetPosition(0,o.transform.position);
 				}
 			}
 		}
@@ -208,14 +201,11 @@ public class EditorScript : MonoBehaviour {
 		{
 			foreach (GameObject o in g)
 			{
-//				o.GetComponent<LineRenderer>().SetColors (new Color(236f/255f,243f/255f,183f/255f,255f/255f), new Color(106f/255f,58f/255f,32f/255f,255f/255f));
 				// Checking all tiles for num, using locksOut
 				if ( o.GetComponent<EditorTile>().locksOut.Contains(num))
 				{
 					outFound = true;
 					bool inFound = false;
-//					o.GetComponent<LineRenderer>().SetVertexCount(3);
-//					o.GetComponent<LineRenderer>().SetPosition(count,ReturnTileCenter(o.transform.position));
 					foreach (List<GameObject> g2 in map)
 					{
 						foreach (GameObject o2 in g2)
@@ -223,25 +213,21 @@ public class EditorScript : MonoBehaviour {
 							// Check all tiles again for num, using locksin
 							if (o2.GetComponent<EditorTile>().locksIn.Contains(num))
 							{
-								// With another matching tile, set another LineRender point, and then return to source tile again
-//								o.GetComponent<LineRenderer>().SetVertexCount(count + 3);
-//								o.GetComponent<LineRenderer>().SetPosition(++count,ReturnTileCenter(o2.transform.position));
-//								o.GetComponent<LineRenderer>().SetPosition(++count,ReturnTileCenter(o.transform.position));
-								// !!- New object creating line between tiles
 								inFound = true;
 								AddLineObject(o,o2);
-								lineList[lineList.Count - 1].GetComponent<LineRenderer>().SetColors (new Color(236f/255f,243f/255f,183f/255f,255f/255f), new Color(106f/255f,58f/255f,32f/255f,255f/255f));
+								if (num == lockEntry) // Visual distinction for modifiable entry
+								{
+									lineList[lineList.Count - 1].GetComponent<LineRenderer>().SetColors(new Color(197f/255f,244f/255f,184f/255f),new Color(206f/255f,58f/255f,32f/255f,255f/255f));
+									lineList[lineList.Count - 1].GetComponent<LineRenderer>().SetWidth(6f, 2f);
+								}
+								else
+									lineList[lineList.Count - 1].GetComponent<LineRenderer>().SetColors (new Color(236f/255f,243f/255f,183f/255f,255f/255f), new Color(106f/255f,58f/255f,32f/255f,255f/255f));
 							}
 						}
 					}
 					if (!inFound) {
-//						o.GetComponent<LineRenderer>().SetVertexCount(0);
 						o.GetComponent<EditorTile>().locksOut.Remove(num); // Removes lone Outs
 					}
-				}
-				else {
-//					o.GetComponent<LineRenderer>().SetVertexCount(1);
-//					o.GetComponent<LineRenderer>().SetPosition(0,o.transform.position);
 				}
 			}
 		}
@@ -268,9 +254,6 @@ public class EditorScript : MonoBehaviour {
 					map[i].Add(OT.CreateObject ("builderSprite"));
 					mapObs[i].Add(OT.CreateObject ("builderSprite"));
 					map[i][j].AddComponent<EditorTile>();
-					map[i][j].AddComponent<LineRenderer>();
-    				map[i][j].GetComponent<LineRenderer>().material = new Material (Shader.Find("Particles/Additive"));
-					map[i][j].GetComponent<LineRenderer>().SetWidth (6f, 2f);
 					map[i][j].GetComponent<OTSprite>().position = new Vector2(j*32f,i*-32f);
 					mapObs[i][j].GetComponent<OTSprite>().position = new Vector2(j*32f,i*-32f);
 					map[i][j].GetComponent<OTSprite>().frameName = "ed_Wall0";
@@ -350,21 +333,6 @@ public class EditorScript : MonoBehaviour {
 					anchorYX = map[selectY][selectX];
 					anchor = ReturnTileCenter(map[selectY][selectX].transform.position);
 				}
-//				if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
-//					if (activeSelection == "conn") {
-//						if (map[selectY][selectX].GetComponent<EditorTile>().consIn.Contains(connectionEntry))
-//							map[selectY][selectX].GetComponent<EditorTile>().consIn.Remove(connectionEntry);
-//						if (map[selectY][selectX].GetComponent<EditorTile>().consOut.Contains(connectionEntry))
-//							map[selectY][selectX].GetComponent<EditorTile>().consOut.Remove(connectionEntry);
-//						DrawConnections(connectionEntry);
-//					} else {
-//						if (map[selectY][selectX].GetComponent<EditorTile>().locksIn.Contains(lockEntry))
-//							map[selectY][selectX].GetComponent<EditorTile>().locksIn.Remove(lockEntry);
-//						if (map[selectY][selectX].GetComponent<EditorTile>().locksOut.Contains(lockEntry))
-//							map[selectY][selectX].GetComponent<EditorTile>().locksOut.Remove(lockEntry);
-//						DrawLocks(lockEntry);
-//					}
-//				}
 			}
 			if ((Input.GetMouseButton (0) || Input.GetMouseButton(1)) && !guiError && !loadFile && !saveFile && !guiInput && validAnchor == true)
 			{
@@ -384,7 +352,6 @@ public class EditorScript : MonoBehaviour {
 							map[selectY][selectX].GetComponent<EditorTile>().consIn.Add(connectionEntry);
 						if (!anchorYX.GetComponent<EditorTile>().consOut.Contains(connectionEntry) && !anchorYX.GetComponent<EditorTile>().consIn.Contains(connectionEntry))
 							anchorYX.GetComponent<EditorTile>().consOut.Add(connectionEntry);
-//						DrawConnections(connectionEntry);
 						DrawLinks();
 					} 
 					else if (activeSelection == "lock" && map[selectY][selectX] != anchorYX)
@@ -392,7 +359,6 @@ public class EditorScript : MonoBehaviour {
 							map[selectY][selectX].GetComponent<EditorTile>().locksIn.Add(lockEntry);
 						if (!anchorYX.GetComponent<EditorTile>().locksOut.Contains(lockEntry) && !anchorYX.GetComponent<EditorTile>().locksIn.Contains(lockEntry))
 							anchorYX.GetComponent<EditorTile>().locksOut.Add (lockEntry);
-//						DrawLocks(lockEntry);
 						DrawLinks();
 					}
 				}
@@ -410,14 +376,12 @@ public class EditorScript : MonoBehaviour {
 							map[selectY][selectX].GetComponent<EditorTile>().consIn.Remove(connectionEntry);
 						if (anchorYX.GetComponent<EditorTile>().consOut.Contains(connectionEntry))
 							anchorYX.GetComponent<EditorTile>().consOut.Remove(connectionEntry);
-//						DrawConnections(connectionEntry);
 						DrawLinks();
 					} else if (activeSelection == "lock") {
 						if (map[selectY][selectX].GetComponent<EditorTile>().locksIn.Contains(lockEntry))
 							map[selectY][selectX].GetComponent<EditorTile>().locksIn.Remove(lockEntry);
 						if (anchorYX.GetComponent<EditorTile>().locksOut.Contains(lockEntry))
 							anchorYX.GetComponent<EditorTile>().locksOut.Remove(lockEntry);
-//						DrawLocks(lockEntry);
 						DrawLinks();
 					}							
 				}
@@ -903,9 +867,6 @@ public class EditorScript : MonoBehaviour {
 		
 		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+180,100,25), ref showViewList, ref viewEntry, viewDropdown[viewEntry], viewDropdown, activeButton)) {
 			viewPicked = true;
-//			viewEntry = int.Parse (viewDropdown[viewEntry].text);
-//			DrawConnections (connectionEntry);
-//			activeSelection = "conn";
 			DrawLinks();
 		} else
 			viewPicked = false;
@@ -915,7 +876,6 @@ public class EditorScript : MonoBehaviour {
 		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+240,90,30), ref showConList, ref connectionEntry, new GUIContent(connectionEntry.ToString()), consDropdown, activeButton)) {
 			conPicked = true;
 			connectionEntry = int.Parse (consDropdown[connectionEntry].text);
-//			DrawConnections (connectionEntry);
 			DrawLinks();
 			activeSelection = "conn";
 		} else
@@ -933,7 +893,6 @@ public class EditorScript : MonoBehaviour {
 		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+320,90,30), ref showLockList, ref lockEntry, new GUIContent(lockEntry.ToString()), locksDropdown, activeButton)) {
 			lockPicked = true;
 			lockEntry = int.Parse (locksDropdown[lockEntry].text);
-//			DrawLocks(lockEntry);
 			DrawLinks();
 			activeSelection = "lock";
 		} else
