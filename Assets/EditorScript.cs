@@ -46,8 +46,8 @@ public class EditorScript : MonoBehaviour {
 	private bool showConList = false;
 	private bool showLockList = false;
 	private bool showViewList = false;
-	private int connectionEntry = 0;
-	private int lockEntry = 0;
+	private int connectionEntry = 1;
+	private int lockEntry = 1;
 	private int viewEntry = 0;
 	private GUIContent[] consDropdown = {new GUIContent("1")};
 	private GUIContent[] locksDropdown = {new GUIContent("1")};
@@ -124,6 +124,76 @@ public class EditorScript : MonoBehaviour {
 		line.GetComponent<LineRenderer>().SetPosition(3,d);
 		
 		line.GetComponent<LineRenderer>().SetPosition(4,a);
+	}
+	// Set first empty active as selection, otherwise create new active as selection
+	private void CheckForEmptyActive()
+	{
+		int emptyActive = -1;
+		
+		if (activeSelection == "conn")
+		{
+			foreach (int act in activeCons)
+			{
+				bool linkFound = false;
+				foreach (List<GameObject> g in map)
+				{
+					foreach (GameObject o in g)
+					{
+						if (o.GetComponent<EditorTile>().consOut.Contains(act))
+						{
+							linkFound = true;
+						}
+					}
+				}
+				if (!linkFound){
+					emptyActive = act;
+					break;
+				}
+			}
+			if (emptyActive < 0)
+			{
+				activeCons.Add(activeCons.Count + 1);
+				consDropdown = new GUIContent[activeCons.Count];
+				for (int i = 0; i < consDropdown.Length; i++)
+					consDropdown[i] = new GUIContent(activeCons[i].ToString());
+				connectionEntry = activeCons[activeCons.Count - 1];
+			}
+			else{
+				connectionEntry = activeCons[emptyActive - 1];
+			}
+		}
+		else if (activeSelection == "lock")
+		{
+			foreach (int act in activeLocks)
+			{
+				bool linkFound = false;
+				foreach (List<GameObject> g in map)
+				{
+					foreach (GameObject o in g)
+					{
+						if (o.GetComponent<EditorTile>().locksOut.Contains(act))
+						{
+							linkFound = true;
+						}
+					}
+				}
+				if (!linkFound){
+					emptyActive = act;
+					break;
+				}
+			}
+			if (emptyActive < 0)
+			{
+				activeLocks.Add(activeLocks.Count + 1);
+				locksDropdown = new GUIContent[activeLocks.Count];
+				for (int i = 0; i < locksDropdown.Length; i++)
+					locksDropdown[i] = new GUIContent(activeLocks[i].ToString());
+				lockEntry = activeLocks[activeLocks.Count - 1];
+			}
+			else {
+				lockEntry = activeLocks[emptyActive - 1];
+			}
+		}
 	}
 	
 	private void DrawLinks()
@@ -348,24 +418,14 @@ public class EditorScript : MonoBehaviour {
 				if (Input.GetKey(KeyCode.LeftControl)){ // Holding control creates new link in a new group
 					if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
 						if (activeSelection == "conn" && map[selectY][selectX] != anchorYX){
-							// Add new connection group and make it the active entry
-							activeCons.Add(activeCons.Count + 1);
-							consDropdown = new GUIContent[activeCons.Count];
-							for (int i = 0; i < consDropdown.Length; i++)
-								consDropdown[i] = new GUIContent(activeCons[i].ToString());
-							connectionEntry = activeCons[activeCons.Count - 1];
+							CheckForEmptyActive();
 							// Set link
 							map[selectY][selectX].GetComponent<EditorTile>().consIn.Add(connectionEntry);
 							anchorYX.GetComponent<EditorTile>().consOut.Add(connectionEntry);
 							DrawLinks();
 						}
 						else if (activeSelection == "lock" && map[selectY][selectX] != anchorYX) {
-							//Add new lock group and make it the active entry
-							activeLocks.Add(activeLocks.Count + 1);
-							locksDropdown = new GUIContent[activeLocks.Count];
-							for (int i = 0; i < locksDropdown.Length; i++)
-								locksDropdown[i] = new GUIContent(activeLocks[i].ToString());
-							lockEntry = activeLocks[activeLocks.Count - 1];
+							CheckForEmptyActive();
 							//Set link
 							map[selectY][selectX].GetComponent<EditorTile>().locksIn.Add(lockEntry);
 							anchorYX.GetComponent<EditorTile>().locksOut.Add (lockEntry);
@@ -912,11 +972,10 @@ public class EditorScript : MonoBehaviour {
 		} else
 			conPicked = false;
 	
-		if (GUI.Button (new Rect(Screen.width-(32*2)-80,(32+5)*(tileList.Length/2+obsList.Length/2)+240,40,30), "Add")) {
-			activeCons.Add(activeCons.Count + 1);
-			consDropdown = new GUIContent[activeCons.Count];
-				for (int i = 0; i < consDropdown.Length; i++)
-					consDropdown[i] = new GUIContent(activeCons[i].ToString());
+		if (GUI.Button (new Rect(Screen.width-(32*2)-85,(32+5)*(tileList.Length/2+obsList.Length/2)+240,45,30), "New")) {
+			activeSelection = "conn";
+			CheckForEmptyActive();
+			DrawLinks();
 		}
 		
 		GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+280,150,30), "Lock Groups:");
@@ -929,11 +988,10 @@ public class EditorScript : MonoBehaviour {
 		} else
 			lockPicked = false;
 		
-		if (GUI.Button (new Rect(Screen.width-(32*2)-80,(32+5)*(tileList.Length/2+obsList.Length/2)+320,40,30), "Add")) {
-			activeLocks.Add(activeLocks.Count + 1);
-			locksDropdown = new GUIContent[activeLocks.Count];
-				for (int i = 0; i < locksDropdown.Length; i++)
-					locksDropdown[i] = new GUIContent(activeLocks[i].ToString());
+		if (GUI.Button (new Rect(Screen.width-(32*2)-85,(32+5)*(tileList.Length/2+obsList.Length/2)+320,45,30), "New")) {
+			activeSelection = "lock";
+			CheckForEmptyActive();
+			DrawLinks();
 		}
 		
 		if (loadFile) {
