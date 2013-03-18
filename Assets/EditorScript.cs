@@ -487,13 +487,23 @@ public class EditorScript : MonoBehaviour {
 	
 	private void SetTypeByDraw(GameObject a)
 	{
+		//Stop the case where an obstacle is present and the pending tile type is a wall/door
+		if(!(!(a.GetComponent<EditorTile>().obsType == "") && (activeSelection == "Wall" || activeSelection == "Door" || /*activeSelection == "Electrified" ||*/
+																activeSelection == "Button" || activeSelection == "Generator" || activeSelection == "Source")))
+		{
 		a.GetComponent<EditorTile>().tileType = activeSelection;
 		a.GetComponent<EditorTile>().tileSet = activeSet;
+		}
 	}
 	
 	private void SetObsByDraw(GameObject a)
 	{
+		//Stop the case where the tile type is a wall/door
+		if (!(a.GetComponent<EditorTile>().tileType == "Wall" || a.GetComponent<EditorTile>().tileType == "Door" || /*a.GetComponent<EditorTile>().tileType == "Electrified" ||*/
+				a.GetComponent<EditorTile>().tileType == "Button" || a.GetComponent<EditorTile>().tileType == "Generator" || a.GetComponent<EditorTile>().tileType == "Source"))
+		{
 		a.GetComponent<EditorTile>().obsType = activeSelection;
+		}
 	}
 	
 	private void SetGraphics(GameObject a, GameObject b)
