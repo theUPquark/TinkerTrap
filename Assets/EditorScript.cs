@@ -412,19 +412,28 @@ public class EditorScript : MonoBehaviour {
 					anchorYX = map[selectY][selectX];
 					anchor = ReturnTileCenter(map[selectY][selectX].transform.position); //Do I want center?
 				}
-			} else if (Input.GetMouseButtonUp (0) && validAnchor == true) {
+			} 
+			else if (Input.GetMouseButtonUp (0) && validAnchor == true) {
+				validAnchor = false;
+			}
+			if (Input.GetMouseButton (0) && validAnchor == true) {
 				Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
 				int selectX = (int)(Math.Floor (mouseLocation.x/32));
 				int selectY = (int)(Math.Floor (mouseLocation.y/-32));
 				if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
 					SetBoxedSelection(anchorYX,map[selectY][selectX]);
-					DragBox(anchor,ReturnTileCenter(map[selectY][selectX].transform.position));
+					Vector3 pointB = new Vector3(map[selectY][selectX].transform.position.x,map[selectY][selectX].transform.position.y,map[selectY][selectX].transform.position.z);
+					if (anchor.x < map[selectY][selectX].transform.position.x)
+						if (anchor.y > map[selectY][selectX].transform.position.y)
+							DragBox(new Vector3(anchor.x - 16,anchor.y + 16, anchor.z),new Vector3(pointB.x + 32, pointB.y - 32, pointB.z));
+						else
+							DragBox(new Vector3(anchor.x - 16,anchor.y - 16, anchor.z),new Vector3(pointB.x + 32, pointB.y, pointB.z));
+					else
+						if (anchor.y > map[selectY][selectX].transform.position.y)
+							DragBox(new Vector3(anchor.x + 16,anchor.y + 16, anchor.z),new Vector3(pointB.x, pointB.y - 32, pointB.z));
+						else
+							DragBox(new Vector3(anchor.x + 16,anchor.y - 16, anchor.z),new Vector3(pointB.x, pointB.y, pointB.z));
 				}
-				validAnchor = false;
-			}
-			if (Input.GetMouseButton (0) && validAnchor == true) {
-				Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
-				DragBox(anchor,mouseLocation);
 			}
 			
 		} else if (tileList.Contains (activeSelection) && Input.GetMouseButton (0) && !guiError && !loadFile && !saveFile && !guiInput)
@@ -1027,7 +1036,7 @@ public class EditorScript : MonoBehaviour {
 					activeSelection = "empty";
 					if (!paintMode && boxedSelection.Count > 0){
 						foreach (GameObject o in boxedSelection){
-							SetObsByDraw(o);
+							o.GetComponent<EditorTile>().obsType = "";
 							SetGraphics(o,mapObs[(int)o.transform.position.y/-32][(int)o.transform.position.x/32]);
 						}
 					}
