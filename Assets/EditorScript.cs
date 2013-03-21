@@ -128,6 +128,8 @@ public class EditorScript : MonoBehaviour {
 	
 	private void DrawMouse(Vector3 a, Vector3 b)
 	{
+		line.GetComponent<LineRenderer>().SetColors(Color.white, Color.blue);
+		line.GetComponent<LineRenderer>().SetWidth(6f,2f);
 		line.GetComponent<LineRenderer>().SetVertexCount(2);
 		line.GetComponent<LineRenderer>().SetPosition(0, a);
 		line.GetComponent<LineRenderer>().SetPosition(1, b);
@@ -138,6 +140,7 @@ public class EditorScript : MonoBehaviour {
 		 * d c
 		 */
 		line.GetComponent<LineRenderer>().SetColors(Color.cyan,Color.cyan);
+		line.GetComponent<LineRenderer>().SetWidth(2f,2f);
 		line.GetComponent<LineRenderer>().SetVertexCount(5);
 		line.GetComponent<LineRenderer>().SetPosition(0,a);
 		
@@ -1007,11 +1010,9 @@ public class EditorScript : MonoBehaviour {
 			if (modeEntry == 0) {
 				paintMode = true;
 				line.GetComponent<LineRenderer>().SetVertexCount(0);
-				line.GetComponent<LineRenderer>().SetColors(Color.white, Color.blue);
-				line.GetComponent<LineRenderer>().SetWidth(6f,2f);
+				ClearBoxedSelection();
 			} else {
 				paintMode = false;
-				line.GetComponent<LineRenderer>().SetWidth(2f,2f);
 			}
 		} else
 			modePicked = false;
@@ -1044,6 +1045,8 @@ public class EditorScript : MonoBehaviour {
 						SetTypeByDraw(o);
 						SetGraphics(o,mapObs[(int)o.transform.position.y/-32][(int)o.transform.position.x/32]);
 					}
+				} else if (paintMode) {
+					// Something to show when selection is active
 				}
 			}
 		}
