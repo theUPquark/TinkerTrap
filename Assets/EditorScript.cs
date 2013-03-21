@@ -988,8 +988,8 @@ public class EditorScript : MonoBehaviour {
 		}
 		
 		if (guiError) {
-			GUI.Label (new Rect (5, 70, 100, 60), guiErS);
-			if (GUI.Button (new Rect(5, 135, 60, 30), "Okay.")) {
+			GUI.Label (new Rect (Screen.width/2 - 150, 70, 300, 100), guiErS, "box");
+			if (GUI.Button (new Rect(Screen.width/2 - 30, 135, 60, 30), "Okay.")) {
 				guiInput = true;
 				guiError = false;
 				guiErS = "";
