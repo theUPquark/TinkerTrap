@@ -152,12 +152,17 @@ public class EditorScript : MonoBehaviour {
 		line.GetComponent<LineRenderer>().SetPosition(4,a);
 	}
 	
-	private void SetBoxedSelection(GameObject a, GameObject b)
+	private void ClearBoxedSelection()
 	{
 		while (boxedSelection.Count > 0)
 		{
 			boxedSelection.RemoveAt(boxedSelection.Count - 1);
 		}
+	}
+	
+	private void SetBoxedSelection(GameObject a, GameObject b)
+	{
+		ClearBoxedSelection();
 		int startX = (int)a.transform.position.x/32;
 		int startY = (int)(a.transform.position.y/-32);
 		int endX = (int)b.transform.position.x/32;
@@ -418,7 +423,7 @@ public class EditorScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
-		if (!paintMode && !guiError && !loadFile && !saveFile && !guiInput) {
+		if (!paintMode && activeSelection != "conn" && activeSelection != "lock" && !guiError && !loadFile && !saveFile && !guiInput) {
 			if (Input.GetMouseButtonDown (0)) {
 				Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
 				int selectX = (int)(Math.Floor (mouseLocation.x/32));
@@ -489,8 +494,8 @@ public class EditorScript : MonoBehaviour {
 				anchorYX = map[selectY][selectX];
 				anchor = ReturnTileCenter(map[selectY][selectX].transform.position);
 			}
-		} else {
-			if ((activeSelection == "conn" || activeSelection == "lock") && Input.GetMouseButtonDown (1) && !guiError && !loadFile && !saveFile && !guiInput)
+		} else if (activeSelection == "conn" || activeSelection == "lock"){
+			if (Input.GetMouseButtonDown (1) && !guiError && !loadFile && !saveFile && !guiInput)
 			{
 				Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
 				int selectX = (int)(Math.Floor (mouseLocation.x/32));
@@ -996,10 +1001,12 @@ public class EditorScript : MonoBehaviour {
 			}
 		}
 		
-		if (Popup.List (new Rect(Screen.width - 150,5,70,30), ref showModeList, ref modeEntry, modeDropdown[modeEntry], modeDropdown, activeButton)) {
+		if (Popup.List (new Rect(Screen.width - 149,5,70,30), ref showModeList, ref modeEntry, modeDropdown[modeEntry], modeDropdown, activeButton)) {
 			modePicked = true;
+			activeSelection = "";
 			if (modeEntry == 0) {
 				paintMode = true;
+				line.GetComponent<LineRenderer>().SetVertexCount(0);
 				line.GetComponent<LineRenderer>().SetColors(Color.white, Color.blue);
 				line.GetComponent<LineRenderer>().SetWidth(6f,2f);
 			} else {
@@ -1009,7 +1016,8 @@ public class EditorScript : MonoBehaviour {
 		} else
 			modePicked = false;
 		
-		GUI.Label (new Rect(Screen.width-(32*2)-10,5,50,30), "Tiles:");
+		GUI.Label (new Rect(Screen.width - 78,5,72,190), "Tiles", "box");
+		//GUI.Label (new Rect(Screen.width-(32*2)-10,5,50,30), "Tiles:");
 		for (int i = 0; i < tileList.Length; i++) {
 			GUIStyle buttonStyle;
 			if (tileList[i] == activeSelection)
@@ -1040,7 +1048,8 @@ public class EditorScript : MonoBehaviour {
 			}
 		}
 		
-		GUI.Label (new Rect(Screen.width-(32*2)-10,(32+5)*(tileList.Length/2+1)+40,70,30), "Spawns:");
+		GUI.Label (new Rect(Screen.width - 78,(32+5)*(tileList.Length/2+1)+40,72,120), "Spawns", "box");
+		//GUI.Label (new Rect(Screen.width-(32*2)-10,(32+5)*(tileList.Length/2+1)+40,70,30), "Spawns:");
 		for (int i = 0; i < obsList.Length+1; i++) {
 			Texture tex;
 			int oSet = 0;
@@ -1101,40 +1110,46 @@ public class EditorScript : MonoBehaviour {
 			browser = BrowserSetup ();
 		}
 		
-		if (Popup.List (new Rect(Screen.width-(32*2)-50,(32+5)*(tileList.Length/2+obsList.Length/2)+170,100,25), ref showViewList, ref viewEntry, viewDropdown[viewEntry], viewDropdown, activeButton)) {
+		if (Popup.List (new Rect(Screen.width - 124,(32+5)*(tileList.Length/2+obsList.Length/2)+170,100,25), ref showViewList, ref viewEntry, viewDropdown[viewEntry], viewDropdown, activeButton)) {
 			viewPicked = true;
 			DrawLinks();
 		} else
 			viewPicked = false;
 		
-		GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+200,90,30), "Connections:");
+		GUI.Label (new Rect(Screen.width - 147,(32+5)*(tileList.Length/2+obsList.Length/2)+208,141,75), "Connections", "box");
+		//GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+200,90,30), "Connections:");
 	
-		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+240,90,30), ref showConList, ref connectionEntry, new GUIContent(connectionEntry.ToString()), consDropdown, activeButton)) {
+		if (Popup.List (new Rect(Screen.width - 99,(32+5)*(tileList.Length/2+obsList.Length/2)+240,90,30), ref showConList, ref connectionEntry, new GUIContent(connectionEntry.ToString()), consDropdown, activeButton)) {
 			conPicked = true;
 			connectionEntry = int.Parse (consDropdown[connectionEntry].text);
 			activeSelection = "conn";
+			ClearBoxedSelection();
 			DrawLinks();
 		} else
 			conPicked = false;
 	
-		if (GUI.Button (new Rect(Screen.width-(32*2)-85,(32+5)*(tileList.Length/2+obsList.Length/2)+240,45,30), "New")) {
+		if (GUI.Button (new Rect(Screen.width - 144,(32+5)*(tileList.Length/2+obsList.Length/2)+240,45,30), "New")) {
 			activeSelection = "conn";
+			ClearBoxedSelection();
 			CheckForEmptyActive();
 			DrawLinks();
 		}
 		
-		GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+280,150,30), "Lock Groups:");
+		GUI.Label (new Rect(Screen.width - 147,(32+5)*(tileList.Length/2+obsList.Length/2)+288,141,75), "Lock Groups", "box");
+		//GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+280,150,30), "Lock Groups:");
 		
-		if (Popup.List (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+320,90,30), ref showLockList, ref lockEntry, new GUIContent(lockEntry.ToString()), locksDropdown, activeButton)) {
+		if (Popup.List (new Rect(Screen.width - 99,(32+5)*(tileList.Length/2+obsList.Length/2)+320,90,30), ref showLockList, ref lockEntry, new GUIContent(lockEntry.ToString()), locksDropdown, activeButton)) {
 			lockPicked = true;
 			lockEntry = int.Parse (locksDropdown[lockEntry].text);
 			activeSelection = "lock";
+			ClearBoxedSelection();
 			DrawLinks();
 		} else
 			lockPicked = false;
 		
-		if (GUI.Button (new Rect(Screen.width-(32*2)-85,(32+5)*(tileList.Length/2+obsList.Length/2)+320,45,30), "New")) {
+		if (GUI.Button (new Rect(Screen.width - 144,(32+5)*(tileList.Length/2+obsList.Length/2)+320,45,30), "New")) {
 			activeSelection = "lock";
+			ClearBoxedSelection();
 			CheckForEmptyActive();
 			DrawLinks();
 		}
