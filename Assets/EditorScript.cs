@@ -84,6 +84,23 @@ public class EditorScript : MonoBehaviour {
 		activeLocks.Add(1);
 	}
 	
+	private bool validSave()
+	{
+		bool saveMe = true;
+		int countPlayerSpawn = 0;
+		
+		foreach (List<GameObject> g in map)
+		{	foreach (GameObject o in g)
+			{
+				if (o.GetComponent<EditorTile>().obsType == "Spawn")
+					countPlayerSpawn++;
+			}
+		}
+		if (countPlayerSpawn != 1)
+			saveMe = false;
+		return saveMe;
+	}
+	
 	private void AddLineObject (GameObject a, GameObject b)
 	{
 		lineList.Add (new GameObject(lineList.Count.ToString()));
@@ -1068,9 +1085,14 @@ public class EditorScript : MonoBehaviour {
 		}
 		
 		if (GUI.Button (new Rect(200,5,90,60), "Save") && (!saveFile && !loadFile) ) { // Changed '||' to '&&' so filebrower won't open both load and save windows
-			guiInput = true;
-			saveFile = true;
-			browser = BrowserSetup ();
+			if (validSave()) {
+				guiInput = true;
+				saveFile = true;
+				browser = BrowserSetup ();
+			} else {
+				guiError = true;
+				guiErS = "Spawn must be present and unique.";
+			}
 		}
 		
 		if (GUI.Button (new Rect(295,5,90,60), "Load") && (!saveFile && !loadFile) ) { // Changed '||' to '&&' so filebrower won't open both load and save windows
