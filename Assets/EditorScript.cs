@@ -1095,9 +1095,18 @@ public class EditorScript : MonoBehaviour {
 				activeSelection = tileList[i];
 				activeSet = tSet;
 				if (!paintMode && boxedSelection.Count > 0){
-					foreach (GameObject o in boxedSelection){
-						SetTypeByDraw(o);
-						SetGraphics(o,mapObs[(int)o.transform.position.y/-32][(int)o.transform.position.x/32]);
+					if (Event.current.button == 0) {
+						foreach (GameObject o in boxedSelection){
+							SetTypeByDraw(o);
+							SetGraphics(o,mapObs[(int)o.transform.position.y/-32][(int)o.transform.position.x/32]);
+						}
+					} else if (Event.current.button == 1) {
+						foreach (GameObject o in boxedSelection){
+							o.GetComponent<EditorTile>().ClearConstraints();
+							SetTypeByDraw(o);
+							SetGraphics(o,mapObs[(int)o.transform.position.y/-32][(int)o.transform.position.x/32]);
+						}
+						CheckAllLinks();
 					}
 				} else if (paintMode) {
 					// Something to show when selection is active
@@ -1141,9 +1150,18 @@ public class EditorScript : MonoBehaviour {
 					activeSelection = obsList[i];
 					activeSet = oSet;
 					if (!paintMode && boxedSelection.Count > 0){
-						foreach (GameObject o in boxedSelection){
-							SetObsByDraw(o);
-							SetGraphics(o,mapObs[(int)o.transform.position.y/-32][(int)o.transform.position.x/32]);
+						if (Event.current.button == 0) {
+							foreach (GameObject o in boxedSelection){
+								SetObsByDraw(o);
+								SetGraphics(o,mapObs[(int)o.transform.position.y/-32][(int)o.transform.position.x/32]);
+							}
+						} else if (Event.current.button == 1) {
+							foreach (GameObject o in boxedSelection){
+								o.GetComponent<EditorTile>().ClearConstraints();
+								SetObsByDraw(o);
+								SetGraphics(o,mapObs[(int)o.transform.position.y/-32][(int)o.transform.position.x/32]);
+							}
+							CheckAllLinks();
 						}
 					}
 				}
