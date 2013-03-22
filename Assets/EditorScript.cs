@@ -304,6 +304,7 @@ public class EditorScript : MonoBehaviour {
 			viewEntry = 1;
 			DrawLinks();
 			viewEntry = 0;
+			DrawLinks();
 		} else
 			DrawLinks();	
 	}
