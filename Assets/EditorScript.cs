@@ -299,6 +299,15 @@ public class EditorScript : MonoBehaviour {
 		}
 	}
 	
+	private void CheckAllLinks() {
+		if (viewEntry == 0) {
+			viewEntry = 1;
+			DrawLinks();
+			viewEntry = 0;
+		} else
+			DrawLinks();	
+	}
+	
 	private void DrawConnections(int num)
 	{
 		bool outFound = false;
@@ -438,14 +447,8 @@ public class EditorScript : MonoBehaviour {
 			mapObs.RemoveRange (gridH,map.Count-gridH);
 		}
 		// Redraw links on downsize to clear any resulting broken links.
-		if (downSized == true) {
-			if (viewEntry == 0) {
-				viewEntry = 1;
-				DrawLinks();
-				viewEntry = 0;
-			} else
-				DrawLinks();
-		}
+		if (downSized == true) 
+			CheckAllLinks();
 	}
 	
 	// Update is called once per frame
@@ -485,22 +488,46 @@ public class EditorScript : MonoBehaviour {
 				}
 			}
 			
-		} else if (tileList.Contains (activeSelection) && Input.GetMouseButton (0) && !guiError && !loadFile && !saveFile && !guiInput)
+		} else if (tileList.Contains (activeSelection) && !guiError && !loadFile && !saveFile && !guiInput)
 		{
-			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
-			int selectX = (int)(Math.Floor (mouseLocation.x/32));
-			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
-			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
-				SetTypeByDraw(map[selectY][selectX]);
-				SetGraphics(map[selectY][selectX], mapObs[selectY][selectX]);
+			if (Input.GetMouseButton (0)) {
+				Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
+				int selectX = (int)(Math.Floor (mouseLocation.x/32));
+				int selectY = (int)(Math.Floor (mouseLocation.y/-32));
+				if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+					SetTypeByDraw(map[selectY][selectX]);
+					SetGraphics(map[selectY][selectX], mapObs[selectY][selectX]);
+				}
+			} else if (Input.GetMouseButton (1)) {
+				Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
+				int selectX = (int)(Math.Floor (mouseLocation.x/32));
+				int selectY = (int)(Math.Floor (mouseLocation.y/-32));
+				if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+					map[selectY][selectX].GetComponent<EditorTile>().ClearConstraints();
+					SetTypeByDraw(map[selectY][selectX]);
+					SetGraphics(map[selectY][selectX], mapObs[selectY][selectX]);
+					CheckAllLinks();
+				}
 			}
-		} else if (obsList.Contains (activeSelection) && Input.GetMouseButton (0) && !guiError && !loadFile && !saveFile && !guiInput) {
-			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
-			int selectX = (int)(Math.Floor (mouseLocation.x/32));
-			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
-			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
-				SetObsByDraw(map[selectY][selectX]);
-				SetGraphics(map[selectY][selectX], mapObs[selectY][selectX]);
+		} else if (obsList.Contains (activeSelection) && !guiError && !loadFile && !saveFile && !guiInput) {
+			if (Input.GetMouseButton (0)) {
+				Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
+				int selectX = (int)(Math.Floor (mouseLocation.x/32));
+				int selectY = (int)(Math.Floor (mouseLocation.y/-32));
+				if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+					SetObsByDraw(map[selectY][selectX]);
+					SetGraphics(map[selectY][selectX], mapObs[selectY][selectX]);
+				}
+			} else if (Input.GetMouseButton (1)) {
+				Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
+				int selectX = (int)(Math.Floor (mouseLocation.x/32));
+				int selectY = (int)(Math.Floor (mouseLocation.y/-32));
+				if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+					map[selectY][selectX].GetComponent<EditorTile>().ClearConstraints();
+					SetObsByDraw(map[selectY][selectX]);
+					SetGraphics(map[selectY][selectX], mapObs[selectY][selectX]);
+					CheckAllLinks();
+				}
 			}
 		} else if (activeSelection == "empty" && Input.GetMouseButton (0) && !guiError && !loadFile && !saveFile && !guiInput) {
 			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
@@ -620,9 +647,10 @@ public class EditorScript : MonoBehaviour {
 	{
 		//Stop the case where an obstacle is present and the pending tile type is a wall/door
 		if(!(!(a.GetComponent<EditorTile>().obsType == "") && (activeSelection == "Wall" || activeSelection == "Door" || /*activeSelection == "Electrified" ||*/
-																activeSelection == "Button" || activeSelection == "Generator" || activeSelection == "Source")))
+																activeSelection == "Button" || activeSelection == "Generator" /*|| activeSelection == "Source"*/)))
 		{	// Stop Wall or Floor values if any in/out Link is present
-			if (!((activeSelection == "Wall" || activeSelection == "Floor")  && (a.GetComponent<EditorTile>().consIn.Count != 0 || a.GetComponent<EditorTile>().consOut.Count != 0 || a.GetComponent<EditorTile>().locksIn.Count != 0 || a.GetComponent<EditorTile>().locksOut.Count != 0))) {
+			if (!((activeSelection == "Wall" || activeSelection == "Floor")  && (a.GetComponent<EditorTile>().consIn.Count != 0 || a.GetComponent<EditorTile>().consOut.Count != 0 
+				|| a.GetComponent<EditorTile>().locksIn.Count != 0 || a.GetComponent<EditorTile>().locksOut.Count != 0))) {
 				a.GetComponent<EditorTile>().tileType = activeSelection;
 				a.GetComponent<EditorTile>().tileSet = activeSet;
 			}
@@ -633,7 +661,7 @@ public class EditorScript : MonoBehaviour {
 	{
 		//Stop the case where the tile type is a wall/door
 		if (!(a.GetComponent<EditorTile>().tileType == "Wall" || a.GetComponent<EditorTile>().tileType == "Door" || /*a.GetComponent<EditorTile>().tileType == "Electrified" ||*/
-				a.GetComponent<EditorTile>().tileType == "Button" || a.GetComponent<EditorTile>().tileType == "Generator" || a.GetComponent<EditorTile>().tileType == "Source"))
+				a.GetComponent<EditorTile>().tileType == "Button" || a.GetComponent<EditorTile>().tileType == "Generator" /*|| a.GetComponent<EditorTile>().tileType == "Source"*/))
 		{
 			a.GetComponent<EditorTile>().obsType = activeSelection;
 		}
