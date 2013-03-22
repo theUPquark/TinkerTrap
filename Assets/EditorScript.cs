@@ -83,6 +83,18 @@ public class EditorScript : MonoBehaviour {
 		activeCons.Add(1);
 		activeLocks.Add(1);
 	}
+	private bool Linkable(GameObject a, GameObject b)
+	{
+		bool linkable = true;
+		if (a == b) 
+			linkable = false;
+		else if (a.GetComponent<EditorTile>().tileType == "Wall" || a.GetComponent<EditorTile>().tileType == "Floor")
+			linkable = false;
+		else if (b.GetComponent<EditorTile>().tileType == "Wall" || b.GetComponent<EditorTile>().tileType == "Floor")
+			linkable = false;
+		
+		return linkable;
+	}
 	
 	private bool validSave()
 	{
@@ -386,6 +398,7 @@ public class EditorScript : MonoBehaviour {
 	}
 	
 	private void SetGrid() {
+		bool downSized = false;
 		for (int i = 0; i < gridH; i++) {
 			if (map.Count == i) {
 				map.Add (new List<GameObject>());
@@ -404,6 +417,7 @@ public class EditorScript : MonoBehaviour {
 				}
 			}
 			if (gridW < map[i].Count) {
+				downSized = true;
 				foreach (GameObject t in map[i].GetRange (gridW,map[i].Count-gridW))
 					Destroy (t);
 				foreach (GameObject o in mapObs[i].GetRange (gridW,map[i].Count-gridW))
@@ -413,6 +427,7 @@ public class EditorScript : MonoBehaviour {
 			}
 		}
 		if (gridH < map.Count) {
+			downSized = true;
 			foreach (List<GameObject> l in map.GetRange (gridH,map.Count-gridH))
 				foreach (GameObject t in l)
 					Destroy (t);
@@ -421,6 +436,15 @@ public class EditorScript : MonoBehaviour {
 					Destroy (o);
 			map.RemoveRange (gridH,map.Count-gridH);
 			mapObs.RemoveRange (gridH,map.Count-gridH);
+		}
+		// Redraw links on downsize to clear any resulting broken links.
+		if (downSized == true) {
+			if (viewEntry == 0) {
+				viewEntry = 1;
+				DrawLinks();
+				viewEntry = 0;
+			} else
+				DrawLinks();
 		}
 	}
 	
@@ -435,7 +459,7 @@ public class EditorScript : MonoBehaviour {
 					line.GetComponent<LineRenderer>().SetColors(Color.white, Color.blue);
 					validAnchor = true;
 					anchorYX = map[selectY][selectX];
-					anchor = ReturnTileCenter(map[selectY][selectX].transform.position); //Do I want center?
+					anchor = ReturnTileCenter(map[selectY][selectX].transform.position);
 				}
 			} 
 			else if (Input.GetMouseButtonUp (0) && validAnchor == true) {
@@ -524,14 +548,14 @@ public class EditorScript : MonoBehaviour {
 				validAnchor = false;
 				if (Input.GetKey(KeyCode.LeftControl)){ // Holding control creates new link in a new group
 					if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
-						if (activeSelection == "conn" && map[selectY][selectX] != anchorYX){
+						if (activeSelection == "conn" && Linkable(map[selectY][selectX], anchorYX)){
 							CheckForEmptyActive();
 							// Set link
 							map[selectY][selectX].GetComponent<EditorTile>().consIn.Add(connectionEntry);
 							anchorYX.GetComponent<EditorTile>().consOut.Add(connectionEntry);
 							DrawLinks();
 						}
-						else if (activeSelection == "lock" && map[selectY][selectX] != anchorYX) {
+						else if (activeSelection == "lock" && Linkable(map[selectY][selectX], anchorYX)) {
 							CheckForEmptyActive();
 							//Set link
 							map[selectY][selectX].GetComponent<EditorTile>().locksIn.Add(lockEntry);
@@ -543,14 +567,14 @@ public class EditorScript : MonoBehaviour {
 				else {
 					if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
 						// Set the connection (20) or lockgroup (21)
-						if (activeSelection == "conn" && map[selectY][selectX] != anchorYX) // Don't add nodes if they start/end on same tile
+						if (activeSelection == "conn" && Linkable(map[selectY][selectX], anchorYX)) 
 						{	if (!map[selectY][selectX].GetComponent<EditorTile>().consIn.Contains(connectionEntry)&& !map[selectY][selectX].GetComponent<EditorTile>().consOut.Contains(connectionEntry)) //Don't add node if one already exists
 								map[selectY][selectX].GetComponent<EditorTile>().consIn.Add(connectionEntry);
 							if (!anchorYX.GetComponent<EditorTile>().consOut.Contains(connectionEntry) && !anchorYX.GetComponent<EditorTile>().consIn.Contains(connectionEntry))
 								anchorYX.GetComponent<EditorTile>().consOut.Add(connectionEntry);
 							DrawLinks();
 						} 
-						else if (activeSelection == "lock" && map[selectY][selectX] != anchorYX)
+						else if (activeSelection == "lock" && Linkable(map[selectY][selectX], anchorYX))
 						{	if (!map[selectY][selectX].GetComponent<EditorTile>().locksIn.Contains(lockEntry) && !map[selectY][selectX].GetComponent<EditorTile>().locksOut.Contains(lockEntry))
 								map[selectY][selectX].GetComponent<EditorTile>().locksIn.Add(lockEntry);
 							if (!anchorYX.GetComponent<EditorTile>().locksOut.Contains(lockEntry) && !anchorYX.GetComponent<EditorTile>().locksIn.Contains(lockEntry))
@@ -597,9 +621,11 @@ public class EditorScript : MonoBehaviour {
 		//Stop the case where an obstacle is present and the pending tile type is a wall/door
 		if(!(!(a.GetComponent<EditorTile>().obsType == "") && (activeSelection == "Wall" || activeSelection == "Door" || /*activeSelection == "Electrified" ||*/
 																activeSelection == "Button" || activeSelection == "Generator" || activeSelection == "Source")))
-		{
-		a.GetComponent<EditorTile>().tileType = activeSelection;
-		a.GetComponent<EditorTile>().tileSet = activeSet;
+		{	// Stop Wall or Floor values if any in/out Link is present
+			if (!((activeSelection == "Wall" || activeSelection == "Floor")  && (a.GetComponent<EditorTile>().consIn.Count != 0 || a.GetComponent<EditorTile>().consOut.Count != 0 || a.GetComponent<EditorTile>().locksIn.Count != 0 || a.GetComponent<EditorTile>().locksOut.Count != 0))) {
+				a.GetComponent<EditorTile>().tileType = activeSelection;
+				a.GetComponent<EditorTile>().tileSet = activeSet;
+			}
 		}
 	}
 	
@@ -609,7 +635,7 @@ public class EditorScript : MonoBehaviour {
 		if (!(a.GetComponent<EditorTile>().tileType == "Wall" || a.GetComponent<EditorTile>().tileType == "Door" || /*a.GetComponent<EditorTile>().tileType == "Electrified" ||*/
 				a.GetComponent<EditorTile>().tileType == "Button" || a.GetComponent<EditorTile>().tileType == "Generator" || a.GetComponent<EditorTile>().tileType == "Source"))
 		{
-		a.GetComponent<EditorTile>().obsType = activeSelection;
+			a.GetComponent<EditorTile>().obsType = activeSelection;
 		}
 	}
 	
