@@ -6,7 +6,10 @@ public class Bot3 : Player, Obstacle
 	private bool dashing = false;
 	private double endCooldown = 0.0;
 	private double endDash = 0.0;
-	public int dashDir = 0;
+	private int dashDir = 0;
+	private const double STEPDIST = 6.4; // Before x1.5
+	private const double COOLDOWN = 2;
+	private const double DURATION = 0.75;
 	
 	public Bot3 () : base(3)
 	{
@@ -30,8 +33,8 @@ public class Bot3 : Player, Obstacle
 		if (!dashing && Time.time >= endCooldown)
 		{
 			dashing = true;
-			endCooldown = Time.time+2;
-			endDash = Time.time+0.75;
+			endCooldown = Time.time+COOLDOWN;
+			endDash = Time.time+DURATION;
 			dashDir = currDir;
 		}
 	}
@@ -45,4 +48,7 @@ public class Bot3 : Player, Obstacle
 		} else 
 			return true;
 	}
+	
+	public double STEP(){return STEPDIST;}
+	public int DashDir() {return dashDir;}
 }
