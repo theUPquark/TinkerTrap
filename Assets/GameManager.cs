@@ -423,14 +423,14 @@ public class GameManager : MonoBehaviour {
 				
 				//If activebot is Bot3 and it should be dashing
 				if (players[activeBot - 1].act() && players[activeBot-1].GetType() == typeof(Bot3)) {
-					if (players[2].actDir == 0)
-						moveChar(players[2],6.4,0,-1);
-					else if (players[2].actDir == 1)
-						moveChar(players[2],6.4,1,0);
-					else if (players[2].actDir == 2)
-						moveChar(players[2],6.4,0,1);
-					else if (players[2].actDir == 3)
-						moveChar(players[2],6.4,-1,0);
+					if (((Bot3)players[activeBot - 1]).dashDir == 0)
+						moveChar(players[activeBot - 1],6.4,0,-1);
+					else if (((Bot3)players[activeBot - 1]).dashDir == 1)
+						moveChar(players[activeBot - 1],6.4,1,0);
+					else if (((Bot3)players[activeBot - 1]).dashDir == 2)
+						moveChar(players[activeBot - 1],6.4,0,1);
+					else if (((Bot3)players[activeBot - 1]).dashDir == 3)
+						moveChar(players[activeBot - 1],6.4,-1,0);
 				}
 			}
 		}

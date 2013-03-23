@@ -6,8 +6,7 @@ public class Bot3 : Player, Obstacle
 	private bool dashing = false;
 	private double endCooldown = 0.0;
 	private double endDash = 0.0;
-	private int frameCount = 0;
-//	public int dashDir = 0;
+	public int dashDir = 0;
 	
 	public Bot3 () : base(3)
 	{
@@ -33,7 +32,7 @@ public class Bot3 : Player, Obstacle
 			dashing = true;
 			endCooldown = Time.time+2;
 			endDash = Time.time+0.75;
-			actDir = currDir;
+			dashDir = currDir;
 		}
 	}
 	
