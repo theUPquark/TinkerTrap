@@ -420,6 +420,18 @@ public class GameManager : MonoBehaviour {
 				foreach (Tile t in gameB.Values) {
 					t.update();
 				}
+				
+				//If activebot = 3 && primary is active, then do moveChar
+				if (activeBot == 3 && players[2].act ()) {
+					if (players[2].actDir == 0)
+						moveChar(players[2],6.4,0,-1);
+					else if (players[2].actDir == 1)
+						moveChar(players[2],6.4,1,0);
+					else if (players[2].actDir == 2)
+						moveChar(players[2],6.4,0,1);
+					else if (players[2].actDir == 3)
+						moveChar(players[2],6.4,-1,0);
+				}
 			}
 		}
 	}

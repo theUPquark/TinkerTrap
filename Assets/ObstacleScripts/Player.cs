@@ -4,6 +4,7 @@ using UnityEngine;
 public abstract class Player : ObstacleClass, Obstacle
 {
 	public int currDir;
+	public int actDir;
 	
 	public Player(int a) : base(a)
 	{
