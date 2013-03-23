@@ -421,8 +421,8 @@ public class GameManager : MonoBehaviour {
 					t.update();
 				}
 				
-				//If activebot = 3 && primary is active, then do moveChar
-				if (activeBot == 3 && players[2].act ()) {
+				//If activebot is Bot3 and it should be dashing
+				if (players[activeBot - 1].act() && players[activeBot-1].GetType() == typeof(Bot3)) {
 					if (players[2].actDir == 0)
 						moveChar(players[2],6.4,0,-1);
 					else if (players[2].actDir == 1)
