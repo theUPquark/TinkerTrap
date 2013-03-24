@@ -66,6 +66,8 @@ public class EditorScript : MonoBehaviour {
 	
 	// Drawing lines
 	
+	private bool showTileActives = false;
+	private GameObject queryTile;
 	private bool mouse0Active = true;
 	private bool validAnchor = false; // Control variable to help set tracer line
 	private Vector3 anchor;
@@ -407,6 +409,15 @@ public class EditorScript : MonoBehaviour {
 		}
 	}
 	
+	private string printList (List<int> coll) {
+		string makeString = "";
+		if (coll.Count > 0)
+			makeString = coll[0].ToString();
+		for (int count = 1; count < coll.Count; count++)
+			makeString += ", " + coll[count].ToString();
+		return makeString;
+	}
+	
 	private void SetGrid() {
 		bool downSized = false;
 		for (int i = 0; i < gridH; i++) {
@@ -454,6 +465,23 @@ public class EditorScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
+		if (Input.GetKeyDown(KeyCode.LeftAlt) && !guiError && !loadFile && !saveFile && !guiInput) {
+			Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
+			int selectX = (int)(Math.Floor (mouseLocation.x/32));
+			int selectY = (int)(Math.Floor (mouseLocation.y/-32));
+			if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
+				if (queryTile == map[selectY][selectX]) {
+					if (!showTileActives)
+						showTileActives = true;
+					else
+						showTileActives = false;
+				} else {
+					queryTile = map[selectY][selectX];
+					showTileActives = true;
+				}
+			} else
+				showTileActives = false;
+		}
 		if (!paintMode && activeSelection != "conn" && activeSelection != "lock" && !guiError && !loadFile && !saveFile && !guiInput) {
 			if (Input.GetMouseButtonDown (0)) {
 				Vector3 mouseLocation = camera.ScreenToWorldPoint (Input.mousePosition);
@@ -1194,7 +1222,17 @@ public class EditorScript : MonoBehaviour {
 		
 		GUI.Label (new Rect(Screen.width - 147,(32+5)*(tileList.Length/2+obsList.Length/2)+208,141,75), "Connections", "box");
 		//GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+200,90,30), "Connections:");
-	
+		if (showTileActives){
+			if (queryTile.GetComponent<EditorTile>().consIn.Count > 0)
+				GUI.Label (new Rect(Screen.width - 187 - 5*printList(queryTile.GetComponent<EditorTile>().consIn).Length,(32+5)*(tileList.Length/2+obsList.Length/2)+208,40 + 5*printList(queryTile.GetComponent<EditorTile>().consIn).Length,30),"In: " + printList(queryTile.GetComponent<EditorTile>().consIn), "box");
+			if (queryTile.GetComponent<EditorTile>().consOut.Count > 0)
+				GUI.Label (new Rect(Screen.width - 197 - 5*printList(queryTile.GetComponent<EditorTile>().consOut).Length,(32+5)*(tileList.Length/2+obsList.Length/2)+248,50 + 5*printList(queryTile.GetComponent<EditorTile>().consOut).Length,30),"Out: " + printList(queryTile.GetComponent<EditorTile>().consOut), "box");
+			if (queryTile.GetComponent<EditorTile>().locksIn.Count > 0)
+				GUI.Label (new Rect(Screen.width - 187 - 5*printList(queryTile.GetComponent<EditorTile>().locksIn).Length,(32+5)*(tileList.Length/2+obsList.Length/2)+288,40 + 5*printList(queryTile.GetComponent<EditorTile>().locksIn).Length,30),"In: " + printList(queryTile.GetComponent<EditorTile>().locksIn), "box");
+			if (queryTile.GetComponent<EditorTile>().locksOut.Count > 0)
+				GUI.Label (new Rect(Screen.width - 197 - 5*printList(queryTile.GetComponent<EditorTile>().locksOut).Length,(32+5)*(tileList.Length/2+obsList.Length/2)+328,50 + 5*printList(queryTile.GetComponent<EditorTile>().locksOut).Length,30),"Out: " + printList(queryTile.GetComponent<EditorTile>().locksOut), "box");
+		}
+		
 		if (Popup.List (new Rect(Screen.width - 99,(32+5)*(tileList.Length/2+obsList.Length/2)+240,90,30), ref showConList, ref connectionEntry, new GUIContent(connectionEntry.ToString()), consDropdown, activeButton)) {
 			conPicked = true;
 			connectionEntry = int.Parse (consDropdown[connectionEntry].text);
