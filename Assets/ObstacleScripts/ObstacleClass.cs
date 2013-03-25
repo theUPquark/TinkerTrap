@@ -50,7 +50,7 @@ public abstract class ObstacleClass
 	
 	public abstract int width { get; }
 	
-	public virtual bool act() { return false;}
+	public virtual bool inAction() { return false;}
 	
 	public virtual double getSpeed (double speed)
 	{

@@ -30,7 +30,7 @@ public interface Obstacle
 	bool downleft { get; set; }
 	bool upleft { get; set; }
 	
-	bool act();
+	bool inAction();
 	
 	void setXY(double x, double y);
 	
