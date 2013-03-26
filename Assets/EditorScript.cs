@@ -11,7 +11,7 @@ public class EditorScript : MonoBehaviour {
 	
 	private List<List<GameObject>> map = new List<List<GameObject>>();
 	private List<List<GameObject>> mapObs = new List<List<GameObject>>();
-	private string[] tileList = new string[] {"Wall","Floor","Door","Button","Plate","Electrified", "Generator", "Source"};
+	private string[] tileList = new string[] {"Wall","Floor","Door","Button","Plate","Electrified", "Generator", "Source", "Finish"};
 	private string[] obsList = new string[] {"Spawn", "Box", "Battery"};
 	private string activeSelection = "empty";
 	private int activeSet = 0;
@@ -88,31 +88,40 @@ public class EditorScript : MonoBehaviour {
 	}
 	private bool Linkable(GameObject a, GameObject b)
 	{
-		bool linkable = true;
 		if (a == b) 
-			linkable = false;
-		else if (a.GetComponent<EditorTile>().tileType == "Wall" || a.GetComponent<EditorTile>().tileType == "Floor")
-			linkable = false;
-		else if (b.GetComponent<EditorTile>().tileType == "Wall" || b.GetComponent<EditorTile>().tileType == "Floor")
-			linkable = false;
-		
-		return linkable;
+			return false;
+		else if (a.GetComponent<EditorTile>().tileType == "Wall" || a.GetComponent<EditorTile>().tileType == "Floor" || a.GetComponent<EditorTile>().tileType == "Finish")
+			return false;
+		else if (b.GetComponent<EditorTile>().tileType == "Wall" || b.GetComponent<EditorTile>().tileType == "Floor" || b.GetComponent<EditorTile>().tileType == "Finish")
+			return false;
+		else
+			return true;
 	}
 	
-	private bool validSave()
+	private bool ValidSave()
 	{
 		bool saveMe = true;
 		int countPlayerSpawn = 0;
+		int countFinish = 0;
 		
 		foreach (List<GameObject> g in map)
 		{	foreach (GameObject o in g)
 			{
 				if (o.GetComponent<EditorTile>().obsType == "Spawn")
 					countPlayerSpawn++;
+				if (o.GetComponent<EditorTile>().tileType == "Finish")
+					countFinish++;
 			}
 		}
-		if (countPlayerSpawn != 1)
+		if (countPlayerSpawn != 1) {
 			saveMe = false;
+			guiError = true;
+			guiErS = "Spawn must be present and unique.\n";
+		} if (countFinish != 1) {
+			saveMe = false;
+			guiError = true;
+			guiErS += "Finish tile must be present and unique.";
+		}
 		return saveMe;
 	}
 	
@@ -343,10 +352,8 @@ public class EditorScript : MonoBehaviour {
 	}
 	
 	private void CheckAllLinks() {
-		if (viewEntry == 0) {
+		if (viewEntry != 1) {
 			viewEntry = 1;
-			DrawLinks();
-			viewEntry = 0;
 			DrawLinks();
 		} else
 			DrawLinks();	
@@ -723,8 +730,8 @@ public class EditorScript : MonoBehaviour {
 	
 	private void SetTypeByDraw(GameObject a)
 	{
-		//Stop the case where an obstacle is present and the pending tile type is a wall/door
-		if(!(!(a.GetComponent<EditorTile>().obsType == "") && (activeSelection == "Wall" || activeSelection == "Door" || /*activeSelection == "Electrified" ||*/
+		//Stop the case where an obstacle is present and the pending tile type is invalid (wall/door/finish)
+		if(!(!(a.GetComponent<EditorTile>().obsType == "") && (activeSelection == "Wall" || activeSelection == "Door" || activeSelection == "Finish" ||
 																activeSelection == "Button" || activeSelection == "Generator" /*|| activeSelection == "Source"*/)))
 		{	// Stop Wall or Floor values if any in/out Link is present
 			if (!((activeSelection == "Wall" || activeSelection == "Floor")  && (a.GetComponent<EditorTile>().consIn.Count != 0 || a.GetComponent<EditorTile>().consOut.Count != 0 
@@ -737,8 +744,8 @@ public class EditorScript : MonoBehaviour {
 	
 	private void SetObsByDraw(GameObject a)
 	{
-		//Stop the case where the tile type is a wall/door
-		if (!(a.GetComponent<EditorTile>().tileType == "Wall" || a.GetComponent<EditorTile>().tileType == "Door" || /*a.GetComponent<EditorTile>().tileType == "Electrified" ||*/
+		//Stop the case where the tile type is invalid (wall/door/finish)
+		if (!(a.GetComponent<EditorTile>().tileType == "Wall" || a.GetComponent<EditorTile>().tileType == "Door" || a.GetComponent<EditorTile>().tileType == "Finish" ||
 				a.GetComponent<EditorTile>().tileType == "Button" || a.GetComponent<EditorTile>().tileType == "Generator" /*|| a.GetComponent<EditorTile>().tileType == "Source"*/))
 		{
 			a.GetComponent<EditorTile>().obsType = activeSelection;
@@ -1149,7 +1156,7 @@ public class EditorScript : MonoBehaviour {
 		} else
 			modePicked = false;
 		
-		GUI.Label (new Rect(Screen.width - 78,5,72,190), "Tiles", "box");
+		GUI.Label (new Rect(Screen.width - 78,5,72,222), "Tiles", "box");
 		//GUI.Label (new Rect(Screen.width-(32*2)-10,5,50,30), "Tiles:");
 		for (int i = 0; i < tileList.Length; i++) {
 			GUIStyle buttonStyle;
@@ -1201,7 +1208,7 @@ public class EditorScript : MonoBehaviour {
 			if (i == obsList.Length) {
 				buttonStyle = passiveButton;
 				tex = (Texture) Resources.Load ("Editor/empty", typeof(Texture));
-				if (GUI.Button (new Rect(Screen.width-(32*(2-(i+1)%2))-10,(32+5)*((tileList.Length+i+4)/2)+40,32,32), tex, buttonStyle)) {
+				if (GUI.Button (new Rect(Screen.width-(32*(2-(i+1)%2))-10,(32+5)*((tileList.Length-(tileList.Length%2)+i+4)/2)+40,32,32), tex, buttonStyle)) {
 					guiInput = true;
 					activeSelection = "empty";
 					if (!paintMode && boxedSelection.Count > 0){
@@ -1223,7 +1230,7 @@ public class EditorScript : MonoBehaviour {
 						tex = (Texture) Resources.Load ("Editor/ed_"+obsList[i]+(activeSet+1).ToString (), typeof(Texture));
 				} else
 					tex = (Texture) Resources.Load ("Editor/ed_"+obsList[i]+0.ToString (), typeof(Texture));
-				if (GUI.Button (new Rect(Screen.width-(32*(2-(i+1)%2))-10,(32+5)*((tileList.Length+i+4)/2)+40,32,32), tex, buttonStyle)) {
+				if (GUI.Button (new Rect(Screen.width-(32*(2-(i+1)%2))-10,(32+5)*((tileList.Length-(tileList.Length%2)+i+4)/2)+40,32,32), tex, buttonStyle)) {
 					guiInput = true;
 					activeSelection = obsList[i];
 					activeSet = oSet;
@@ -1247,13 +1254,10 @@ public class EditorScript : MonoBehaviour {
 		}
 		
 		if (GUI.Button (new Rect(200,5,90,60), "Save") && (!saveFile && !loadFile) ) { // Changed '||' to '&&' so filebrower won't open both load and save windows
-			if (validSave()) {
+			if (ValidSave()) {
 				guiInput = true;
 				saveFile = true;
 				browser = BrowserSetup ();
-			} else {
-				guiError = true;
-				guiErS = "Spawn must be present and unique.";
 			}
 		}
 		
