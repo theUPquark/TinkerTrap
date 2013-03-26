@@ -11,7 +11,7 @@ public class Finish : Floor, Tile {
 	public override void act(List<Obstacle> objs) {
 		foreach (Obstacle i in objs) {
 			if (i.xtile == gridx && i.ytile == gridy)	{
-				if (i.GetType() == typeof(Player)){
+				if (i.GetType().IsSubclassOf(typeof(Player))){
 					//Do a thing
 					levelComplete = true;
 					break;
@@ -19,7 +19,7 @@ public class Finish : Floor, Tile {
 			}
 		}
 	}
-	public bool Status () {
+	public bool LevelComplete () {
 		return levelComplete;
 	}
 }

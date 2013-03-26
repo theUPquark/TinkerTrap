@@ -13,7 +13,7 @@ public abstract class ObstacleClass
 	public bool[] canGo = new bool[4];
 	public int type;
 	public GameObject gfx;
-	protected OTSprite os;
+	public OTSprite os;
 	
 	public ObstacleClass (int a): this(a, -100, -100)
 	{
@@ -103,6 +103,10 @@ public abstract class ObstacleClass
 		//calculate the tile where tobs center is
 		xtile = Math.Floor((posX/GameManager.getTileW ()));
 		ytile = Math.Floor((posY/GameManager.getTileW ()));
+	}
+	
+	public OTSprite graphic {
+		get { return os; }
 	}
 	
 	public void setDepth(Dictionary<string, Tile> tileSheet)

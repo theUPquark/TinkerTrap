@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour {
 	private bool selection = false;
 	private bool paused = false;
 	private int level = 0;
+	private Finish refFinish;
 	
 	private List<Player> players = new List<Player>();
 	private int activeBot = 1;
@@ -80,31 +81,47 @@ public class GameManager : MonoBehaviour {
 		
 	    ///////menu buttons
 	    //selection options
-		if (level == 0) {
-		    if(GUI.Button(new Rect(55, 100, 180, 40), "Webelo")) {
+		string bot1Text = "Webelo";
+		string bot2Text = "Hob";
+		string bot3Text = "Hisco";
+		if (players[0].level > 0)
+			bot1Text = "UPGRADE: Webelo";
+		if (players[1].level > 0)
+			bot2Text = "UPGRADE: Hob";
+		if (players[2].level > 0)
+			bot3Text = "UPGRADE: Hisco";
+		if (!running) {
+		    if(GUI.Button(new Rect(55, 100, 180, 40), bot1Text)) {
 				running = true;
 				selection = false;
 				activeBot = 1;
 				level++;
-				BuildLevel ("level1");
+				players[0].level++;
+//				BuildLevel ("level1");
+				BuildLevel ("level"+level);
 		    }
-		    if(GUI.Button(new Rect(55, 150, 180, 40), "Hob")) {
+		    if(GUI.Button(new Rect(55, 150, 180, 40), bot2Text)) {
 				running = true;
 				selection = false;
 				activeBot = 2;
 				level++;
-				BuildLevel ("level1");
+				players[1].level++;
+//				BuildLevel ("level1");
+				BuildLevel ("level"+level);
 		    }
-		    if(GUI.Button(new Rect(55, 200, 180, 40), "Hisco")) {
+		    if(GUI.Button(new Rect(55, 200, 180, 40), bot3Text)) {
 				running = true;
 				selection = false;
 				activeBot = 3;
 				level++;
-				BuildLevel ("level1");
+				players[2].level++;
+//				BuildLevel ("level1");
+				BuildLevel ("level"+level);
 		    }
 		    //return to main menu
-		    if(GUI.Button(new Rect(55, 250, 180, 40), "Return")) {
-		    	selection = false;
+			if (level == 0)
+		    	if(GUI.Button(new Rect(55, 250, 180, 40), "Return")) {
+		    		selection = false;
 		    }
 		}
 	   
@@ -154,6 +171,24 @@ public class GameManager : MonoBehaviour {
 		GUI.EndGroup ();
 	}
 	
+	void ClearLevel()
+	{
+		if (gameB.Count > 0) {
+			foreach (KeyValuePair<string,Tile> o in gameB) {
+				Destroy(o.Value.graphic);
+			}
+			foreach (Obstacle ob in gameObs) {
+				Destroy(ob.graphic); // This completely killed the prototype - I think I'm missing the file :\
+			}
+			gameB.Clear();
+			gameConsIn.Clear();
+			gameConsOut.Clear ();
+			gameLocksIn.Clear();
+			gameLocksOut.Clear ();
+			gameObs.Clear();
+		}
+	}
+	
 	void BuildLevel(string map)
 	{
 		TextAsset file = (TextAsset) Resources.Load (map, typeof(TextAsset));
@@ -196,6 +231,8 @@ public class GameManager : MonoBehaviour {
 						read.Read ();
 						var tempTile = Type.GetType (tileType);
 						gameB.Add (squareName, (Tile)Activator.CreateInstance(tempTile, new object[] {i,j,read.ReadContentAsInt ()}));
+						if (tileType == "Finish")
+							refFinish = (Finish)gameB[squareName];
 						break;
 					case "obs":
 						if (!read.IsEmptyElement) {
@@ -340,7 +377,7 @@ public class GameManager : MonoBehaviour {
 				// Bot selection... eventually this will only be if you have multiple robots active!
 				
 				if (Input.GetKeyDown (KeyCode.Alpha1)) {
-					if (activeBot != 1) {
+					if (activeBot != 1 && players[0].level > 0) {
 						players[0].setX (players[activeBot-1].posX);
 						players[0].setY (players[activeBot-1].posY);
 						players[activeBot-1].setXY (-100,-100);
@@ -351,7 +388,7 @@ public class GameManager : MonoBehaviour {
 					}
 				}
 				if (Input.GetKeyDown (KeyCode.Alpha2)) {
-					if (activeBot != 2) {
+					if (activeBot != 2 && players[1].level > 0) {
 						players[1].setX (players[activeBot-1].posX);
 						players[1].setY (players[activeBot-1].posY);
 						players[activeBot-1].setXY (-100,-100);
@@ -362,7 +399,7 @@ public class GameManager : MonoBehaviour {
 					}
 				}
 				if (Input.GetKeyDown (KeyCode.Alpha3)) {
-					if (activeBot != 3) {
+					if (activeBot != 3 && players[2].level > 0) {
 						players[2].setX (players[activeBot-1].posX);
 						players[2].setY (players[activeBot-1].posY);
 						players[activeBot-1].setXY (-100,-100);
@@ -451,6 +488,14 @@ public class GameManager : MonoBehaviour {
 			// Do round 2 of Tile updates. Initial 'update' method called in Update();
 			foreach (Tile t in gameB.Values) {
 				t.act(gameObs);
+			}
+			
+			// Check if level is complete
+			if (refFinish.LevelComplete() == true) {
+				//Do a thing
+				running = false;
+				selection = true;
+				ClearLevel();
 			}
 			
 			OTSprite ps = players[activeBot-1].gfx.GetComponent<OTSprite>();

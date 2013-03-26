@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class Player : ObstacleClass, Obstacle
 {
 	public int currDir;
-	public int upgradeLevel = 0;
+	public int level = 0;
 	
 	public Player(int a) : base(a)
 	{

@@ -41,6 +41,10 @@ public interface Obstacle
 	double getSpeed (double speed);
 	double getSpeed (double speed, Obstacle source);
 	
+	OTSprite graphic {
+		get;
+	}
+	
 	void setDepth(Dictionary<string, Tile> tileSheet);
 }
 
