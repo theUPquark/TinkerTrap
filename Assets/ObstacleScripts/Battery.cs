@@ -7,12 +7,10 @@ public class Battery : ObstacleClass, Obstacle
 	
 	public Battery (int a) : base(a)
 	{
-		os.frameName = "Battery0";
 	}
 	
 	public Battery (int a, double x, double y) : base(a,x,y)
 	{
-		os.frameName = "Battery0";
 	}
 
 	public override int width {

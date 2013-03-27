@@ -8,10 +8,12 @@ public abstract class Player : ObstacleClass, Obstacle
 	
 	public Player(int a) : base(a)
 	{
+		setDir (0);
 	}
 	
 	public Player(int a, double x, double y) : base(a,x,y)
 	{
+		setDir (0);
 	}
 	
 	public override int width {
@@ -24,16 +26,16 @@ public abstract class Player : ObstacleClass, Obstacle
 		if (gfx != null) {
 			switch (currDir) {
 			case 0:
-				os.frameName = "Bot"+type+"UpRt";
+				os.PlayLoop ("Bot"+type+"UpRt_Idle");
 				break;
 			case 3:
-				os.frameName = "Bot"+type+"UpLft";
+				os.PlayLoop ("Bot"+type+"UpLft_Idle");
 				break;
 			case 2:
-				os.frameName = "Bot"+type+"DnLft";
+				os.PlayLoop ("Bot"+type+"DnLft_Idle");
 				break;
 			case 1:
-				os.frameName = "Bot"+type+"DnRt";
+				os.PlayLoop ("Bot"+type+"DnRt_Idle");
 				break;
 			}
 		}

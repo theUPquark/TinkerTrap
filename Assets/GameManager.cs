@@ -244,10 +244,10 @@ public class GameManager : MonoBehaviour {
 								gameObs.Add (players[activeBot-1]);
 								break;
 							case "Box":
-								gameObs.Add (new Box(4, i, j));
+								gameObs.Add (new Box(1, i, j));
 								break;
 							case "Battery":
-								gameObs.Add (new Battery(4, i, j));
+								gameObs.Add (new Battery(1, i, j));
 								break;
 							}
 						}
