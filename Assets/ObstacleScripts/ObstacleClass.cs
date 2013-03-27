@@ -13,7 +13,7 @@ public abstract class ObstacleClass
 	public bool[] canGo = new bool[4];
 	public int type;
 	public GameObject gfx;
-	public OTSprite os;
+	public OTAnimatingSprite os;
 	
 	public ObstacleClass (int a): this(a, -100, -100)
 	{
@@ -23,11 +23,14 @@ public abstract class ObstacleClass
 	{
 		type = a;
 		if (this.GetType ().IsSubclassOf (typeof(Player)))
-			gfx = OT.CreateObject ("Bots");
+			gfx = OT.CreateObject (this.GetType ().Name);
 		else
 			gfx = OT.CreateObject ("Obs");
-		os = gfx.GetComponent<OTSprite>();
+		os = gfx.GetComponent<OTAnimatingSprite>();
 		setXY(x,y);
+		if (!this.GetType ().IsSubclassOf (typeof(Player))) {
+			os.animationFrameset = this.GetType ().Name;
+		}
 	}
 	
 	
