@@ -32,6 +32,9 @@ public class Bot1 : Player, Obstacle
 				} else if (startDir == currDir+1 || startDir == currDir-3) {
 					animPlay = true;
 					os.PlayOnce (this.GetType ().Name + dirStr (startDir)+"_TurnLftSt");
+				} else if (Math.Abs (startDir-currDir) == 2) {
+					animPlay = true;
+					os.PlayOnce (this.GetType ().Name + dirStr (startDir)+"_TurnRvSt");
 				}
 			} else {
 				os.PlayLoop (this.GetType().Name + dirStr (currDir)+"_Move");
@@ -39,7 +42,7 @@ public class Bot1 : Player, Obstacle
 		}
 		if (!animPlay) {
 			if (!moving) {
-				moving = moveIntro = animPlay = true;
+				moving = moveIntro = true;
 				os.PlayOnce (this.GetType ().Name + dirStr (currDir)+"_MvInt");
 			} else if (moveIntro) {
 				if (!os.isPlaying) {
