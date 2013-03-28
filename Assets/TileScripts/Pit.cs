@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Pit : TileClass, Tile {
+public class Pit : Floor, Tile {
 	
 	public Pit(int gx, int gy, int tSet) : base(gx, gy, tSet) {}
 	
