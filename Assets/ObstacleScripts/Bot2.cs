@@ -5,7 +5,8 @@ public class Bot2 : Player, Obstacle
 {
 	private bool hovering = false;
 	private double targetX, targetY;
-	private string hoverTarget = "";
+	private string hoverTargetTopL = "";
+	private string hoverTargetBotR = "";
 		
 	public Bot2 ()
 	{
@@ -20,7 +21,7 @@ public class Bot2 : Player, Obstacle
 		if (level >= 1 && !hovering) {
 			if ( (a.GetType().IsSubclassOf(typeof(Floor)) || a.GetType() == typeof(Floor)) 
 				&& b.GetType() != typeof(Pit) && b.walkable() ) {
-				hoverTarget = b.myName(); // Well that didn't work. Check for clearance using getCorners instead ?
+				hoverTargetTopL = b.myName(); // Well that didn't work. Check for clearance using getCorners instead ?
 				targetX = (double)b.xgrid();
 				targetY = (double)b.ygrid();
 				hovering = true;
@@ -31,10 +32,15 @@ public class Bot2 : Player, Obstacle
 	public override bool inAction()
 	{
 		//Hover Conditions
-		if (hovering && !onTile().Equals(hoverTarget)){
-			return true;
+		if (hovering){
+			if ( (currDir == 1  || currDir == 2 ) && !onTile().Equals(hoverTargetTopL))
+				return true;
+			else if ( (currDir == 0  || currDir == 3 ) && !onTileBotR().Equals(hoverTargetTopL))
+				return true;
+			else 
+				return hovering = false;
 		} else {
-			hoverTarget = "";
+//			hoverTarget = "";
 			hovering = false;
 			return false;
 		}

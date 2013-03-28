@@ -510,22 +510,27 @@ public class GameManager : MonoBehaviour {
 	{	return tileW;	}
 	
 	private Tile FacingTile(int distance) {
-		string tarTile = "";
+		string tarTile1 = "";
+		string tarTile2 = "";
 		if (players[activeBot-1].currDir == 0) {
-			tarTile = "tile_"+(int)(players[activeBot-1].xtile)+"_"+(int)(players[activeBot-1].ytile-distance);
+			tarTile1 = "tile_"+(int)(players[activeBot-1].xtile)+"_"+(int)(players[activeBot-1].ytile-distance);
+			tarTile2 = "tile_"+(int)(players[activeBot-1].rightX)+"_"+(int)(players[activeBot-1].ytile-distance);
 		}
 		if (players[activeBot-1].currDir == 1) {
-			tarTile = "tile_"+(int)(players[activeBot-1].xtile+distance)+"_"+(int)(players[activeBot-1].ytile);
+			tarTile1 = "tile_"+(int)(players[activeBot-1].rightX+distance)+"_"+(int)(players[activeBot-1].ytile);
+			tarTile2 = "tile_"+(int)(players[activeBot-1].rightX+distance)+"_"+(int)(players[activeBot-1].downY);
 		}
 		if (players[activeBot-1].currDir == 2) {
-			tarTile = "tile_"+(int)(players[activeBot-1].xtile)+"_"+(int)(players[activeBot-1].ytile+distance);
+			tarTile1 = "tile_"+(int)(players[activeBot-1].xtile)+"_"+(int)(players[activeBot-1].downY+distance);
+			tarTile2 = "tile_"+(int)(players[activeBot-1].rightX)+"_"+(int)(players[activeBot-1].downY+distance);
 		}
 		if (players[activeBot-1].currDir == 3) {
-			tarTile = "tile_"+(int)(players[activeBot-1].xtile-distance)+"_"+(int)(players[activeBot-1].ytile);
+			tarTile1 = "tile_"+(int)(players[activeBot-1].xtile-distance)+"_"+(int)(players[activeBot-1].ytile);
+			tarTile2 = "tile_"+(int)(players[activeBot-1].xtile-distance)+"_"+(int)(players[activeBot-1].downY);
 		}
 		
-		if (gameB.ContainsKey (tarTile))
-			return gameB[tarTile];
+		if (gameB.ContainsKey (tarTile1) && gameB.ContainsKey(tarTile2) && tarTile1 == tarTile2)
+			return gameB[tarTile1];
 		return null;
 	}
 	
