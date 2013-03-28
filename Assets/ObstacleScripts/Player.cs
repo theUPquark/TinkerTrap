@@ -4,14 +4,18 @@ using UnityEngine;
 public abstract class Player : ObstacleClass, Obstacle
 {
 	public int currDir;
+	protected bool animPlay = false;
+	protected bool moveIntro = false;
+	protected bool moving = false;
+	protected float stopTime = Time.time;
 	public int level = 0;
 	
-	public Player(int a) : base(a)
+	public Player() : base(1)
 	{
 		setDir (0);
 	}
 	
-	public Player(int a, double x, double y) : base(a,x,y)
+	public Player(double x, double y) : base(1,x,y)
 	{
 		setDir (0);
 	}
@@ -41,6 +45,23 @@ public abstract class Player : ObstacleClass, Obstacle
 		}
 	}
 	
+	protected string dirStr(int a) {
+		switch (a) {
+		default:
+			return "UpRt";
+			break;
+		case 1:
+			return "DnRt";
+			break;
+		case 2:
+			return "DnLft";
+			break;
+		case 3:
+			return "UpLft";
+			break;
+		}
+	}
+	
 	public virtual void primary(Tile a) {}
 	public virtual void primary(Tile a, Obstacle b)
 	{
@@ -48,5 +69,7 @@ public abstract class Player : ObstacleClass, Obstacle
 	}
 	// ADD: Method to determine coordinates, currently in GameManager.moveChar
 	// ADD: Method to determine coordinate area to perform a turn.
+	
+	public virtual void update() {}
 }
 

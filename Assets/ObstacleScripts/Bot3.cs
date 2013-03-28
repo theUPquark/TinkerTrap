@@ -11,11 +11,11 @@ public class Bot3 : Player, Obstacle
 	private const double COOLDOWN = 2;
 	private const double DURATION = 0.75;
 
-	public Bot3 () : base(3)
+	public Bot3 ()
 	{
 	}
 	
-	public Bot3 (double x, double y) : base(3,x,y)
+	public Bot3 (double x, double y)
 	{
 	}
 	

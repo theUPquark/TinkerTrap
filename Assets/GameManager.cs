@@ -363,6 +363,7 @@ public class GameManager : MonoBehaviour {
 	void Update() {
 		if (running && !selection) {
 			if (!paused) {
+				players[activeBot-1].update ();
 				
 				//Directional movement. Should this be limited to one direction at a time?
 				if (Input.GetKeyDown (KeyCode.E)) {
@@ -423,6 +424,7 @@ public class GameManager : MonoBehaviour {
 		
 		if (running && !selection) {
 			if (!paused) {
+				players[activeBot-1].update ();
 				if (!players[activeBot-1].inAction()) {
 					double speed = 5;
 					//Directional movement. Should this be limited to one direction at a time?
@@ -434,24 +436,24 @@ public class GameManager : MonoBehaviour {
 						speed *= 0.7071;
 					if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) 
 					{
-						moveChar(players[activeBot-1], speed, -1, 0);
 						players[activeBot-1].setDir(3);
+						moveChar(players[activeBot-1], speed, -1, 0);
 					}
 					if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) 
 					{
-						moveChar(players[activeBot-1], speed, 1, 0);
 						players[activeBot-1].setDir(1);
+						moveChar(players[activeBot-1], speed, 1, 0);
 					}
 		
 					if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) 
 					{
-						moveChar(players[activeBot-1], speed, 0, -1);
 						players[activeBot-1].setDir(0);
+						moveChar(players[activeBot-1], speed, 0, -1);
 					}
 					if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) 
 					{
-						moveChar(players[activeBot-1], speed, 0, 1);
 						players[activeBot-1].setDir(2);
+						moveChar(players[activeBot-1], speed, 0, 1);
 					}
 				}
 				
