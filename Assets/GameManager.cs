@@ -562,6 +562,15 @@ public class GameManager : MonoBehaviour {
 			if (left1 == null || left2 == null || right1 == null || right2 == null)
 				return;
 			else {
+				// Check that no obstacle is on the ending tiles
+				foreach (Obstacle iob in gameObs) {
+					if (iob != players[activeBot-1]) {
+						string topLCorner = "tile_"+(int)(iob.xtile)+"_"+(int)(iob.ytile);
+						string botRCorner = "tile_"+(int)(iob.rightX)+"_"+(int)(iob.downY);
+						if (topLCorner == left2.myName() || botRCorner == right2.myName())
+							return;
+					}
+				}
 				((Bot2)players[activeBot-1]).primary(left1,left2,right1,right2);
 				return;
 			}
