@@ -7,6 +7,8 @@ public abstract class Player : ObstacleClass, Obstacle
 	protected bool animPlay = false;
 	protected bool moveIntro = false;
 	protected bool moving = false;
+	protected bool stopping = false;
+	protected bool playstop = false;
 	protected float stopTime = Time.time;
 	public int level = 0;
 	
@@ -70,6 +72,6 @@ public abstract class Player : ObstacleClass, Obstacle
 	// ADD: Method to determine coordinates, currently in GameManager.moveChar
 	// ADD: Method to determine coordinate area to perform a turn.
 	
-	public virtual void update() {}
+	public virtual void update(bool input) {}
 }
 
