@@ -363,7 +363,6 @@ public class GameManager : MonoBehaviour {
 	void Update() {
 		if (running && !selection) {
 			if (!paused) {
-				players[activeBot-1].update ();
 				
 				//Directional movement. Should this be limited to one direction at a time?
 				if (Input.GetKeyDown (KeyCode.E)) {
@@ -424,7 +423,7 @@ public class GameManager : MonoBehaviour {
 		
 		if (running && !selection) {
 			if (!paused) {
-				players[activeBot-1].update ();
+				bool movement = false;
 				if (!players[activeBot-1].inAction()) {
 					double speed = 5;
 					//Directional movement. Should this be limited to one direction at a time?
@@ -438,23 +437,29 @@ public class GameManager : MonoBehaviour {
 					{
 						players[activeBot-1].setDir(3);
 						moveChar(players[activeBot-1], speed, -1, 0);
+						movement = true;
 					}
 					if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) 
 					{
 						players[activeBot-1].setDir(1);
 						moveChar(players[activeBot-1], speed, 1, 0);
+						movement = true;
 					}
 		
 					if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) 
 					{
 						players[activeBot-1].setDir(0);
 						moveChar(players[activeBot-1], speed, 0, -1);
+						movement = true;
 					}
 					if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) 
 					{
 						players[activeBot-1].setDir(2);
 						moveChar(players[activeBot-1], speed, 0, 1);
+						movement = true;
 					}
+					
+					players[activeBot-1].update (movement);
 				}
 				
 				// Do round 1 of Tile updates. Final 'act' method called in LateUpdate();

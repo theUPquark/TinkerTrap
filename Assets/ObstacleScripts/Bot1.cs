@@ -27,46 +27,68 @@ public class Bot1 : Player, Obstacle
 		{
 			if (Time.time-stopTime >= 1) {
 				if (startDir == currDir-1 || startDir == currDir+3) {
-					animPlay = true;
 					os.PlayOnce (this.GetType ().Name + dirStr (startDir)+"_TurnRtSt");
 				} else if (startDir == currDir+1 || startDir == currDir-3) {
-					animPlay = true;
 					os.PlayOnce (this.GetType ().Name + dirStr (startDir)+"_TurnLftSt");
 				} else if (Math.Abs (startDir-currDir) == 2) {
-					animPlay = true;
 					os.PlayOnce (this.GetType ().Name + dirStr (startDir)+"_TurnRvSt");
 				}
 			} else {
-				os.PlayLoop (this.GetType().Name + dirStr (currDir)+"_Move");
+				if (startDir == currDir-1 || startDir == currDir+3) {
+					moveIntro = true;
+					os.PlayOnce (this.GetType ().Name + dirStr (startDir)+"_TurnRtMv");
+				} else if (startDir == currDir+1 || startDir == currDir-3) {
+					moveIntro = true;
+					os.PlayOnce (this.GetType ().Name + dirStr (startDir)+"_TurnLftMv");
+				} else if (Math.Abs (startDir-currDir) == 2) {
+					moveIntro = true;
+					os.PlayOnce (this.GetType ().Name + dirStr (startDir)+"_TurnRvMv");
+				}
 			}
 		}
 		if (!animPlay) {
 			if (!moving) {
-				moving = moveIntro = true;
-				os.PlayOnce (this.GetType ().Name + dirStr (currDir)+"_MvInt");
-			} else if (moveIntro) {
-				if (!os.isPlaying) {
-					os.PlayLoop (this.GetType().Name + dirStr (currDir)+"_Move");
-					moveIntro = false;
+				if (!moveIntro) {
+					moveIntro = true;
+					os.PlayOnce (this.GetType ().Name + dirStr (currDir)+"_MvInt");
+				} else {
+					if (!os.isPlaying) {
+						os.PlayLoop (this.GetType().Name + dirStr (currDir)+"_Move");
+						moveIntro = false;
+						moving = true;
+					}
 				}
-			}
+			} 
 		}
+		stopping = playstop = false;
 	}
 	
-	public override void update()
+	public override void update(bool input)
 	{
-		if (moving) {
-			if (!(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)
-				|| Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))) {
-				moveIntro = animPlay = moving = false;
-				os.PlayLoop (this.GetType ().Name + dirStr (currDir)+"_Idle");
+		if (moving || moveIntro) {
+			if (!input) {
+				stopping = true;
+				moveIntro = false;
+				if (Time.time - stopTime >= 1)
+					moving = false;
 			} else {
 				stopTime = Time.time;
 			}
 		}
-		if (animPlay && !os.isPlaying) {
-			animPlay = false;
+		if (stopping) {
+			if (!os.isPlaying || os.animationFrameset.Equals (this.GetType ().Name + dirStr (currDir)+"_Move")) {
+				if (!playstop) {
+					os.PlayOnce (this.GetType ().Name + dirStr (currDir)+"_MvStop");
+					playstop = true;
+				} else {
+					os.PlayLoop (this.GetType ().Name + dirStr (currDir)+"_Idle");
+					stopping = false;
+					playstop = false;
+				}
+			}
 		}
+		if (!os.isPlaying)
+			animPlay = false;
 	}
 	
 	public override void primary (Tile a)
