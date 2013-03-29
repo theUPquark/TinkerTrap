@@ -22,6 +22,7 @@ public class Bot2 : Player, Obstacle
 				&& ( (r1.GetType().IsSubclassOf(typeof(Floor)) || r1.GetType() == typeof(Floor)) && r2.GetType() != typeof(Pit) && r2.walkable() ) ) {
 				hoverTargetL = l2.myName();
 				hoverTargetR = r2.myName();
+				vertLift = 1;
 				hovering = true;
 			}
 		}
@@ -35,12 +36,15 @@ public class Bot2 : Player, Obstacle
 				return true;
 			else if ( (currDir == 0  || currDir == 3 ) && !onTileBotR().Equals(hoverTargetR))
 				return true;
-			else 
+			else {
+				vertLift = 0;
 				return hovering = false;
+			}
 		} else {
-			hovering = false;
-			return false;
+			vertLift = 0;
+			return hovering = false;
 		}
 		
 	}
+	public bool IsHovering() {return hovering;}
 }

@@ -666,7 +666,7 @@ public class GameManager : MonoBehaviour {
 			if (tob.upleft && tob.upright)
 			{
 				foreach (Obstacle iob in gameObs) {
-					if (iob != tob && iob != players[activeBot-1]) {
+					if (iob != tob && iob != players[activeBot-1] && tob.vertLift == iob.vertLift) {
 						getMyCorners(iob, iob.posX, iob.posY);
 						if ( tob.upYPos < iob.downYPos && tob.downYPos > iob.upYPos &&
 							tob.leftXPos < iob.rightXPos && tob.rightXPos > iob.leftXPos) {
@@ -677,6 +677,7 @@ public class GameManager : MonoBehaviour {
 				if (tob.GetType () == typeof(Bot1))
 					if (((Bot1)tob).grabbing)
 						speedAdj = moveChar (((Bot1)tob).grabbed, ((Bot1)tob).grabbed.getSpeed (speedAdj,tob), dirx, diry);
+				// Need alt case where if 'something' then baseSpeed is used (to ignore obstacles)
 				tob.setY((float)(tob.posY+speedAdj*diry));
 			}
 			else
@@ -699,7 +700,7 @@ public class GameManager : MonoBehaviour {
 			if (tob.downleft && tob.downright)
 			{
 				foreach (Obstacle iob in gameObs) {
-					if (iob != tob && iob != players[activeBot-1]) {
+					if (iob != tob && iob != players[activeBot-1] && tob.vertLift == iob.vertLift) {
 						getMyCorners(iob, iob.posX, iob.posY);
 						if ( tob.downYPos > iob.upYPos && tob.upYPos < iob.downYPos &&
 							tob.leftXPos < iob.rightXPos && tob.rightXPos > iob.leftXPos) {
@@ -734,7 +735,7 @@ public class GameManager : MonoBehaviour {
 			if (tob.downleft && tob.upleft)
 			{
 				foreach (Obstacle iob in gameObs) {
-					if (iob != tob && iob != players[activeBot-1]) {
+					if (iob != tob && iob != players[activeBot-1] && tob.vertLift == iob.vertLift) {
 						getMyCorners(iob, iob.posX, iob.posY);
 						if ( tob.leftXPos < iob.rightXPos && tob.rightXPos > iob.leftXPos &&
 							tob.upYPos < iob.downYPos && tob.downYPos > iob.upYPos) {
@@ -766,7 +767,7 @@ public class GameManager : MonoBehaviour {
 			if (tob.upright && tob.downright)
 			{
 				foreach (Obstacle iob in gameObs) {
-					if (iob != tob && iob != players[activeBot-1]) {
+					if (iob != tob && iob != players[activeBot-1] && tob.vertLift == iob.vertLift) {
 						getMyCorners(iob, iob.posX, iob.posY);
 						if ( tob.rightXPos > iob.leftXPos && tob.leftXPos < iob.rightXPos &&
 							tob.upYPos < iob.downYPos && tob.downYPos > iob.upYPos) {
