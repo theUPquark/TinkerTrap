@@ -469,14 +469,16 @@ public class GameManager : MonoBehaviour {
 				
 				// Frame/time stepped move actions of activeBot here
 				if (players[activeBot - 1].inAction() ) {
-					if (players[activeBot - 1].currDir == 0)
-						moveChar(players[activeBot - 1],5,0,-1);
-					else if (players[activeBot - 1].currDir == 1)
-						moveChar(players[activeBot - 1],5,1,0);
-					else if (players[activeBot - 1].currDir == 2)
-						moveChar(players[activeBot - 1],5,0,1);
-					else if (players[activeBot - 1].currDir == 3)
-						moveChar(players[activeBot - 1],5,-1,0);
+					if (players[activeBot-1].GetType () == typeof(Bot3)) {
+						if (players[activeBot - 1].currDir == 0)
+							moveChar(players[activeBot - 1],5,0,-1);
+						else if (players[activeBot - 1].currDir == 1)
+							moveChar(players[activeBot - 1],5,1,0);
+						else if (players[activeBot - 1].currDir == 2)
+							moveChar(players[activeBot - 1],5,0,1);
+						else if (players[activeBot - 1].currDir == 3)
+							moveChar(players[activeBot - 1],5,-1,0);
+					}
 				}
 			}
 		}
