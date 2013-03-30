@@ -29,22 +29,7 @@ public abstract class Player : ObstacleClass, Obstacle
 	public virtual void setDir(int dir)
 	{
 		currDir = dir;
-		if (gfx != null) {
-			switch (currDir) {
-			case 0:
-				os.PlayLoop ("Bot"+type+"UpRt_Idle");
-				break;
-			case 3:
-				os.PlayLoop ("Bot"+type+"UpLft_Idle");
-				break;
-			case 2:
-				os.PlayLoop ("Bot"+type+"DnLft_Idle");
-				break;
-			case 1:
-				os.PlayLoop ("Bot"+type+"DnRt_Idle");
-				break;
-			}
-		}
+		os.PlayLoop (this.GetType ().Name+dirStr (currDir)+"_Idle");
 	}
 	
 	protected string dirStr(int a) {
