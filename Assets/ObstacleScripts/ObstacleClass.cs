@@ -59,6 +59,8 @@ public abstract class ObstacleClass
 	
 	public virtual bool inAction() { return false;}
 	
+	public virtual void endAction() {}
+	
 	public virtual double getSpeed (double speed)
 	{
 		return Math.Floor (speed);

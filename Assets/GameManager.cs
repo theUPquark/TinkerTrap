@@ -902,6 +902,8 @@ public class GameManager : MonoBehaviour {
 				speedAdj = 0;
 			}
 		}
+		if (speedAdj == 0)
+			tob.endAction();
 		
 		return (speedAdj);
 	}

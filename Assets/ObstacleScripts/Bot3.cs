@@ -57,4 +57,10 @@ public class Bot3 : Player, Obstacle
 			return true;
 	}
 	
+	public override void endAction() {
+		if (dashing) {
+			dashing = false;
+		}
+	}
+	
 }
