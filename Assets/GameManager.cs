@@ -239,19 +239,19 @@ public class GameManager : MonoBehaviour {
 					{
 					case "Bot1":
 						read.Read ();
-						players[0].level = int.Parse(read.Value);
+						players[0].level = read.ReadContentAsInt();
 						break;
 					case "Bot2":
 						read.Read ();
-						players[1].level = int.Parse (read.Value);
+						players[1].level = read.ReadContentAsInt();
 						break;
 					case "Bot3":
 						read.Read ();
-						players[2].level = int.Parse(read.Value);
+						players[2].level = read.ReadContentAsInt();
 						break;
 					case "Level":
 						read.Read ();
-						level = int.Parse(read.Value);
+						level = read.ReadContentAsInt();
 						break;
 					}
 				}
@@ -388,28 +388,24 @@ public class GameManager : MonoBehaviour {
 						if (consGroup) {
 							List<Tile> tilelist;
 							int k = read.ReadContentAsInt();
-							if (k != 0) {
-								if (!gameConsOut.ContainsKey(k)) {
-									tilelist = new List<Tile>();
-									tilelist.Add(gameB[squareName]);
-									gameConsOut.Add(k, tilelist);
-								} else {
-									tilelist = gameConsOut[k];
-									tilelist.Add(gameB[squareName]);
-								}
+							if (!gameConsOut.ContainsKey(k)) {
+								tilelist = new List<Tile>();
+								tilelist.Add(gameB[squareName]);
+								gameConsOut.Add(k, tilelist);
+							} else {
+								tilelist = gameConsOut[k];
+								tilelist.Add(gameB[squareName]);
 							}
 						} else {
 							List<Tile> tilelist;
 							int k = read.ReadContentAsInt();
-							if (k != 0) {
-								if (!gameLocksOut.ContainsKey(k)) {
-									tilelist = new List<Tile>();
-									tilelist.Add(gameB[squareName]);
-									gameLocksOut.Add(k, tilelist);
-								} else {
-									tilelist = gameLocksOut[k];
-									tilelist.Add(gameB[squareName]);
-								}
+							if (!gameLocksOut.ContainsKey(k)) {
+								tilelist = new List<Tile>();
+								tilelist.Add(gameB[squareName]);
+								gameLocksOut.Add(k, tilelist);
+							} else {
+								tilelist = gameLocksOut[k];
+								tilelist.Add(gameB[squareName]);
 							}
 						}
 						break;
