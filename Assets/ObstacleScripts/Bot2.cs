@@ -15,6 +15,10 @@ public class Bot2 : Player, Obstacle
 	{
 	}
 	
+	public override int width {
+		get { return 85; }
+	}
+	
 	public void primary(Tile l1, Tile l2, Tile r1, Tile r2)
 	{
 		if (level >= 1 && !hovering) {

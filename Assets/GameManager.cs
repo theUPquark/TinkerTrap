@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
 	
 	private int mapWidth = 0;
 	private int mapHeight = 0;
-	private static float tileW = 64;
+	private static float tileW = 128;
 																						
 	private Dictionary<string, Tile> gameB = new Dictionary<string, Tile>();
 	private Dictionary<int, List<Tile>> gameConsOut = new Dictionary<int, List<Tile>>();
@@ -507,14 +507,45 @@ public class GameManager : MonoBehaviour {
 				ClearLevel();
 			}
 			
-			OTSprite ps = players[activeBot-1].gfx.GetComponent<OTSprite>();
-			OTSprite iSp;
-			OTSprite jSp;
+			List<Obstacle> orderedObs = new List<Obstacle>(gameObs.Count);
+			foreach (Obstacle i in gameObs) {
+				int insertAfter = -1;
+				for (int j = 0; j < orderedObs.Capacity; j++) {
+					if (orderedObs.Count <= j)
+						break;
+					if (orderedObs[j].depth <= i.depth) // If the object is definitely 'above' the current item in the list, it needs to be inserted after.
+						insertAfter = j;
+				}
+				if (orderedObs.Count-1 <= insertAfter)
+					orderedObs.Add (i); //It's at the end of the list, add a new entry.
+				else
+					orderedObs.Insert (insertAfter+1, i); //It's within the list, insert it.
+			}
+			int depthLevel = -998; // -1000 is causing things to draw behind the camera. Silly Orthello.
+			foreach (Obstacle i in orderedObs) {
+				i.graphic.depth = depthLevel;
+				depthLevel += 2; // Later obs in this list should be further back in space. But we need layers in between for the Tiles.
+			}
+			foreach (Tile i in gameB.Values) {
+				if (i.walkable()) // Walkable tiles are always on the bottom.
+					i.graphic.depth = 1000;
+				else { // Similar checks to the obstacles above.
+					foreach (Obstacle j in orderedObs) {
+						//Debug.Log("Obs depth: " + j.depth + " Tile depth: " + i.depth);
+						if (j.depth >= i.depth ) {
+							i.graphic.depth = j.graphic.depth-1;
+							break;
+						}
+						if (orderedObs.IndexOf(j) == orderedObs.Count-1)
+							i.graphic.depth = j.graphic.depth+1;
+					}
+				}
+			}
 		}
 	}
 	
 	public static float getTileW()
-	{	return tileW;	}
+	{	return tileW/2;	}
 	
 	private Tile FacingTile(bool fromLeft, int distance) {
 		string tarTile = "";
@@ -630,10 +661,10 @@ public class GameManager : MonoBehaviour {
 		tob.leftXPos = px;
 		tob.rightXPos = px+tob.width/2-1;
 		//find corner points
-		tob.downY = Math.Floor(tob.downYPos/tileW);
-		tob.upY = Math.Floor(tob.upYPos/tileW);
-		tob.leftX = Math.Floor(tob.leftXPos/tileW);
-		tob.rightX = Math.Floor(tob.rightXPos/tileW);
+		tob.downY = Math.Floor(tob.downYPos/(tileW/2));
+		tob.upY = Math.Floor(tob.upYPos/(tileW/2));
+		tob.leftX = Math.Floor(tob.leftXPos/(tileW/2));
+		tob.rightX = Math.Floor(tob.rightXPos/(tileW/2));
 		//check if they are walls
 		if (tob.downY < mapHeight && tob.upY >= 0 &&
 			tob.leftX >= 0 && tob.rightX < mapWidth) {
@@ -693,7 +724,7 @@ public class GameManager : MonoBehaviour {
 			{
 				//hit the wall, place tob near the wall
 				double yStart = tob.posY;
-				tob.setY(((float)((tob.ytile)*tileW)));
+				tob.setY(((float)((tob.ytile)*(tileW/2))));
 				double yShift = yStart-tob.posY;
 				if (tob.GetType () == typeof(Bot1))
 					if (((Bot1)tob).grabbing)
@@ -725,7 +756,7 @@ public class GameManager : MonoBehaviour {
 			else
 			{
 				double yStart = tob.posY;
-				tob.setY(((float)((tob.ytile+1)*tileW-(tob.width/2))));
+				tob.setY(((float)((tob.ytile+1)*(tileW/2)-(tob.width/2))));
 				double yShift = tob.posY-yStart;
 				if (tob.GetType () == typeof(Bot1))
 					if (((Bot1)tob).grabbing)
@@ -760,7 +791,7 @@ public class GameManager : MonoBehaviour {
 			else
 			{
 				double xStart = tob.posX;
-				tob.setX(((float)(tob.xtile*tileW)));
+				tob.setX(((float)(tob.xtile*(tileW/2))));
 				double xShift = xStart-tob.posX;
 				if (tob.GetType () == typeof(Bot1))
 					if (((Bot1)tob).grabbing)
@@ -792,7 +823,7 @@ public class GameManager : MonoBehaviour {
 			else
 			{
 				double xStart = tob.posX;
-				tob.setX(((float)((tob.xtile+1)*tileW-(tob.width/2))));
+				tob.setX(((float)((tob.xtile+1)*(tileW/2)-(tob.width/2))));
 				double xShift = tob.posX-xStart;
 				if (tob.GetType () == typeof(Bot1))
 					if (((Bot1)tob).grabbing)

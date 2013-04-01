@@ -53,6 +53,13 @@ public abstract class ObstacleClass
 	public bool downleft { get {return canGo[2];} set {canGo[2] = value;} }
 	public bool upleft { get {return canGo[3];} set {canGo[3] = value;} }
 	
+	public int depth {
+		get {
+			int depthshift = ((int)(GameManager.getTileW ())-width/2)/2;
+			return ((int)(yiso)-depthshift)*300+(int)(xiso)+1;
+		}
+	}
+	
 	public abstract int width { get; }
 	
 	public int vertLift { set { vertL = value; } get { return vertL; } }
@@ -117,18 +124,8 @@ public abstract class ObstacleClass
 		ytile = Math.Floor((posY/GameManager.getTileW ()));
 	}
 	
-	public OTSprite graphic {
+	public OTAnimatingSprite graphic {
 		get { return os; }
-	}
-	
-	public void setDepth(Dictionary<string, Tile> tileSheet)
-	{
-		foreach (var i in tileSheet) {
-			if (i.Value.graphic.position.y > os.position.y || i.Value.walkable((Obstacle)this))
-				i.Value.graphic.depth = 1;
-			else
-				i.Value.graphic.depth = -1;
-		}
 	}
 }
 

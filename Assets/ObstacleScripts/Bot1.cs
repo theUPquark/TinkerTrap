@@ -17,6 +17,10 @@ public class Bot1 : Player, Obstacle
 		os.PlayLoop (this.GetType ().Name + dirStr (currDir)+"_Idle");
 	}
 	
+	public override int width {
+		get { return 85; }
+	}
+	
 	public override void setDir(int dir)
 	{
 		int startDir = currDir;

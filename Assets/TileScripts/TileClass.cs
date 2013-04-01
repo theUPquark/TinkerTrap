@@ -40,6 +40,12 @@ public abstract class TileClass : Tile
 			os.depth = 1;
 	}
 	
+	public int depth {
+		get {
+			return -((ygrid+xgrid)*(int)(GameManager.getTileW())/2*300+(ygrid-xgrid)*(int)(GameManager.getTileW())-1);
+		}
+	}
+	
 	public virtual bool walkable () {
 		return false;
 	}
@@ -48,12 +54,12 @@ public abstract class TileClass : Tile
 		return walkable ();
 	}
 	
-	public OTSprite graphic {
+	public OTAnimatingSprite graphic {
 		get { return os; }
 	}
-	public int xgrid() {return gridx; }
+	public int xgrid {get{return gridx;}}
 	
-	public int ygrid() {return gridy; }
+	public int ygrid {get{return gridy;}}
 	
 	// Returns the name of the tile
 	public string myName()	{
