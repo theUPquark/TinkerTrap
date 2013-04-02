@@ -14,6 +14,7 @@ public interface Obstacle
 	int width { get; }
 	int vertLift {get; set; }
 	
+	int depth { get; }
 	double posX { get; set; }
 	double posY { get; set; }
 	double xtile { get; set; }
@@ -43,10 +44,8 @@ public interface Obstacle
 	double getSpeed (double speed);
 	double getSpeed (double speed, Obstacle source);
 	
-	OTSprite graphic {
+	OTAnimatingSprite graphic {
 		get;
 	}
-	
-	void setDepth(Dictionary<string, Tile> tileSheet);
 }
 
