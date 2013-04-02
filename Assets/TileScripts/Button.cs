@@ -8,7 +8,7 @@ public class Button : TileClass, Tile {
 
 	public Button(int gx, int gy, int tSet) : base(gx, gy, tSet)
 	{
-		os.PlayOnce(this.GetType ().Name+tSet.ToString());
+		os.PlayOnce(this.GetType ().Name+tSet.ToString()+"_off");
 		locked = true;
 	}
 	
@@ -31,16 +31,16 @@ public class Button : TileClass, Tile {
 	
 	public override void act(List<Obstacle> objs) {
 		if (used) {
-			/*if (active)
-				//Button off state graphic goes here.
-			else
-				//Button on state graphic goes here.*/
 			if (isActivated ()) {
 				foreach(List<Tile> i in connections[0].Values)
 					foreach(Tile j in i)
 						j.interact ();
 				powered = !powered;
 				locked = !locked;
+				if (powered)
+					os.PlayOnce(this.GetType ().Name+tileSet+"_on");
+				else
+					os.PlayOnce(this.GetType ().Name+tileSet+"_off");
 			}
 			used = false;
 		}
