@@ -49,7 +49,9 @@ public interface Tile {
 	
 	bool walkable (Obstacle o);
 	
-	OTSprite graphic {
+	int depth {get;}
+	
+	OTAnimatingSprite graphic {
 		get;
 	}
 
@@ -70,7 +72,7 @@ public interface Tile {
 	void act(List<Obstacle> objs);
 	
 	string myName();
-	int xgrid();
-	int ygrid();
+	int xgrid{get;}
+	int ygrid{get;}
 }
 
