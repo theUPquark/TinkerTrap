@@ -29,3 +29,5 @@ Library/ScriptAssemblies/CompilationCompleted.txt
 .DS_Store
 
 *.userprefs
+
+save.xml
