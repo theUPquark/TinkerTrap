@@ -98,15 +98,12 @@ public class Bot1 : Player, Obstacle
 	
 	public override void primary (Tile a)
 	{
-		Debug.Log ("Bot1 Empty Primary");
 		if (grabbing)
 			Release ();
 	}
 	
 	public override void primary(Tile a, Obstacle b)
 	{
-		Debug.Log ("Bot1 Using Primary");
-		
 		if (!b.GetType ().IsSubclassOf (typeof(Player))) {
 			if (grabbing) {
 				Release ();

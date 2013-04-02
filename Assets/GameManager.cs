@@ -333,7 +333,6 @@ public class GameManager : MonoBehaviour {
 					case "obs":
 						if (!read.IsEmptyElement) {
 							read.Read ();
-							Debug.Log ("Reading obstacles...");
 							switch (read.ReadContentAsString()) {
 							case "Spawn": // Player starting location, probably only for first level.
 								players[activeBot-1].setXY(i,j);
@@ -606,7 +605,6 @@ public class GameManager : MonoBehaviour {
 					i.graphic.depth = 1000;
 				else { // Similar checks to the obstacles above.
 					foreach (Obstacle j in orderedObs) {
-						//Debug.Log("Obs depth: " + j.depth + " Tile depth: " + i.depth);
 						if (j.depth >= i.depth ) {
 							i.graphic.depth = j.graphic.depth-1;
 							break;
