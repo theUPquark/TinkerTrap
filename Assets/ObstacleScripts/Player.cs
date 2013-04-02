@@ -3,10 +3,13 @@ using UnityEngine;
 
 public abstract class Player : ObstacleClass, Obstacle
 {
-	public int currDir;
+	public int currDir, animDir;
 	protected bool animPlay = false;
 	protected bool moveIntro = false;
+	protected bool moveTry = false;
 	protected bool moving = false;
+	protected bool turning = false;
+	protected bool idle = true;
 	protected bool stopping = false;
 	protected bool playstop = false;
 	protected float stopTime = Time.time;

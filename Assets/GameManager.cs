@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour {
 	
 	private List<Player> players = new List<Player>();
 	private int activeBot = 1;
+	private List<KeyCode> activeInputs = new List<KeyCode>();
 	
 	void Start () {
 		Time.fixedDeltaTime = 1/30f;
@@ -332,7 +333,6 @@ public class GameManager : MonoBehaviour {
 					case "obs":
 						if (!read.IsEmptyElement) {
 							read.Read ();
-							Debug.Log ("Reading obstacles...");
 							switch (read.ReadContentAsString()) {
 							case "Spawn": // Player starting location, probably only for first level.
 								players[activeBot-1].setXY(i,j);
@@ -461,9 +461,8 @@ public class GameManager : MonoBehaviour {
 			if (!paused) {
 				
 				//Directional movement. Should this be limited to one direction at a time?
-				if (Input.GetKeyDown (KeyCode.E)) {
-					DoPrimary ();
-				}
+				if (Input.GetKeyDown(KeyCode.E))
+				{	DoPrimary (); }
 				
 				// Scan for player interaction. This probably needs updating for different bot abilites.
 				
@@ -472,7 +471,7 @@ public class GameManager : MonoBehaviour {
 				
 				// Bot selection... eventually this will only be if you have multiple robots active! (Remove comment below)
 				
-				if (Input.GetKeyDown (KeyCode.Alpha1)) {
+				if (Input.GetAxis("select1") == 1.0) {
 					if (activeBot != 1 /*&& players[0].level > 0*/) {
 						players[0].setX (players[activeBot-1].posX);
 						players[0].setY (players[activeBot-1].posY);
@@ -483,7 +482,7 @@ public class GameManager : MonoBehaviour {
 						activeBot = 1;
 					}
 				}
-				if (Input.GetKeyDown (KeyCode.Alpha2)) {
+				if (Input.GetAxis("select2") == 1.0) {
 					if (activeBot != 2 /*&& players[1].level > 0*/) {
 						players[1].setX (players[activeBot-1].posX);
 						players[1].setY (players[activeBot-1].posY);
@@ -494,7 +493,7 @@ public class GameManager : MonoBehaviour {
 						activeBot = 2;
 					}
 				}
-				if (Input.GetKeyDown (KeyCode.Alpha3)) {
+				if (Input.GetAxis("select3") == 1.0) {
 					if (activeBot != 3 /*&& players[2].level > 0*/) {
 						players[2].setX (players[activeBot-1].posX);
 						players[2].setY (players[activeBot-1].posY);
@@ -508,7 +507,7 @@ public class GameManager : MonoBehaviour {
 			}
 			
 			// Bring up or close the pause menu!
-			if (Input.GetKeyDown (KeyCode.Escape))
+			if (Input.GetKeyDown(KeyCode.Escape))
 			{
 				paused = !paused;
 			}
@@ -523,35 +522,14 @@ public class GameManager : MonoBehaviour {
 				if (!players[activeBot-1].inAction()) {
 					double speed = 5;
 					//Directional movement. Should this be limited to one direction at a time?
-					if (Input.GetKeyDown (KeyCode.E)) {
-						DoPrimary ();
-					}
-					if (((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) || (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))) 
+					/*if (((activeMovement.Contains(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) || (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))) 
 						&& ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) || (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))))
-						speed *= 0.7071;
-					if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) 
-					{
-						players[activeBot-1].setDir(3);
-						moveChar(players[activeBot-1], speed, -1, 0);
+						speed *= 0.7071;*/
+					if (Input.GetAxis("horizontal") != 0.0) {
+						moveChar(players[activeBot-1], speed, (int)(Math.Round(Input.GetAxis("horizontal"),MidpointRounding.AwayFromZero)), 0);
 						movement = true;
-					}
-					if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) 
-					{
-						players[activeBot-1].setDir(1);
-						moveChar(players[activeBot-1], speed, 1, 0);
-						movement = true;
-					}
-		
-					if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) 
-					{
-						players[activeBot-1].setDir(0);
-						moveChar(players[activeBot-1], speed, 0, -1);
-						movement = true;
-					}
-					if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) 
-					{
-						players[activeBot-1].setDir(2);
-						moveChar(players[activeBot-1], speed, 0, 1);
+					} else if (Input.GetAxis("vertical") != 0.0) {
+						moveChar(players[activeBot-1], speed, 0, (int)(Math.Round(Input.GetAxis("vertical"),MidpointRounding.AwayFromZero)));
 						movement = true;
 					}
 					
@@ -627,7 +605,6 @@ public class GameManager : MonoBehaviour {
 					i.graphic.depth = 1000;
 				else { // Similar checks to the obstacles above.
 					foreach (Obstacle j in orderedObs) {
-						//Debug.Log("Obs depth: " + j.depth + " Tile depth: " + i.depth);
 						if (j.depth >= i.depth ) {
 							i.graphic.depth = j.graphic.depth-1;
 							break;
@@ -742,9 +719,9 @@ public class GameManager : MonoBehaviour {
 					}
 					break;
 				}
-				players[activeBot-1].primary(target);
 			}
 		}
+		players[activeBot-1].primary(target);
 	}
 	
 	// getMyCorners is called to detect the player position and dimensions, checking if movement will carry the player into a new tile.
@@ -829,6 +806,10 @@ public class GameManager : MonoBehaviour {
 				gameB[tarTile].interact (tob);
 				speedAdj = 0;
 			}
+			if (speedAdj != 0 && tob.GetType ().IsSubclassOf (typeof(Player))) {
+				Player p = (Player)tob;
+				p.setDir(0);
+			}
 		}
 		//if going down
 		if (diry == 1)
@@ -860,6 +841,10 @@ public class GameManager : MonoBehaviour {
 				string tarTile = "tile_"+(int)(tob.xtile)+"_"+(int)(tob.ytile+1);
 				gameB[tarTile].interact (tob);
 				speedAdj = 0;
+			}
+			if (speedAdj != 0 && tob.GetType ().IsSubclassOf (typeof(Player))) {
+				Player p = (Player)tob;
+				p.setDir(2);
 			}
 		}
 		//horizontal movement
@@ -896,6 +881,10 @@ public class GameManager : MonoBehaviour {
 				gameB[tarTile].interact (tob);
 				speedAdj = 0;
 			}
+			if (speedAdj != 0 && tob.GetType ().IsSubclassOf (typeof(Player))) {
+				Player p = (Player)tob;
+				p.setDir(3);
+			}
 		}
 		//if going right
 		if (dirx == 1)
@@ -927,6 +916,10 @@ public class GameManager : MonoBehaviour {
 				string tarTile = "tile_"+(int)(tob.xtile+1)+"_"+(int)(tob.ytile);
 				gameB[tarTile].interact (tob);
 				speedAdj = 0;
+			}
+			if (speedAdj != 0 && tob.GetType ().IsSubclassOf (typeof(Player))) {
+				Player p = (Player)tob;
+				p.setDir(1);
 			}
 		}
 		if (speedAdj == 0)

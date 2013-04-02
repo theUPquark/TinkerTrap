@@ -9,20 +9,14 @@
       <tset>0</tset>
       <obs />
       <connections />
-      <locks>
-        <out>9</out>
-        <out>10</out>
-      </locks>
+      <locks />
     </x>
     <x>
       <type>Wall</type>
       <tset>0</tset>
       <obs />
       <connections />
-      <locks>
-        <in>9</in>
-        <in>10</in>
-      </locks>
+      <locks />
     </x>
     <x>
       <type>Wall</type>
@@ -659,9 +653,7 @@
       <type>Floor</type>
       <tset>0</tset>
       <obs />
-      <connections>
-        <out>1</out>
-      </connections>
+      <connections />
       <locks />
     </x>
     <x>
@@ -766,28 +758,28 @@
     <x>
       <type>Wall</type>
       <tset>0</tset>
-      <obs>Box</obs>
+      <obs />
       <connections />
       <locks />
     </x>
     <x>
       <type>Wall</type>
       <tset>0</tset>
-      <obs>Box</obs>
+      <obs />
       <connections />
       <locks />
     </x>
     <x>
       <type>Wall</type>
       <tset>0</tset>
-      <obs>Box</obs>
+      <obs />
       <connections />
       <locks />
     </x>
     <x>
       <type>Wall</type>
       <tset>0</tset>
-      <obs>Box</obs>
+      <obs />
       <connections />
       <locks />
     </x>
@@ -1360,7 +1352,7 @@
       <tset>0</tset>
       <obs>Box</obs>
       <connections>
-        <in>1</in>
+        <in>12</in>
       </connections>
       <locks>
         <in>7</in>
@@ -1482,7 +1474,7 @@
       <tset>0</tset>
       <obs />
       <connections>
-        <in>1</in>
+        <in>12</in>
       </connections>
       <locks>
         <in>7</in>
@@ -1493,7 +1485,7 @@
       <tset>0</tset>
       <obs>Box</obs>
       <connections>
-        <in>1</in>
+        <in>12</in>
       </connections>
       <locks>
         <in>7</in>
@@ -1830,11 +1822,9 @@
       <tset>1</tset>
       <obs />
       <connections>
-        <in>3</in>
+        <in>5</in>
       </connections>
-      <locks>
-        <in>1</in>
-      </locks>
+      <locks />
     </x>
     <x>
       <type>Floor</type>
@@ -1858,11 +1848,15 @@
       <locks />
     </x>
     <x>
-      <type>Wall</type>
+      <type>Source</type>
       <tset>0</tset>
       <obs />
-      <connections />
-      <locks />
+      <connections>
+        <out>12</out>
+      </connections>
+      <locks>
+        <in>4</in>
+      </locks>
     </x>
     <x>
       <type>Wall</type>
@@ -2206,9 +2200,7 @@
       <connections>
         <out>4</out>
       </connections>
-      <locks>
-        <out>1</out>
-      </locks>
+      <locks />
     </x>
     <x>
       <type>Floor</type>
@@ -2264,14 +2256,14 @@
     <x>
       <type>Wall</type>
       <tset>0</tset>
-      <obs>Box</obs>
+      <obs />
       <connections />
       <locks />
     </x>
     <x>
       <type>Wall</type>
       <tset>0</tset>
-      <obs>Box</obs>
+      <obs />
       <connections />
       <locks />
     </x>
