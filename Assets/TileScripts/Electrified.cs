@@ -17,7 +17,7 @@ public class Electrified : Floor, Tile {
 	public override bool walkable(Obstacle b)
 	{
 		if (on) {
-			if (b.GetType() == typeof(Box) || b.GetType() == typeof(Bot2))
+			if (b.GetType() == typeof(Box)|| b.GetType() == typeof(Battery) || b.GetType() == typeof(Bot2))
 				return true;
 			else
 				return false;

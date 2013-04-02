@@ -14,7 +14,9 @@ public class Source : TileClass, Tile {
 		foreach (List<Tile> conList in locks[0].Values)
 			foreach (Tile t in conList)
 				if (((TileClass)t).locked && t != this)
-					return false;
+					return true;
+		if (locks[0].Count > 0)
+			return false;
 		return true;
 	}
 	
