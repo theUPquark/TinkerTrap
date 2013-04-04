@@ -42,7 +42,8 @@ public class Bot2 : Player, Obstacle
 		}
 		if (moveTry && input)
 			stopping = false;
-		if (!os.isPlaying || os.animationFrameset.Equals (this.GetType ().Name + dirStr (animDir)+"_MvStop") || os.animationFrameset.Equals (this.GetType ().Name + dirStr (animDir)+"_Idle")) {
+		if (!os.isPlaying || os.animationFrameset.Equals (this.GetType ().Name + dirStr (animDir)+"_MvStop") || os.animationFrameset.Equals (this.GetType ().Name + dirStr (animDir)+"_Idle") ||
+			os.animationFrameset.Equals (this.GetType ().Name + dirStr (animDir)+"_Move")) {
 			animPlay = false;
 			if (turning) {
 				if (idle) {
@@ -82,7 +83,7 @@ public class Bot2 : Player, Obstacle
 					os.PlayOnce (this.GetType ().Name + dirStr (currDir)+"_MvInt");
 					animDir = currDir;
 					idle = false;
-				} else {
+				} else if (!os.isPlaying) {
 					os.PlayOnce (this.GetType ().Name + dirStr (currDir)+"_Move");
 					animDir = currDir;
 					moving = true;
