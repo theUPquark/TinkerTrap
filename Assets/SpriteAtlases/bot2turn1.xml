@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>Bot2DnLft_Idle_00000.png</key>
+            <key>Bot2DnLft_TrnLft_00000.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,0},{128,256}}</string>
@@ -17,7 +17,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00001.png</key>
+            <key>Bot2DnLft_TrnLft_00001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{128,0},{128,256}}</string>
@@ -30,7 +30,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00002.png</key>
+            <key>Bot2DnLft_TrnLft_00002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{256,0},{128,256}}</string>
@@ -43,7 +43,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00003.png</key>
+            <key>Bot2DnLft_TrnLft_00003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{384,0},{128,256}}</string>
@@ -56,7 +56,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00004.png</key>
+            <key>Bot2DnLft_TrnLft_00004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{512,0},{128,256}}</string>
@@ -69,7 +69,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00005.png</key>
+            <key>Bot2DnLft_TrnLft_00005.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,0},{128,256}}</string>
@@ -82,7 +82,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00006.png</key>
+            <key>Bot2DnLft_TrnLft_00006.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{768,0},{128,256}}</string>
@@ -95,7 +95,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00007.png</key>
+            <key>Bot2DnLft_TrnLft_00007.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{896,0},{128,256}}</string>
@@ -108,7 +108,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00008.png</key>
+            <key>Bot2DnLft_TrnLft_00008.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1024,0},{128,256}}</string>
@@ -121,7 +121,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00009.png</key>
+            <key>Bot2DnLft_TrnLft_00009.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1152,0},{128,256}}</string>
@@ -134,7 +134,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00010.png</key>
+            <key>Bot2DnLft_TrnLft_00010.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1280,0},{128,256}}</string>
@@ -147,7 +147,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00011.png</key>
+            <key>Bot2DnLft_TrnLft_00011.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1408,0},{128,256}}</string>
@@ -160,7 +160,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00012.png</key>
+            <key>Bot2DnLft_TrnLft_00012.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1536,0},{128,256}}</string>
@@ -173,7 +173,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00013.png</key>
+            <key>Bot2DnLft_TrnLft_00013.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1664,0},{128,256}}</string>
@@ -186,7 +186,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00014.png</key>
+            <key>Bot2DnLft_TrnLft_00014.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1792,0},{128,256}}</string>
@@ -199,7 +199,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00015.png</key>
+            <key>Bot2DnLft_TrnLft_00015.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1920,0},{128,256}}</string>
@@ -212,7 +212,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00016.png</key>
+            <key>Bot2DnLft_TrnLft_00016.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2048,0},{128,256}}</string>
@@ -225,7 +225,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00017.png</key>
+            <key>Bot2DnLft_TrnLft_00017.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2176,0},{128,256}}</string>
@@ -238,7 +238,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00018.png</key>
+            <key>Bot2DnLft_TrnLft_00018.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2304,0},{128,256}}</string>
@@ -251,7 +251,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00019.png</key>
+            <key>Bot2DnLft_TrnLft_00019.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2432,0},{128,256}}</string>
@@ -264,7 +264,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00020.png</key>
+            <key>Bot2DnLft_TrnLft_00020.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2560,0},{128,256}}</string>
@@ -277,7 +277,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00021.png</key>
+            <key>Bot2DnLft_TrnLft_00021.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2688,0},{128,256}}</string>
@@ -290,7 +290,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00022.png</key>
+            <key>Bot2DnLft_TrnLft_00022.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2816,0},{128,256}}</string>
@@ -303,7 +303,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00023.png</key>
+            <key>Bot2DnLft_TrnLft_00023.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2944,0},{128,256}}</string>
@@ -316,7 +316,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00024.png</key>
+            <key>Bot2DnLft_TrnLft_00024.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3072,0},{128,256}}</string>
@@ -329,7 +329,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00025.png</key>
+            <key>Bot2DnLft_TrnLft_00025.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3200,0},{128,256}}</string>
@@ -342,7 +342,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00026.png</key>
+            <key>Bot2DnLft_TrnLft_00026.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3328,0},{128,256}}</string>
@@ -355,7 +355,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00027.png</key>
+            <key>Bot2DnLft_TrnLft_00027.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3456,0},{128,256}}</string>
@@ -368,7 +368,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00028.png</key>
+            <key>Bot2DnLft_TrnLft_00028.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3584,0},{128,256}}</string>
@@ -381,7 +381,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00029.png</key>
+            <key>Bot2DnLft_TrnLft_00029.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3712,0},{128,256}}</string>
@@ -394,7 +394,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00030.png</key>
+            <key>Bot2DnLft_TrnLft_00030.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3840,0},{128,256}}</string>
@@ -407,7 +407,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00031.png</key>
+            <key>Bot2DnLft_TrnLft_00031.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3968,0},{128,256}}</string>
@@ -420,7 +420,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00032.png</key>
+            <key>Bot2DnLft_TrnLft_00032.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,256},{128,256}}</string>
@@ -433,7 +433,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00033.png</key>
+            <key>Bot2DnLft_TrnLft_00033.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{128,256},{128,256}}</string>
@@ -446,7 +446,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00034.png</key>
+            <key>Bot2DnLft_TrnLft_00034.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{256,256},{128,256}}</string>
@@ -459,7 +459,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00035.png</key>
+            <key>Bot2DnLft_TrnLft_00035.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{384,256},{128,256}}</string>
@@ -472,7 +472,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00036.png</key>
+            <key>Bot2DnLft_TrnRt_00000.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{512,256},{128,256}}</string>
@@ -485,7 +485,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00037.png</key>
+            <key>Bot2DnLft_TrnRt_00001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,256},{128,256}}</string>
@@ -498,7 +498,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00038.png</key>
+            <key>Bot2DnLft_TrnRt_00002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{768,256},{128,256}}</string>
@@ -511,7 +511,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00039.png</key>
+            <key>Bot2DnLft_TrnRt_00003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{896,256},{128,256}}</string>
@@ -524,7 +524,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00040.png</key>
+            <key>Bot2DnLft_TrnRt_00004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1024,256},{128,256}}</string>
@@ -537,7 +537,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00041.png</key>
+            <key>Bot2DnLft_TrnRt_00005.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1152,256},{128,256}}</string>
@@ -550,7 +550,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00042.png</key>
+            <key>Bot2DnLft_TrnRt_00006.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1280,256},{128,256}}</string>
@@ -563,7 +563,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00043.png</key>
+            <key>Bot2DnLft_TrnRt_00007.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1408,256},{128,256}}</string>
@@ -576,7 +576,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00044.png</key>
+            <key>Bot2DnLft_TrnRt_00008.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1536,256},{128,256}}</string>
@@ -589,7 +589,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00045.png</key>
+            <key>Bot2DnLft_TrnRt_00009.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1664,256},{128,256}}</string>
@@ -602,7 +602,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00046.png</key>
+            <key>Bot2DnLft_TrnRt_00010.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1792,256},{128,256}}</string>
@@ -615,7 +615,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00047.png</key>
+            <key>Bot2DnLft_TrnRt_00011.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1920,256},{128,256}}</string>
@@ -628,7 +628,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00048.png</key>
+            <key>Bot2DnLft_TrnRt_00012.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2048,256},{128,256}}</string>
@@ -641,7 +641,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00049.png</key>
+            <key>Bot2DnLft_TrnRt_00013.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2176,256},{128,256}}</string>
@@ -654,7 +654,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00050.png</key>
+            <key>Bot2DnLft_TrnRt_00014.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2304,256},{128,256}}</string>
@@ -667,7 +667,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00051.png</key>
+            <key>Bot2DnLft_TrnRt_00015.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2432,256},{128,256}}</string>
@@ -680,7 +680,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00052.png</key>
+            <key>Bot2DnLft_TrnRt_00016.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2560,256},{128,256}}</string>
@@ -693,7 +693,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00053.png</key>
+            <key>Bot2DnLft_TrnRt_00017.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2688,256},{128,256}}</string>
@@ -706,7 +706,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00054.png</key>
+            <key>Bot2DnLft_TrnRt_00018.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2816,256},{128,256}}</string>
@@ -719,7 +719,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00055.png</key>
+            <key>Bot2DnLft_TrnRt_00019.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2944,256},{128,256}}</string>
@@ -732,7 +732,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00056.png</key>
+            <key>Bot2DnLft_TrnRt_00020.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3072,256},{128,256}}</string>
@@ -745,7 +745,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00057.png</key>
+            <key>Bot2DnLft_TrnRt_00021.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3200,256},{128,256}}</string>
@@ -758,7 +758,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00058.png</key>
+            <key>Bot2DnLft_TrnRt_00022.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3328,256},{128,256}}</string>
@@ -771,7 +771,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00059.png</key>
+            <key>Bot2DnLft_TrnRt_00023.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3456,256},{128,256}}</string>
@@ -784,7 +784,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00060.png</key>
+            <key>Bot2DnLft_TrnRt_00024.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3584,256},{128,256}}</string>
@@ -797,7 +797,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00061.png</key>
+            <key>Bot2DnLft_TrnRt_00025.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3712,256},{128,256}}</string>
@@ -810,7 +810,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00062.png</key>
+            <key>Bot2DnLft_TrnRt_00026.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3840,256},{128,256}}</string>
@@ -823,7 +823,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00063.png</key>
+            <key>Bot2DnLft_TrnRt_00027.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3968,256},{128,256}}</string>
@@ -836,7 +836,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00064.png</key>
+            <key>Bot2DnLft_TrnRt_00028.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,512},{128,256}}</string>
@@ -849,7 +849,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00065.png</key>
+            <key>Bot2DnLft_TrnRt_00029.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{128,512},{128,256}}</string>
@@ -862,7 +862,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00066.png</key>
+            <key>Bot2DnLft_TrnRt_00030.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{256,512},{128,256}}</string>
@@ -875,7 +875,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00067.png</key>
+            <key>Bot2DnLft_TrnRt_00031.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{384,512},{128,256}}</string>
@@ -888,7 +888,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00068.png</key>
+            <key>Bot2DnLft_TrnRt_00032.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{512,512},{128,256}}</string>
@@ -901,7 +901,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00069.png</key>
+            <key>Bot2DnLft_TrnRt_00033.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,512},{128,256}}</string>
@@ -914,7 +914,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00070.png</key>
+            <key>Bot2DnLft_TrnRt_00034.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{768,512},{128,256}}</string>
@@ -927,7 +927,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00071.png</key>
+            <key>Bot2DnLft_TrnRt_00035.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{896,512},{128,256}}</string>
@@ -940,7 +940,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00072.png</key>
+            <key>Bot2DnLft_TrnRv_00000.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1024,512},{128,256}}</string>
@@ -953,7 +953,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00073.png</key>
+            <key>Bot2DnLft_TrnRv_00001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1152,512},{128,256}}</string>
@@ -966,7 +966,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00074.png</key>
+            <key>Bot2DnLft_TrnRv_00002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1280,512},{128,256}}</string>
@@ -979,7 +979,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00075.png</key>
+            <key>Bot2DnLft_TrnRv_00003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1408,512},{128,256}}</string>
@@ -992,7 +992,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00076.png</key>
+            <key>Bot2DnLft_TrnRv_00004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1536,512},{128,256}}</string>
@@ -1005,7 +1005,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00077.png</key>
+            <key>Bot2DnLft_TrnRv_00005.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1664,512},{128,256}}</string>
@@ -1018,7 +1018,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00078.png</key>
+            <key>Bot2DnLft_TrnRv_00006.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1792,512},{128,256}}</string>
@@ -1031,7 +1031,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00079.png</key>
+            <key>Bot2DnLft_TrnRv_00007.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1920,512},{128,256}}</string>
@@ -1044,7 +1044,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00080.png</key>
+            <key>Bot2DnLft_TrnRv_00008.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2048,512},{128,256}}</string>
@@ -1057,7 +1057,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00081.png</key>
+            <key>Bot2DnLft_TrnRv_00009.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2176,512},{128,256}}</string>
@@ -1070,7 +1070,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00082.png</key>
+            <key>Bot2DnLft_TrnRv_00010.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2304,512},{128,256}}</string>
@@ -1083,7 +1083,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00083.png</key>
+            <key>Bot2DnLft_TrnRv_00011.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2432,512},{128,256}}</string>
@@ -1096,7 +1096,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00084.png</key>
+            <key>Bot2DnLft_TrnRv_00012.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2560,512},{128,256}}</string>
@@ -1109,7 +1109,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00085.png</key>
+            <key>Bot2DnLft_TrnRv_00013.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2688,512},{128,256}}</string>
@@ -1122,7 +1122,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00086.png</key>
+            <key>Bot2DnLft_TrnRv_00014.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2816,512},{128,256}}</string>
@@ -1135,7 +1135,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00087.png</key>
+            <key>Bot2DnLft_TrnRv_00015.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2944,512},{128,256}}</string>
@@ -1148,7 +1148,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00088.png</key>
+            <key>Bot2DnLft_TrnRv_00016.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3072,512},{128,256}}</string>
@@ -1161,7 +1161,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00089.png</key>
+            <key>Bot2DnLft_TrnRv_00017.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3200,512},{128,256}}</string>
@@ -1174,7 +1174,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00090.png</key>
+            <key>Bot2DnLft_TrnRv_00018.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3328,512},{128,256}}</string>
@@ -1187,7 +1187,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00091.png</key>
+            <key>Bot2DnLft_TrnRv_00019.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3456,512},{128,256}}</string>
@@ -1200,7 +1200,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00092.png</key>
+            <key>Bot2DnLft_TrnRv_00020.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3584,512},{128,256}}</string>
@@ -1213,7 +1213,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00093.png</key>
+            <key>Bot2DnLft_TrnRv_00021.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3712,512},{128,256}}</string>
@@ -1226,7 +1226,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00094.png</key>
+            <key>Bot2DnLft_TrnRv_00022.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3840,512},{128,256}}</string>
@@ -1239,7 +1239,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnLft_Idle_00095.png</key>
+            <key>Bot2DnLft_TrnRv_00023.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3968,512},{128,256}}</string>
@@ -1252,7 +1252,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00000.png</key>
+            <key>Bot2DnLft_TrnRv_00024.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,768},{128,256}}</string>
@@ -1265,7 +1265,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00001.png</key>
+            <key>Bot2DnLft_TrnRv_00025.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{128,768},{128,256}}</string>
@@ -1278,7 +1278,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00002.png</key>
+            <key>Bot2DnLft_TrnRv_00026.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{256,768},{128,256}}</string>
@@ -1291,7 +1291,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00003.png</key>
+            <key>Bot2DnLft_TrnRv_00027.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{384,768},{128,256}}</string>
@@ -1304,7 +1304,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00004.png</key>
+            <key>Bot2DnLft_TrnRv_00028.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{512,768},{128,256}}</string>
@@ -1317,7 +1317,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00005.png</key>
+            <key>Bot2DnLft_TrnRv_00029.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,768},{128,256}}</string>
@@ -1330,7 +1330,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00006.png</key>
+            <key>Bot2DnLft_TrnRv_00030.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{768,768},{128,256}}</string>
@@ -1343,7 +1343,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00007.png</key>
+            <key>Bot2DnLft_TrnRv_00031.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{896,768},{128,256}}</string>
@@ -1356,7 +1356,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00008.png</key>
+            <key>Bot2DnLft_TrnRv_00032.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1024,768},{128,256}}</string>
@@ -1369,7 +1369,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00009.png</key>
+            <key>Bot2DnLft_TrnRv_00033.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1152,768},{128,256}}</string>
@@ -1382,7 +1382,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00010.png</key>
+            <key>Bot2DnLft_TrnRv_00034.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1280,768},{128,256}}</string>
@@ -1395,7 +1395,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00011.png</key>
+            <key>Bot2DnLft_TrnRv_00035.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1408,768},{128,256}}</string>
@@ -1408,7 +1408,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00012.png</key>
+            <key>Bot2DnRt_TrnLft_00000.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1536,768},{128,256}}</string>
@@ -1421,7 +1421,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00013.png</key>
+            <key>Bot2DnRt_TrnLft_00001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1664,768},{128,256}}</string>
@@ -1434,7 +1434,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00014.png</key>
+            <key>Bot2DnRt_TrnLft_00002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1792,768},{128,256}}</string>
@@ -1447,7 +1447,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00015.png</key>
+            <key>Bot2DnRt_TrnLft_00003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1920,768},{128,256}}</string>
@@ -1460,7 +1460,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00016.png</key>
+            <key>Bot2DnRt_TrnLft_00004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2048,768},{128,256}}</string>
@@ -1473,7 +1473,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00017.png</key>
+            <key>Bot2DnRt_TrnLft_00005.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2176,768},{128,256}}</string>
@@ -1486,7 +1486,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00018.png</key>
+            <key>Bot2DnRt_TrnLft_00006.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2304,768},{128,256}}</string>
@@ -1499,7 +1499,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00019.png</key>
+            <key>Bot2DnRt_TrnLft_00007.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2432,768},{128,256}}</string>
@@ -1512,7 +1512,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00020.png</key>
+            <key>Bot2DnRt_TrnLft_00008.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2560,768},{128,256}}</string>
@@ -1525,7 +1525,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00021.png</key>
+            <key>Bot2DnRt_TrnLft_00009.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2688,768},{128,256}}</string>
@@ -1538,7 +1538,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00022.png</key>
+            <key>Bot2DnRt_TrnLft_00010.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2816,768},{128,256}}</string>
@@ -1551,7 +1551,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00023.png</key>
+            <key>Bot2DnRt_TrnLft_00011.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2944,768},{128,256}}</string>
@@ -1564,7 +1564,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00024.png</key>
+            <key>Bot2DnRt_TrnLft_00012.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3072,768},{128,256}}</string>
@@ -1577,7 +1577,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00025.png</key>
+            <key>Bot2DnRt_TrnLft_00013.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3200,768},{128,256}}</string>
@@ -1590,7 +1590,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00026.png</key>
+            <key>Bot2DnRt_TrnLft_00014.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3328,768},{128,256}}</string>
@@ -1603,7 +1603,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00027.png</key>
+            <key>Bot2DnRt_TrnLft_00015.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3456,768},{128,256}}</string>
@@ -1616,7 +1616,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00028.png</key>
+            <key>Bot2DnRt_TrnLft_00016.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3584,768},{128,256}}</string>
@@ -1629,7 +1629,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00029.png</key>
+            <key>Bot2DnRt_TrnLft_00017.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3712,768},{128,256}}</string>
@@ -1642,7 +1642,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00030.png</key>
+            <key>Bot2DnRt_TrnLft_00018.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3840,768},{128,256}}</string>
@@ -1655,7 +1655,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00031.png</key>
+            <key>Bot2DnRt_TrnLft_00019.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3968,768},{128,256}}</string>
@@ -1668,7 +1668,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00032.png</key>
+            <key>Bot2DnRt_TrnLft_00020.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,1024},{128,256}}</string>
@@ -1681,7 +1681,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00033.png</key>
+            <key>Bot2DnRt_TrnLft_00021.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{128,1024},{128,256}}</string>
@@ -1694,7 +1694,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00034.png</key>
+            <key>Bot2DnRt_TrnLft_00022.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{256,1024},{128,256}}</string>
@@ -1707,7 +1707,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00035.png</key>
+            <key>Bot2DnRt_TrnLft_00023.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{384,1024},{128,256}}</string>
@@ -1720,7 +1720,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00036.png</key>
+            <key>Bot2DnRt_TrnLft_00024.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{512,1024},{128,256}}</string>
@@ -1733,7 +1733,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00037.png</key>
+            <key>Bot2DnRt_TrnLft_00025.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,1024},{128,256}}</string>
@@ -1746,7 +1746,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00038.png</key>
+            <key>Bot2DnRt_TrnLft_00026.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{768,1024},{128,256}}</string>
@@ -1759,7 +1759,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00039.png</key>
+            <key>Bot2DnRt_TrnLft_00027.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{896,1024},{128,256}}</string>
@@ -1772,7 +1772,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00040.png</key>
+            <key>Bot2DnRt_TrnLft_00028.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1024,1024},{128,256}}</string>
@@ -1785,7 +1785,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00041.png</key>
+            <key>Bot2DnRt_TrnLft_00029.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1152,1024},{128,256}}</string>
@@ -1798,7 +1798,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00042.png</key>
+            <key>Bot2DnRt_TrnLft_00030.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1280,1024},{128,256}}</string>
@@ -1811,7 +1811,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00043.png</key>
+            <key>Bot2DnRt_TrnLft_00031.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1408,1024},{128,256}}</string>
@@ -1824,7 +1824,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00044.png</key>
+            <key>Bot2DnRt_TrnLft_00032.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1536,1024},{128,256}}</string>
@@ -1837,7 +1837,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00045.png</key>
+            <key>Bot2DnRt_TrnLft_00033.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1664,1024},{128,256}}</string>
@@ -1850,7 +1850,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00046.png</key>
+            <key>Bot2DnRt_TrnLft_00034.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1792,1024},{128,256}}</string>
@@ -1863,7 +1863,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00047.png</key>
+            <key>Bot2DnRt_TrnLft_00035.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1920,1024},{128,256}}</string>
@@ -1876,7 +1876,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00048.png</key>
+            <key>Bot2DnRt_TrnRt_00000.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2048,1024},{128,256}}</string>
@@ -1889,7 +1889,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00049.png</key>
+            <key>Bot2DnRt_TrnRt_00001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2176,1024},{128,256}}</string>
@@ -1902,7 +1902,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00050.png</key>
+            <key>Bot2DnRt_TrnRt_00002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2304,1024},{128,256}}</string>
@@ -1915,7 +1915,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00051.png</key>
+            <key>Bot2DnRt_TrnRt_00003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2432,1024},{128,256}}</string>
@@ -1928,7 +1928,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00052.png</key>
+            <key>Bot2DnRt_TrnRt_00004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2560,1024},{128,256}}</string>
@@ -1941,7 +1941,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00053.png</key>
+            <key>Bot2DnRt_TrnRt_00005.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2688,1024},{128,256}}</string>
@@ -1954,7 +1954,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00054.png</key>
+            <key>Bot2DnRt_TrnRt_00006.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2816,1024},{128,256}}</string>
@@ -1967,7 +1967,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00055.png</key>
+            <key>Bot2DnRt_TrnRt_00007.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2944,1024},{128,256}}</string>
@@ -1980,7 +1980,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00056.png</key>
+            <key>Bot2DnRt_TrnRt_00008.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3072,1024},{128,256}}</string>
@@ -1993,7 +1993,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00057.png</key>
+            <key>Bot2DnRt_TrnRt_00009.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3200,1024},{128,256}}</string>
@@ -2006,7 +2006,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00058.png</key>
+            <key>Bot2DnRt_TrnRt_00010.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3328,1024},{128,256}}</string>
@@ -2019,7 +2019,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00059.png</key>
+            <key>Bot2DnRt_TrnRt_00011.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3456,1024},{128,256}}</string>
@@ -2032,7 +2032,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00060.png</key>
+            <key>Bot2DnRt_TrnRt_00012.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3584,1024},{128,256}}</string>
@@ -2045,7 +2045,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00061.png</key>
+            <key>Bot2DnRt_TrnRt_00013.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3712,1024},{128,256}}</string>
@@ -2058,7 +2058,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00062.png</key>
+            <key>Bot2DnRt_TrnRt_00014.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3840,1024},{128,256}}</string>
@@ -2071,7 +2071,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00063.png</key>
+            <key>Bot2DnRt_TrnRt_00015.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3968,1024},{128,256}}</string>
@@ -2084,7 +2084,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00064.png</key>
+            <key>Bot2DnRt_TrnRt_00016.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,1280},{128,256}}</string>
@@ -2097,7 +2097,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00065.png</key>
+            <key>Bot2DnRt_TrnRt_00017.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{128,1280},{128,256}}</string>
@@ -2110,7 +2110,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00066.png</key>
+            <key>Bot2DnRt_TrnRt_00018.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{256,1280},{128,256}}</string>
@@ -2123,7 +2123,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00067.png</key>
+            <key>Bot2DnRt_TrnRt_00019.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{384,1280},{128,256}}</string>
@@ -2136,7 +2136,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00068.png</key>
+            <key>Bot2DnRt_TrnRt_00020.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{512,1280},{128,256}}</string>
@@ -2149,7 +2149,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00069.png</key>
+            <key>Bot2DnRt_TrnRt_00021.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,1280},{128,256}}</string>
@@ -2162,7 +2162,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00070.png</key>
+            <key>Bot2DnRt_TrnRt_00022.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{768,1280},{128,256}}</string>
@@ -2175,7 +2175,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00071.png</key>
+            <key>Bot2DnRt_TrnRt_00023.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{896,1280},{128,256}}</string>
@@ -2188,7 +2188,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00072.png</key>
+            <key>Bot2DnRt_TrnRt_00024.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1024,1280},{128,256}}</string>
@@ -2201,7 +2201,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00073.png</key>
+            <key>Bot2DnRt_TrnRt_00025.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1152,1280},{128,256}}</string>
@@ -2214,7 +2214,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00074.png</key>
+            <key>Bot2DnRt_TrnRt_00026.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1280,1280},{128,256}}</string>
@@ -2227,7 +2227,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00075.png</key>
+            <key>Bot2DnRt_TrnRt_00027.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1408,1280},{128,256}}</string>
@@ -2240,7 +2240,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00076.png</key>
+            <key>Bot2DnRt_TrnRt_00028.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1536,1280},{128,256}}</string>
@@ -2253,7 +2253,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00077.png</key>
+            <key>Bot2DnRt_TrnRt_00029.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1664,1280},{128,256}}</string>
@@ -2266,7 +2266,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00078.png</key>
+            <key>Bot2DnRt_TrnRt_00030.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1792,1280},{128,256}}</string>
@@ -2279,7 +2279,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00079.png</key>
+            <key>Bot2DnRt_TrnRt_00031.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1920,1280},{128,256}}</string>
@@ -2292,7 +2292,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00080.png</key>
+            <key>Bot2DnRt_TrnRt_00032.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2048,1280},{128,256}}</string>
@@ -2305,7 +2305,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00081.png</key>
+            <key>Bot2DnRt_TrnRt_00033.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2176,1280},{128,256}}</string>
@@ -2318,7 +2318,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00082.png</key>
+            <key>Bot2DnRt_TrnRt_00034.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2304,1280},{128,256}}</string>
@@ -2331,7 +2331,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00083.png</key>
+            <key>Bot2DnRt_TrnRt_00035.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2432,1280},{128,256}}</string>
@@ -2344,7 +2344,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00084.png</key>
+            <key>Bot2DnRt_TrnRv_00000.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2560,1280},{128,256}}</string>
@@ -2357,7 +2357,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00085.png</key>
+            <key>Bot2DnRt_TrnRv_00001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2688,1280},{128,256}}</string>
@@ -2370,7 +2370,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00086.png</key>
+            <key>Bot2DnRt_TrnRv_00002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2816,1280},{128,256}}</string>
@@ -2383,7 +2383,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00087.png</key>
+            <key>Bot2DnRt_TrnRv_00003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2944,1280},{128,256}}</string>
@@ -2396,7 +2396,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00088.png</key>
+            <key>Bot2DnRt_TrnRv_00004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3072,1280},{128,256}}</string>
@@ -2409,7 +2409,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00089.png</key>
+            <key>Bot2DnRt_TrnRv_00005.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3200,1280},{128,256}}</string>
@@ -2422,7 +2422,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00090.png</key>
+            <key>Bot2DnRt_TrnRv_00006.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3328,1280},{128,256}}</string>
@@ -2435,7 +2435,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00091.png</key>
+            <key>Bot2DnRt_TrnRv_00007.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3456,1280},{128,256}}</string>
@@ -2448,7 +2448,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00092.png</key>
+            <key>Bot2DnRt_TrnRv_00008.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3584,1280},{128,256}}</string>
@@ -2461,7 +2461,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00093.png</key>
+            <key>Bot2DnRt_TrnRv_00009.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3712,1280},{128,256}}</string>
@@ -2474,7 +2474,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00094.png</key>
+            <key>Bot2DnRt_TrnRv_00010.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3840,1280},{128,256}}</string>
@@ -2487,7 +2487,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2DnRt_Idle_00095.png</key>
+            <key>Bot2DnRt_TrnRv_00011.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3968,1280},{128,256}}</string>
@@ -2500,7 +2500,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00000.png</key>
+            <key>Bot2DnRt_TrnRv_00012.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,1536},{128,256}}</string>
@@ -2513,7 +2513,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00001.png</key>
+            <key>Bot2DnRt_TrnRv_00013.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{128,1536},{128,256}}</string>
@@ -2526,7 +2526,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00002.png</key>
+            <key>Bot2DnRt_TrnRv_00014.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{256,1536},{128,256}}</string>
@@ -2539,7 +2539,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00003.png</key>
+            <key>Bot2DnRt_TrnRv_00015.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{384,1536},{128,256}}</string>
@@ -2552,7 +2552,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00004.png</key>
+            <key>Bot2DnRt_TrnRv_00016.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{512,1536},{128,256}}</string>
@@ -2565,7 +2565,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00005.png</key>
+            <key>Bot2DnRt_TrnRv_00017.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,1536},{128,256}}</string>
@@ -2578,7 +2578,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00006.png</key>
+            <key>Bot2DnRt_TrnRv_00018.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{768,1536},{128,256}}</string>
@@ -2591,7 +2591,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00007.png</key>
+            <key>Bot2DnRt_TrnRv_00019.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{896,1536},{128,256}}</string>
@@ -2604,7 +2604,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00008.png</key>
+            <key>Bot2DnRt_TrnRv_00020.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1024,1536},{128,256}}</string>
@@ -2617,7 +2617,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00009.png</key>
+            <key>Bot2DnRt_TrnRv_00021.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1152,1536},{128,256}}</string>
@@ -2630,7 +2630,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00010.png</key>
+            <key>Bot2DnRt_TrnRv_00022.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1280,1536},{128,256}}</string>
@@ -2643,7 +2643,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00011.png</key>
+            <key>Bot2DnRt_TrnRv_00023.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1408,1536},{128,256}}</string>
@@ -2656,7 +2656,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00012.png</key>
+            <key>Bot2DnRt_TrnRv_00024.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1536,1536},{128,256}}</string>
@@ -2669,7 +2669,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00013.png</key>
+            <key>Bot2DnRt_TrnRv_00025.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1664,1536},{128,256}}</string>
@@ -2682,7 +2682,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00014.png</key>
+            <key>Bot2DnRt_TrnRv_00026.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1792,1536},{128,256}}</string>
@@ -2695,7 +2695,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00015.png</key>
+            <key>Bot2DnRt_TrnRv_00027.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1920,1536},{128,256}}</string>
@@ -2708,7 +2708,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00016.png</key>
+            <key>Bot2DnRt_TrnRv_00028.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2048,1536},{128,256}}</string>
@@ -2721,7 +2721,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00017.png</key>
+            <key>Bot2DnRt_TrnRv_00029.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2176,1536},{128,256}}</string>
@@ -2734,7 +2734,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00018.png</key>
+            <key>Bot2DnRt_TrnRv_00030.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2304,1536},{128,256}}</string>
@@ -2747,7 +2747,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00019.png</key>
+            <key>Bot2DnRt_TrnRv_00031.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2432,1536},{128,256}}</string>
@@ -2760,7 +2760,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00020.png</key>
+            <key>Bot2DnRt_TrnRv_00032.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2560,1536},{128,256}}</string>
@@ -2773,7 +2773,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00021.png</key>
+            <key>Bot2DnRt_TrnRv_00033.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2688,1536},{128,256}}</string>
@@ -2786,7 +2786,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00022.png</key>
+            <key>Bot2DnRt_TrnRv_00034.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2816,1536},{128,256}}</string>
@@ -2799,7 +2799,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00023.png</key>
+            <key>Bot2DnRt_TrnRv_00035.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2944,1536},{128,256}}</string>
@@ -2812,7 +2812,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00024.png</key>
+            <key>Bot2UpLft_TrnLft_00000.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3072,1536},{128,256}}</string>
@@ -2825,7 +2825,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00025.png</key>
+            <key>Bot2UpLft_TrnLft_00001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3200,1536},{128,256}}</string>
@@ -2838,7 +2838,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00026.png</key>
+            <key>Bot2UpLft_TrnLft_00002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3328,1536},{128,256}}</string>
@@ -2851,7 +2851,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00027.png</key>
+            <key>Bot2UpLft_TrnLft_00003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3456,1536},{128,256}}</string>
@@ -2864,7 +2864,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00028.png</key>
+            <key>Bot2UpLft_TrnLft_00004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3584,1536},{128,256}}</string>
@@ -2877,7 +2877,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00029.png</key>
+            <key>Bot2UpLft_TrnLft_00005.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3712,1536},{128,256}}</string>
@@ -2890,7 +2890,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00030.png</key>
+            <key>Bot2UpLft_TrnLft_00006.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3840,1536},{128,256}}</string>
@@ -2903,7 +2903,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00031.png</key>
+            <key>Bot2UpLft_TrnLft_00007.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3968,1536},{128,256}}</string>
@@ -2916,7 +2916,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00032.png</key>
+            <key>Bot2UpLft_TrnLft_00008.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,1792},{128,256}}</string>
@@ -2929,7 +2929,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00033.png</key>
+            <key>Bot2UpLft_TrnLft_00009.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{128,1792},{128,256}}</string>
@@ -2942,7 +2942,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00034.png</key>
+            <key>Bot2UpLft_TrnLft_00010.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{256,1792},{128,256}}</string>
@@ -2955,7 +2955,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00035.png</key>
+            <key>Bot2UpLft_TrnLft_00011.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{384,1792},{128,256}}</string>
@@ -2968,7 +2968,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00036.png</key>
+            <key>Bot2UpLft_TrnLft_00012.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{512,1792},{128,256}}</string>
@@ -2981,7 +2981,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00037.png</key>
+            <key>Bot2UpLft_TrnLft_00013.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,1792},{128,256}}</string>
@@ -2994,7 +2994,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00038.png</key>
+            <key>Bot2UpLft_TrnLft_00014.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{768,1792},{128,256}}</string>
@@ -3007,7 +3007,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00039.png</key>
+            <key>Bot2UpLft_TrnLft_00015.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{896,1792},{128,256}}</string>
@@ -3020,7 +3020,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00040.png</key>
+            <key>Bot2UpLft_TrnLft_00016.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1024,1792},{128,256}}</string>
@@ -3033,7 +3033,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00041.png</key>
+            <key>Bot2UpLft_TrnLft_00017.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1152,1792},{128,256}}</string>
@@ -3046,7 +3046,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00042.png</key>
+            <key>Bot2UpLft_TrnLft_00018.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1280,1792},{128,256}}</string>
@@ -3059,7 +3059,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00043.png</key>
+            <key>Bot2UpLft_TrnLft_00019.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1408,1792},{128,256}}</string>
@@ -3072,7 +3072,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00044.png</key>
+            <key>Bot2UpLft_TrnLft_00020.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1536,1792},{128,256}}</string>
@@ -3085,7 +3085,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00045.png</key>
+            <key>Bot2UpLft_TrnLft_00021.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1664,1792},{128,256}}</string>
@@ -3098,7 +3098,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00046.png</key>
+            <key>Bot2UpLft_TrnLft_00022.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1792,1792},{128,256}}</string>
@@ -3111,7 +3111,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00047.png</key>
+            <key>Bot2UpLft_TrnLft_00023.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1920,1792},{128,256}}</string>
@@ -3124,7 +3124,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00048.png</key>
+            <key>Bot2UpLft_TrnLft_00024.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2048,1792},{128,256}}</string>
@@ -3137,7 +3137,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00049.png</key>
+            <key>Bot2UpLft_TrnLft_00025.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2176,1792},{128,256}}</string>
@@ -3150,7 +3150,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00050.png</key>
+            <key>Bot2UpLft_TrnLft_00026.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2304,1792},{128,256}}</string>
@@ -3163,7 +3163,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00051.png</key>
+            <key>Bot2UpLft_TrnLft_00027.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2432,1792},{128,256}}</string>
@@ -3176,7 +3176,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00052.png</key>
+            <key>Bot2UpLft_TrnLft_00028.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2560,1792},{128,256}}</string>
@@ -3189,7 +3189,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00053.png</key>
+            <key>Bot2UpLft_TrnLft_00029.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2688,1792},{128,256}}</string>
@@ -3202,7 +3202,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00054.png</key>
+            <key>Bot2UpLft_TrnLft_00030.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2816,1792},{128,256}}</string>
@@ -3215,7 +3215,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00055.png</key>
+            <key>Bot2UpLft_TrnLft_00031.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2944,1792},{128,256}}</string>
@@ -3228,7 +3228,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00056.png</key>
+            <key>Bot2UpLft_TrnLft_00032.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3072,1792},{128,256}}</string>
@@ -3241,7 +3241,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00057.png</key>
+            <key>Bot2UpLft_TrnLft_00033.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3200,1792},{128,256}}</string>
@@ -3254,7 +3254,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00058.png</key>
+            <key>Bot2UpLft_TrnLft_00034.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3328,1792},{128,256}}</string>
@@ -3267,7 +3267,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00059.png</key>
+            <key>Bot2UpLft_TrnLft_00035.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3456,1792},{128,256}}</string>
@@ -3280,7 +3280,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00060.png</key>
+            <key>Bot2UpLft_TrnRt_00000.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3584,1792},{128,256}}</string>
@@ -3293,7 +3293,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00061.png</key>
+            <key>Bot2UpLft_TrnRt_00001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3712,1792},{128,256}}</string>
@@ -3306,7 +3306,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00062.png</key>
+            <key>Bot2UpLft_TrnRt_00002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3840,1792},{128,256}}</string>
@@ -3319,7 +3319,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00063.png</key>
+            <key>Bot2UpLft_TrnRt_00003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3968,1792},{128,256}}</string>
@@ -3332,7 +3332,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00064.png</key>
+            <key>Bot2UpLft_TrnRt_00004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,2048},{128,256}}</string>
@@ -3345,7 +3345,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00065.png</key>
+            <key>Bot2UpLft_TrnRt_00005.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{128,2048},{128,256}}</string>
@@ -3358,7 +3358,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00066.png</key>
+            <key>Bot2UpLft_TrnRt_00006.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{256,2048},{128,256}}</string>
@@ -3371,7 +3371,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00067.png</key>
+            <key>Bot2UpLft_TrnRt_00007.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{384,2048},{128,256}}</string>
@@ -3384,7 +3384,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00068.png</key>
+            <key>Bot2UpLft_TrnRt_00008.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{512,2048},{128,256}}</string>
@@ -3397,7 +3397,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00069.png</key>
+            <key>Bot2UpLft_TrnRt_00009.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,2048},{128,256}}</string>
@@ -3410,7 +3410,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00070.png</key>
+            <key>Bot2UpLft_TrnRt_00010.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{768,2048},{128,256}}</string>
@@ -3423,7 +3423,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00071.png</key>
+            <key>Bot2UpLft_TrnRt_00011.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{896,2048},{128,256}}</string>
@@ -3436,7 +3436,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00072.png</key>
+            <key>Bot2UpLft_TrnRt_00012.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1024,2048},{128,256}}</string>
@@ -3449,7 +3449,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00073.png</key>
+            <key>Bot2UpLft_TrnRt_00013.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1152,2048},{128,256}}</string>
@@ -3462,7 +3462,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00074.png</key>
+            <key>Bot2UpLft_TrnRt_00014.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1280,2048},{128,256}}</string>
@@ -3475,7 +3475,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00075.png</key>
+            <key>Bot2UpLft_TrnRt_00015.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1408,2048},{128,256}}</string>
@@ -3488,7 +3488,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00076.png</key>
+            <key>Bot2UpLft_TrnRt_00016.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1536,2048},{128,256}}</string>
@@ -3501,7 +3501,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00077.png</key>
+            <key>Bot2UpLft_TrnRt_00017.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1664,2048},{128,256}}</string>
@@ -3514,7 +3514,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00078.png</key>
+            <key>Bot2UpLft_TrnRt_00018.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1792,2048},{128,256}}</string>
@@ -3527,7 +3527,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00079.png</key>
+            <key>Bot2UpLft_TrnRt_00019.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1920,2048},{128,256}}</string>
@@ -3540,7 +3540,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00080.png</key>
+            <key>Bot2UpLft_TrnRt_00020.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2048,2048},{128,256}}</string>
@@ -3553,7 +3553,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00081.png</key>
+            <key>Bot2UpLft_TrnRt_00021.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2176,2048},{128,256}}</string>
@@ -3566,7 +3566,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00082.png</key>
+            <key>Bot2UpLft_TrnRt_00022.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2304,2048},{128,256}}</string>
@@ -3579,7 +3579,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00083.png</key>
+            <key>Bot2UpLft_TrnRt_00023.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2432,2048},{128,256}}</string>
@@ -3592,7 +3592,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00084.png</key>
+            <key>Bot2UpLft_TrnRt_00024.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2560,2048},{128,256}}</string>
@@ -3605,7 +3605,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00085.png</key>
+            <key>Bot2UpLft_TrnRt_00025.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2688,2048},{128,256}}</string>
@@ -3618,7 +3618,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00086.png</key>
+            <key>Bot2UpLft_TrnRt_00026.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2816,2048},{128,256}}</string>
@@ -3631,7 +3631,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00087.png</key>
+            <key>Bot2UpLft_TrnRt_00027.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2944,2048},{128,256}}</string>
@@ -3644,7 +3644,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00088.png</key>
+            <key>Bot2UpLft_TrnRt_00028.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3072,2048},{128,256}}</string>
@@ -3657,7 +3657,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00089.png</key>
+            <key>Bot2UpLft_TrnRt_00029.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3200,2048},{128,256}}</string>
@@ -3670,7 +3670,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00090.png</key>
+            <key>Bot2UpLft_TrnRt_00030.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3328,2048},{128,256}}</string>
@@ -3683,7 +3683,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00091.png</key>
+            <key>Bot2UpLft_TrnRt_00031.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3456,2048},{128,256}}</string>
@@ -3696,7 +3696,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00092.png</key>
+            <key>Bot2UpLft_TrnRt_00032.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3584,2048},{128,256}}</string>
@@ -3709,7 +3709,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00093.png</key>
+            <key>Bot2UpLft_TrnRt_00033.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3712,2048},{128,256}}</string>
@@ -3722,7 +3722,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00094.png</key>
+            <key>Bot2UpLft_TrnRt_00034.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3840,2048},{128,256}}</string>
@@ -3735,7 +3735,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpLft_Idle_00095.png</key>
+            <key>Bot2UpLft_TrnRt_00035.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3968,2048},{128,256}}</string>
@@ -3748,7 +3748,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00000.png</key>
+            <key>Bot2UpLft_TrnRv_00000.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,2304},{128,256}}</string>
@@ -3761,7 +3761,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00001.png</key>
+            <key>Bot2UpLft_TrnRv_00001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{128,2304},{128,256}}</string>
@@ -3774,7 +3774,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00002.png</key>
+            <key>Bot2UpLft_TrnRv_00002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{256,2304},{128,256}}</string>
@@ -3787,7 +3787,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00003.png</key>
+            <key>Bot2UpLft_TrnRv_00003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{384,2304},{128,256}}</string>
@@ -3800,7 +3800,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00004.png</key>
+            <key>Bot2UpLft_TrnRv_00004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{512,2304},{128,256}}</string>
@@ -3813,7 +3813,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00005.png</key>
+            <key>Bot2UpLft_TrnRv_00005.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,2304},{128,256}}</string>
@@ -3826,7 +3826,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00006.png</key>
+            <key>Bot2UpLft_TrnRv_00006.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{768,2304},{128,256}}</string>
@@ -3839,7 +3839,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00007.png</key>
+            <key>Bot2UpLft_TrnRv_00007.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{896,2304},{128,256}}</string>
@@ -3852,7 +3852,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00008.png</key>
+            <key>Bot2UpLft_TrnRv_00008.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1024,2304},{128,256}}</string>
@@ -3865,7 +3865,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00009.png</key>
+            <key>Bot2UpLft_TrnRv_00009.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1152,2304},{128,256}}</string>
@@ -3878,7 +3878,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00010.png</key>
+            <key>Bot2UpLft_TrnRv_00010.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1280,2304},{128,256}}</string>
@@ -3891,7 +3891,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00011.png</key>
+            <key>Bot2UpLft_TrnRv_00011.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1408,2304},{128,256}}</string>
@@ -3904,7 +3904,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00012.png</key>
+            <key>Bot2UpLft_TrnRv_00012.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1536,2304},{128,256}}</string>
@@ -3917,7 +3917,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00013.png</key>
+            <key>Bot2UpLft_TrnRv_00013.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1664,2304},{128,256}}</string>
@@ -3930,7 +3930,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00014.png</key>
+            <key>Bot2UpLft_TrnRv_00014.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1792,2304},{128,256}}</string>
@@ -3943,7 +3943,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00015.png</key>
+            <key>Bot2UpLft_TrnRv_00015.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1920,2304},{128,256}}</string>
@@ -3956,7 +3956,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00016.png</key>
+            <key>Bot2UpLft_TrnRv_00016.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2048,2304},{128,256}}</string>
@@ -3969,7 +3969,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00017.png</key>
+            <key>Bot2UpLft_TrnRv_00017.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2176,2304},{128,256}}</string>
@@ -3982,7 +3982,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00018.png</key>
+            <key>Bot2UpLft_TrnRv_00018.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2304,2304},{128,256}}</string>
@@ -3995,7 +3995,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00019.png</key>
+            <key>Bot2UpLft_TrnRv_00019.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2432,2304},{128,256}}</string>
@@ -4008,7 +4008,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00020.png</key>
+            <key>Bot2UpLft_TrnRv_00020.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2560,2304},{128,256}}</string>
@@ -4021,7 +4021,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00021.png</key>
+            <key>Bot2UpLft_TrnRv_00021.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2688,2304},{128,256}}</string>
@@ -4034,7 +4034,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00022.png</key>
+            <key>Bot2UpLft_TrnRv_00022.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2816,2304},{128,256}}</string>
@@ -4047,7 +4047,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00023.png</key>
+            <key>Bot2UpLft_TrnRv_00023.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2944,2304},{128,256}}</string>
@@ -4060,7 +4060,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00024.png</key>
+            <key>Bot2UpLft_TrnRv_00024.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3072,2304},{128,256}}</string>
@@ -4073,7 +4073,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00025.png</key>
+            <key>Bot2UpLft_TrnRv_00025.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3200,2304},{128,256}}</string>
@@ -4086,7 +4086,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00026.png</key>
+            <key>Bot2UpLft_TrnRv_00026.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3328,2304},{128,256}}</string>
@@ -4099,7 +4099,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00027.png</key>
+            <key>Bot2UpLft_TrnRv_00027.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3456,2304},{128,256}}</string>
@@ -4112,7 +4112,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00028.png</key>
+            <key>Bot2UpLft_TrnRv_00028.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3584,2304},{128,256}}</string>
@@ -4125,7 +4125,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00029.png</key>
+            <key>Bot2UpLft_TrnRv_00029.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3712,2304},{128,256}}</string>
@@ -4138,7 +4138,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00030.png</key>
+            <key>Bot2UpLft_TrnRv_00030.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3840,2304},{128,256}}</string>
@@ -4151,7 +4151,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00031.png</key>
+            <key>Bot2UpLft_TrnRv_00031.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3968,2304},{128,256}}</string>
@@ -4164,7 +4164,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00032.png</key>
+            <key>Bot2UpLft_TrnRv_00032.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,2560},{128,256}}</string>
@@ -4177,7 +4177,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00033.png</key>
+            <key>Bot2UpLft_TrnRv_00033.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{128,2560},{128,256}}</string>
@@ -4190,7 +4190,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00034.png</key>
+            <key>Bot2UpLft_TrnRv_00034.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{256,2560},{128,256}}</string>
@@ -4203,7 +4203,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00035.png</key>
+            <key>Bot2UpLft_TrnRv_00035.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{384,2560},{128,256}}</string>
@@ -4216,7 +4216,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00036.png</key>
+            <key>Bot2UpRt_TrnLft_00000.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{512,2560},{128,256}}</string>
@@ -4229,7 +4229,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00037.png</key>
+            <key>Bot2UpRt_TrnLft_00001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,2560},{128,256}}</string>
@@ -4242,7 +4242,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00038.png</key>
+            <key>Bot2UpRt_TrnLft_00002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{768,2560},{128,256}}</string>
@@ -4255,7 +4255,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00039.png</key>
+            <key>Bot2UpRt_TrnLft_00003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{896,2560},{128,256}}</string>
@@ -4268,7 +4268,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00040.png</key>
+            <key>Bot2UpRt_TrnLft_00004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1024,2560},{128,256}}</string>
@@ -4281,7 +4281,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00041.png</key>
+            <key>Bot2UpRt_TrnLft_00005.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1152,2560},{128,256}}</string>
@@ -4294,7 +4294,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00042.png</key>
+            <key>Bot2UpRt_TrnLft_00006.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1280,2560},{128,256}}</string>
@@ -4307,7 +4307,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00043.png</key>
+            <key>Bot2UpRt_TrnLft_00007.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1408,2560},{128,256}}</string>
@@ -4320,7 +4320,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00044.png</key>
+            <key>Bot2UpRt_TrnLft_00008.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1536,2560},{128,256}}</string>
@@ -4333,7 +4333,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00045.png</key>
+            <key>Bot2UpRt_TrnLft_00009.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1664,2560},{128,256}}</string>
@@ -4346,7 +4346,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00046.png</key>
+            <key>Bot2UpRt_TrnLft_00010.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1792,2560},{128,256}}</string>
@@ -4359,7 +4359,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00047.png</key>
+            <key>Bot2UpRt_TrnLft_00011.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1920,2560},{128,256}}</string>
@@ -4372,7 +4372,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00048.png</key>
+            <key>Bot2UpRt_TrnLft_00012.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2048,2560},{128,256}}</string>
@@ -4385,7 +4385,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00049.png</key>
+            <key>Bot2UpRt_TrnLft_00013.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2176,2560},{128,256}}</string>
@@ -4398,7 +4398,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00050.png</key>
+            <key>Bot2UpRt_TrnLft_00014.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2304,2560},{128,256}}</string>
@@ -4411,7 +4411,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00051.png</key>
+            <key>Bot2UpRt_TrnLft_00015.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2432,2560},{128,256}}</string>
@@ -4424,7 +4424,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00052.png</key>
+            <key>Bot2UpRt_TrnLft_00016.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2560,2560},{128,256}}</string>
@@ -4437,7 +4437,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00053.png</key>
+            <key>Bot2UpRt_TrnLft_00017.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2688,2560},{128,256}}</string>
@@ -4450,7 +4450,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00054.png</key>
+            <key>Bot2UpRt_TrnLft_00018.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2816,2560},{128,256}}</string>
@@ -4463,7 +4463,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00055.png</key>
+            <key>Bot2UpRt_TrnLft_00019.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2944,2560},{128,256}}</string>
@@ -4476,7 +4476,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00056.png</key>
+            <key>Bot2UpRt_TrnLft_00020.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3072,2560},{128,256}}</string>
@@ -4489,7 +4489,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00057.png</key>
+            <key>Bot2UpRt_TrnLft_00021.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3200,2560},{128,256}}</string>
@@ -4502,7 +4502,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00058.png</key>
+            <key>Bot2UpRt_TrnLft_00022.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3328,2560},{128,256}}</string>
@@ -4515,7 +4515,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00059.png</key>
+            <key>Bot2UpRt_TrnLft_00023.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3456,2560},{128,256}}</string>
@@ -4528,7 +4528,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00060.png</key>
+            <key>Bot2UpRt_TrnLft_00024.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3584,2560},{128,256}}</string>
@@ -4541,7 +4541,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00061.png</key>
+            <key>Bot2UpRt_TrnLft_00025.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3712,2560},{128,256}}</string>
@@ -4554,7 +4554,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00062.png</key>
+            <key>Bot2UpRt_TrnLft_00026.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3840,2560},{128,256}}</string>
@@ -4567,7 +4567,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00063.png</key>
+            <key>Bot2UpRt_TrnLft_00027.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3968,2560},{128,256}}</string>
@@ -4580,7 +4580,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00064.png</key>
+            <key>Bot2UpRt_TrnLft_00028.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,2816},{128,256}}</string>
@@ -4593,7 +4593,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00065.png</key>
+            <key>Bot2UpRt_TrnLft_00029.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{128,2816},{128,256}}</string>
@@ -4606,7 +4606,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00066.png</key>
+            <key>Bot2UpRt_TrnLft_00030.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{256,2816},{128,256}}</string>
@@ -4619,7 +4619,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00067.png</key>
+            <key>Bot2UpRt_TrnLft_00031.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{384,2816},{128,256}}</string>
@@ -4632,7 +4632,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00068.png</key>
+            <key>Bot2UpRt_TrnLft_00032.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{512,2816},{128,256}}</string>
@@ -4645,7 +4645,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00069.png</key>
+            <key>Bot2UpRt_TrnLft_00033.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,2816},{128,256}}</string>
@@ -4658,7 +4658,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00070.png</key>
+            <key>Bot2UpRt_TrnLft_00034.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{768,2816},{128,256}}</string>
@@ -4671,7 +4671,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00071.png</key>
+            <key>Bot2UpRt_TrnLft_00035.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{896,2816},{128,256}}</string>
@@ -4684,7 +4684,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00072.png</key>
+            <key>Bot2UpRt_TrnRt_00000.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1024,2816},{128,256}}</string>
@@ -4697,7 +4697,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00073.png</key>
+            <key>Bot2UpRt_TrnRt_00001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1152,2816},{128,256}}</string>
@@ -4710,7 +4710,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00074.png</key>
+            <key>Bot2UpRt_TrnRt_00002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1280,2816},{128,256}}</string>
@@ -4723,7 +4723,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00075.png</key>
+            <key>Bot2UpRt_TrnRt_00003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1408,2816},{128,256}}</string>
@@ -4736,7 +4736,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00076.png</key>
+            <key>Bot2UpRt_TrnRt_00004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1536,2816},{128,256}}</string>
@@ -4749,7 +4749,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00077.png</key>
+            <key>Bot2UpRt_TrnRt_00005.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1664,2816},{128,256}}</string>
@@ -4762,7 +4762,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00078.png</key>
+            <key>Bot2UpRt_TrnRt_00006.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1792,2816},{128,256}}</string>
@@ -4775,7 +4775,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00079.png</key>
+            <key>Bot2UpRt_TrnRt_00007.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1920,2816},{128,256}}</string>
@@ -4788,7 +4788,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00080.png</key>
+            <key>Bot2UpRt_TrnRt_00008.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2048,2816},{128,256}}</string>
@@ -4801,7 +4801,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00081.png</key>
+            <key>Bot2UpRt_TrnRt_00009.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2176,2816},{128,256}}</string>
@@ -4814,7 +4814,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00082.png</key>
+            <key>Bot2UpRt_TrnRt_00010.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2304,2816},{128,256}}</string>
@@ -4827,7 +4827,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00083.png</key>
+            <key>Bot2UpRt_TrnRt_00011.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2432,2816},{128,256}}</string>
@@ -4840,7 +4840,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00084.png</key>
+            <key>Bot2UpRt_TrnRt_00012.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2560,2816},{128,256}}</string>
@@ -4853,7 +4853,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00085.png</key>
+            <key>Bot2UpRt_TrnRt_00013.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2688,2816},{128,256}}</string>
@@ -4866,7 +4866,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00086.png</key>
+            <key>Bot2UpRt_TrnRt_00014.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2816,2816},{128,256}}</string>
@@ -4879,7 +4879,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00087.png</key>
+            <key>Bot2UpRt_TrnRt_00015.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2944,2816},{128,256}}</string>
@@ -4892,7 +4892,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00088.png</key>
+            <key>Bot2UpRt_TrnRt_00016.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3072,2816},{128,256}}</string>
@@ -4905,7 +4905,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00089.png</key>
+            <key>Bot2UpRt_TrnRt_00017.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3200,2816},{128,256}}</string>
@@ -4918,7 +4918,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00090.png</key>
+            <key>Bot2UpRt_TrnRt_00018.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3328,2816},{128,256}}</string>
@@ -4931,7 +4931,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00091.png</key>
+            <key>Bot2UpRt_TrnRt_00019.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3456,2816},{128,256}}</string>
@@ -4944,7 +4944,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00092.png</key>
+            <key>Bot2UpRt_TrnRt_00020.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3584,2816},{128,256}}</string>
@@ -4957,7 +4957,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00093.png</key>
+            <key>Bot2UpRt_TrnRt_00021.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3712,2816},{128,256}}</string>
@@ -4970,7 +4970,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00094.png</key>
+            <key>Bot2UpRt_TrnRt_00022.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3840,2816},{128,256}}</string>
@@ -4983,10 +4983,634 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot2UpRt_Idle_00095.png</key>
+            <key>Bot2UpRt_TrnRt_00023.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{3968,2816},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRt_00024.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRt_00025.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{128,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRt_00026.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{256,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRt_00027.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{384,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRt_00028.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{512,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRt_00029.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{640,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRt_00030.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{768,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRt_00031.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{896,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRt_00032.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1024,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRt_00033.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1152,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRt_00034.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1280,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRt_00035.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1408,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00000.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1536,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00001.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1664,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00002.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1792,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00003.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1920,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00004.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2048,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00005.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2176,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00006.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2304,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00007.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2432,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00008.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2560,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00009.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2688,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00010.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2816,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00011.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2944,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00012.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{3072,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00013.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{3200,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00014.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{3328,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00015.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{3456,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00016.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{3584,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00017.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{3712,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00018.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{3840,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00019.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{3968,3072},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00020.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0,3328},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00021.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{128,3328},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00022.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{256,3328},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00023.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{384,3328},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00024.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{512,3328},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00025.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{640,3328},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00026.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{768,3328},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00027.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{896,3328},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00028.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1024,3328},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00029.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1152,3328},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00030.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1280,3328},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00031.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1408,3328},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00032.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1536,3328},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00033.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1664,3328},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00034.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1792,3328},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot2UpRt_TrnRv_00035.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1920,3328},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -5002,13 +5626,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>bot2idle.png</string>
+            <string>bot2turn1.png</string>
             <key>size</key>
             <string>{4096,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:3d2dd0505edb6515366fbbb808600e4c$</string>
+            <string>$TexturePacker:SmartUpdate:73cac97808e8b0cfabb7a7413736456c$</string>
             <key>textureFileName</key>
-            <string>bot2idle.png</string>
+            <string>bot2turn1.png</string>
         </dict>
     </dict>
 </plist>
