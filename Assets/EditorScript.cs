@@ -169,7 +169,6 @@ public class EditorScript : MonoBehaviour {
 	
 	private void DrawMouse(Vector3 a, Vector3 b)
 	{
-		line.GetComponent<LineRenderer>().SetColors(Color.white, Color.blue);
 		line.GetComponent<LineRenderer>().SetWidth(6f,2f);
 		line.GetComponent<LineRenderer>().SetVertexCount(2);
 		line.GetComponent<LineRenderer>().SetPosition(0, a);
@@ -561,7 +560,7 @@ public class EditorScript : MonoBehaviour {
 				int selectX = (int)(Math.Floor (mouseLocation.x/32));
 				int selectY = (int)(Math.Floor (mouseLocation.y/-32));
 				if ((selectY >= 0 && selectY < gridH) && (selectX >= 0 && selectX < gridW)) {
-					line.GetComponent<LineRenderer>().SetColors(Color.white, Color.blue);
+//					line.GetComponent<LineRenderer>().SetColors(Color.white, Color.blue);
 					validAnchor = true;
 					anchorYX = map[selectY][selectX];
 					anchor = ReturnTileCenter(map[selectY][selectX].transform.position);
@@ -1400,8 +1399,8 @@ public class EditorScript : MonoBehaviour {
 				count++;
 			}		
 		} else {
-			GUI.Label (new Rect(Screen.width - 235, (32+5)*(tileList.Length/2+obsList.Length/2)+370,230,60), "Tutorial/Hint Message", "box");
-			GUI.Label (new Rect(Screen.width - 230, (32+5)*(tileList.Length/2+obsList.Length/2)+390,250,30), "Select tile to set/view messages");	
+			GUI.Label (new Rect(Screen.width - 235, (32+5)*(tileList.Length/2+obsList.Length/2)+370,230,90), "Tutorial/Hint Message", "box");
+			GUI.Label (new Rect(Screen.width - 230, (32+5)*(tileList.Length/2+obsList.Length/2)+400,225,60), "Select tile (Left Alt) to set/view messages.");	
 		}
 		
 		if (loadFile) {
