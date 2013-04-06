@@ -858,7 +858,8 @@ public class EditorScript : MonoBehaviour {
 						botNum++;
 						writer.WriteStartElement ("bot"+botNum.ToString());
 						foreach (KeyValuePair<int, string> msg in j.GetComponent<EditorTile>().botMessage[botNum-1]) {
-							writer.WriteElementString ("level"+msg.Key.ToString(),msg.Value);
+							writer.WriteElementString ("level", msg.Key.ToString());
+							writer.WriteElementString ("msg",msg.Value);
 						}
 						writer.WriteEndElement ();
 					}
@@ -892,6 +893,7 @@ public class EditorScript : MonoBehaviour {
 			int j = -1;
 			bool consGroup = true;
 			int botGroup = -1;
+			int lvl = 0;
 			while (read.Read ()) {
 				if (read.IsStartElement ())
 				{
@@ -995,20 +997,14 @@ public class EditorScript : MonoBehaviour {
 					case "bot3":
 						botGroup = 2;
 						break;
-					case "level0":
+					case "level":
 						read.Read();
-						string v = read.Value;
-						map[j][i].GetComponent<EditorTile>().botMessage[botGroup].Add (0,v);
+						lvl = int.Parse (read.Value);
 						break;
-					case "level1":
+					case "msg":
 						read.Read ();
-						v = read.Value;
-						map[j][i].GetComponent<EditorTile>().botMessage[botGroup].Add (1,v);
-						break;
-					case "level2":
-						read.Read ();
-						v = read.Value;
-						map[j][i].GetComponent<EditorTile>().botMessage[botGroup].Add (2,v);
+						string msg = read.Value;
+						map[j][i].GetComponent<EditorTile>().botMessage[botGroup].Add (lvl,msg);
 						break;
 					}
 				}
