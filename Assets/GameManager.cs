@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour {
 	private int stageSelect = 0;
 	private bool paused = false;
 	private int level = 0;
+	private bool showMessages = true;
 	private string filePath = "save.xml";
 	private Finish refFinish;
 	private Tile refSpawn;
@@ -206,6 +207,17 @@ public class GameManager : MonoBehaviour {
 		GUI.Label (new Rect(5, 266, 133, 20), "1");
 		GUI.Label (new Rect(138, 266, 133, 20), "2");
 		GUI.Label (new Rect(271, 266, 133, 20), "3");
+		
+		if (showMessages && ((TileClass)gameB[players[activeBot-1].onTile()]).messages[activeBot-1].Count > 0) {
+			GUI.Box (new Rect(Screen.width-(Screen.width/2)-5, 100, 300,(((TileClass)gameB[players[activeBot-1].onTile()]).messages[activeBot-1].Count * 60))," ");
+			int stepMsgs = 0;
+			foreach (KeyValuePair<int,string> kvp in ((TileClass)gameB[players[activeBot-1].onTile()]).messages[activeBot-1]) {
+				if (players[activeBot-1].level >= kvp.Key) {
+					GUI.Label(new Rect(Screen.width-(Screen.width/2),100 + stepMsgs,290,60), kvp.Value);
+					stepMsgs += 60;
+				}
+			}
+		}
 		GUI.EndGroup ();
 	}
 	
@@ -220,6 +232,7 @@ public class GameManager : MonoBehaviour {
 			writer.WriteElementString ("Bot2", players[1].level.ToString());
 			writer.WriteElementString ("Bot3", players[2].level.ToString());
 			writer.WriteElementString ("Level", level.ToString());
+			writer.WriteElementString ("Tutorial", showMessages.ToString());
 			writer.WriteEndDocument ();
 		};
 //		PlayerPrefs.SetInt("Last Level", level);
@@ -254,6 +267,10 @@ public class GameManager : MonoBehaviour {
 					case "Level":
 						read.Read ();
 						level = read.ReadContentAsInt();
+						break;
+					case "Tutorial":
+						read.Read ();
+						showMessages = read.ReadContentAsBoolean();
 						break;
 					}
 				}
@@ -298,6 +315,8 @@ public class GameManager : MonoBehaviour {
 		using (XmlReader read = XmlReader.Create(new StringReader(file.text))) {
 			int i = -1;
 			int j = -1;
+			int setBot = -1;
+			int lvl = 0;
 			bool consGroup = true;
 			string squareName = "";
 			string tileType = "Wall";
@@ -413,6 +432,27 @@ public class GameManager : MonoBehaviour {
 							}
 						}
 						break;
+					case "tutorial":
+						break;
+					case "bot1":
+						setBot = 0;
+						break;
+					case "bot2":
+						setBot = 1;
+						break;
+					case "bot3":
+						setBot = 2;
+						break;
+					case "level":
+						read.Read ();
+						lvl = int.Parse(read.Value);
+						break;
+					case "msg":
+						read.Read ();
+						string msg = read.Value;
+						// Set msg to tile
+						gameB[squareName].addMessage(setBot, lvl, msg);
+						break;
 					}
 				}
 			}
@@ -476,7 +516,7 @@ public class GameManager : MonoBehaviour {
 				// Bot selection... eventually this will only be if you have multiple robots active! (Remove comment below)
 				
 				if (Input.GetAxis("select1") == 1.0) {
-					if (activeBot != 1 /*&& players[0].level > 0*/) {
+					if (activeBot != 1 /*&& players[0].level >= 0*/) {
 						if (!gameObs.Contains(players[0]) && (players[1].onTile() != refSpawn.myName() && players[1].onTileBotR() != refSpawn.myName()) && (players[2].onTile() != refSpawn.myName() && players[2].onTileBotR() != refSpawn.myName())) {
 							players[0].setXY (refSpawn.xgrid,refSpawn.ygrid);
 	//						players[0].setY (players[activeBot-1].posY);
@@ -490,7 +530,7 @@ public class GameManager : MonoBehaviour {
 					}
 				}
 				if (Input.GetAxis("select2") == 1.0) {
-					if (activeBot != 2 /*&& players[1].level > 0*/) {
+					if (activeBot != 2 /*&& players[1].level >= 0*/) {
 						if (!gameObs.Contains(players[1]) && (players[0].onTile() != refSpawn.myName() && players[0].onTileBotR() != refSpawn.myName()) && (players[2].onTile() != refSpawn.myName() && players[2].onTileBotR() != refSpawn.myName())) {
 							players[1].setXY (refSpawn.xgrid,refSpawn.ygrid);
 	//						players[1].setY (players[activeBot-1].posY);
@@ -504,7 +544,7 @@ public class GameManager : MonoBehaviour {
 					}
 				}
 				if (Input.GetAxis("select3") == 1.0) {
-					if (activeBot != 3 /*&& players[2].level > 0*/) {
+					if (activeBot != 3 /*&& players[2].level >= 0*/) {
 						if (!gameObs.Contains(players[2]) && (players[0].onTile() != refSpawn.myName() && players[0].onTileBotR() != refSpawn.myName()) && (players[1].onTile() != refSpawn.myName() && players[1].onTileBotR() != refSpawn.myName())) {
 							players[2].setXY (refSpawn.xgrid,refSpawn.ygrid);
 	//						players[2].setY (players[activeBot-1].posY);
