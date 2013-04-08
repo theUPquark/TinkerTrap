@@ -1382,8 +1382,9 @@ public class EditorScript : MonoBehaviour {
 			}
 
 			if (GUI.Button(new Rect(Screen.width - 175, (32+5)*(tileList.Length/2+obsList.Length/2)+396,20,20), "+")) {
-				if (!queryTile.GetComponent<EditorTile>().botMessage[bot].ContainsKey(keyToAdd))
+				if (!queryTile.GetComponent<EditorTile>().botMessage[bot].ContainsKey(keyToAdd)) {
 					queryTile.GetComponent<EditorTile>().botMessage[bot].Add (keyToAdd,"");
+				}	
 			}
 			GUI.Label(new Rect(Screen.width - 150, (32+5)*(tileList.Length/2+obsList.Length/2)+393,130,30),"Active at level:");
 			keyToAdd = int.Parse(GUI.TextArea(new Rect(Screen.width - 50, (32+5)*(tileList.Length/2+obsList.Length/2)+393,30,30), keyToAdd.ToString(), 2));
