@@ -171,13 +171,13 @@ public class GameManager : MonoBehaviour {
 	// If you hit Escape while playing the game!
 	void PauseMenu() {
 	    //layout start
-	    GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 50, 300, 200));
+	    GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 50, 300, 300));
 	   
 	    //the menu background box
-	    GUI.Box(new Rect(0, 0, 300, 200), "");
+	    GUI.Box(new Rect(0, 0, 300, 270), "");
 	   
 	    //logo picture
-	    GUI.Label(new Rect(34, 10, 300, 40), "Game Paused!");
+	    GUI.Label(new Rect(94, 15, 300, 40), "Game Paused!");
 	   
 	    ///////main menu buttons
 	    //game start button
@@ -188,8 +188,16 @@ public class GameManager : MonoBehaviour {
 	    if(GUI.Button(new Rect(55, 110, 180, 40), "Editor")) {
 			Application.LoadLevel (1);
 	    }
+		//toggle tutorial
+		if (showMessages) {
+			if(GUI.Button(new Rect(55, 160, 180, 40), "Tutorial: On")) {
+				showMessages = false;		}
+		} else {
+			if(GUI.Button(new Rect(55, 160, 180, 40), "Tutorial: Off")) {
+				showMessages = true; 	}
+		}
 	    //quit button
-	    if(GUI.Button(new Rect(55, 160, 180, 40), "Quit")) {
+	    if(GUI.Button(new Rect(55, 210, 180, 40), "Quit")) {
 	    	Application.Quit();
 	    }
 	   
