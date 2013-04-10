@@ -95,7 +95,7 @@ public abstract class ObstacleClass
 	
 	// Returns the name of the Tile currently occupied by the Obstacle
 	public string onTile()	{
-		string tileName = "tile_"+xtile+"_"+ytile;
+		string tileName = "tile_"+leftX+"_"+upY;
 		return tileName;
 	}
 	
