@@ -325,6 +325,7 @@ public class GameManager : MonoBehaviour {
 	
 	void BuildLevel(string map)
 	{
+//		map = "Level2Test";	//load this
 		TextAsset file = (TextAsset) Resources.Load (map, typeof(TextAsset));
 		OTSprite os;
 		Vector2 pos;
