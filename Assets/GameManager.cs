@@ -217,8 +217,14 @@ public class GameManager : MonoBehaviour {
 		GUI.Label (new Rect(271, 266, 133, 20), "3");
 		
 		if (showMessages && ((TileClass)gameB[players[activeBot-1].onTile()]).messages[activeBot-1].Count > 0) {
-			GUI.Box (new Rect(Screen.width-(Screen.width/2)-5, 100, 300,(((TileClass)gameB[players[activeBot-1].onTile()]).messages[activeBot-1].Count * 60))," ");
 			int stepMsgs = 0;
+			foreach (KeyValuePair<int,string> kvp in ((TileClass)gameB[players[activeBot-1].onTile()]).messages[activeBot-1]) {
+				if (players[activeBot-1].level >= kvp.Key)
+					stepMsgs += 60;
+			}
+			if (stepMsgs > 0)
+				GUI.Box (new Rect(Screen.width-(Screen.width/2)-5, 100, 300,(((TileClass)gameB[players[activeBot-1].onTile()]).messages[activeBot-1].Count * 60))," ");
+			stepMsgs = 0;
 			foreach (KeyValuePair<int,string> kvp in ((TileClass)gameB[players[activeBot-1].onTile()]).messages[activeBot-1]) {
 				if (players[activeBot-1].level >= kvp.Key) {
 					GUI.Label(new Rect(Screen.width-(Screen.width/2),100 + stepMsgs,290,60), kvp.Value);
