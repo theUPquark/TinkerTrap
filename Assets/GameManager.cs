@@ -867,12 +867,13 @@ public class GameManager : MonoBehaviour {
 	
 	private bool CanThisTurn(Obstacle ob) {
 		if (ob.GetType() == typeof(Bot3)) {
-			double[] checkPos = ((Bot3)ob).turnCorner;
+			Bot3 b3 = (Bot3)ob;
+			b3.TurnCorners();
 			
-			double upY = Math.Floor(checkPos[0]/(tileW/2));
-			double downY = Math.Floor(checkPos[2]/(tileW/2));
-			double leftX = Math.Floor(checkPos[3]/(tileW/2));
-			double rightX = Math.Floor(checkPos[1]/(tileW/2));
+			double upY = Math.Floor(b3.upYPos2/(tileW/2));
+			double downY = Math.Floor(b3.downYPos2/(tileW/2));
+			double leftX = Math.Floor(b3.leftXPos2/(tileW/2));
+			double rightX = Math.Floor(b3.rightXPos2/(tileW/2));
 			
 			if (downY < mapHeight && upY >= 0 && leftX >= 0 && rightX < mapWidth) {
 				if (!gameB["tile_"+leftX+"_"+upY].walkable(ob))
@@ -905,13 +906,13 @@ public class GameManager : MonoBehaviour {
 //						return false;
 //					if (rightX > o.leftX && leftX < o.rightX && upY < o.downY && downY > o.upY)
 //						return false;
-					if (upY < o.downY && upY > o.upY && leftX < o.rightX && leftX > o.leftX)
+					if (b3.upYPos2 < o.downYPos && b3.upYPos2 > o.upYPos && b3.leftXPos2 < o.rightXPos && b3.leftXPos2 > o.leftXPos)
 						return false;
-					if (downY < o.downY && downY > o.upY && leftX < o.rightX && leftX > o.leftX)
+					if (b3.downYPos2 < o.downYPos && b3.downYPos2 > o.upYPos && b3.leftXPos2 < o.rightXPos && b3.leftXPos2 > o.leftXPos)
 						return false;
-					if (upY < o.downY && upY > o.upY && rightX < o.rightX && rightX > o.leftX)
+					if (b3.upYPos2 < o.downYPos && b3.upYPos2 > o.upYPos && b3.rightXPos2 < o.rightXPos && b3.rightXPos2 > o.leftXPos)
 						return false;
-					if (downY < o.downY && downY > o.upY && rightX < o.rightX && rightX > o.leftX)
+					if (b3.downYPos2 < o.downYPos && b3.downYPos2 > o.upYPos && b3.rightXPos2 < o.rightXPos && b3.rightXPos2 > o.leftXPos)
 						return false;
 				}
 			}
