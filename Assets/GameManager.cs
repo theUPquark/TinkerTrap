@@ -584,7 +584,7 @@ public class GameManager : MonoBehaviour {
 		if (running && !selection) {
 			if (!paused) {
 				bool movement = false;
-				if (!players[activeBot-1].inAction()) {
+				if (!players[activeBot-1].inAction() && !players[activeBot-1].onActiveElec) {
 					double speed = 5;
 					//Directional movement. Should this be limited to one direction at a time?
 					/*if (((activeMovement.Contains(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) || (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))) 
@@ -606,17 +606,74 @@ public class GameManager : MonoBehaviour {
 					t.update();
 				}
 				
-				// Frame/time stepped move actions of activeBot here
-				if (players[activeBot - 1].inAction() ) {
-					if (players[activeBot-1].GetType () != typeof(Bot1)) {
-						if (players[activeBot - 1].currDir == 0)
-							moveChar(players[activeBot - 1],5,0,-1);
-						else if (players[activeBot - 1].currDir == 1)
-							moveChar(players[activeBot - 1],5,1,0);
-						else if (players[activeBot - 1].currDir == 2)
-							moveChar(players[activeBot - 1],5,0,1);
-						else if (players[activeBot - 1].currDir == 3)
-							moveChar(players[activeBot - 1],5,-1,0);
+				// Frame/time stepped move actions of activeBot here. 
+				foreach (Player p in players) {
+					if (p.GetType() != typeof(Bot2)) {			// Push player back when on a powered Elec tile
+						bool needToMove = false;
+						if ( gameB[p.onTile()].GetType() == typeof(Electrified)) {
+							Electrified e = (Electrified)gameB[p.onTile()];
+							if (e.on) 
+								needToMove = true;
+						}
+						if ( gameB[p.onTileTopR()].GetType() == typeof(Electrified)) {
+							Electrified e = (Electrified)gameB[p.onTile()];
+							if (e.on)
+								needToMove = true;
+						}
+						if ( gameB[p.onTileBotL()].GetType() == typeof(Electrified)) {
+							Electrified e = (Electrified)gameB[p.onTile()];
+							if (e.on)
+								needToMove = true;
+						}
+						if ( gameB[p.onTileBotR()].GetType() == typeof(Electrified)) {
+							Electrified e = (Electrified)gameB[p.onTile()];
+							if (e.on)
+								needToMove = true;
+						}
+						bool setStart = false;
+						while (!setStart) {
+							if (p.pathOrder.Count > 0 && p.onTile() != p.pathOrder[p.pathOrder.Count-1] && p.onTileTopR() != p.pathOrder[p.pathOrder.Count-1]
+								&& p.onTileBotL() != p.pathOrder[p.pathOrder.Count-1] && p.onTileBotR() != p.pathOrder[p.pathOrder.Count-1]) {
+								p.pathDir.Remove(p.pathOrder[p.pathOrder.Count-1]);
+								p.pathOrder.RemoveAt(p.pathOrder.Count-1);
+							} else {
+								setStart = true;	
+							}
+								
+						}
+						if (needToMove) {
+							p.endAction();
+							p.onActiveElec = true;
+							switch (p.pathDir[p.pathOrder[p.pathOrder.Count-1]]) {
+							case 0: moveChar(p,10,0,-1);
+									break;
+							case 1:	moveChar(p,10,1,0);
+									break;
+							case 2: moveChar(p,10,0,1);
+									break;
+							case 3: moveChar(p,10,-1,0);
+									break;
+							}
+//							if (p.onTile() != p.pathOrder[p.pathOrder.Count-1] && p.onTileTopR() != p.pathOrder[p.pathOrder.Count-1] 
+//								&& p.onTileBotL() != p.pathOrder[p.pathOrder.Count-1] && p.onTileBotR() != p.pathOrder[p.pathOrder.Count-1]) {
+//								p.pathDir.RemoveAt(p.pathDir.Count-1);
+//								p.pathOrder.RemoveAt(p.pathOrder.Count-1);
+//							}
+						} else {
+							p.onActiveElec = false;	
+						}
+					}
+					if (p.inAction() ) {							//Actives Bot abilites such as Dash(Bot3) and Hover(Bot2)
+						if (p.GetType () != typeof(Bot1)) {
+							if (p.currDir == 0)
+								moveChar(p,5,0,-1);
+							else if (p.currDir == 1)
+								moveChar(p,5,1,0);
+							else if (p.currDir == 2)
+								moveChar(p,5,0,1);
+							else if (p.currDir == 3)
+								moveChar(p,5,-1,0);
+						}
 					}
 				}
 			}
@@ -706,9 +763,9 @@ public class GameManager : MonoBehaviour {
 			} else if (players[activeBot-1].currDir == 1) {
 				tarTile = "tile_"+(int)(players[activeBot-1].rightX+distance)+"_"+(int)(players[activeBot-1].upY);
 			} else if (players[activeBot-1].currDir == 2) {
-				tarTile = "tile_"+(int)(players[activeBot-1].leftX)+"_"+(int)(players[activeBot-1].downY+distance);
+				tarTile = "tile_"+(int)(players[activeBot-1].rightX)+"_"+(int)(players[activeBot-1].downY+distance);
 			} else if (players[activeBot-1].currDir == 3) {
-				tarTile = "tile_"+(int)(players[activeBot-1].leftX-distance)+"_"+(int)(players[activeBot-1].upY);
+				tarTile = "tile_"+(int)(players[activeBot-1].leftX-distance)+"_"+(int)(players[activeBot-1].downY);
 			}
 		} else {
 			if (players[activeBot-1].currDir == 0) {
@@ -716,9 +773,9 @@ public class GameManager : MonoBehaviour {
 			} else if (players[activeBot-1].currDir == 1) {
 				tarTile = "tile_"+(int)(players[activeBot-1].rightX+distance)+"_"+(int)(players[activeBot-1].downY);
 			} else if (players[activeBot-1].currDir == 2) {
-				tarTile = "tile_"+(int)(players[activeBot-1].rightX)+"_"+(int)(players[activeBot-1].downY+distance);
+				tarTile = "tile_"+(int)(players[activeBot-1].leftX)+"_"+(int)(players[activeBot-1].downY+distance);
 			} else if (players[activeBot-1].currDir == 3) {
-				tarTile = "tile_"+(int)(players[activeBot-1].leftX-distance)+"_"+(int)(players[activeBot-1].downY);
+				tarTile = "tile_"+(int)(players[activeBot-1].leftX-distance)+"_"+(int)(players[activeBot-1].upY);
 			}
 		}
 		if (gameB.ContainsKey (tarTile))
@@ -812,8 +869,8 @@ public class GameManager : MonoBehaviour {
 		if (ob.GetType() == typeof(Bot3)) {
 			double[] checkPos = ((Bot3)ob).turnCorner;
 			
-			double downY = Math.Floor(checkPos[2]/(tileW/2));
 			double upY = Math.Floor(checkPos[0]/(tileW/2));
+			double downY = Math.Floor(checkPos[2]/(tileW/2));
 			double leftX = Math.Floor(checkPos[3]/(tileW/2));
 			double rightX = Math.Floor(checkPos[1]/(tileW/2));
 			
@@ -840,13 +897,13 @@ public class GameManager : MonoBehaviour {
 			foreach (Obstacle o in gameObs) {
 				if (o != ob) {
 					getMyCorners(o, o.posX, o.posY);
-					if (upY < o.upY && upY > o.downY && leftX < o.rightX && leftX > o.leftX)
+					if (upY < o.downY && downY > o.upY && leftX < o.rightX && rightX > o.leftX)
 						return false;
-					if (upY < o.upY && upY > o.downY && rightX < o.rightX && rightX > o.leftX)
+					if (downY > o.upY && upY < o.downY && leftX < o.rightX && rightX > o.leftX)
 						return false;
-					if (downY < o.upY && downY > o.downY && leftX < o.rightX && leftX > o.leftX)
+					if (leftX < o.rightX && rightX > o.leftX && upY < o.downY && downY > o.upY)
 						return false;
-					if (downY < o.upY && downY > o.downY && rightX < o.rightX && rightX > o.leftX)
+					if (rightX > o.leftX && leftX < o.rightX && upY < o.downY && downY > o.upY)
 						return false;
 				}
 			}
@@ -911,23 +968,25 @@ public class GameManager : MonoBehaviour {
 		
 		//if going up
 		if (diry == -1)
-		{
+		{	//Pre-move check for players
 			if (tob.GetType().IsSubclassOf(typeof(Player))) {
-				if(tob.GetType() == typeof(Bot3)) {
-					Bot3 b3 = (Bot3)tob;
-					if (b3.currDir != 0) {
-						if (!CanThisTurn(tob)) {
-							if(b3.currDir == 2)
-								speedAdj /= 2;
-							else
-								return speedAdj = 0.0;
-						} else {
-							b3.setDir(0);
-							return 0.0;
+				if(!((Player)tob).onActiveElec) {
+					if(tob.GetType() == typeof(Bot3)) {
+						Bot3 b3 = (Bot3)tob;
+						if (b3.currDir != 0) {
+							if (!CanThisTurn(tob)) {
+								if(b3.currDir == 2)
+									speedAdj /= 2;
+								else
+									return 0.0;
+							} else {
+								b3.setDir(0);
+								return 0.0;
+							}
 						}
+					} else {
+						((Player)tob).setDir(0);
 					}
-				} else {
-					((Player)tob).setDir(0);
 				}
 			}
 			if (tob.upleft && tob.upright)
@@ -941,9 +1000,30 @@ public class GameManager : MonoBehaviour {
 						}
 					}
 				}
-				if (tob.GetType () == typeof(Bot1))
-					if (((Bot1)tob).grabbing)
-						speedAdj = moveChar (((Bot1)tob).grabbed, ((Bot1)tob).grabbed.getSpeed (speedAdj,tob), dirx, diry);
+				//post-move player updates
+				if (tob.GetType().IsSubclassOf(typeof(Player))) {
+					//electric tile path pushback set/clear
+					if (tob.GetType() != typeof(Bot2)) {
+						if (gameB[tob.onTile()].GetType() == typeof(Electrified)) {
+							if (!((Player)tob).pathDir.ContainsKey(tob.onTile())) {
+								((Player)tob).pathDir.Add(tob.onTile(),2); 
+								((Player)tob).pathOrder.Add (tob.onTile());
+							}
+						} else if (gameB[tob.onTileTopR()].GetType() == typeof(Electrified)) {
+							if (!((Player)tob).pathDir.ContainsKey(tob.onTileTopR())) {
+								((Player)tob).pathDir.Add(tob.onTileTopR(),2);
+								((Player)tob).pathOrder.Add (tob.onTileTopR());
+							}
+						} else if (gameB[tob.onTileTopR()].GetType() != typeof(Electrified) && gameB[tob.onTile()].GetType() != typeof(Electrified) &&
+							gameB[tob.onTileBotL()].GetType() != typeof(Electrified) && gameB[tob.onTileBotR()].GetType() != typeof(Electrified)) {
+							((Player)tob).pathDir.Clear();
+							((Player)tob).pathOrder.Clear();
+						}
+					}
+					if (tob.GetType () == typeof(Bot1))
+						if (((Bot1)tob).grabbing)
+							speedAdj = moveChar (((Bot1)tob).grabbed, ((Bot1)tob).grabbed.getSpeed (speedAdj,tob), dirx, diry);
+				}
 				// Need alt case where if 'something' then baseSpeed is used (to ignore obstacles)
 				tob.setY((float)(tob.posY+speedAdj*diry));
 			}
@@ -969,21 +1049,23 @@ public class GameManager : MonoBehaviour {
 		if (diry == 1)
 		{
 			if (tob.GetType().IsSubclassOf(typeof(Player))) {
-				if(tob.GetType() == typeof(Bot3)) {
-					Bot3 b3 = (Bot3)tob;
-					if (b3.currDir != 2) {
-						if (!CanThisTurn(tob)) {
-							if(b3.currDir == 0)
-								speedAdj /= 2;
-							else
-								return speedAdj = 0.0;
-						} else {
-							b3.setDir(2);
-							return 0.0;
+				if(!((Player)tob).onActiveElec) {
+					if(tob.GetType() == typeof(Bot3)) {
+						Bot3 b3 = (Bot3)tob;
+						if (b3.currDir != 2) {
+							if (!CanThisTurn(tob)) {
+								if(b3.currDir == 0)
+									speedAdj /= 2;
+								else
+									return 0.0;
+							} else {
+								b3.setDir(2);
+								return 0.0;
+							}
 						}
+					} else {
+						((Player)tob).setDir(2);
 					}
-				} else {
-					((Player)tob).setDir(2);
 				}
 			}
 			if (tob.downleft && tob.downright)
@@ -997,9 +1079,29 @@ public class GameManager : MonoBehaviour {
 						}
 					}
 				}
-				if (tob.GetType () == typeof(Bot1))
-					if (((Bot1)tob).grabbing)
-						speedAdj = moveChar (((Bot1)tob).grabbed, ((Bot1)tob).grabbed.getSpeed (speedAdj,tob), dirx, diry);
+				if (tob.GetType().IsSubclassOf(typeof(Player))) {
+					//electric tile path pushback set/clear
+					if (tob.GetType() != typeof(Bot2)) {
+						if (gameB[tob.onTileBotL()].GetType() == typeof(Electrified)) {
+							if (!((Player)tob).pathDir.ContainsKey(tob.onTileBotL())) {
+								((Player)tob).pathDir.Add(tob.onTileBotL(),0); 
+								((Player)tob).pathOrder.Add (tob.onTileBotL());
+							}
+						} else if (gameB[tob.onTileBotR()].GetType() == typeof(Electrified)) {
+							if (!((Player)tob).pathDir.ContainsKey(tob.onTileBotR())) {
+								((Player)tob).pathDir.Add(tob.onTileBotR(),0);
+								((Player)tob).pathOrder.Add (tob.onTileBotR());
+							}
+						} else if (gameB[tob.onTileTopR()].GetType() != typeof(Electrified) && gameB[tob.onTile()].GetType() != typeof(Electrified) &&
+							gameB[tob.onTileBotL()].GetType() != typeof(Electrified) && gameB[tob.onTileBotR()].GetType() != typeof(Electrified)) {
+							((Player)tob).pathDir.Clear();
+							((Player)tob).pathOrder.Clear();
+						}
+					}
+					if (tob.GetType () == typeof(Bot1))
+						if (((Bot1)tob).grabbing)
+							speedAdj = moveChar (((Bot1)tob).grabbed, ((Bot1)tob).grabbed.getSpeed (speedAdj,tob), dirx, diry);
+				}
 				tob.setY((float)(tob.posY+speedAdj*diry));
 			}
 			else
@@ -1026,21 +1128,23 @@ public class GameManager : MonoBehaviour {
 		if (dirx == -1)
 		{
 			if (tob.GetType().IsSubclassOf(typeof(Player))) {
-				if(tob.GetType() == typeof(Bot3)) {
-					Bot3 b3 = (Bot3)tob;
-					if (b3.currDir != 3) {
-						if (!CanThisTurn(tob)) {
-							if(b3.currDir == 1)
-								speedAdj /= 2;
-							else
-								return speedAdj = 0.0;
-						} else {
-							b3.setDir(3);
-							return 0.0;
+				if(!((Player)tob).onActiveElec) {
+					if(tob.GetType() == typeof(Bot3)) {
+						Bot3 b3 = (Bot3)tob;
+						if (b3.currDir != 3) {
+							if (!CanThisTurn(tob)) {
+								if(b3.currDir == 1)
+									speedAdj /= 2;
+								else
+									return 0.0;
+							} else {
+								b3.setDir(3);
+								return 0.0;
+							}
 						}
+					} else {
+						((Player)tob).setDir(3);
 					}
-				} else {
-					((Player)tob).setDir(3);
 				}
 			}
 			if (tob.downleft && tob.upleft)
@@ -1054,9 +1158,29 @@ public class GameManager : MonoBehaviour {
 						}
 					}
 				}
-				if (tob.GetType () == typeof(Bot1))
-					if (((Bot1)tob).grabbing)
-						speedAdj = moveChar (((Bot1)tob).grabbed, ((Bot1)tob).grabbed.getSpeed (speedAdj,tob), dirx, diry);
+				if (tob.GetType().IsSubclassOf(typeof(Player))) {
+					//electric tile path pushback set/clear
+					if (tob.GetType() != typeof(Bot2)) {
+						if (gameB[tob.onTile()].GetType() == typeof(Electrified)) {
+							if (!((Player)tob).pathDir.ContainsKey(tob.onTile())) {
+								((Player)tob).pathDir.Add(tob.onTile(),1); 
+								((Player)tob).pathOrder.Add (tob.onTile());
+							}
+						} else if (gameB[tob.onTileBotL()].GetType() == typeof(Electrified)) {
+							if (!((Player)tob).pathDir.ContainsKey(tob.onTileBotL())) {
+								((Player)tob).pathDir.Add(tob.onTileBotL(),1);
+								((Player)tob).pathOrder.Add (tob.onTileBotL());
+							}
+						} else if (gameB[tob.onTileTopR()].GetType() != typeof(Electrified) && gameB[tob.onTile()].GetType() != typeof(Electrified) &&
+							gameB[tob.onTileBotL()].GetType() != typeof(Electrified) && gameB[tob.onTileBotR()].GetType() != typeof(Electrified)) {
+							((Player)tob).pathDir.Clear();
+							((Player)tob).pathOrder.Clear();
+						}
+					}
+					if (tob.GetType () == typeof(Bot1))
+						if (((Bot1)tob).grabbing)
+							speedAdj = moveChar (((Bot1)tob).grabbed, ((Bot1)tob).grabbed.getSpeed (speedAdj,tob), dirx, diry);
+				}
 				tob.setX((float)(tob.posX+speedAdj*dirx));
 			}
 			else
@@ -1080,21 +1204,23 @@ public class GameManager : MonoBehaviour {
 		if (dirx == 1)
 		{
 			if (tob.GetType().IsSubclassOf(typeof(Player))) {
-				if(tob.GetType() == typeof(Bot3)) {
-					Bot3 b3 = (Bot3)tob;
-					if (b3.currDir != 1) {
-						if (!CanThisTurn(tob)) {
-							if(b3.currDir == 3)
-								speedAdj /= 2;
-							else
-								return speedAdj = 0.0;
-						} else {
-							b3.setDir(1);
-							return 0.0;
+				if(!((Player)tob).onActiveElec) {
+					if(tob.GetType() == typeof(Bot3)) {
+						Bot3 b3 = (Bot3)tob;
+						if (b3.currDir != 1) {
+							if (!CanThisTurn(tob)) {
+								if(b3.currDir == 3)
+									speedAdj /= 2;
+								else
+									return 0.0;
+							} else {
+								b3.setDir(1);
+								return 0.0;
+							}
 						}
+					} else {
+						((Player)tob).setDir(1);
 					}
-				} else {
-					((Player)tob).setDir(1);
 				}
 			}
 			if (tob.upright && tob.downright)
@@ -1108,9 +1234,29 @@ public class GameManager : MonoBehaviour {
 						}
 					}
 				}
-				if (tob.GetType () == typeof(Bot1))
-					if (((Bot1)tob).grabbing)
-						speedAdj = moveChar (((Bot1)tob).grabbed, ((Bot1)tob).grabbed.getSpeed (speedAdj,tob), dirx, diry);
+				if (tob.GetType().IsSubclassOf(typeof(Player))) {
+					//electric tile path pushback set/clear
+					if (tob.GetType() != typeof(Bot2)) {
+						if (gameB[tob.onTileBotR()].GetType() == typeof(Electrified)) {
+							if (!((Player)tob).pathDir.ContainsKey(tob.onTileBotR())) {
+								((Player)tob).pathDir.Add(tob.onTileBotR(),3); 
+								((Player)tob).pathOrder.Add (tob.onTileBotR());
+							}
+						} else if (gameB[tob.onTileTopR()].GetType() == typeof(Electrified)) {
+							if (!((Player)tob).pathDir.ContainsKey(tob.onTileTopR())) {
+								((Player)tob).pathDir.Add(tob.onTileTopR(),3);
+								((Player)tob).pathOrder.Add (tob.onTileTopR());
+							}
+						} else if (gameB[tob.onTileTopR()].GetType() != typeof(Electrified) && gameB[tob.onTile()].GetType() != typeof(Electrified) &&
+							gameB[tob.onTileBotL()].GetType() != typeof(Electrified) && gameB[tob.onTileBotR()].GetType() != typeof(Electrified)) {
+							((Player)tob).pathDir.Clear();
+							((Player)tob).pathOrder.Clear();
+						}
+					}
+					if (tob.GetType () == typeof(Bot1))
+						if (((Bot1)tob).grabbing)
+							speedAdj = moveChar (((Bot1)tob).grabbed, ((Bot1)tob).grabbed.getSpeed (speedAdj,tob), dirx, diry);
+				}
 				tob.setX((float)(tob.posX+speedAdj*dirx));
 			}
 			else

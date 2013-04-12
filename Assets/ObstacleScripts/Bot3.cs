@@ -89,7 +89,7 @@ public class Bot3 : Player, Obstacle
 			leftXPos = posX+(length/2)/2;
 			rightXPos = leftXPos+width/2-1;
 		} else { // switch using length/width for downY and rightX
-			upYPos = posY+(length/2)/2-1;
+			upYPos = posY+(length/2)/2;
 			downYPos = upYPos+width/2-1;
 			leftXPos = posX;
 			rightXPos = leftXPos+length/2-1;
