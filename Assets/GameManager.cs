@@ -897,13 +897,21 @@ public class GameManager : MonoBehaviour {
 			foreach (Obstacle o in gameObs) {
 				if (o != ob) {
 					getMyCorners(o, o.posX, o.posY);
-					if (upY < o.downY && downY > o.upY && leftX < o.rightX && rightX > o.leftX)
+//					if (upY < o.downY && downY > o.upY && leftX < o.rightX && rightX > o.leftX)
+//						return false;
+//					if (downY > o.upY && upY < o.downY && leftX < o.rightX && rightX > o.leftX)
+//						return false;
+//					if (leftX < o.rightX && rightX > o.leftX && upY < o.downY && downY > o.upY)
+//						return false;
+//					if (rightX > o.leftX && leftX < o.rightX && upY < o.downY && downY > o.upY)
+//						return false;
+					if (upY < o.downY && upY > o.upY && leftX < o.rightX && leftX > o.leftX)
 						return false;
-					if (downY > o.upY && upY < o.downY && leftX < o.rightX && rightX > o.leftX)
+					if (downY < o.downY && downY > o.upY && leftX < o.rightX && leftX > o.leftX)
 						return false;
-					if (leftX < o.rightX && rightX > o.leftX && upY < o.downY && downY > o.upY)
+					if (upY < o.downY && upY > o.upY && rightX < o.rightX && rightX > o.leftX)
 						return false;
-					if (rightX > o.leftX && leftX < o.rightX && upY < o.downY && downY > o.upY)
+					if (downY < o.downY && downY > o.upY && rightX < o.rightX && rightX > o.leftX)
 						return false;
 				}
 			}
