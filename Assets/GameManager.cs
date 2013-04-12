@@ -532,10 +532,7 @@ public class GameManager : MonoBehaviour {
 					if (activeBot != 1 /*&& players[0].level >= 0*/) {
 						if (!gameObs.Contains(players[0]) && TileClear(refSpawn.myName())) {
 							players[0].setXY (refSpawn.xgrid,refSpawn.ygrid);
-	//						players[0].setY (players[activeBot-1].posY);
-	//						players[activeBot-1].setXY (-100,-100);
 							players[0].setDir (0);
-	//						gameObs.Remove (players[activeBot-1]);
 							gameObs.Add (players[0]);
 							getMyCorners(players[0],players[0].posX,players[0].posY);
 						}
@@ -547,13 +544,10 @@ public class GameManager : MonoBehaviour {
 					if (activeBot != 2 /*&& players[1].level >= 0*/) {
 						if (!gameObs.Contains(players[1]) && TileClear(refSpawn.myName())) {
 							players[1].setXY (refSpawn.xgrid,refSpawn.ygrid);
-	//						players[1].setY (players[activeBot-1].posY);
-	//						players[activeBot-1].setXY (-100,-100);
-							players[1].setDir (0);
-	//						gameObs.Remove (players[activeBot-1]);
+							players[1].setDir (0);;
 							gameObs.Add (players[1]);
 							getMyCorners(players[1],players[1].posX,players[1].posY);
-							}
+						}
 						if (gameObs.Contains(players[1]))
 							activeBot = 2;
 					}
@@ -562,10 +556,7 @@ public class GameManager : MonoBehaviour {
 					if (activeBot != 3 /*&& players[2].level >= 0*/) {
 						if (!gameObs.Contains(players[2]) && TileClear(refSpawn.myName())) {
 							players[2].setXY (refSpawn.xgrid,refSpawn.ygrid);
-	//						players[2].setY (players[activeBot-1].posY);
-	//						players[activeBot-1].setXY (-100,-100);
 							players[2].setDir (players[activeBot-1].currDir);
-	//						gameObs.Remove (players[activeBot-1]);
 							gameObs.Add (players[2]);
 							getMyCorners(players[2],players[2].posX,players[2].posY);
 						}
@@ -591,9 +582,6 @@ public class GameManager : MonoBehaviour {
 				if (!players[activeBot-1].inAction() && !players[activeBot-1].onActiveElec) {
 					double speed = 5;
 					//Directional movement. Should this be limited to one direction at a time?
-					/*if (((activeMovement.Contains(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) || (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))) 
-						&& ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) || (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))))
-						speed *= 0.7071;*/
 					if (Input.GetAxis("horizontal") != 0.0) {
 						moveChar(players[activeBot-1], speed, (int)(Math.Round(Input.GetAxis("horizontal"),MidpointRounding.AwayFromZero)), 0);
 						movement = true;
@@ -620,18 +608,15 @@ public class GameManager : MonoBehaviour {
 								needToMove = true;
 						}
 						if ( !needToMove && gameB[p.onTileTopR()].GetType() == typeof(Electrified)) {
-//							Electrified e = (Electrified)gameB[p.onTile()];
-							if (((Electrified)gameB[p.onTile()]).on)
+							if (((Electrified)gameB[p.onTileTopR()]).on)
 								needToMove = true;
 						}
 						if ( !needToMove && gameB[p.onTileBotL()].GetType() == typeof(Electrified)) {
-//							Electrified e = (Electrified)gameB[p.onTile()];
-							if (((Electrified)gameB[p.onTile()]).on)
+							if (((Electrified)gameB[p.onTileBotL()]).on)
 								needToMove = true;
 						}
 						if ( !needToMove && gameB[p.onTileBotR()].GetType() == typeof(Electrified)) {
-//							Electrified e = (Electrified)gameB[p.onTile()];
-							if (((Electrified)gameB[p.onTile()]).on)
+							if (((Electrified)gameB[p.onTileBotR()]).on)
 								needToMove = true;
 						}
 
@@ -641,15 +626,11 @@ public class GameManager : MonoBehaviour {
 								if (p.onTile() == p.pathOrder[p.pathOrder.Count-1] || p.onTileTopR() == p.pathOrder[p.pathOrder.Count-1]
 									|| p.onTileBotL() == p.pathOrder[p.pathOrder.Count-1] || p.onTileBotR() == p.pathOrder[p.pathOrder.Count-1]) {
 									setStart = true;
-//									p.pathDir.Remove(p.pathOrder[p.pathOrder.Count-1]);
-//									p.pathOrder.RemoveAt(p.pathOrder.Count-1);
-								} else {
-	//								setStart = true;	
+								} else {	
 									p.pathDir.Remove(p.pathOrder[p.pathOrder.Count-1]);
 									p.pathOrder.RemoveAt(p.pathOrder.Count-1);
 								}
 							}
-							
 							p.endAction();
 							p.onActiveElec = true;
 							switch (p.pathDir[p.pathOrder[p.pathOrder.Count-1]]) {
@@ -662,11 +643,6 @@ public class GameManager : MonoBehaviour {
 							case 3: moveChar(p,10,-1,0);
 									break;
 							}
-//							if (p.onTile() != p.pathOrder[p.pathOrder.Count-1] && p.onTileTopR() != p.pathOrder[p.pathOrder.Count-1] 
-//								&& p.onTileBotL() != p.pathOrder[p.pathOrder.Count-1] && p.onTileBotR() != p.pathOrder[p.pathOrder.Count-1]) {
-//								p.pathDir.RemoveAt(p.pathDir.Count-1);
-//								p.pathOrder.RemoveAt(p.pathOrder.Count-1);
-//							}
 						} else {
 							p.onActiveElec = false;	
 						}
