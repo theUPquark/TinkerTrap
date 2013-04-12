@@ -372,6 +372,7 @@ public class GameManager : MonoBehaviour {
 								refSpawn = gameB[squareName];
 								players[activeBot-1].setXY(i,j);
 								gameObs.Add (players[activeBot-1]);
+								getMyCorners(players[activeBot-1],players[activeBot-1].posX,players[activeBot-1].posY);
 								break;
 							case "Box":
 								gameObs.Add (new Box(1, i, j));
@@ -536,6 +537,7 @@ public class GameManager : MonoBehaviour {
 							players[0].setDir (0);
 	//						gameObs.Remove (players[activeBot-1]);
 							gameObs.Add (players[0]);
+							getMyCorners(players[0],players[0].posX,players[0].posY);
 						}
 						if (gameObs.Contains(players[0]))
 							activeBot = 1;
@@ -550,6 +552,7 @@ public class GameManager : MonoBehaviour {
 							players[1].setDir (0);
 	//						gameObs.Remove (players[activeBot-1]);
 							gameObs.Add (players[1]);
+							getMyCorners(players[1],players[1].posX,players[1].posY);
 							}
 						if (gameObs.Contains(players[1]))
 							activeBot = 2;
@@ -564,6 +567,7 @@ public class GameManager : MonoBehaviour {
 							players[2].setDir (players[activeBot-1].currDir);
 	//						gameObs.Remove (players[activeBot-1]);
 							gameObs.Add (players[2]);
+							getMyCorners(players[2],players[2].posX,players[2].posY);
 						}
 						if (gameObs.Contains(players[2]))
 							activeBot = 3;
@@ -611,37 +615,41 @@ public class GameManager : MonoBehaviour {
 					if (p.GetType() != typeof(Bot2)) {			// Push player back when on a powered Elec tile
 						bool needToMove = false;
 						if ( gameB[p.onTile()].GetType() == typeof(Electrified)) {
-							Electrified e = (Electrified)gameB[p.onTile()];
-							if (e.on) 
+//							Electrified e = (Electrified)gameB[p.onTile()];
+							if (((Electrified)gameB[p.onTile()]).on) 
 								needToMove = true;
 						}
-						if ( gameB[p.onTileTopR()].GetType() == typeof(Electrified)) {
-							Electrified e = (Electrified)gameB[p.onTile()];
-							if (e.on)
+						if ( !needToMove && gameB[p.onTileTopR()].GetType() == typeof(Electrified)) {
+//							Electrified e = (Electrified)gameB[p.onTile()];
+							if (((Electrified)gameB[p.onTile()]).on)
 								needToMove = true;
 						}
-						if ( gameB[p.onTileBotL()].GetType() == typeof(Electrified)) {
-							Electrified e = (Electrified)gameB[p.onTile()];
-							if (e.on)
+						if ( !needToMove && gameB[p.onTileBotL()].GetType() == typeof(Electrified)) {
+//							Electrified e = (Electrified)gameB[p.onTile()];
+							if (((Electrified)gameB[p.onTile()]).on)
 								needToMove = true;
 						}
-						if ( gameB[p.onTileBotR()].GetType() == typeof(Electrified)) {
-							Electrified e = (Electrified)gameB[p.onTile()];
-							if (e.on)
+						if ( !needToMove && gameB[p.onTileBotR()].GetType() == typeof(Electrified)) {
+//							Electrified e = (Electrified)gameB[p.onTile()];
+							if (((Electrified)gameB[p.onTile()]).on)
 								needToMove = true;
 						}
-						bool setStart = false;
-						while (!setStart) {
-							if (p.pathOrder.Count > 0 && p.onTile() != p.pathOrder[p.pathOrder.Count-1] && p.onTileTopR() != p.pathOrder[p.pathOrder.Count-1]
-								&& p.onTileBotL() != p.pathOrder[p.pathOrder.Count-1] && p.onTileBotR() != p.pathOrder[p.pathOrder.Count-1]) {
-								p.pathDir.Remove(p.pathOrder[p.pathOrder.Count-1]);
-								p.pathOrder.RemoveAt(p.pathOrder.Count-1);
-							} else {
-								setStart = true;	
-							}
-								
-						}
+
 						if (needToMove) {
+							bool setStart = false;
+							while (!setStart) {
+								if (p.onTile() == p.pathOrder[p.pathOrder.Count-1] || p.onTileTopR() == p.pathOrder[p.pathOrder.Count-1]
+									|| p.onTileBotL() == p.pathOrder[p.pathOrder.Count-1] || p.onTileBotR() == p.pathOrder[p.pathOrder.Count-1]) {
+									setStart = true;
+//									p.pathDir.Remove(p.pathOrder[p.pathOrder.Count-1]);
+//									p.pathOrder.RemoveAt(p.pathOrder.Count-1);
+								} else {
+	//								setStart = true;	
+									p.pathDir.Remove(p.pathOrder[p.pathOrder.Count-1]);
+									p.pathOrder.RemoveAt(p.pathOrder.Count-1);
+								}
+							}
+							
 							p.endAction();
 							p.onActiveElec = true;
 							switch (p.pathDir[p.pathOrder[p.pathOrder.Count-1]]) {
@@ -748,7 +756,7 @@ public class GameManager : MonoBehaviour {
 			return false;
 		else {
 			foreach (Obstacle ob in gameObs) {
-				if (ob.onTile() == name || ob.onTileBotR() == name)
+				if (ob.onTile() == name || ob.onTileBotR() == name || ob.onTileTopR() == name || ob.onTileBotL() == name)
 					return false;
 			}
 			return true;
@@ -808,16 +816,6 @@ public class GameManager : MonoBehaviour {
 				} else {
 					return;
 				}
-//				foreach (Obstacle iob in gameObs) {
-//					if (iob != players[activeBot-1]) {
-//						string topLCorner = "tile_"+(int)(iob.xtile)+"_"+(int)(iob.ytile);
-//						string botRCorner = "tile_"+(int)(iob.rightX)+"_"+(int)(iob.downY);
-//						if (topLCorner == left2.myName() || botRCorner == right2.myName())
-//							return;
-//					}
-//				}
-//				((Bot2)players[activeBot-1]).primary(left1,left2,right1,right2);
-//				return;
 			}
 		}
 		Tile target = FacingTile (true,1);
@@ -893,19 +891,10 @@ public class GameManager : MonoBehaviour {
 				return false;
 			if (rightX >= mapWidth)
 				return false;
-			
 		
 			foreach (Obstacle o in gameObs) {
 				if (o != ob) {
 					getMyCorners(o, o.posX, o.posY);
-//					if (upY < o.downY && downY > o.upY && leftX < o.rightX && rightX > o.leftX)
-//						return false;
-//					if (downY > o.upY && upY < o.downY && leftX < o.rightX && rightX > o.leftX)
-//						return false;
-//					if (leftX < o.rightX && rightX > o.leftX && upY < o.downY && downY > o.upY)
-//						return false;
-//					if (rightX > o.leftX && leftX < o.rightX && upY < o.downY && downY > o.upY)
-//						return false;
 					if (b3.upYPos2 < o.downYPos && b3.upYPos2 > o.upYPos && b3.leftXPos2 < o.rightXPos && b3.leftXPos2 > o.leftXPos)
 						return false;
 					if (b3.downYPos2 < o.downYPos && b3.downYPos2 > o.upYPos && b3.leftXPos2 < o.rightXPos && b3.leftXPos2 > o.leftXPos)
@@ -1116,7 +1105,7 @@ public class GameManager : MonoBehaviour {
 			else
 			{
 				double yStart = tob.posY;
-				tob.setY(((float)((tob.ytile+1)*(tileW/2)-(tob.width/2))));
+				tob.setY(((float)((tob.ytile+1)*(tileW/2)-(tob.length/2))));
 				double yShift = tob.posY-yStart;
 				if (tob.GetType () == typeof(Bot1))
 					if (((Bot1)tob).grabbing)
@@ -1271,7 +1260,7 @@ public class GameManager : MonoBehaviour {
 			else
 			{
 				double xStart = tob.posX;
-				tob.setX(((float)((tob.xtile+1)*(tileW/2)-(tob.width/2))));
+				tob.setX(((float)((tob.xtile+1)*(tileW/2)-(tob.length/2))));
 				double xShift = tob.posX-xStart;
 				if (tob.GetType () == typeof(Bot1))
 					if (((Bot1)tob).grabbing)

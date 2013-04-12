@@ -33,14 +33,14 @@ public class Bot3 : Player, Obstacle
 	public void TurnCorners() {
 			// return same as SetCorners, except backwardes
 			if (currDir == 0 || currDir == 2) {
-				upYPos2 = posY+(length/2)/2;
+				upYPos2 = posY+(length/4)/2;
 				downYPos2 = upYPos+width/2-1;
 				leftXPos2 = posX;
 				rightXPos2 = leftXPos+length/2-1;
 			} else { // switch using length/width;
 				upYPos2 = posY;
 				downYPos2 = upYPos+length/2-1;
-				leftXPos2 = posX+(length/2)/2;
+				leftXPos2 = posX+(length/4)/2;
 				rightXPos2 = leftXPos+width/2-1;
 			}
 	}
@@ -87,10 +87,10 @@ public class Bot3 : Player, Obstacle
 		if (currDir == 0 || currDir == 2) {
 			upYPos = posY;
 			downYPos = upYPos+length/2-1;
-			leftXPos = posX+(length/2)/2;
+			leftXPos = posX+(length/4)/2;
 			rightXPos = leftXPos+width/2-1;
 		} else { // switch using length/width for downY and rightX
-			upYPos = posY+(length/2)/2;
+			upYPos = posY+(length/4)/2;
 			downYPos = upYPos+width/2-1;
 			leftXPos = posX;
 			rightXPos = leftXPos+length/2-1;
