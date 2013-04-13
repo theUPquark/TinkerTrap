@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour {
 	private string filePath = "save.xml";
 	private Finish refFinish;
 	private Tile refSpawn;
+	private bool cheats = false;
 	
 	private List<Player> players = new List<Player>();
 	private int activeBot = 1;
@@ -523,7 +524,12 @@ public class GameManager : MonoBehaviour {
 	void Update() {
 		if (running && !selection) {
 			if (!paused) {
-				
+				// Upgrade all bots
+				if (!cheats && Input.GetKey(KeyCode.U) && Input.GetKey(KeyCode.P)) {
+					cheats = true;
+					foreach (Player p in players)
+						p.level = 10;
+				}
 				//Directional movement. Should this be limited to one direction at a time?
 				if (Input.GetKeyDown(KeyCode.E))
 				{	DoPrimary (); }
@@ -999,6 +1005,11 @@ public class GameManager : MonoBehaviour {
 							gameB[tob.onTileBotL()].GetType() != typeof(Electrified) && gameB[tob.onTileBotR()].GetType() != typeof(Electrified)) {
 							((Player)tob).pathDir.Clear();
 							((Player)tob).pathOrder.Clear();
+						} else {
+							if (!((Player)tob).pathDir.ContainsKey(tob.onTile())) {
+								((Player)tob).pathDir.Add(tob.onTile(),2); 
+								((Player)tob).pathOrder.Add (tob.onTile());
+							}
 						}
 					}
 					if (tob.GetType () == typeof(Bot1))
@@ -1077,6 +1088,11 @@ public class GameManager : MonoBehaviour {
 							gameB[tob.onTileBotL()].GetType() != typeof(Electrified) && gameB[tob.onTileBotR()].GetType() != typeof(Electrified)) {
 							((Player)tob).pathDir.Clear();
 							((Player)tob).pathOrder.Clear();
+						} else {
+							if (!((Player)tob).pathDir.ContainsKey(tob.onTileBotL())) {
+								((Player)tob).pathDir.Add(tob.onTileBotL(),0); 
+								((Player)tob).pathOrder.Add (tob.onTileBotL());
+							}
 						}
 					}
 					if (tob.GetType () == typeof(Bot1))
@@ -1156,6 +1172,11 @@ public class GameManager : MonoBehaviour {
 							gameB[tob.onTileBotL()].GetType() != typeof(Electrified) && gameB[tob.onTileBotR()].GetType() != typeof(Electrified)) {
 							((Player)tob).pathDir.Clear();
 							((Player)tob).pathOrder.Clear();
+						} else {
+							if (!((Player)tob).pathDir.ContainsKey(tob.onTile())) {
+								((Player)tob).pathDir.Add(tob.onTile(),1); 
+								((Player)tob).pathOrder.Add (tob.onTile());
+							}
 						}
 					}
 					if (tob.GetType () == typeof(Bot1))
@@ -1232,6 +1253,11 @@ public class GameManager : MonoBehaviour {
 							gameB[tob.onTileBotL()].GetType() != typeof(Electrified) && gameB[tob.onTileBotR()].GetType() != typeof(Electrified)) {
 							((Player)tob).pathDir.Clear();
 							((Player)tob).pathOrder.Clear();
+						} else {
+							if (!((Player)tob).pathDir.ContainsKey(tob.onTileBotR())) {
+								((Player)tob).pathDir.Add(tob.onTileBotR(),3); 
+								((Player)tob).pathOrder.Add (tob.onTileBotR());
+							}
 						}
 					}
 					if (tob.GetType () == typeof(Bot1))
