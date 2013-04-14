@@ -326,7 +326,7 @@ public class GameManager : MonoBehaviour {
 	
 	void BuildLevel(string map)
 	{
-//		map = "Level2Test";	//load this
+//		map = "Level2";	//load this
 		TextAsset file = (TextAsset) Resources.Load (map, typeof(TextAsset));
 		OTSprite os;
 		Vector2 pos;
@@ -990,7 +990,7 @@ public class GameManager : MonoBehaviour {
 				//post-move player updates
 				if (tob.GetType().IsSubclassOf(typeof(Player))) {
 					//electric tile path pushback set/clear
-					if (tob.GetType() != typeof(Bot2)) {
+					if (tob.GetType() != typeof(Bot2) && !((Player)tob).onActiveElec) {
 						if (gameB[tob.onTile()].GetType() == typeof(Electrified)) {
 							if (!((Player)tob).pathDir.ContainsKey(tob.onTile())) {
 								((Player)tob).pathDir.Add(tob.onTile(),2); 
@@ -1073,7 +1073,7 @@ public class GameManager : MonoBehaviour {
 				}
 				if (tob.GetType().IsSubclassOf(typeof(Player))) {
 					//electric tile path pushback set/clear
-					if (tob.GetType() != typeof(Bot2)) {
+					if (tob.GetType() != typeof(Bot2) && !((Player)tob).onActiveElec) {
 						if (gameB[tob.onTileBotL()].GetType() == typeof(Electrified)) {
 							if (!((Player)tob).pathDir.ContainsKey(tob.onTileBotL())) {
 								((Player)tob).pathDir.Add(tob.onTileBotL(),0); 
@@ -1157,7 +1157,7 @@ public class GameManager : MonoBehaviour {
 				}
 				if (tob.GetType().IsSubclassOf(typeof(Player))) {
 					//electric tile path pushback set/clear
-					if (tob.GetType() != typeof(Bot2)) {
+					if (tob.GetType() != typeof(Bot2) && !((Player)tob).onActiveElec) {
 						if (gameB[tob.onTile()].GetType() == typeof(Electrified)) {
 							if (!((Player)tob).pathDir.ContainsKey(tob.onTile())) {
 								((Player)tob).pathDir.Add(tob.onTile(),1); 
@@ -1238,7 +1238,7 @@ public class GameManager : MonoBehaviour {
 				}
 				if (tob.GetType().IsSubclassOf(typeof(Player))) {
 					//electric tile path pushback set/clear
-					if (tob.GetType() != typeof(Bot2)) {
+					if (tob.GetType() != typeof(Bot2) && !((Player)tob).onActiveElec) {
 						if (gameB[tob.onTileBotR()].GetType() == typeof(Electrified)) {
 							if (!((Player)tob).pathDir.ContainsKey(tob.onTileBotR())) {
 								((Player)tob).pathDir.Add(tob.onTileBotR(),3); 
