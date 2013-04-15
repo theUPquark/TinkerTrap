@@ -217,6 +217,7 @@ public class GameManager : MonoBehaviour {
 		GUI.Label (new Rect(138, 266, 133, 20), "2");
 		GUI.Label (new Rect(271, 266, 133, 20), "3");
 		
+		// Tutorial Message Box
 		if (showMessages && ((TileClass)gameB[players[activeBot-1].onTile()]).messages[activeBot-1].Count > 0) {
 			int stepMsgs = 0;
 			foreach (KeyValuePair<int,string> kvp in ((TileClass)gameB[players[activeBot-1].onTile()]).messages[activeBot-1]) {
@@ -309,7 +310,7 @@ public class GameManager : MonoBehaviour {
 				Destroy(o.Value.graphic);
 			}
 			foreach (Obstacle ob in gameObs) {
-				if (ob.GetType() != typeof(Player)) {
+				if (!ob.GetType().IsSubclassOf(typeof(Player))) {
 					Destroy(ob.graphic); 
 				} else {
 					ob.setXY(-100,-100); // Remove Player object from view
@@ -549,8 +550,9 @@ public class GameManager : MonoBehaviour {
 							gameObs.Add (players[0]);
 							getMyCorners(players[0],players[0].posX,players[0].posY);
 						}
-						if (gameObs.Contains(players[0]))
+						if (gameObs.Contains(players[0])) {
 							activeBot = 1;
+						}
 					}
 				}
 				if (Input.GetAxis("select2") == 1.0) {
@@ -561,8 +563,9 @@ public class GameManager : MonoBehaviour {
 							gameObs.Add (players[1]);
 							getMyCorners(players[1],players[1].posX,players[1].posY);
 						}
-						if (gameObs.Contains(players[1]))
+						if (gameObs.Contains(players[1])) {
 							activeBot = 2;
+						}
 					}
 				}
 				if (Input.GetAxis("select3") == 1.0) {
@@ -573,8 +576,9 @@ public class GameManager : MonoBehaviour {
 							gameObs.Add (players[2]);
 							getMyCorners(players[2],players[2].posX,players[2].posY);
 						}
-						if (gameObs.Contains(players[2]))
+						if (gameObs.Contains(players[2])) {
 							activeBot = 3;
+						}
 					}
 				}
 			}
