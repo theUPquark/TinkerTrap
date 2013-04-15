@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour {
 	public Texture2D bot1Texture;
 	public Texture2D bot2Texture;
 	public Texture2D bot3Texture;
-	
+	public Texture2D overlayActive;
 	
 	private int mapWidth = 0;
 	private int mapHeight = 0;
@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour {
 		players.Add (new Bot1()); // Webelo (Red, Lifter)
 		players.Add (new Bot2()); // Hob (Yellow, Hoverer)
 		players.Add (new Bot3()); // Hisco (Green, Wheelie)
+		
+		bot1Texture = Resources.Load ("overlayB1") as Texture2D;
+		bot2Texture = Resources.Load ("overlayB2") as Texture2D;
+		bot3Texture = Resources.Load ("overlayB3") as Texture2D;
+		overlayActive = Resources.Load ("overlayActive") as Texture2D;
 	}
 	
 	void TopMenu() {
@@ -107,10 +112,10 @@ public class GameManager : MonoBehaviour {
 	}
 	void SelectionMenu() {
 	    //layout start
-	    GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 50, 300, 400));
+	    GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 50, 600, 400));
 	   
 	    //the menu background box
-	    GUI.Box(new Rect(0, 0, 300, 400), "");
+	    GUI.Box(new Rect(0, 0, 600, 400), "");
 	   
 	    //title
 	    GUI.Label(new Rect(15, 10, 300, 68), "Which robot will you make?");
@@ -120,43 +125,62 @@ public class GameManager : MonoBehaviour {
 		string bot1Text = "Webelo";
 		string bot2Text = "Hob";
 		string bot3Text = "Hisco";
-		if (players[0].level > 0)
+		if (players[0].level > -1)
 			bot1Text = "UPGRADE: Webelo";
-		if (players[1].level > 0)
+		if (players[1].level > -1)
 			bot2Text = "UPGRADE: Hob";
-		if (players[2].level > 0)
+		if (players[2].level > -1)
 			bot3Text = "UPGRADE: Hisco";
 		if (!running) {
-		    if(GUI.Button(new Rect(55, 100, 180, 40), bot1Text)) {
+			Rect selectBot1 = new Rect(55, 100, 180, 40);
+			Rect selectBot2 = new Rect(55, 150, 180, 40);
+			Rect selectBot3 = new Rect(55, 200, 180, 40);
+		    if(GUI.Button(selectBot1, bot1Text)) {
 				running = true;
 				selection = false;
 				activeBot = 1;
 				level++;
 				players[0].level++;
-//				BuildLevel ("level1");
 				BuildLevel ("level"+level);
 				Save ();
 		    }
-		    if(GUI.Button(new Rect(55, 150, 180, 40), bot2Text)) {
+			if (selectBot1.Contains(Event.current.mousePosition)){
+				if (players[0].level == -1)
+					GUI.Label(new Rect(240,100, 200,200),"This robot can push boxes. It has the ability to grab and pull objects.");
+				else
+					GUI.Label(new Rect(240,100, 200,200),"This upgrade will allow the robot to extend its arms up to 3 tiles.");
+			}
+		    if(GUI.Button(selectBot2, bot2Text)) {
 				running = true;
 				selection = false;
 				activeBot = 2;
 				level++;
 				players[1].level++;
-//				BuildLevel ("level1");
 				BuildLevel ("level"+level);
 				Save ();
 		    }
-		    if(GUI.Button(new Rect(55, 200, 180, 40), bot3Text)) {
+			if (selectBot2.Contains(Event.current.mousePosition)){
+				if (players[1].level == -1)
+					GUI.Label(new Rect(240,100, 200,200),"This robot can not push boxes. It has the ability to charge generators it touches " +
+														"and can traverse electrified tiles.");
+				else
+					GUI.Label(new Rect(240,100, 200,200),"Gain the ability to hover over short distances to get over small obstacles and pits.");
+			}
+		    if(GUI.Button(selectBot3, bot3Text)) {
 				running = true;
 				selection = false;
 				activeBot = 3;
 				level++;
 				players[2].level++;
-//				BuildLevel ("level1");
 				BuildLevel ("level"+level);
 				Save ();
 		    }
+			if (selectBot3.Contains(Event.current.mousePosition)){
+				if (players[2].level == -1)
+					GUI.Label(new Rect(240,100, 200,200),"This robot can push boxes. It has the ability to sprint for short periods of time.");
+				else
+					GUI.Label(new Rect(240,100, 200,200),"Upgrade wheel(s) to gain speed on certain tiles and lessen the penalty for pushing objects.");
+			}
 		    //return to main menu
 			if (level == 0)
 		    	if(GUI.Button(new Rect(55, 250, 180, 40), "Return")) {
@@ -210,11 +234,18 @@ public class GameManager : MonoBehaviour {
 		// Covers entire screen...
 		GUI.BeginGroup (new Rect(0, 0, Screen.width, Screen.height));
 		
+		GUI.Box (new Rect(5+133*(activeBot-1), 5, 133, 261),overlayActive); // Box position emphasises activeBot
+		
 		GUI.Box (new Rect(5, 5, 133, 261), bot1Texture);
 		GUI.Box (new Rect(138, 5, 133, 261), bot2Texture);
 		GUI.Box (new Rect(271, 5, 133, 261), bot3Texture);
+		GUI.Label (new Rect(10, 246, 133, 20), "L: "+players[0].level);
 		GUI.Label (new Rect(5, 266, 133, 20), "1");
+		
+		GUI.Label (new Rect(143, 246, 133, 20), "L: "+players[1].level);
 		GUI.Label (new Rect(138, 266, 133, 20), "2");
+		
+		GUI.Label (new Rect(276, 246, 133, 20), "L: "+players[2].level);
 		GUI.Label (new Rect(271, 266, 133, 20), "3");
 		
 		// Tutorial Message Box
@@ -251,10 +282,6 @@ public class GameManager : MonoBehaviour {
 			writer.WriteElementString ("Tutorial", showMessages.ToString());
 			writer.WriteEndDocument ();
 		};
-//		PlayerPrefs.SetInt("Last Level", level);
-//		PlayerPrefs.SetInt("Bot1 Level", players[0].level);
-//		PlayerPrefs.SetInt("Bot2 Level", players[1].level);
-//		PlayerPrefs.SetInt("Bot3 Level", players[2].level);
 	}
 	
 	void LoadFromSave()
@@ -327,7 +354,7 @@ public class GameManager : MonoBehaviour {
 	
 	void BuildLevel(string map)
 	{
-//		map = "Level2";	//load this
+//		map = "level2";	//load this
 		TextAsset file = (TextAsset) Resources.Load (map, typeof(TextAsset));
 		OTSprite os;
 		Vector2 pos;
