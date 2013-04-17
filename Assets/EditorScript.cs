@@ -48,6 +48,7 @@ public class EditorScript : MonoBehaviour {
 	public GUIStyle activeButton;
 	public GUIStyle passiveButton;
 	public GUISkin mainSkin;
+	public Texture2D activeSelBox;
 	
 	// For connection/lock selection dropdowns
 	
@@ -89,10 +90,11 @@ public class EditorScript : MonoBehaviour {
 		line = GameObject.Find ("mouseLine");
 		line.GetComponent<LineRenderer>().SetColors(Color.white, Color.blue);
 		SetGrid();
-		
 		// Sync active lists to dropdown content
 		activeCons.Add(1);
 		activeLocks.Add(1);
+		
+		activeSelBox = Resources.Load ("Editor/ed_boxed") as Texture2D;
 	}
 	
 	private void Sort( GUIContent[] dropList, List<int> actives) {
@@ -1209,7 +1211,6 @@ public class EditorScript : MonoBehaviour {
 			modePicked = false;
 		
 		GUI.Label (new Rect(Screen.width - 78,5,72,222), "Tiles", "box");
-		//GUI.Label (new Rect(Screen.width-(32*2)-10,5,50,30), "Tiles:");
 		for (int i = 0; i < tileList.Length; i++) {
 			GUIStyle buttonStyle;
 			if (tileList[i] == activeSelection)
@@ -1245,14 +1246,13 @@ public class EditorScript : MonoBehaviour {
 						}
 						CheckAllLinks();
 					}
-				} else if (paintMode) {
-					// Something to show when selection is active
 				}
 			}
+			if (paintMode && tileList[i] == activeSelection) {
+				GUI.DrawTexture (new Rect(Screen.width-(32*(2-i%2))-10,(32+5)*(i/2)+40,32,32),activeSelBox); }
 		}
 		
 		GUI.Label (new Rect(Screen.width - 78,(32+5)*(tileList.Length/2+1)+40,72,120), "Spawns", "box");
-		//GUI.Label (new Rect(Screen.width-(32*2)-10,(32+5)*(tileList.Length/2+1)+40,70,30), "Spawns:");
 		for (int i = 0; i < obsList.Length+1; i++) {
 			Texture tex;
 			int oSet = 0;
@@ -1270,6 +1270,8 @@ public class EditorScript : MonoBehaviour {
 						}
 					}
 				}
+				if (paintMode && activeSelection == "empty") {
+					GUI.DrawTexture (new Rect(Screen.width-(32*(2-(i+1)%2))-10,(32+5)*((tileList.Length-(tileList.Length%2)+i+4)/2)+40,32,32),activeSelBox); }
 			} else {
 				if (obsList[i].Equals (activeSelection))
 					buttonStyle = activeButton;
@@ -1302,6 +1304,8 @@ public class EditorScript : MonoBehaviour {
 						}
 					}
 				}
+				if (paintMode && obsList[i] == activeSelection) {
+					GUI.DrawTexture (new Rect(Screen.width-(32*(2-(i+1)%2))-10,(32+5)*((tileList.Length-(tileList.Length%2)+i+4)/2)+40,32,32),activeSelBox); }
 			}
 		}
 		
@@ -1326,7 +1330,9 @@ public class EditorScript : MonoBehaviour {
 			viewPicked = false;
 		
 		GUI.Label (new Rect(Screen.width - 147,(32+5)*(tileList.Length/2+obsList.Length/2)+208,141,75), "Connections", "box");
-		//GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+200,90,30), "Connections:");
+		if (activeSelection == "conn") {
+			GUI.DrawTexture (new Rect(Screen.width - 147,(32+5)*(tileList.Length/2+obsList.Length/2)+208,141,75),activeSelBox);
+		}
 		if (showTileActives){
 			if (queryTile.GetComponent<EditorTile>().consIn.Count > 0)
 				GUI.Label (new Rect(Screen.width - 187 - 5*printList(queryTile.GetComponent<EditorTile>().consIn).Length,(32+5)*(tileList.Length/2+obsList.Length/2)+208,40 + 5*printList(queryTile.GetComponent<EditorTile>().consIn).Length,30),"In: " + printList(queryTile.GetComponent<EditorTile>().consIn), "box");
@@ -1355,8 +1361,9 @@ public class EditorScript : MonoBehaviour {
 		}
 		
 		GUI.Label (new Rect(Screen.width - 147,(32+5)*(tileList.Length/2+obsList.Length/2)+288,141,75), "Lock Groups", "box");
-		//GUI.Label (new Rect(Screen.width-(32*2)-40,(32+5)*(tileList.Length/2+obsList.Length/2)+280,150,30), "Lock Groups:");
-		
+		if (activeSelection == "lock") {
+			GUI.DrawTexture (new Rect(Screen.width - 147,(32+5)*(tileList.Length/2+obsList.Length/2)+288,141,75),activeSelBox);
+		}
 		if (Popup.List (new Rect(Screen.width - 99,(32+5)*(tileList.Length/2+obsList.Length/2)+320,90,30), ref showLockList, ref lockEntry, new GUIContent(lockEntry.ToString()), locksDropdown, activeButton)) {
 			lockPicked = true;
 			lockEntry = int.Parse (locksDropdown[lockEntry].text);
