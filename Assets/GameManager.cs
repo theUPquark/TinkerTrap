@@ -1015,6 +1015,8 @@ public class GameManager : MonoBehaviour {
 						if ( tob.upYPos < iob.downYPos && tob.downYPos > iob.upYPos &&
 							tob.leftXPos < iob.rightXPos && tob.rightXPos > iob.leftXPos) {
 							speedAdj = moveChar(iob, iob.getSpeed (speedAdj,tob), dirx, diry);
+							if (((Bot1)players[0]).grabbed == iob && tob != players[0] && speedAdj > 0)
+								players[0].primary(FacingTile(true,0));
 						}
 					}
 				}
@@ -1099,6 +1101,8 @@ public class GameManager : MonoBehaviour {
 						if ( tob.downYPos > iob.upYPos && tob.upYPos < iob.downYPos &&
 							tob.leftXPos < iob.rightXPos && tob.rightXPos > iob.leftXPos) {
 							speedAdj = moveChar(iob, iob.getSpeed (speedAdj,tob), dirx, diry);
+							if (((Bot1)players[0]).grabbed == iob && tob != players[0] && speedAdj > 0)
+								players[0].primary(FacingTile(true,0));
 						}
 					}
 				}
@@ -1183,6 +1187,8 @@ public class GameManager : MonoBehaviour {
 						if ( tob.leftXPos < iob.rightXPos && tob.rightXPos > iob.leftXPos &&
 							tob.upYPos < iob.downYPos && tob.downYPos > iob.upYPos) {
 							speedAdj = moveChar(iob, iob.getSpeed (speedAdj,tob), dirx, diry);
+							if (((Bot1)players[0]).grabbed == iob && tob != players[0] && speedAdj > 0)
+								players[0].primary(FacingTile(true,0));
 						}
 					}
 				}
@@ -1264,6 +1270,8 @@ public class GameManager : MonoBehaviour {
 						if ( tob.rightXPos > iob.leftXPos && tob.leftXPos < iob.rightXPos &&
 							tob.upYPos < iob.downYPos && tob.downYPos > iob.upYPos) {
 							speedAdj = moveChar(iob, iob.getSpeed (speedAdj,tob), dirx, diry);
+							if (((Bot1)players[0]).grabbed == iob && tob != players[0] && speedAdj > 0)
+								players[0].primary(FacingTile(true,0));
 						}
 					}
 				}
