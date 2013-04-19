@@ -196,10 +196,10 @@ public class GameManager : MonoBehaviour {
 	// If you hit Escape while playing the game!
 	void PauseMenu() {
 	    //layout start
-	    GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 50, 300, 300));
+	    GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 50, 300, 400));
 	   
 	    //the menu background box
-	    GUI.Box(new Rect(0, 0, 300, 270), "");
+	    GUI.Box(new Rect(0, 0, 300, 350), "");
 	   
 	    //logo picture
 	    GUI.Label(new Rect(94, 15, 300, 40), "Game Paused!");
@@ -209,20 +209,26 @@ public class GameManager : MonoBehaviour {
 	    if(GUI.Button(new Rect(55, 60, 180, 40), "Resume Game")) {
 			paused = false;
 	    }
+		//restart level
+		if(GUI.Button(new Rect(55, 110, 180, 40), "Restart Level")) {
+			paused = false;
+			ClearLevel();
+			BuildLevel("level"+level);
+	    }
 		//gogo editor
-	    if(GUI.Button(new Rect(55, 110, 180, 40), "Editor")) {
+	    if(GUI.Button(new Rect(55, 160, 180, 40), "Editor")) {
 			Application.LoadLevel (1);
 	    }
 		//toggle tutorial
 		if (showMessages) {
-			if(GUI.Button(new Rect(55, 160, 180, 40), "Tutorial: On")) {
+			if(GUI.Button(new Rect(55, 210, 180, 40), "Tutorial: On")) {
 				showMessages = false;		}
 		} else {
-			if(GUI.Button(new Rect(55, 160, 180, 40), "Tutorial: Off")) {
+			if(GUI.Button(new Rect(55, 210, 180, 40), "Tutorial: Off")) {
 				showMessages = true; 	}
 		}
 	    //quit button
-	    if(GUI.Button(new Rect(55, 210, 180, 40), "Quit")) {
+	    if(GUI.Button(new Rect(55, 260, 180, 40), "Quit")) {
 	    	Application.Quit();
 	    }
 	   
@@ -279,7 +285,7 @@ public class GameManager : MonoBehaviour {
 			writer.WriteElementString ("Bot2", players[1].level.ToString());
 			writer.WriteElementString ("Bot3", players[2].level.ToString());
 			writer.WriteElementString ("Level", level.ToString());
-			writer.WriteElementString ("Tutorial", showMessages.ToString());
+			writer.WriteElementString ("Tutorial", showMessages.ToString().ToLower());
 			writer.WriteEndDocument ();
 		};
 	}
@@ -320,9 +326,9 @@ public class GameManager : MonoBehaviour {
 			}
 			read.Close ();
 		}
-		if (players[0].level > 0)
+		if (players[0].level > -1)
 			activeBot = 1;
-		else if (players[1].level > 0)
+		else if (players[1].level > -1)
 			activeBot = 2;
 		else 
 			activeBot = 3;
@@ -552,6 +558,10 @@ public class GameManager : MonoBehaviour {
 	void Update() {
 		if (running && !selection) {
 			if (!paused) {
+				// Auto-complete level
+				if (Input.GetKey(KeyCode.G) && Input.GetKey(KeyCode.O)) {
+					refFinish.SkipLevel();
+				}
 				// Upgrade all bots
 				if (!cheats && Input.GetKey(KeyCode.U) && Input.GetKey(KeyCode.P)) {
 					cheats = true;
