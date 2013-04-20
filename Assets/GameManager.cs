@@ -568,10 +568,11 @@ public class GameManager : MonoBehaviour {
 					foreach (Player p in players)
 						p.level = 10;
 				}
-				//Directional movement. Should this be limited to one direction at a time?
 				if (Input.GetKeyDown(KeyCode.E))
 				{	DoPrimary (); }
 				
+				if (Input.GetKeyDown (KeyCode.R) && !players[activeBot-1].inAction())
+				{	DoSecondary(); }
 				// Scan for player interaction. This probably needs updating for different bot abilites.
 				
 				if (Input.GetKeyDown(KeyCode.Space))
@@ -701,7 +702,8 @@ public class GameManager : MonoBehaviour {
 							p.onActiveElec = false;	
 						}
 					}
-					if (p.inAction() ) {							//Actives Bot abilites such as Dash(Bot3) and Hover(Bot2)
+					if (p.inAction() ) {								//Actives Bot abilites such as Dash(Bot3) and Hover(Bot2)
+						Debug.Log ("Player ability interaction");
 						if (p.GetType () != typeof(Bot1)) {
 							if (p.currDir == 0)
 								moveChar(p,5,0,-1);
@@ -711,6 +713,77 @@ public class GameManager : MonoBehaviour {
 								moveChar(p,5,0,1);
 							else if (p.currDir == 3)
 								moveChar(p,5,-1,0);
+						} else {
+							Bot1 b1 = (Bot1)p;
+							int step = b1.ExtendArmsStep();
+							switch(p.currDir){
+								case 0:	getMyCorners(b1,b1.posX,b1.posY-step);
+										break;
+								case 1: getMyCorners(b1,b1.posX+step,b1.posY);
+										break;
+								case 2: getMyCorners(b1,b1.posX,b1.posY+step);
+										break;
+								case 3: getMyCorners(b1,b1.posX-step,b1.posY);
+										break;
+							}
+							if (!b1.downleft || !b1.downright || !b1.upleft || !b1.upright)
+								b1.endAction();
+							if (b1.extendingArms){
+								//ToDo: Move arms out
+								if (b1.grabbing){
+//									Move b1.grabbed out until max distance or until released
+									double spd = 1;
+									switch(b1.currDir){
+										case 0:	spd = moveChar(b1.grabbed,10,0,-1);
+												break;
+										case 1: spd = moveChar(b1.grabbed,10,1,0);
+												break;
+										case 2: spd = moveChar(b1.grabbed,10,0,1);
+												break;
+										case 3: spd = moveChar(b1.grabbed,10,-1,0);
+												break;
+									}
+									if (spd == 0)
+										b1.endAction();
+								} else {
+//									Move arms out until obstacle (when they exist)
+//									if Obstacle is grabbable {
+									foreach (Obstacle o in gameObs) {
+										if (!o.GetType().IsSubclassOf(typeof(Player))) {
+											getMyCorners(o, o.posX, o.posY);
+											if (b1.upYPos < o.downYPos && b1.upYPos > o.upYPos && b1.leftXPos < o.rightXPos && b1.leftXPos > o.leftXPos)
+												b1.Grab(o);
+											if (b1.downYPos < o.downYPos && b1.downYPos > o.upYPos && b1.leftXPos < o.rightXPos && b1.leftXPos > o.leftXPos)
+												b1.Grab(o);
+											if (b1.upYPos < o.downYPos && b1.upYPos > o.upYPos && b1.rightXPos < o.rightXPos && b1.rightXPos > o.leftXPos)
+												b1.Grab(o);
+											if (b1.downYPos < o.downYPos && b1.downYPos > o.upYPos && b1.rightXPos < o.rightXPos && b1.rightXPos > o.leftXPos)
+												b1.Grab(o);
+										}
+										if (b1.grabbing)
+											b1.endAction();
+									}
+//										set obstacle as grabbed
+//										extendingArms = false;
+//									}
+								}
+							} else if (b1.retractArms) {
+								//ToDo: move arms back in
+								if (b1.grabbing) {
+//									Move back with b1.grabbed until interacting with bot1
+									switch(b1.currDir){
+										case 0:	moveChar(b1.grabbed,10,0,1);
+												break;
+										case 1: moveChar(b1.grabbed,10,-1,0);
+												break;
+										case 2: moveChar(b1.grabbed,10,0,-1);
+												break;
+										case 3: moveChar(b1.grabbed,10,1,0);
+												break;
+									}
+								} 
+							} 	
+							getMyCorners(b1,b1.posX,b1.posY);
 						}
 					}
 				}
@@ -893,6 +966,15 @@ public class GameManager : MonoBehaviour {
 		players[activeBot-1].primary(target);
 	}
 	
+	private void DoSecondary() {
+		Debug.Log ("Secondary");
+		if (players[activeBot-1].GetType() == typeof(Bot1)){
+			Bot1 b1 = (Bot1)players[activeBot-1];
+			b1.secondary();
+			
+		}
+	}
+	
 	private bool CanThisTurn(Obstacle ob) {
 		if (ob.GetType() == typeof(Bot3)) {
 			Bot3 b3 = (Bot3)ob;
@@ -1025,7 +1107,7 @@ public class GameManager : MonoBehaviour {
 						if ( tob.upYPos < iob.downYPos && tob.downYPos > iob.upYPos &&
 							tob.leftXPos < iob.rightXPos && tob.rightXPos > iob.leftXPos) {
 							speedAdj = moveChar(iob, iob.getSpeed (speedAdj,tob), dirx, diry);
-							if (((Bot1)players[0]).grabbed == iob && tob != players[0] && speedAdj > 0)
+							if (((Bot1)players[0]).grabbed == iob && tob != players[0] && speedAdj > 0 && !players[0].inAction())
 								players[0].primary(FacingTile(true,0));
 						}
 					}
@@ -1055,9 +1137,12 @@ public class GameManager : MonoBehaviour {
 							}
 						}
 					}
-					if (tob.GetType () == typeof(Bot1))
+					if (tob.GetType () == typeof(Bot1)){
+//						foreach (Box a in ((Bot1)tob).arm)
+//							a.setXY(tob.posX,tob.posY);
 						if (((Bot1)tob).grabbing)
 							speedAdj = moveChar (((Bot1)tob).grabbed, ((Bot1)tob).grabbed.getSpeed (speedAdj,tob), dirx, diry);
+					}
 				}
 				// Need alt case where if 'something' then baseSpeed is used (to ignore obstacles)
 				tob.setY((float)(tob.posY+speedAdj*diry));
@@ -1106,12 +1191,12 @@ public class GameManager : MonoBehaviour {
 			if (tob.downleft && tob.downright)
 			{
 				foreach (Obstacle iob in gameObs) {
-					if (iob != tob && iob != players[activeBot-1] && tob.vertLift == iob.vertLift) {
+					if (iob != tob && tob.vertLift == iob.vertLift) {
 						getMyCorners(iob, iob.posX, iob.posY);
 						if ( tob.downYPos > iob.upYPos && tob.upYPos < iob.downYPos &&
 							tob.leftXPos < iob.rightXPos && tob.rightXPos > iob.leftXPos) {
 							speedAdj = moveChar(iob, iob.getSpeed (speedAdj,tob), dirx, diry);
-							if (((Bot1)players[0]).grabbed == iob && tob != players[0] && speedAdj > 0)
+							if (((Bot1)players[0]).grabbed == iob && tob != players[0] && speedAdj > 0 && !players[0].inAction())
 								players[0].primary(FacingTile(true,0));
 						}
 					}
@@ -1192,12 +1277,12 @@ public class GameManager : MonoBehaviour {
 			if (tob.downleft && tob.upleft)
 			{
 				foreach (Obstacle iob in gameObs) {
-					if (iob != tob && iob != players[activeBot-1] && tob.vertLift == iob.vertLift) {
+					if (iob != tob && tob.vertLift == iob.vertLift) {
 						getMyCorners(iob, iob.posX, iob.posY);
 						if ( tob.leftXPos < iob.rightXPos && tob.rightXPos > iob.leftXPos &&
 							tob.upYPos < iob.downYPos && tob.downYPos > iob.upYPos) {
 							speedAdj = moveChar(iob, iob.getSpeed (speedAdj,tob), dirx, diry);
-							if (((Bot1)players[0]).grabbed == iob && tob != players[0] && speedAdj > 0)
+							if (((Bot1)players[0]).grabbed == iob && tob != players[0] && speedAdj > 0 && !players[0].inAction())
 								players[0].primary(FacingTile(true,0));
 						}
 					}
@@ -1275,12 +1360,12 @@ public class GameManager : MonoBehaviour {
 			if (tob.upright && tob.downright)
 			{
 				foreach (Obstacle iob in gameObs) {
-					if (iob != tob && iob != players[activeBot-1] && tob.vertLift == iob.vertLift) {
+					if (iob != tob && tob.vertLift == iob.vertLift) {
 						getMyCorners(iob, iob.posX, iob.posY);
 						if ( tob.rightXPos > iob.leftXPos && tob.leftXPos < iob.rightXPos &&
 							tob.upYPos < iob.downYPos && tob.downYPos > iob.upYPos) {
 							speedAdj = moveChar(iob, iob.getSpeed (speedAdj,tob), dirx, diry);
-							if (((Bot1)players[0]).grabbed == iob && tob != players[0] && speedAdj > 0)
+							if (((Bot1)players[0]).grabbed == iob && tob != players[0] && speedAdj > 0 && !players[0].inAction())
 								players[0].primary(FacingTile(true,0));
 						}
 					}
