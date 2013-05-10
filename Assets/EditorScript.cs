@@ -11,7 +11,7 @@ public class EditorScript : MonoBehaviour {
 	
 	private List<List<GameObject>> map = new List<List<GameObject>>();
 	private List<List<GameObject>> mapObs = new List<List<GameObject>>();
-	private string[] tileList = new string[] {"Wall","Floor","Door","Button","Plate","Electrified", "Generator", "Source", "Finish"};
+	private string[] tileList = new string[] {"Wall","Indicator","Floor","Door","Button","Plate","Electrified", "Generator", "Source", "Finish"};
 	private string[] obsList = new string[] {"Spawn", "Box", "Battery"};
 	private string activeSelection = "empty";
 	private int activeSet = 0;

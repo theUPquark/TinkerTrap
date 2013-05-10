@@ -22,11 +22,13 @@ public abstract class Player : ObstacleClass, Obstacle
 	public Player() : base(1)
 	{
 		os.PlayLoop (this.GetType ().Name + dirStr (currDir)+"_Idle");
+		setDir (0);
 	}
 	
 	public Player(double x, double y) : base(1,x,y)
 	{
 		os.PlayLoop (this.GetType ().Name + dirStr (currDir)+"_Idle");
+		setDir (0);
 	}
 	
 	public override int width {

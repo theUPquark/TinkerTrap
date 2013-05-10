@@ -7,10 +7,13 @@ public class Door : TileClass, Tile {
 	private bool open = false;
 	
 	public Door(int gx, int gy, int tSet) : base(gx, gy, tSet) {
-		os.PlayOnce("Door"+tSet.ToString ()+"_cl");
+		os.frameName = "Door"+tileSet.ToString ()+"_op_00000";
+		os.Stop ();
 	}
 	
 	public override bool walkable() {
+		if (os.isPlaying)
+			return false;
 		return open;
 	}
 	
@@ -31,13 +34,13 @@ public class Door : TileClass, Tile {
 	
 	public override void act(List<Obstacle> objs) {
 		if (used && !open) {
-			os.PlayOnce("Door"+tileSet.ToString ()+"_op");
-			open = true;
+			os.PlayOnce("Door"+tileSet.ToString ());
 			powered = true;
+			open = true;
 		} else if (!used && open) {
-			os.PlayOnce("Door"+tileSet.ToString ()+"_cl");
-			open = false;
+			os.PlayOnceBackward("Door"+tileSet.ToString ());
 			powered = false;
+			open = false;
 		}
 	}
 }
