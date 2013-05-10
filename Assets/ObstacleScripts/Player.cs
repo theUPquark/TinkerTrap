@@ -21,11 +21,13 @@ public abstract class Player : ObstacleClass, Obstacle
 	
 	public Player() : base(1)
 	{
+		os.PlayLoop (this.GetType ().Name + dirStr (currDir)+"_Idle");
 		setDir (0);
 	}
 	
 	public Player(double x, double y) : base(1,x,y)
 	{
+		os.PlayLoop (this.GetType ().Name + dirStr (currDir)+"_Idle");
 		setDir (0);
 	}
 	
@@ -35,8 +37,14 @@ public abstract class Player : ObstacleClass, Obstacle
 	
 	public virtual void setDir(int dir)
 	{
+		int startDir = currDir;
+		if (animDir == null)
+			animDir = dir;
+		else
+			moveTry = true;
 		currDir = dir;
-		os.PlayLoop (this.GetType ().Name+dirStr (currDir)+"_Idle");
+		if (currDir != startDir)
+			turning = true;
 	}
 	
 	protected string dirStr(int a) {
@@ -64,6 +72,63 @@ public abstract class Player : ObstacleClass, Obstacle
 	// ADD: Method to determine coordinates, currently in GameManager.moveChar
 	// ADD: Method to determine coordinate area to perform a turn.
 	
-	public virtual void update(bool input) {}
+	public virtual void update(bool input) {
+		if (moving || moveIntro) {
+			if (!input) {
+				stopping = true;
+			}
+		}
+		if (moveTry && input)
+			stopping = false;
+		if (!os.isPlaying || os.animationFrameset.Equals (this.GetType ().Name + dirStr (animDir)+"_MvStop") || os.animationFrameset.Equals (this.GetType ().Name + dirStr (animDir)+"_Idle") ||
+			os.animationFrameset.Equals (this.GetType ().Name + dirStr (animDir)+"_Move")) {
+			animPlay = false;
+			if (turning) {
+				if (idle) {
+					if (animDir == currDir-1 || animDir == currDir+3)
+						os.PlayOnce (this.GetType ().Name + dirStr (animDir)+"_TurnRtSt");
+					else if (animDir == currDir+1 || animDir == currDir-3)
+						os.PlayOnce (this.GetType ().Name + dirStr (animDir)+"_TurnLftSt");
+					else if (Math.Abs (animDir-currDir) == 2)
+						os.PlayOnce (this.GetType ().Name + dirStr (animDir)+"_TurnRvSt");
+				} else {
+					if (animDir == currDir-1 || animDir == currDir+3)
+						os.PlayOnce (this.GetType ().Name + dirStr (animDir)+"_TurnRtMv");
+					else if (animDir == currDir+1 || animDir == currDir-3)
+						os.PlayOnce (this.GetType ().Name + dirStr (animDir)+"_TurnLftMv");
+					else if (Math.Abs (animDir-currDir) == 2)
+						os.PlayOnce (this.GetType ().Name + dirStr (animDir)+"_TurnRvMv");
+				}
+				if (os.isPlaying)
+					animDir = currDir;
+				turning = false;
+			} else if (stopping) {
+				if (!os.isPlaying) {
+					if (!playstop && !idle) {
+						os.PlayOnce (this.GetType ().Name + dirStr (currDir)+"_MvStop");
+						animDir = currDir;
+						playstop = true;
+					} else {
+						os.PlayLoop (this.GetType ().Name + dirStr (currDir)+"_Idle");
+						animDir = currDir;
+						stopping = false;
+						idle = true;
+						playstop = false;
+					}
+				}
+			} else if (moveTry) {
+				if (idle) {
+					os.PlayOnce (this.GetType ().Name + dirStr (currDir)+"_MvInt");
+					animDir = currDir;
+					idle = false;
+				} else if (!os.isPlaying) {
+					os.PlayOnce (this.GetType ().Name + dirStr (currDir)+"_Move");
+					animDir = currDir;
+					moving = true;
+				}
+				moveTry = false;
+			}
+		}
+	}
 }
 

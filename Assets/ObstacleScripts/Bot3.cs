@@ -52,11 +52,6 @@ public class Bot3 : Player, Obstacle
 		return (Math.Floor (speed*1.5));
 	}
 	
-//	public override void setDir (int dir)
-//	{
-//		// Check to see what direction changes are allowed
-//	}
-	
 	public override void primary (Tile a)
 	{
 		if (!dashing && Time.time >= endCooldown)
