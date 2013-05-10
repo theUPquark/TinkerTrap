@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://texturepacker.com-->
-<!-- $TexturePacker:SmartUpdate:c72a643a23f74e4221482dcb17a729bc$ -->
+<!-- $TexturePacker:SmartUpdate:ff163b7e5fa43e8dcbaf34f1bd86a108$ -->
 <TextureAtlas imagePath="level2.png">
     <SubTexture name="Off/Indicator0_0000" x="0" y="0" width="128" height="256"/>
     <SubTexture name="Off/Indicator0_0001" x="128" y="0" width="128" height="256"/>
