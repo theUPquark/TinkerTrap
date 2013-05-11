@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour {
 		players.Add (new Bot2()); // Hob (Yellow, Hoverer)
 		players.Add (new Bot3()); // Hisco (Green, Wheelie)
 		
+//		camera.GetComponent<AudioListener>().enabled = false;
+		
 		messagesDisplayed.Add(new Dictionary<int, double>());
 		messagesDisplayed.Add(new Dictionary<int, double>());
 		messagesDisplayed.Add(new Dictionary<int, double>());
@@ -710,8 +712,7 @@ public class GameManager : MonoBehaviour {
 					if (p.GetType() != typeof(Bot2)) {			// Push player back when on a powered Elec tile
 						bool needToMove = false;
 						if ( gameB[p.onTile()].GetType() == typeof(Electrified)) {
-//							Electrified e = (Electrified)gameB[p.onTile()];
-							if (((Electrified)gameB[p.onTile()]).on) 
+							if (((Electrified)gameB[p.onTile()]).on)
 								needToMove = true;
 						}
 						if ( !needToMove && gameB[p.onTileTopR()].GetType() == typeof(Electrified)) {
