@@ -202,6 +202,24 @@ public class GameManager : MonoBehaviour {
 	    GUI.EndGroup();
 	}
 	
+	void VictoryMenu() {
+		//layout start
+	    GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 50, 300, 400));
+		
+		//the menu background box
+	    GUI.Box(new Rect(0, 50, 300, 300), "You're a winner!");
+		
+		if (GUI.Button (new Rect(55,110,180,40),"Main Menu")) {
+			stageSelect = 0;
+			selection = false;
+			level = 0;
+			foreach (Player p in players)
+				p.level = -1;
+		}
+		
+		//layout end
+	    GUI.EndGroup();
+	}
 	// If you hit Escape while playing the game!
 	void PauseMenu() {
 	    //layout start
@@ -375,6 +393,10 @@ public class GameManager : MonoBehaviour {
 			gameLocksIn.Clear();
 			gameLocksOut.Clear ();
 			gameObs.Clear();
+		}
+		// Check if next level exists
+		if (Resources.Load("level"+(level+1)) == null) {
+			stageSelect = 3;
 		}
 	}
 	
@@ -561,6 +583,8 @@ public class GameManager : MonoBehaviour {
 					SelectionMenu();
 				else if (stageSelect == 2)
 					LoadFromSave();
+				else if (stageSelect == 3)
+					VictoryMenu();
 			} else //Goto Main Menu
 			    TopMenu();
 		} else if (paused) {
