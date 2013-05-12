@@ -865,6 +865,11 @@ public class GameManager : MonoBehaviour {
 							getMyCorners(b1,b1.posX,b1.posY);
 						}
 					}
+					if (p.GetType() == typeof(Bot3)) {
+						Bot3 b3 = (Bot3)p;
+						if (b3.charge > 0)
+							b3.Dissipate();
+					}
 				}
 			}
 		}
