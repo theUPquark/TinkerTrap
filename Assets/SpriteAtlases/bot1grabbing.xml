@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>Bot1DnLft_Grab_00000.png</key>
+            <key>Bot1DnLft_Ext_00000.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,0},{128,256}}</string>
@@ -17,7 +17,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnLft_Grab_00001.png</key>
+            <key>Bot1DnLft_Ext_00001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{128,0},{128,256}}</string>
@@ -30,7 +30,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnLft_Grab_00002.png</key>
+            <key>Bot1DnLft_Ext_00002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{256,0},{128,256}}</string>
@@ -43,7 +43,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnLft_Grab_00003.png</key>
+            <key>Bot1DnLft_Ext_00003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{384,0},{128,256}}</string>
@@ -56,7 +56,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnLft_Grab_00004.png</key>
+            <key>Bot1DnLft_Ext_00004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{512,0},{128,256}}</string>
@@ -69,7 +69,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnLft_Grab_00005.png</key>
+            <key>Bot1DnLft_Ext_00005.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,0},{128,256}}</string>
@@ -82,7 +82,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnLft_Grab_00006.png</key>
+            <key>Bot1DnLft_Ext_00006.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{768,0},{128,256}}</string>
@@ -95,7 +95,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnLft_Grab_00007.png</key>
+            <key>Bot1DnLft_Ext_00007.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{896,0},{128,256}}</string>
@@ -108,7 +108,111 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnLft_Grab_00008.png</key>
+            <key>Bot1DnLft_Ext_00008.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1024,0},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnLft_Grab_00000.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1152,0},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnLft_Grab_00001.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1280,0},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnLft_Grab_00002.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1408,0},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnLft_Grab_00003.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1536,0},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnLft_Grab_00004.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1664,0},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnLft_Grab_00005.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1792,0},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnLft_Grab_00006.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1920,0},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnLft_Grab_00007.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,256},{128,256}}</string>
@@ -121,7 +225,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnLft_Grab_00009.png</key>
+            <key>Bot1DnLft_Grab_00008.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{128,256},{128,256}}</string>
@@ -134,7 +238,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnLft_Grab_00010.png</key>
+            <key>Bot1DnLft_Grab_00009.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{256,256},{128,256}}</string>
@@ -147,7 +251,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnLft_Grab_00011.png</key>
+            <key>Bot1DnLft_Grab_00010.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{384,256},{128,256}}</string>
@@ -160,7 +264,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnLft_Grab_00012.png</key>
+            <key>Bot1DnLft_Grab_00011.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{512,256},{128,256}}</string>
@@ -173,7 +277,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnLft_Grab_00013.png</key>
+            <key>Bot1DnLft_Grab_00012.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,256},{128,256}}</string>
@@ -186,7 +290,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnLft_Grab_00014.png</key>
+            <key>Bot1DnLft_Grab_00013.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{768,256},{128,256}}</string>
@@ -199,7 +303,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnLft_Grab_00015.png</key>
+            <key>Bot1DnLft_Grab_00014.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{896,256},{128,256}}</string>
@@ -212,7 +316,111 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnRt_Grab_00000.png</key>
+            <key>Bot1DnLft_Grab_00015.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1024,256},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnLft_Ret_00010.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1152,256},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnLft_Ret_00011.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1280,256},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnLft_Ret_00012.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1408,256},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnRt_Ext_00000.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1536,256},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnRt_Ext_00001.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1664,256},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnRt_Ext_00002.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1792,256},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnRt_Ext_00003.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1920,256},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnRt_Ext_00004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,512},{128,256}}</string>
@@ -225,7 +433,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnRt_Grab_00001.png</key>
+            <key>Bot1DnRt_Ext_00005.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{128,512},{128,256}}</string>
@@ -238,7 +446,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnRt_Grab_00002.png</key>
+            <key>Bot1DnRt_Ext_00006.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{256,512},{128,256}}</string>
@@ -251,7 +459,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnRt_Grab_00003.png</key>
+            <key>Bot1DnRt_Ext_00007.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{384,512},{128,256}}</string>
@@ -264,7 +472,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnRt_Grab_00004.png</key>
+            <key>Bot1DnRt_Ext_00008.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{512,512},{128,256}}</string>
@@ -277,7 +485,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnRt_Grab_00005.png</key>
+            <key>Bot1DnRt_Grab_00000.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,512},{128,256}}</string>
@@ -290,7 +498,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnRt_Grab_00006.png</key>
+            <key>Bot1DnRt_Grab_00001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{768,512},{128,256}}</string>
@@ -303,7 +511,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1DnRt_Grab_00007.png</key>
+            <key>Bot1DnRt_Grab_00002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{896,512},{128,256}}</string>
@@ -316,10 +524,75 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
+            <key>Bot1DnRt_Grab_00003.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1024,512},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnRt_Grab_00004.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1152,512},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnRt_Grab_00005.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1280,512},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnRt_Grab_00006.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1408,512},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnRt_Grab_00007.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1536,512},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
             <key>Bot1DnRt_Grab_00008.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,768},{128,256}}</string>
+                <string>{{1664,512},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -332,7 +605,7 @@
             <key>Bot1DnRt_Grab_00009.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{128,768},{128,256}}</string>
+                <string>{{1792,512},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -345,7 +618,7 @@
             <key>Bot1DnRt_Grab_00010.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{256,768},{128,256}}</string>
+                <string>{{1920,512},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -358,7 +631,7 @@
             <key>Bot1DnRt_Grab_00011.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{384,768},{128,256}}</string>
+                <string>{{0,768},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -371,7 +644,7 @@
             <key>Bot1DnRt_Grab_00012.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{512,768},{128,256}}</string>
+                <string>{{128,768},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -384,7 +657,7 @@
             <key>Bot1DnRt_Grab_00013.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{640,768},{128,256}}</string>
+                <string>{{256,768},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -397,7 +670,7 @@
             <key>Bot1DnRt_Grab_00014.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{768,768},{128,256}}</string>
+                <string>{{384,768},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -410,6 +683,45 @@
             <key>Bot1DnRt_Grab_00015.png</key>
             <dict>
                 <key>frame</key>
+                <string>{{512,768},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnRt_Ret_00010.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{640,768},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnRt_Ret_00011.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{768,768},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1DnRt_Ret_00012.png</key>
+            <dict>
+                <key>frame</key>
                 <string>{{896,768},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
@@ -420,7 +732,111 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1UpLft_Grab_00000.png</key>
+            <key>Bot1UpLft_Ext_00000.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1024,768},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpLft_Ext_00001.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1152,768},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpLft_Ext_00002.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1280,768},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpLft_Ext_00003.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1408,768},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpLft_Ext_00004.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1536,768},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpLft_Ext_00005.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1664,768},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpLft_Ext_00006.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1792,768},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpLft_Ext_00007.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1920,768},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpLft_Ext_00008.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,1024},{128,256}}</string>
@@ -433,7 +849,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1UpLft_Grab_00001.png</key>
+            <key>Bot1UpLft_Grab_00000.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{128,1024},{128,256}}</string>
@@ -446,7 +862,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1UpLft_Grab_00002.png</key>
+            <key>Bot1UpLft_Grab_00001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{256,1024},{128,256}}</string>
@@ -459,7 +875,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1UpLft_Grab_00003.png</key>
+            <key>Bot1UpLft_Grab_00002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{384,1024},{128,256}}</string>
@@ -472,7 +888,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1UpLft_Grab_00004.png</key>
+            <key>Bot1UpLft_Grab_00003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{512,1024},{128,256}}</string>
@@ -485,7 +901,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1UpLft_Grab_00005.png</key>
+            <key>Bot1UpLft_Grab_00004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,1024},{128,256}}</string>
@@ -498,7 +914,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1UpLft_Grab_00006.png</key>
+            <key>Bot1UpLft_Grab_00005.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{768,1024},{128,256}}</string>
@@ -511,7 +927,7 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
-            <key>Bot1UpLft_Grab_00007.png</key>
+            <key>Bot1UpLft_Grab_00006.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{896,1024},{128,256}}</string>
@@ -524,10 +940,23 @@
                 <key>sourceSize</key>
                 <string>{128,256}</string>
             </dict>
+            <key>Bot1UpLft_Grab_00007.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1024,1024},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
             <key>Bot1UpLft_Grab_00008.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,1280},{128,256}}</string>
+                <string>{{1152,1024},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -540,7 +969,7 @@
             <key>Bot1UpLft_Grab_00009.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{128,1280},{128,256}}</string>
+                <string>{{1280,1024},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -553,7 +982,7 @@
             <key>Bot1UpLft_Grab_00010.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{256,1280},{128,256}}</string>
+                <string>{{1408,1024},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -566,7 +995,7 @@
             <key>Bot1UpLft_Grab_00011.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{384,1280},{128,256}}</string>
+                <string>{{1536,1024},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -579,7 +1008,7 @@
             <key>Bot1UpLft_Grab_00012.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{512,1280},{128,256}}</string>
+                <string>{{1664,1024},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -592,7 +1021,7 @@
             <key>Bot1UpLft_Grab_00013.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{640,1280},{128,256}}</string>
+                <string>{{1792,1024},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -605,7 +1034,7 @@
             <key>Bot1UpLft_Grab_00014.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{768,1280},{128,256}}</string>
+                <string>{{1920,1024},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -618,7 +1047,163 @@
             <key>Bot1UpLft_Grab_00015.png</key>
             <dict>
                 <key>frame</key>
+                <string>{{0,1280},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpLft_Ret_00010.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{128,1280},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpLft_Ret_00011.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{256,1280},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpLft_Ret_00012.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{384,1280},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpRt_Ext_00000.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{512,1280},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpRt_Ext_00001.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{640,1280},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpRt_Ext_00002.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{768,1280},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpRt_Ext_00003.png</key>
+            <dict>
+                <key>frame</key>
                 <string>{{896,1280},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpRt_Ext_00004.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1024,1280},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpRt_Ext_00005.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1152,1280},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpRt_Ext_00006.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1280,1280},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpRt_Ext_00007.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1408,1280},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpRt_Ext_00008.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1536,1280},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -631,7 +1216,7 @@
             <key>Bot1UpRt_Grab_00000.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,1536},{128,256}}</string>
+                <string>{{1664,1280},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -644,7 +1229,7 @@
             <key>Bot1UpRt_Grab_00001.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{128,1536},{128,256}}</string>
+                <string>{{1792,1280},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -657,7 +1242,7 @@
             <key>Bot1UpRt_Grab_00002.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{256,1536},{128,256}}</string>
+                <string>{{1920,1280},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -670,7 +1255,7 @@
             <key>Bot1UpRt_Grab_00003.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{384,1536},{128,256}}</string>
+                <string>{{0,1536},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -683,7 +1268,7 @@
             <key>Bot1UpRt_Grab_00004.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{512,1536},{128,256}}</string>
+                <string>{{128,1536},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -696,7 +1281,7 @@
             <key>Bot1UpRt_Grab_00005.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{640,1536},{128,256}}</string>
+                <string>{{256,1536},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -709,7 +1294,7 @@
             <key>Bot1UpRt_Grab_00006.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{768,1536},{128,256}}</string>
+                <string>{{384,1536},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -722,7 +1307,7 @@
             <key>Bot1UpRt_Grab_00007.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{896,1536},{128,256}}</string>
+                <string>{{512,1536},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -735,7 +1320,7 @@
             <key>Bot1UpRt_Grab_00008.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,1792},{128,256}}</string>
+                <string>{{640,1536},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -748,7 +1333,7 @@
             <key>Bot1UpRt_Grab_00009.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{128,1792},{128,256}}</string>
+                <string>{{768,1536},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -761,7 +1346,7 @@
             <key>Bot1UpRt_Grab_00010.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{256,1792},{128,256}}</string>
+                <string>{{896,1536},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -774,7 +1359,7 @@
             <key>Bot1UpRt_Grab_00011.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{384,1792},{128,256}}</string>
+                <string>{{1024,1536},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -787,7 +1372,7 @@
             <key>Bot1UpRt_Grab_00012.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{512,1792},{128,256}}</string>
+                <string>{{1152,1536},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -800,7 +1385,7 @@
             <key>Bot1UpRt_Grab_00013.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{640,1792},{128,256}}</string>
+                <string>{{1280,1536},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -813,7 +1398,7 @@
             <key>Bot1UpRt_Grab_00014.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{768,1792},{128,256}}</string>
+                <string>{{1408,1536},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -826,7 +1411,410 @@
             <key>Bot1UpRt_Grab_00015.png</key>
             <dict>
                 <key>frame</key>
+                <string>{{1536,1536},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpRt_Ret_00010.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1664,1536},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpRt_Ret_00011.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1792,1536},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>Bot1UpRt_Ret_00012.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1920,1536},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsDnLft_00000.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0,1792},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsDnLft_00001.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{128,1792},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsDnLft_00002.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{256,1792},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsDnLft_00003.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{384,1792},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsDnLft_00004.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{512,1792},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsDnLft_00005.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{640,1792},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsDnLft_00006.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{768,1792},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsDnRt_00000.png</key>
+            <dict>
+                <key>frame</key>
                 <string>{{896,1792},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsDnRt_00001.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1024,1792},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsDnRt_00002.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1152,1792},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsDnRt_00003.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1280,1792},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsDnRt_00004.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1408,1792},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsDnRt_00005.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1536,1792},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsDnRt_00006.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1664,1792},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsUpLft_00000.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1792,1792},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsUpLft_00001.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1920,1792},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsUpLft_00002.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0,2048},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsUpLft_00003.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{128,2048},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsUpLft_00004.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{256,2048},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsUpLft_00005.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{384,2048},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsUpLft_00006.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{512,2048},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsUpRt_00000.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{640,2048},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsUpRt_00001.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{768,2048},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsUpRt_00002.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{896,2048},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsUpRt_00003.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1024,2048},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsUpRt_00004.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1152,2048},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsUpRt_00005.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1280,2048},{128,256}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,256}}</string>
+                <key>sourceSize</key>
+                <string>{128,256}</string>
+            </dict>
+            <key>HandsUpRt_00006.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1408,2048},{128,256}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -844,9 +1832,9 @@
             <key>realTextureFileName</key>
             <string>bot1grabbing.png</string>
             <key>size</key>
-            <string>{1024,2048}</string>
+            <string>{2048,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:4d3ddbf4595085db940b7bfdce28e5fe$</string>
+            <string>$TexturePacker:SmartUpdate:59ed89899ee7a9c2296d9b32b91f21fa$</string>
             <key>textureFileName</key>
             <string>bot1grabbing.png</string>
         </dict>
