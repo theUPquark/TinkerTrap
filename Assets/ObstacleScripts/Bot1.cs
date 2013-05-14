@@ -10,14 +10,14 @@ public class Bot1 : Player, Obstacle
 	public int extendDist = 0;
 	public const int EXTEND_MAX = 192;
 	public const int STEP_SIZE = 10;
-//	public List<BotArm> arm = new List<BotArm>();
+	public Hands hands;
 	public Obstacle grabbed;
 	public AudioClip audioGrab;
 	
 	public Bot1 ()
 	{
-//		arm.Add(new BotArm(1));
-//		arm.Add(new BotArm(1));
+		hands = new Hands(this);
+		
 		audioGrab = Resources.Load ("clank") as AudioClip;
 		gfx.AddComponent<AudioSource>().clip = audioGrab;
 	}
@@ -73,6 +73,11 @@ public class Bot1 : Player, Obstacle
 	
 	public void secondary () {
 		if (level > 0){
+			hands.os.visible = true;
+			hands.setX (posX);
+			hands.setY (posY);
+			hands.os.PlayOnce(this.GetType().Name + dirStr (currDir)+"_Ext");
+			
 			extendingArms = true;
 			Debug.Log("extendingArms TRUE");
 		}
@@ -118,13 +123,19 @@ public class Bot1 : Player, Obstacle
 			if (extendDist > EXTEND_MAX) {
 				extendingArms = false;
 				retractArms = true;
+				hands.os.PlayOnceBackward(this.GetType().Name + dirStr (currDir)+"_Ext");
 			}
 		}
 		if (retractArms){
 			extendDist -= STEP_SIZE;
-			if (extendDist < 0)
+			if (extendDist < 0) {
 				retractArms = false;
+				hands.os.visible = false;
+			}
 		}
+//		hands.setX(leftXPos);
+//		hands.setY(upYPos);
+		
 		return extendDist;
 	}
 	

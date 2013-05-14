@@ -795,12 +795,16 @@ public class GameManager : MonoBehaviour {
 							int step = b1.ExtendArmsStep();
 							switch(p.currDir){
 								case 0:	getMyCorners(b1,b1.posX,b1.posY-step);
+										b1.hands.setY (b1.posY-step);
 										break;
 								case 1: getMyCorners(b1,b1.posX+step,b1.posY);
+										b1.hands.setX (b1.posX+step);
 										break;
 								case 2: getMyCorners(b1,b1.posX,b1.posY+step);
+										b1.hands.setY (b1.posY+step);
 										break;
 								case 3: getMyCorners(b1,b1.posX-step,b1.posY);
+										b1.hands.setX (b1.posX-step);
 										break;
 							}
 							if (!b1.downleft || !b1.downright || !b1.upleft || !b1.upright) {

@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class Door : TileClass, Tile {
 
 	private bool open = false;
+	private bool botAccess = false;
+	private double openUntil = 0.0;
 	
 	public Door(int gx, int gy, int tSet) : base(gx, gy, tSet) {
 		os.frameName = "Door"+tileSet.ToString ()+"_op_00000";
@@ -15,6 +17,16 @@ public class Door : TileClass, Tile {
 		if (os.isPlaying)
 			return false;
 		return open;
+	}
+	public override void interact(Obstacle a) {
+		if (a.GetType() == typeof(Bot3)) {
+			Bot3 b3 = (Bot3)a;
+			if (b3.charge > 0) {
+				botAccess = true;
+				openUntil = Time.time+5;
+				b3.charge = 0;
+			}
+		}
 	}
 	
 	public override bool walkable (Obstacle o)
@@ -30,14 +42,17 @@ public class Door : TileClass, Tile {
 		} else {
 			used = false;
 		}
+		if (Time.time >= openUntil) {
+			botAccess = false;
+		}
 	}
 	
 	public override void act(List<Obstacle> objs) {
-		if (used && !open) {
+		if ((used || botAccess) && !open) {
 			os.PlayOnce("Door"+tileSet.ToString ());
 			powered = true;
 			open = true;
-		} else if (!used && open) {
+		} else if ((!used && !botAccess) && open) {
 			os.PlayOnceBackward("Door"+tileSet.ToString ());
 			powered = false;
 			open = false;
