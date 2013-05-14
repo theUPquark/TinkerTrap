@@ -173,7 +173,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Indicator2.png</key>
+            <key>ed_Indicator10.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{32,96},{32,32}}</string>
@@ -186,7 +186,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Indicator3.png</key>
+            <key>ed_Indicator11.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{64,96},{32,32}}</string>
@@ -199,7 +199,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Indicator4.png</key>
+            <key>ed_Indicator12.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{96,96},{32,32}}</string>
@@ -212,7 +212,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Indicator5.png</key>
+            <key>ed_Indicator13.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,128},{32,32}}</string>
@@ -225,7 +225,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Indicator6.png</key>
+            <key>ed_Indicator14.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{32,128},{32,32}}</string>
@@ -238,7 +238,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Indicator7.png</key>
+            <key>ed_Indicator15.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{64,128},{32,32}}</string>
@@ -251,7 +251,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Plate0.png</key>
+            <key>ed_Indicator2.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{96,128},{32,32}}</string>
@@ -264,7 +264,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Source0.png</key>
+            <key>ed_Indicator3.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,160},{32,32}}</string>
@@ -277,7 +277,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Spawn0.png</key>
+            <key>ed_Indicator4.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{32,160},{32,32}}</string>
@@ -290,7 +290,7 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>ed_Wall0.png</key>
+            <key>ed_Indicator5.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{64,160},{32,32}}</string>
@@ -303,10 +303,114 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>empty.png</key>
+            <key>ed_Indicator6.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{96,160},{32,32}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{32,32}}</string>
+                <key>sourceSize</key>
+                <string>{32,32}</string>
+            </dict>
+            <key>ed_Indicator7.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0,192},{32,32}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{32,32}}</string>
+                <key>sourceSize</key>
+                <string>{32,32}</string>
+            </dict>
+            <key>ed_Indicator8.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{32,192},{32,32}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{32,32}}</string>
+                <key>sourceSize</key>
+                <string>{32,32}</string>
+            </dict>
+            <key>ed_Indicator9.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{64,192},{32,32}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{32,32}}</string>
+                <key>sourceSize</key>
+                <string>{32,32}</string>
+            </dict>
+            <key>ed_Plate0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{96,192},{32,32}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{32,32}}</string>
+                <key>sourceSize</key>
+                <string>{32,32}</string>
+            </dict>
+            <key>ed_Source0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0,224},{32,32}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{32,32}}</string>
+                <key>sourceSize</key>
+                <string>{32,32}</string>
+            </dict>
+            <key>ed_Spawn0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{32,224},{32,32}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{32,32}}</string>
+                <key>sourceSize</key>
+                <string>{32,32}</string>
+            </dict>
+            <key>ed_Wall0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{64,224},{32,32}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{32,32}}</string>
+                <key>sourceSize</key>
+                <string>{32,32}</string>
+            </dict>
+            <key>empty.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{96,224},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -326,7 +430,7 @@
             <key>size</key>
             <string>{128,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:607db699d78ae5763f7ce9571a1c25b0$</string>
+            <string>$TexturePacker:SmartUpdate:14f5d883789738896bb76774b6a5cf3b$</string>
             <key>textureFileName</key>
             <string>builder.png</string>
         </dict>
