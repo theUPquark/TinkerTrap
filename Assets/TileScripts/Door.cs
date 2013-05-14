@@ -7,6 +7,7 @@ public class Door : TileClass, Tile {
 	private bool open = false;
 	private bool botAccess = false;
 	private double openUntil = 0.0;
+	private float delayTime = 0f;
 	
 	public Door(int gx, int gy, int tSet) : base(gx, gy, tSet) {
 		os.frameName = "Door"+tileSet.ToString ()+"_op_00000";
@@ -45,7 +46,7 @@ public class Door : TileClass, Tile {
 		if (Time.time >= openUntil) {
 			botAccess = false;
 		}
-		if (!os.isPlaying && open != powered)
+		if (open != powered && delayTime <= Time.time)
 			powered = !powered;
 	}
 	
@@ -53,9 +54,11 @@ public class Door : TileClass, Tile {
 		if ((used || botAccess) && !open) {
 			os.PlayOnce("Door"+tileSet.ToString ());
 			open = true;
+			delayTime = Time.time + .25f;
 		} else if ((!used && !botAccess) && open) {
 			os.PlayOnceBackward("Door"+tileSet.ToString ());
 			open = false;
+			delayTime = Time.time + .25f;
 		}
 	}
 }

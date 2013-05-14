@@ -7,7 +7,7 @@ public class Electrified : Floor, Tile {
 	public bool on = false;
 	private bool prime = false;
 	private double onTime = 0.0;
-	private double onDelay = 2.0;
+	private double onDelay = 0.75;
 	
 	public Electrified(int gx, int gy, int tSet) : base(gx, gy, tSet)
 	{
