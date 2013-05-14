@@ -7,6 +7,7 @@ public class Bot1 : Player, Obstacle
 	public bool grabbing = false;
 	public bool extendingArms = false;
 	public bool retractArms = false;
+	public bool startExtArms = false;
 	public int extendDist = 0;
 	public const int EXTEND_MAX = 192;
 	public const int STEP_SIZE = 10;
@@ -49,8 +50,17 @@ public class Bot1 : Player, Obstacle
 	
 	public override void update(bool input)
 	{
-		if (!grabbing) {
+		if (!grabbing && !startExtArms && !extendingArms && !retractArms) {
 			base.update (input);
+		}
+		if (startExtArms && !os.isPlaying) {
+			Debug.Log ("Show Hands");
+			startExtArms = false;
+			extendingArms = true;
+			
+//			hands.PlaceHands();
+			hands.os.visible = true;
+			hands.os.PlayOnce("Hands" + dirStr (currDir));
 		}
 	}
 	
@@ -73,12 +83,15 @@ public class Bot1 : Player, Obstacle
 	
 	public void secondary () {
 		if (level > 0){
-			hands.os.visible = true;
+//			hands.os.visible = true;
 			hands.setX (posX);
 			hands.setY (posY);
-			hands.os.PlayOnce(this.GetType().Name + dirStr (currDir)+"_Ext");
 			
-			extendingArms = true;
+			os.PlayOnce(this.GetType().Name + dirStr(currDir)+"_Ext");
+//			hands.os.PlayOnce("Hands" + dirStr (currDir));
+			
+//			extendingArms = true;
+			startExtArms = true;
 			Debug.Log("extendingArms TRUE");
 		}
 	}
@@ -123,7 +136,6 @@ public class Bot1 : Player, Obstacle
 			if (extendDist > EXTEND_MAX) {
 				extendingArms = false;
 				retractArms = true;
-				hands.os.PlayOnceBackward(this.GetType().Name + dirStr (currDir)+"_Ext");
 			}
 		}
 		if (retractArms){

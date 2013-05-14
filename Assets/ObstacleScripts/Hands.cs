@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Hands : ObstacleClass, Obstacle
 {
-	Bot1 b1;
+	private Bot1 b1;
+	public Obstacle grabbed;
+	public bool grabbing;
 	
 	public Hands (Bot1 refBot1) : base(0)
 	{
@@ -22,6 +24,10 @@ public class Hands : ObstacleClass, Obstacle
 	}
 	
 	public void PlaceHands () {
+		if (b1.currDir == 0 || b1.currDir == 3)
+			graphic.depth = b1.graphic.depth-1;
+		else
+			graphic.depth = b1.graphic.depth+1;
 		
 		
 	}
