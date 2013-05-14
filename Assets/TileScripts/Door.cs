@@ -45,16 +45,16 @@ public class Door : TileClass, Tile {
 		if (Time.time >= openUntil) {
 			botAccess = false;
 		}
+		if (!os.isPlaying && open != powered)
+			powered = !powered;
 	}
 	
 	public override void act(List<Obstacle> objs) {
 		if ((used || botAccess) && !open) {
 			os.PlayOnce("Door"+tileSet.ToString ());
-			powered = true;
 			open = true;
 		} else if ((!used && !botAccess) && open) {
 			os.PlayOnceBackward("Door"+tileSet.ToString ());
-			powered = false;
 			open = false;
 		}
 	}

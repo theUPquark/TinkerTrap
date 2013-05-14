@@ -7,7 +7,9 @@ public class Charge : Floor, Tile {
 	bool occupied = false;
 	Bot3 refBot3;
 	
-	public Charge(int gx, int gy, int tSet) : base(gx, gy, tSet) {}
+	public Charge(int gx, int gy, int tSet) : base(gx, gy, tSet) {
+		os.PlayOnce (this.GetType ().Name+tileSet.ToString ()+"_neut");
+	}
 	
 	
 	public override void act(List<Obstacle> objs) {
@@ -27,8 +29,15 @@ public class Charge : Floor, Tile {
 	
 	public override void update ()
 	{
-		if (occupied)
+		if (refBot3 != null) {
+		if (occupied || refBot3.charge > 0) {
 			refBot3.Charge();
+			os.PlayOnce (this.GetType ().Name+tileSet.ToString ()+"_link");
+		} else
+			os.PlayOnce (this.GetType ().Name+tileSet.ToString ()+"_neut");
+		// else if connected to a tile, play "_act"}
+		} else
+			os.PlayOnce (this.GetType ().Name+tileSet.ToString ()+"_neut");
 	}
 }
 
