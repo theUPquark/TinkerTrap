@@ -54,11 +54,11 @@ public class Door : TileClass, Tile {
 		if ((used || botAccess) && !open) {
 			os.PlayOnce("Door"+tileSet.ToString ());
 			open = true;
-			delayTime = Time.time + .25f;
+			delayTime = Time.time + .3f;
 		} else if ((!used && !botAccess) && open) {
 			os.PlayOnceBackward("Door"+tileSet.ToString ());
 			open = false;
-			delayTime = Time.time + .25f;
+			delayTime = Time.time + .4f;
 		}
 	}
 }

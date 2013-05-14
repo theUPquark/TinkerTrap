@@ -223,8 +223,14 @@
       </connections>
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
+        <bot1>
+          <level>0</level>
+          <msg>Ah, a button! If you bump into it, surely something useful will happen. Watch the power lines!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Made it!! And there is a button! If you bump into it, surely something useful will happen. Watch the power lines!</msg>
+        </bot2>
         <bot3 />
       </tutorial>
     </x>
@@ -724,9 +730,18 @@
       </connections>
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Well shoot... What are those power lines connecting to?! The exit is right there!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Well shoot... What are those power lines connecting to?! The exit is right there!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Well shoot... What are those power lines connecting to?! The exit is right there!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -1775,9 +1790,18 @@
       <connections />
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Whoa, what a maze! Webelo excels at heavy lifting, though. Nothing a little elbow grease wont solve...</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Whoa! This is quite a maze! You'll have to be quick on your feet to keep those generators active and make it to the end!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Whoa! What a maze! It's a good thing you already found another way forward...</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -1859,7 +1883,10 @@
       <tutorial>
         <bot1 />
         <bot2 />
-        <bot3 />
+        <bot3>
+          <level>0</level>
+          <msg>A power box! You can use it to turn on that generator! Just got to get it close enough...</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -2218,9 +2245,18 @@
       <connections />
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Yeeeowch! Webelo is repulsed by this electric field. You'll have to find away around, or a way to disable it!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Hob can hover right over these electrified tiles, but that doesn't always mean the path is clear!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Yeeeowch! Hisco is repulsed by this electric field. You'll have to find away around, or a way to disable it!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -2235,9 +2271,18 @@
         <out>5</out>
       </locks>
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -2247,9 +2292,18 @@
       <connections />
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Hmm... This is a Generator. If you had a power box, you could reactivate it! There must be one around here somewhere...</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>A Generator! You're in luck! Hob's hover core can charge these generators for a short period of time if he is close enough. It could also be activated with a power block...</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Hmmm, a generator. You'd need a power box to activate it, but Hisco excels at finding his own path sometimes!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -2264,9 +2318,18 @@
         <out>5</out>
       </locks>
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -2276,9 +2339,18 @@
       <connections />
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Yeeeowch! Webelo is repulsed by this electric field. You'll have to find away around, or a way to disable it!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Hob can hover right over these electrified tiles, but that doesn't always mean the path is clear!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Yeeeowch! Hisco is repulsed by this electric field. You'll have to find away around, or a way to disable it!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -2302,9 +2374,18 @@
       <connections />
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Drat, that button's hard to reach. I wonder if I could grab one of those boxes really quick...</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>That button is enticing, but those boxes are in the way. Good thing Hob can hover right over that electricity!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Ah, a button! If you bump into it, surely something useful will happen. But how do you get there?!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -2462,9 +2543,18 @@
       <connections />
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Webelo can grab obstacles like this box and push/pull them freely! (Default: E)</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Hob, sadly, is unable to push large boxes such as this one.</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Hisco can push obstacles like this one, but he can not pull them! Be careful!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -2662,9 +2752,18 @@
       </connections>
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Webelo can grab obstacles like this box and push/pull them freely! (Default: E)</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Hob, sadly, is unable to push large boxes such as this one.</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Hisco can push obstacles like this one, but he can not pull them! Be careful!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -2676,18 +2775,9 @@
       </connections>
       <locks />
       <tutorial>
-        <bot1>
-          <level>0</level>
-          <msg>You can push the box, or use your primary action key to grab and move it.</msg>
-        </bot1>
-        <bot2>
-          <level>0</level>
-          <msg>This bot can't move these obstacles.</msg>
-        </bot2>
-        <bot3>
-          <level>0</level>
-          <msg>You can push these obstacles.</msg>
-        </bot3>
+        <bot1 />
+        <bot2 />
+        <bot3 />
       </tutorial>
     </x>
     <x>
@@ -2699,9 +2789,18 @@
       </connections>
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Webelo can grab obstacles like this box and push/pull them freely! (Default: E)</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Hob, sadly, is unable to push large boxes such as this one.</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Hisco can push obstacles like this one, but he can not pull them! Be careful!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -2887,9 +2986,18 @@
       <connections />
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Webelo can grab obstacles like this box and push/pull them freely! (Default: E)</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Hob, sadly, is unable to push large boxes such as this one.</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Hisco can push obstacles like this one, but he can not pull them! Be careful!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -3075,9 +3183,18 @@
       </connections>
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -3101,9 +3218,18 @@
       </connections>
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -3151,7 +3277,10 @@
       <connections />
       <locks />
       <tutorial>
-        <bot1 />
+        <bot1>
+          <level>0</level>
+          <msg>Aha!! A power box! If you can get this to a generator, something good's gotta happen!</msg>
+        </bot1>
         <bot2 />
         <bot3 />
       </tutorial>
@@ -3627,7 +3756,10 @@
       <tutorial>
         <bot1 />
         <bot2 />
-        <bot3 />
+        <bot3>
+          <level>0</level>
+          <msg>Ah! The perfect chance to put Hisco's speed to good use. Use his dash to rush over that electric tile before it reactivates! (Default: E)</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -3673,9 +3805,15 @@
       <connections />
       <locks />
       <tutorial>
-        <bot1 />
+        <bot1>
+          <level>0</level>
+          <msg>Uh oh! Webelo is too big for this corridor, and the boxes wont pass over the ridge of the doorway. You'll have to find another route.</msg>
+        </bot1>
         <bot2 />
-        <bot3 />
+        <bot3>
+          <level>0</level>
+          <msg>This passageway is narrow, but so is Hisco! With a little effort, you can navigate this maze!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -3727,7 +3865,10 @@
       <tutorial>
         <bot1 />
         <bot2 />
-        <bot3 />
+        <bot3>
+          <level>0</level>
+          <msg>Uh oh, this box is in a corner. Hisco's not gonna be able to move it from here. Better find another route...</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -3897,9 +4038,18 @@
       <connections />
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Welcome to Tinker Trap! Keep your eye here for helpful tips on how to play the game! Consider looking a the starting tutorial that covers basic controls, such as movement!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Welcome to Tinker Trap! Keep your eye here for helpful tips on how to play the game! Consider looking a the starting tutorial that covers basic controls, such as movement!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Welcome to Tinker Trap! Keep your eye here for helpful tips on how to play the game! Consider looking a the starting tutorial that covers basic controls, such as movement!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
