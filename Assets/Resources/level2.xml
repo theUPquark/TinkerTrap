@@ -1649,7 +1649,7 @@
     </x>
     <x>
       <type>Wall</type>
-      <tset>0</tset>
+      <tset>1</tset>
       <obs />
       <connections />
       <locks />
@@ -1877,7 +1877,7 @@
     </x>
     <x>
       <type>Wall</type>
-      <tset>0</tset>
+      <tset>1</tset>
       <obs />
       <connections />
       <locks />
@@ -2101,7 +2101,7 @@
     </x>
     <x>
       <type>Wall</type>
-      <tset>0</tset>
+      <tset>1</tset>
       <obs />
       <connections />
       <locks />
@@ -2335,7 +2335,7 @@
     </x>
     <x>
       <type>Wall</type>
-      <tset>0</tset>
+      <tset>1</tset>
       <obs />
       <connections />
       <locks />
@@ -2561,7 +2561,7 @@
     </x>
     <x>
       <type>Wall</type>
-      <tset>0</tset>
+      <tset>1</tset>
       <obs />
       <connections />
       <locks />

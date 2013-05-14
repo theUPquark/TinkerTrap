@@ -446,10 +446,23 @@
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
-            <key>empty.png</key>
+            <key>ed_Wall1.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{64,128},{32,32}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{32,32}}</string>
+                <key>sourceSize</key>
+                <string>{32,32}</string>
+            </dict>
+            <key>empty.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{96,128},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -469,7 +482,7 @@
             <key>size</key>
             <string>{256,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:62c64e2f796bef9a47e0d0571e27cbf1$</string>
+            <string>$TexturePacker:SmartUpdate:74477e8f2d779269e83e986336c98a35$</string>
             <key>textureFileName</key>
             <string>builder.png</string>
         </dict>

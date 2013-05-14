@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://texturepacker.com-->
-<!-- $TexturePacker:SmartUpdate:b5fc5c2603b753972a6c2a5b0e1621a3$ -->
+<!-- $TexturePacker:SmartUpdate:ca52b7bbb68d5b38b4ef9664b3d800cd$ -->
 <TextureAtlas imagePath="level.png">
     <SubTexture name="Button0_off" x="0" y="0" width="128" height="256"/>
     <SubTexture name="Button0_on" x="128" y="0" width="128" height="256"/>
@@ -237,4 +237,5 @@
     <SubTexture name="Plate0_on_0031" x="1024" y="3584" width="128" height="256"/>
     <SubTexture name="Plate0_on_0032" x="1152" y="3584" width="128" height="256"/>
     <SubTexture name="Wall0" x="1280" y="3584" width="128" height="256"/>
+    <SubTexture name="Wall1" x="1408" y="3584" width="128" height="256"/>
 </TextureAtlas>
