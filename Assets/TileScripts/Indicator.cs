@@ -10,22 +10,34 @@ public class Indicator : TileClass, Tile {
 		animSelector ();
 	}
 	
+	public override bool walkable() {
+		if (tileSet < 8)
+			return true;
+		return false;
+	}
+	
 	private void animSelector() {
-		if (active) {
+		if (active && tileSet < 8) {
 			if (tileSet <= 3)
 				os.PlayLoop ("Indicator"+tileSet.ToString ()+"_on");
 			else
 				os.PlayLoop ("Indicator"+(tileSet%4).ToString ()+"_multi_on");
-		} else {
+		} else if (!active && tileSet < 8) {
 			if (tileSet <= 3)
 				os.PlayLoop ("Indicator"+tileSet.ToString ()+"_off");
 			else
 				os.PlayLoop ("Indicator"+(tileSet%4).ToString ()+"_multi_off");
+		} else if (active && tileSet >= 8) {
+			if (tileSet <= 11)
+				os.PlayLoop ("Indicator"+tileSet.ToString ()+"_on");
+			else
+				os.PlayLoop ("Indicator"+(tileSet%4+8).ToString ()+"_multi_on");
+		} else if (!active && tileSet >= 8) {
+			if (tileSet <= 11)
+				os.PlayLoop ("Indicator"+tileSet.ToString ()+"_off");
+			else
+				os.PlayLoop ("Indicator"+(tileSet%4+8).ToString ()+"_multi_off");
 		}
-	}
-	
-	public override bool walkable() {
-		return true;
 	}
 	
 	public override void update() {
