@@ -52,12 +52,12 @@ public class EditorScript : MonoBehaviour {
 	
 	// For connection/lock selection dropdowns
 	
-	private bool showConList = false;
-	private bool showLockList = false;
 	private bool showViewList = false;
 	private int connectionEntry = 1;
 	private int lockEntry = 1;
 	private int viewEntry = 0;
+	private ComboBox connectionsBox = new ComboBox();
+	private ComboBox locksBox = new ComboBox();
 	private GUIContent[] consDropdown = {new GUIContent("1")};
 	private GUIContent[] locksDropdown = {new GUIContent("1")};
 	private GUIContent[] viewDropdown = {new GUIContent("Show Active"), new GUIContent("Show All"), new GUIContent("Show Query")};
@@ -1348,9 +1348,11 @@ public class EditorScript : MonoBehaviour {
 				GUI.Label (new Rect(Screen.width - 197 - 5*printList(queryTile.GetComponent<EditorTile>().locksOut).Length,(32+5)*(tileList.Length/2+obsList.Length/2)+328,50 + 5*printList(queryTile.GetComponent<EditorTile>().locksOut).Length,30),"Out: " + printList(queryTile.GetComponent<EditorTile>().locksOut), "box");
 		}
 		
-		if (Popup.List (new Rect(Screen.width - 99,(32+5)*(tileList.Length/2+obsList.Length/2)+240,90,30), ref showConList, ref connectionEntry, new GUIContent(connectionEntry.ToString()), consDropdown, activeButton)) {
+		connectionsBox.List(new Rect(Screen.width - 99,(32+5)*(tileList.Length/2+obsList.Length/2)+240,90,30), new GUIContent(connectionEntry.ToString()), consDropdown, activeButton);
+		
+		if (connectionEntry != int.Parse (consDropdown[connectionsBox.GetSelectedItemIndex()].text)) {
 			conPicked = true;
-			connectionEntry = int.Parse (consDropdown[connectionEntry].text);
+			connectionEntry = int.Parse (consDropdown[connectionsBox.GetSelectedItemIndex()].text);
 			activeSelection = "conn";
 			ClearBoxedSelection();
 			DrawLinks();
@@ -1358,6 +1360,7 @@ public class EditorScript : MonoBehaviour {
 			conPicked = false;
 	
 		if (GUI.Button (new Rect(Screen.width - 144,(32+5)*(tileList.Length/2+obsList.Length/2)+240,45,30), "New")) {
+			conPicked = true;
 			activeSelection = "conn";
 			ClearBoxedSelection();
 			CheckForEmptyActive();
@@ -1368,9 +1371,12 @@ public class EditorScript : MonoBehaviour {
 		if (activeSelection == "lock") {
 			GUI.DrawTexture (new Rect(Screen.width - 147,(32+5)*(tileList.Length/2+obsList.Length/2)+288,141,75),activeSelBox);
 		}
-		if (Popup.List (new Rect(Screen.width - 99,(32+5)*(tileList.Length/2+obsList.Length/2)+320,90,30), ref showLockList, ref lockEntry, new GUIContent(lockEntry.ToString()), locksDropdown, activeButton)) {
+			
+		locksBox.List(new Rect(Screen.width - 99,(32+5)*(tileList.Length/2+obsList.Length/2)+320,90,30), new GUIContent(lockEntry.ToString()), locksDropdown, activeButton);
+		
+		if (lockEntry != int.Parse (locksDropdown[locksBox.GetSelectedItemIndex()].text)) {
 			lockPicked = true;
-			lockEntry = int.Parse (locksDropdown[lockEntry].text);
+			lockEntry = int.Parse (locksDropdown[locksBox.GetSelectedItemIndex()].text);
 			activeSelection = "lock";
 			ClearBoxedSelection();
 			DrawLinks();
@@ -1378,6 +1384,7 @@ public class EditorScript : MonoBehaviour {
 			lockPicked = false;
 		
 		if (GUI.Button (new Rect(Screen.width - 144,(32+5)*(tileList.Length/2+obsList.Length/2)+320,45,30), "New")) {
+			lockPicked = true;
 			activeSelection = "lock";
 			ClearBoxedSelection();
 			CheckForEmptyActive();
