@@ -792,77 +792,83 @@ public class GameManager : MonoBehaviour {
 								moveChar(p,5,-1,0);
 						} else {
 							Bot1 b1 = (Bot1)p;
-							int step = b1.ExtendArmsStep();
-							switch(p.currDir){
-								case 0:	getMyCorners(b1,b1.posX,b1.posY-step);
-										break;
-								case 1: getMyCorners(b1,b1.posX+step,b1.posY);
-										break;
-								case 2: getMyCorners(b1,b1.posX,b1.posY+step);
-										break;
-								case 3: getMyCorners(b1,b1.posX-step,b1.posY);
-										break;
-							}
-							if (!b1.downleft || !b1.downright || !b1.upleft || !b1.upright) {
-								interact();
-								b1.endAction();
-							}
-							if (b1.extendingArms){
-								//ToDo: Move arms out
-								if (b1.grabbing){
-//									Move b1.grabbed out until max distance or until released
-									double spd = 1;
-									switch(b1.currDir){
-										case 0:	spd = moveChar(b1.grabbed,10,0,-1);
-												break;
-										case 1: spd = moveChar(b1.grabbed,10,1,0);
-												break;
-										case 2: spd = moveChar(b1.grabbed,10,0,1);
-												break;
-										case 3: spd = moveChar(b1.grabbed,10,-1,0);
-												break;
-									}
-									if (spd == 0)
-										b1.endAction();
-								} else {
-//									Move arms out until obstacle (when they exist)
-//									if Obstacle is grabbable {
-									foreach (Obstacle o in gameObs) {
-										if (!o.GetType().IsSubclassOf(typeof(Player))) {
-											getMyCorners(o, o.posX, o.posY);
-											if (b1.upYPos < o.downYPos && b1.upYPos > o.upYPos && b1.leftXPos < o.rightXPos && b1.leftXPos > o.leftXPos)
-												b1.Grab(o);
-											else if (b1.downYPos < o.downYPos && b1.downYPos > o.upYPos && b1.leftXPos < o.rightXPos && b1.leftXPos > o.leftXPos)
-												b1.Grab(o);
-											else if (b1.upYPos < o.downYPos && b1.upYPos > o.upYPos && b1.rightXPos < o.rightXPos && b1.rightXPos > o.leftXPos)
-												b1.Grab(o);
-											else if (b1.downYPos < o.downYPos && b1.downYPos > o.upYPos && b1.rightXPos < o.rightXPos && b1.rightXPos > o.leftXPos)
-												b1.Grab(o);
-										}
-										if (b1.grabbing)
-											b1.endAction();
-									}
-//										set obstacle as grabbed
-//										extendingArms = false;
-//									}
+							if (!b1.startExtArms) {
+								int step = b1.ExtendArmsStep();
+								switch(p.currDir){
+									case 0:	getMyCorners(b1,b1.posX,b1.posY-step);
+											b1.hands.setY (b1.posY-step);
+											break;
+									case 1: getMyCorners(b1,b1.posX+step,b1.posY);
+											b1.hands.setX (b1.posX+step);
+											break;
+									case 2: getMyCorners(b1,b1.posX,b1.posY+step);
+											b1.hands.setY (b1.posY+step);
+											break;
+									case 3: getMyCorners(b1,b1.posX-step,b1.posY);
+											b1.hands.setX (b1.posX-step);
+											break;
 								}
-							} else if (b1.retractArms) {
-								//ToDo: move arms back in
-								if (b1.grabbing) {
-//									Move back with b1.grabbed until interacting with bot1
-									switch(b1.currDir){
-										case 0:	moveChar(b1.grabbed,10,0,1);
-												break;
-										case 1: moveChar(b1.grabbed,10,-1,0);
-												break;
-										case 2: moveChar(b1.grabbed,10,0,-1);
-												break;
-										case 3: moveChar(b1.grabbed,10,1,0);
-												break;
+								if (!b1.downleft || !b1.downright || !b1.upleft || !b1.upright) {
+									interact();
+									b1.endAction();
+								}
+								if (b1.extendingArms){
+									//ToDo: Move arms out
+									if (b1.grabbing){
+	//									Move b1.grabbed out until max distance or until released
+										double spd = 1;
+										switch(b1.currDir){
+											case 0:	spd = moveChar(b1.grabbed,10,0,-1);
+													break;
+											case 1: spd = moveChar(b1.grabbed,10,1,0);
+													break;
+											case 2: spd = moveChar(b1.grabbed,10,0,1);
+													break;
+											case 3: spd = moveChar(b1.grabbed,10,-1,0);
+													break;
+										}
+										if (spd == 0)
+											b1.endAction();
+									} else {
+	//									Move arms out until obstacle (when they exist)
+	//									if Obstacle is grabbable {
+										foreach (Obstacle o in gameObs) {
+											if (!o.GetType().IsSubclassOf(typeof(Player))) {
+												getMyCorners(o, o.posX, o.posY);
+												if (b1.upYPos < o.downYPos && b1.upYPos > o.upYPos && b1.leftXPos < o.rightXPos && b1.leftXPos > o.leftXPos)
+													b1.Grab(o);
+												else if (b1.downYPos < o.downYPos && b1.downYPos > o.upYPos && b1.leftXPos < o.rightXPos && b1.leftXPos > o.leftXPos)
+													b1.Grab(o);
+												else if (b1.upYPos < o.downYPos && b1.upYPos > o.upYPos && b1.rightXPos < o.rightXPos && b1.rightXPos > o.leftXPos)
+													b1.Grab(o);
+												else if (b1.downYPos < o.downYPos && b1.downYPos > o.upYPos && b1.rightXPos < o.rightXPos && b1.rightXPos > o.leftXPos)
+													b1.Grab(o);
+											}
+											if (b1.grabbing)
+												b1.endAction();
+										}
+	//										set obstacle as grabbed
+	//										extendingArms = false;
+	//									}
 									}
-								} 
-							} 	
-							getMyCorners(b1,b1.posX,b1.posY);
+								} else if (b1.retractArms) {
+									//ToDo: move arms back in
+									if (b1.grabbing) {
+	//									Move back with b1.grabbed until interacting with bot1
+										switch(b1.currDir){
+											case 0:	moveChar(b1.grabbed,10,0,1);
+													break;
+											case 1: moveChar(b1.grabbed,10,-1,0);
+													break;
+											case 2: moveChar(b1.grabbed,10,0,-1);
+													break;
+											case 3: moveChar(b1.grabbed,10,1,0);
+													break;
+										}
+									} 
+								} 	
+								getMyCorners(b1,b1.posX,b1.posY);
+							}
 						}
 					}
 					if (p.GetType() == typeof(Bot3)) {

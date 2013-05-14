@@ -206,7 +206,6 @@
       <obs />
       <connections>
         <out>5</out>
-        <out>13</out>
       </connections>
       <locks />
       <tutorial>
@@ -220,12 +219,18 @@
       <tset>1</tset>
       <obs />
       <connections>
-        <in>13</in>
+        <in>5</in>
       </connections>
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
+        <bot1>
+          <level>0</level>
+          <msg>Ah, a button! If you bump into it, surely something useful will happen. Watch the power lines!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Made it!! And there is a button! If you bump into it, surely something useful will happen. Watch the power lines!</msg>
+        </bot2>
         <bot3 />
       </tutorial>
     </x>
@@ -234,7 +239,7 @@
       <tset>6</tset>
       <obs>Box</obs>
       <connections>
-        <in>13</in>
+        <in>5</in>
       </connections>
       <locks />
       <tutorial>
@@ -368,12 +373,10 @@
       </tutorial>
     </x>
     <x>
-      <type>Indicator</type>
-      <tset>5</tset>
+      <type>Floor</type>
+      <tset>0</tset>
       <obs />
-      <connections>
-        <in>9</in>
-      </connections>
+      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -382,12 +385,10 @@
       </tutorial>
     </x>
     <x>
-      <type>Indicator</type>
-      <tset>6</tset>
+      <type>Floor</type>
+      <tset>0</tset>
       <obs />
-      <connections>
-        <in>9</in>
-      </connections>
+      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -507,6 +508,7 @@
       <obs />
       <connections>
         <in>11</in>
+        <out>15</out>
       </connections>
       <locks>
         <in>5</in>
@@ -518,10 +520,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Generator</type>
+      <tset>1</tset>
       <obs />
-      <connections />
+      <connections>
+        <out>8</out>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -598,12 +602,10 @@
       </tutorial>
     </x>
     <x>
-      <type>Indicator</type>
-      <tset>2</tset>
+      <type>Floor</type>
+      <tset>0</tset>
       <obs />
-      <connections>
-        <in>9</in>
-      </connections>
+      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -642,9 +644,9 @@
       <tset>6</tset>
       <obs>Box</obs>
       <connections>
+        <in>5</in>
         <in>6</in>
         <in>7</in>
-        <in>13</in>
       </connections>
       <locks />
       <tutorial>
@@ -658,9 +660,9 @@
       <tset>7</tset>
       <obs>Box</obs>
       <connections>
+        <in>5</in>
         <in>6</in>
         <in>7</in>
-        <in>13</in>
       </connections>
       <locks />
       <tutorial>
@@ -720,15 +722,26 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
+      <type>Indicator</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>15</in>
+      </connections>
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Well shoot... What are those power lines connecting to?! The exit is right there!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Well shoot... What are those power lines connecting to?! The exit is right there!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Well shoot... What are those power lines connecting to?! The exit is right there!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -759,7 +772,7 @@
     </x>
     <x>
       <type>Indicator</type>
-      <tset>3</tset>
+      <tset>7</tset>
       <obs />
       <connections>
         <in>8</in>
@@ -772,12 +785,10 @@
       </tutorial>
     </x>
     <x>
-      <type>Indicator</type>
-      <tset>3</tset>
+      <type>Floor</type>
+      <tset>0</tset>
       <obs />
-      <connections>
-        <in>8</in>
-      </connections>
+      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -800,12 +811,10 @@
       </tutorial>
     </x>
     <x>
-      <type>Indicator</type>
-      <tset>7</tset>
+      <type>Floor</type>
+      <tset>0</tset>
       <obs />
-      <connections>
-        <in>8</in>
-      </connections>
+      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -814,12 +823,10 @@
       </tutorial>
     </x>
     <x>
-      <type>Indicator</type>
-      <tset>2</tset>
+      <type>Floor</type>
+      <tset>0</tset>
       <obs />
-      <connections>
-        <in>9</in>
-      </connections>
+      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -860,8 +867,74 @@
       <tset>2</tset>
       <obs />
       <connections>
+        <in>5</in>
         <in>6</in>
         <in>7</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>1</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>1</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>13</tset>
+      <obs />
+      <connections>
         <in>13</in>
       </connections>
       <locks />
@@ -872,11 +945,11 @@
       </tutorial>
     </x>
     <x>
-      <type>Electrified</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>12</tset>
       <obs />
       <connections>
-        <in>1</in>
+        <in>15</in>
       </connections>
       <locks />
       <tutorial>
@@ -886,23 +959,11 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>15</tset>
       <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs>Box</obs>
       <connections>
-        <in>1</in>
+        <in>14</in>
       </connections>
       <locks />
       <tutorial>
@@ -912,18 +973,6 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
       <type>Wall</type>
       <tset>0</tset>
       <obs />
@@ -936,10 +985,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>13</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>8</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -948,10 +999,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>9</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>8</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -960,46 +1013,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>9</tset>
       <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
+      <connections>
+        <in>8</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -1012,8 +1031,8 @@
       <tset>0</tset>
       <obs />
       <connections>
-        <in>8</in>
         <in>9</in>
+        <in>8</in>
       </connections>
       <locks />
       <tutorial>
@@ -1125,10 +1144,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>8</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>13</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -1149,10 +1170,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>8</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>14</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -1173,10 +1196,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
+      <type>Indicator</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>8</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -1213,12 +1238,10 @@
       </tutorial>
     </x>
     <x>
-      <type>Indicator</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
-      <connections>
-        <in>8</in>
-      </connections>
+      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -1271,9 +1294,10 @@
       <tset>2</tset>
       <obs />
       <connections>
+        <in>5</in>
         <in>6</in>
         <in>7</in>
-        <in>13</in>
+        <in>10</in>
       </connections>
       <locks />
       <tutorial>
@@ -1331,10 +1355,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>8</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>13</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -1355,10 +1381,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>8</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>14</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -1383,50 +1411,6 @@
     </x>
     <x>
       <type>Indicator</type>
-      <tset>1</tset>
-      <obs />
-      <connections>
-        <in>8</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <in>1</in>
-      </connections>
-      <locks>
-        <in>4</in>
-      </locks>
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Indicator</type>
-      <tset>1</tset>
-      <obs>Battery</obs>
-      <connections>
-        <in>8</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Indicator</type>
       <tset>4</tset>
       <obs />
       <connections>
@@ -1440,6 +1424,46 @@
       </tutorial>
     </x>
     <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>1</in>
+      </connections>
+      <locks>
+        <in>4</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs>Battery</obs>
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
       <type>Wall</type>
       <tset>0</tset>
       <obs />
@@ -1482,9 +1506,10 @@
       <tset>5</tset>
       <obs />
       <connections>
+        <in>5</in>
         <in>6</in>
         <in>7</in>
-        <in>13</in>
+        <in>10</in>
       </connections>
       <locks />
       <tutorial>
@@ -1498,9 +1523,10 @@
       <tset>1</tset>
       <obs>Box</obs>
       <connections>
+        <in>5</in>
         <in>6</in>
         <in>7</in>
-        <in>13</in>
+        <in>10</in>
       </connections>
       <locks />
       <tutorial>
@@ -1514,8 +1540,51 @@
       <tset>6</tset>
       <obs />
       <connections>
+        <in>5</in>
         <in>6</in>
         <in>7</in>
+        <in>10</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>1</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>1</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>8</tset>
+      <obs />
+      <connections>
         <in>13</in>
       </connections>
       <locks />
@@ -1526,62 +1595,24 @@
       </tutorial>
     </x>
     <x>
-      <type>Electrified</type>
+      <type>Wall</type>
       <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>8</tset>
       <obs />
       <connections>
-        <in>1</in>
+        <in>14</in>
       </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <in>1</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -1725,12 +1756,13 @@
     </x>
     <x>
       <type>Indicator</type>
-      <tset>5</tset>
+      <tset>2</tset>
       <obs />
       <connections>
+        <in>5</in>
         <in>6</in>
         <in>7</in>
-        <in>13</in>
+        <in>10</in>
       </connections>
       <locks />
       <tutorial>
@@ -1740,14 +1772,10 @@
       </tutorial>
     </x>
     <x>
-      <type>Indicator</type>
-      <tset>1</tset>
+      <type>Floor</type>
+      <tset>0</tset>
       <obs>Box</obs>
-      <connections>
-        <in>6</in>
-        <in>7</in>
-        <in>13</in>
-      </connections>
+      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -1756,26 +1784,33 @@
       </tutorial>
     </x>
     <x>
-      <type>Indicator</type>
-      <tset>6</tset>
-      <obs />
-      <connections>
-        <in>6</in>
-        <in>7</in>
-        <in>13</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
+      <locks />
+      <tutorial>
+        <bot1>
+          <level>0</level>
+          <msg>Whoa, what a maze! Webelo excels at heavy lifting, though. Nothing a little elbow grease wont solve...</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Whoa! This is quite a maze! You'll have to be quick on your feet to keep those generators active and make it to the end!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Whoa! What a maze! It's a good thing you already found another way forward...</msg>
+        </bot3>
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>8</tset>
+      <obs />
+      <connections>
+        <in>13</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -1798,10 +1833,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>8</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>14</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -1846,7 +1883,10 @@
       <tutorial>
         <bot1 />
         <bot2 />
-        <bot3 />
+        <bot3>
+          <level>0</level>
+          <msg>A power box! You can use it to turn on that generator! Just got to get it close enough...</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -1936,10 +1976,15 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>13</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>5</in>
+        <in>6</in>
+        <in>7</in>
+        <in>10</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -1948,10 +1993,15 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>9</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>5</in>
+        <in>6</in>
+        <in>7</in>
+        <in>10</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -1977,10 +2027,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>8</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>13</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -2003,10 +2055,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>8</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>14</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -2129,7 +2183,6 @@
       <obs />
       <connections>
         <out>5</out>
-        <out>14</out>
       </connections>
       <locks>
         <out>3</out>
@@ -2146,7 +2199,6 @@
       <obs />
       <connections>
         <in>5</in>
-        <in>14</in>
       </connections>
       <locks />
       <tutorial>
@@ -2157,11 +2209,10 @@
     </x>
     <x>
       <type>Indicator</type>
-      <tset>1</tset>
+      <tset>5</tset>
       <obs />
       <connections>
         <in>5</in>
-        <in>14</in>
       </connections>
       <locks />
       <tutorial>
@@ -2188,18 +2239,24 @@
       </tutorial>
     </x>
     <x>
-      <type>Indicator</type>
-      <tset>5</tset>
+      <type>Floor</type>
+      <tset>0</tset>
       <obs />
-      <connections>
-        <in>13</in>
-        <in>14</in>
-      </connections>
+      <connections />
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Yeeeowch! Webelo is repulsed by this electric field. You'll have to find away around, or a way to disable it!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Hob can hover right over these electrified tiles, but that doesn't always mean the path is clear!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Yeeeowch! Hisco is repulsed by this electric field. You'll have to find away around, or a way to disable it!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -2208,14 +2265,24 @@
       <obs />
       <connections>
         <out>11</out>
+        <out>13</out>
       </connections>
       <locks>
         <out>5</out>
       </locks>
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -2225,9 +2292,18 @@
       <connections />
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Hmm... This is a Generator. If you had a power box, you could reactivate it! There must be one around here somewhere...</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>A Generator! You're in luck! Hob's hover core can charge these generators for a short period of time if he is close enough. It could also be activated with a power block...</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Hmmm, a generator. You'd need a power box to activate it, but Hisco excels at finding his own path sometimes!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -2236,14 +2312,24 @@
       <obs />
       <connections>
         <out>11</out>
+        <out>14</out>
       </connections>
       <locks>
         <out>5</out>
       </locks>
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -2253,14 +2339,251 @@
       <connections />
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Yeeeowch! Webelo is repulsed by this electric field. You'll have to find away around, or a way to disable it!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Hob can hover right over these electrified tiles, but that doesn't always mean the path is clear!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Yeeeowch! Hisco is repulsed by this electric field. You'll have to find away around, or a way to disable it!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
       <type>Door</type>
       <tset>1</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1>
+          <level>0</level>
+          <msg>Drat, that button's hard to reach. I wonder if I could grab one of those boxes really quick...</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>That button is enticing, but those boxes are in the way. Good thing Hob can hover right over that electricity!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Ah, a button! If you bump into it, surely something useful will happen. But how do you get there?!</msg>
+        </bot3>
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs>Box</obs>
+      <connections>
+        <in>12</in>
+      </connections>
+      <locks>
+        <in>7</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>1</in>
+      </connections>
+      <locks>
+        <in>2</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>5</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>9</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>14</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1>
+          <level>0</level>
+          <msg>Webelo can grab obstacles like this box and push/pull them freely! (Default: E)</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Hob, sadly, is unable to push large boxes such as this one.</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Hisco can push obstacles like this one, but he can not pull them! Be careful!</msg>
+        </bot3>
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>8</tset>
       <obs />
       <connections>
         <in>5</in>
@@ -2287,217 +2610,6 @@
     <x>
       <type>Electrified</type>
       <tset>0</tset>
-      <obs>Box</obs>
-      <connections>
-        <in>12</in>
-      </connections>
-      <locks>
-        <in>7</in>
-      </locks>
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-  </y>
-  <y>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <in>1</in>
-      </connections>
-      <locks>
-        <in>2</in>
-      </locks>
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>1</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Indicator</type>
-      <tset>1</tset>
-      <obs />
-      <connections>
-        <in>13</in>
-        <in>14</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Indicator</type>
-      <tset>1</tset>
-      <obs />
-      <connections>
-        <in>13</in>
-        <in>14</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Indicator</type>
-      <tset>6</tset>
-      <obs />
-      <connections>
-        <in>13</in>
-        <in>14</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
       <obs />
       <connections>
         <in>12</in>
@@ -2618,10 +2730,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>13</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>5</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -2630,45 +2744,34 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>1</tset>
       <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs>Box</obs>
-      <connections />
+      <connections>
+        <in>5</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1>
           <level>0</level>
-          <msg>You can push the box, or use your primary action key to grab and move it.</msg>
+          <msg>Webelo can grab obstacles like this box and push/pull them freely! (Default: E)</msg>
         </bot1>
         <bot2>
           <level>0</level>
-          <msg>This bot can't move these obstacles.</msg>
+          <msg>Hob, sadly, is unable to push large boxes such as this one.</msg>
         </bot2>
         <bot3>
           <level>0</level>
-          <msg>You can push these obstacles.</msg>
+          <msg>Hisco can push obstacles like this one, but he can not pull them! Be careful!</msg>
         </bot3>
       </tutorial>
     </x>
     <x>
       <type>Indicator</type>
-      <tset>2</tset>
-      <obs />
+      <tset>1</tset>
+      <obs>Box</obs>
       <connections>
-        <in>13</in>
-        <in>14</in>
+        <in>5</in>
       </connections>
       <locks />
       <tutorial>
@@ -2678,10 +2781,35 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>1</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>5</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1>
+          <level>0</level>
+          <msg>Webelo can grab obstacles like this box and push/pull them freely! (Default: E)</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Hob, sadly, is unable to push large boxes such as this one.</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Hisco can push obstacles like this one, but he can not pull them! Be careful!</msg>
+        </bot3>
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>1</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -2690,10 +2818,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>15</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>5</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -2856,46 +2986,51 @@
       <connections />
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Webelo can grab obstacles like this box and push/pull them freely! (Default: E)</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Hob, sadly, is unable to push large boxes such as this one.</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Hisco can push obstacles like this one, but he can not pull them! Be careful!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
-      <type>Indicator</type>
-      <tset>5</tset>
-      <obs />
-      <connections>
-        <in>13</in>
-        <in>14</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Indicator</type>
-      <tset>6</tset>
-      <obs />
-      <connections>
-        <in>13</in>
-        <in>14</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>10</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -3048,19 +3183,25 @@
       </connections>
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
-      <type>Indicator</type>
-      <tset>6</tset>
+      <type>Floor</type>
+      <tset>0</tset>
       <obs />
-      <connections>
-        <in>3</in>
-        <in>2</in>
-      </connections>
+      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -3077,19 +3218,25 @@
       </connections>
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Pressure plates such as these power lots of different things! Watch for power lines indicating the targets of the power!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
-      <type>Indicator</type>
-      <tset>5</tset>
+      <type>Floor</type>
+      <tset>0</tset>
       <obs />
-      <connections>
-        <in>13</in>
-        <in>14</in>
-      </connections>
+      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -3130,7 +3277,10 @@
       <connections />
       <locks />
       <tutorial>
-        <bot1 />
+        <bot1>
+          <level>0</level>
+          <msg>Aha!! A power box! If you can get this to a generator, something good's gotta happen!</msg>
+        </bot1>
         <bot2 />
         <bot3 />
       </tutorial>
@@ -3255,7 +3405,21 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Indicator</type>
+      <tset>10</tset>
+      <obs />
+      <connections>
+        <in>3</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -3268,24 +3432,11 @@
     </x>
     <x>
       <type>Indicator</type>
-      <tset>2</tset>
+      <tset>10</tset>
       <obs />
       <connections>
-        <in>3</in>
         <in>2</in>
       </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -3454,7 +3605,21 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Indicator</type>
+      <tset>10</tset>
+      <obs />
+      <connections>
+        <in>3</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -3467,24 +3632,11 @@
     </x>
     <x>
       <type>Indicator</type>
-      <tset>2</tset>
+      <tset>10</tset>
       <obs />
       <connections>
-        <in>3</in>
         <in>2</in>
       </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -3604,7 +3756,10 @@
       <tutorial>
         <bot1 />
         <bot2 />
-        <bot3 />
+        <bot3>
+          <level>0</level>
+          <msg>Ah! The perfect chance to put Hisco's speed to good use. Use his dash to rush over that electric tile before it reactivates! (Default: E)</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -3650,9 +3805,15 @@
       <connections />
       <locks />
       <tutorial>
-        <bot1 />
+        <bot1>
+          <level>0</level>
+          <msg>Uh oh! Webelo is too big for this corridor, and the boxes wont pass over the ridge of the doorway. You'll have to find another route.</msg>
+        </bot1>
         <bot2 />
-        <bot3 />
+        <bot3>
+          <level>0</level>
+          <msg>This passageway is narrow, but so is Hisco! With a little effort, you can navigate this maze!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -3670,13 +3831,10 @@
       </tutorial>
     </x>
     <x>
-      <type>Indicator</type>
-      <tset>4</tset>
+      <type>Floor</type>
+      <tset>0</tset>
       <obs />
-      <connections>
-        <in>3</in>
-        <in>2</in>
-      </connections>
+      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -3707,7 +3865,10 @@
       <tutorial>
         <bot1 />
         <bot2 />
-        <bot3 />
+        <bot3>
+          <level>0</level>
+          <msg>Uh oh, this box is in a corner. Hisco's not gonna be able to move it from here. Better find another route...</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -3877,9 +4038,18 @@
       <connections />
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Welcome to Tinker Trap! Keep your eye here for helpful tips on how to play the game! Consider looking a the starting tutorial that covers basic controls, such as movement!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Welcome to Tinker Trap! Keep your eye here for helpful tips on how to play the game! Consider looking a the starting tutorial that covers basic controls, such as movement!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Welcome to Tinker Trap! Keep your eye here for helpful tips on how to play the game! Consider looking a the starting tutorial that covers basic controls, such as movement!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>

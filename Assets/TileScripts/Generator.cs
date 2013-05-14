@@ -28,6 +28,9 @@ public class Generator : TileClass, Tile {
 		} else if (a.GetType () == typeof(Bot2)) {
 			botCharge = true;
 			endTime = Time.time+8;
+		} else if (a.GetType() == typeof(Bot3)) {
+			botCharge = true;
+			endTime = Time.time+8;
 		}
 	}
 	

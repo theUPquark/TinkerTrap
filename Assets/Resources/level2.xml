@@ -17,336 +17,6 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Button</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <out>7</out>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Button</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <out>7</out>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-  </y>
-  <y>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Plate</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs>Box</obs>
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
       <type>Finish</type>
       <tset>0</tset>
       <obs />
@@ -442,148 +112,6 @@
         <bot3 />
       </tutorial>
     </x>
-  </y>
-  <y>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Door</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <in>8</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Generator</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <out>2</out>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs>Box</obs>
-      <connections>
-        <in>2</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Door</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <in>7</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
     <x>
       <type>Wall</type>
       <tset>0</tset>
@@ -646,362 +174,6 @@
     </x>
     <x>
       <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-  </y>
-  <y>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks>
-        <in>6</in>
-      </locks>
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs>Box</obs>
-      <connections>
-        <in>10</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <in>2</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-  </y>
-  <y>
-    <x>
-      <type>Plate</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <out>8</out>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <in>10</in>
-      </connections>
-      <locks>
-        <in>6</in>
-      </locks>
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <in>10</in>
-      </connections>
-      <locks>
-        <in>6</in>
-      </locks>
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <in>10</in>
-      </connections>
-      <locks>
-        <in>6</in>
-      </locks>
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs>Box</obs>
-      <connections>
-        <in>10</in>
-      </connections>
-      <locks>
-        <in>6</in>
-      </locks>
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Plate</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks>
-        <out>6</out>
-      </locks>
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Door</type>
-      <tset>1</tset>
-      <obs />
-      <connections>
-        <in>2</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -1029,92 +201,8 @@
       <tset>1</tset>
       <obs />
       <connections>
-        <out>2</out>
+        <out>22</out>
       </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -1149,7 +237,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Door</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -1173,136 +261,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Source</type>
+      <type>Plate</type>
       <tset>0</tset>
       <obs />
-      <connections>
+      <connections />
+      <locks>
         <out>10</out>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <in>9</in>
-      </connections>
-      <locks>
-        <in>5</in>
       </locks>
       <tutorial>
         <bot1 />
@@ -1336,264 +300,6 @@
     </x>
     <x>
       <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-  </y>
-  <y>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <in>1</in>
-      </connections>
-      <locks>
-        <in>1</in>
-      </locks>
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <in>1</in>
-      </connections>
-      <locks>
-        <in>1</in>
-      </locks>
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <in>1</in>
-      </connections>
-      <locks>
-        <in>1</in>
-      </locks>
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Door</type>
-      <tset>1</tset>
-      <obs />
-      <connections>
-        <in>2</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-  </y>
-  <y>
-    <x>
-      <type>Wall</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -1607,10 +313,10 @@
     <x>
       <type>Plate</type>
       <tset>0</tset>
-      <obs />
+      <obs>Box</obs>
       <connections />
       <locks>
-        <out>1</out>
+        <out>9</out>
       </locks>
       <tutorial>
         <bot1 />
@@ -1618,6 +324,143 @@
         <bot3 />
       </tutorial>
     </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>26</in>
+        <out>27</out>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>25</in>
+        <out>26</out>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>24</in>
+        <out>25</out>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>23</in>
+        <out>24</out>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>22</in>
+        <out>23</out>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+  </y>
+  <y>
     <x>
       <type>Wall</type>
       <tset>0</tset>
@@ -1638,8 +481,718 @@
         <in>1</in>
       </connections>
       <locks>
-        <in>1</in>
+        <in>10</in>
       </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>32</in>
+      </connections>
+      <locks>
+        <in>8</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>31</in>
+        <out>32</out>
+      </connections>
+      <locks>
+        <in>8</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>30</in>
+        <out>31</out>
+      </connections>
+      <locks>
+        <in>8</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>29</in>
+        <out>30</out>
+      </connections>
+      <locks>
+        <in>8</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>28</in>
+        <out>29</out>
+      </connections>
+      <locks>
+        <in>8</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>27</in>
+        <out>28</out>
+      </connections>
+      <locks>
+        <in>8</in>
+        <in>9</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Generator</type>
+      <tset>1</tset>
+      <obs />
+      <connections />
+      <locks>
+        <out>8</out>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Charge</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Button</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <out>19</out>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>17</in>
+        <in>19</in>
+        <in>20</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Generator</type>
+      <tset>1</tset>
+      <obs />
+      <connections>
+        <out>17</out>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs>Box</obs>
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Plate</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <out>20</out>
+      </connections>
+      <locks>
+        <out>7</out>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
       <tutorial>
         <bot1 />
         <bot2 />
@@ -1663,7 +1216,7 @@
       <tset>0</tset>
       <obs />
       <connections>
-        <out>2</out>
+        <out>18</out>
       </connections>
       <locks />
       <tutorial>
@@ -1685,7 +1238,31 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -1721,65 +1298,11 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
+      <type>Wall</type>
       <tset>0</tset>
       <obs />
       <connections />
       <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Plate</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks>
-        <out>4</out>
-      </locks>
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <in>1</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Plate</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks>
-        <out>5</out>
-      </locks>
       <tutorial>
         <bot1 />
         <bot2 />
@@ -1799,32 +1322,6 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-  </y>
-  <y>
-    <x>
       <type>Wall</type>
       <tset>0</tset>
       <obs />
@@ -1837,170 +1334,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
+      <type>Plate</type>
       <tset>0</tset>
       <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs>Box</obs>
       <connections>
-        <in>1</in>
+        <out>21</out>
       </connections>
-      <locks>
-        <in>1</in>
-      </locks>
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -2059,159 +1398,11 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
       <type>Electrified</type>
       <tset>0</tset>
       <obs />
       <connections>
         <in>1</in>
-      </connections>
-      <locks>
-        <in>1</in>
-      </locks>
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Electrified</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <in>9</in>
       </connections>
       <locks>
         <in>4</in>
@@ -2223,85 +1414,15 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
+      <type>Electrified</type>
       <tset>0</tset>
       <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-  </y>
-  <y>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
+      <connections>
+        <in>1</in>
+      </connections>
+      <locks>
+        <in>4</in>
+      </locks>
       <tutorial>
         <bot1 />
         <bot2 />
@@ -2311,12 +1432,12 @@
     <x>
       <type>Electrified</type>
       <tset>0</tset>
-      <obs>Box</obs>
+      <obs />
       <connections>
         <in>1</in>
       </connections>
       <locks>
-        <in>1</in>
+        <in>4</in>
       </locks>
       <tutorial>
         <bot1 />
@@ -2337,91 +1458,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
+      <type>Pit</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -2481,36 +1518,14 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Door</type>
       <tset>0</tset>
       <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-  </y>
-  <y>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
+      <connections>
+        <in>18</in>
+        <in>21</in>
+        <in>19</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -2534,22 +1549,6 @@
       <type>Electrified</type>
       <tset>0</tset>
       <obs />
-      <connections>
-        <in>1</in>
-      </connections>
-      <locks>
-        <in>1</in>
-      </locks>
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
       <connections />
       <locks />
       <tutorial>
@@ -2596,104 +1595,6 @@
     </x>
     <x>
       <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Source</type>
-      <tset>0</tset>
-      <obs />
-      <connections>
-        <out>9</out>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -2731,8 +1632,24 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
+      <type>Plate</type>
       <tset>0</tset>
+      <obs />
+      <connections>
+        <out>13</out>
+      </connections>
+      <locks>
+        <out>4</out>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>1</tset>
       <obs />
       <connections />
       <locks />
@@ -2743,11 +1660,15 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
+      <type>Electrified</type>
       <tset>0</tset>
       <obs />
-      <connections />
-      <locks />
+      <connections>
+        <in>1</in>
+      </connections>
+      <locks>
+        <in>4</in>
+      </locks>
       <tutorial>
         <bot1 />
         <bot2 />
@@ -2755,7 +1676,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
+      <type>Wall</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -2795,11 +1716,1437 @@
       <tset>1</tset>
       <obs />
       <connections>
+        <in>17</in>
+        <in>20</in>
+        <in>19</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>5</tset>
+      <obs />
+      <connections>
+        <in>13</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>1</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs>Box</obs>
+      <connections>
+        <in>1</in>
+      </connections>
+      <locks>
+        <in>4</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>5</tset>
+      <obs />
+      <connections>
+        <in>13</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>1</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>1</in>
+      </connections>
+      <locks>
+        <in>4</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Charge</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks>
+        <in>7</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Generator</type>
+      <tset>1</tset>
+      <obs />
+      <connections>
+        <out>5</out>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>14</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Button</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <out>15</out>
+      </connections>
+      <locks>
+        <out>5</out>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>5</tset>
+      <obs />
+      <connections>
+        <in>13</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>1</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs>Box</obs>
+      <connections>
+        <in>1</in>
+      </connections>
+      <locks>
+        <in>4</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>10</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Pit</type>
+      <tset>1</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Pit</type>
+      <tset>1</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Pit</type>
+      <tset>1</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Pit</type>
+      <tset>1</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Pit</type>
+      <tset>1</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Pit</type>
+      <tset>1</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>5</tset>
+      <obs />
+      <connections>
+        <in>13</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>1</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>1</in>
+      </connections>
+      <locks>
+        <in>4</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Pit</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>13</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>13</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+        <in>15</in>
+        <out>7</out>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>7</in>
+        <out>8</out>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>8</in>
+        <out>9</out>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>9</in>
+        <out>11</out>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>11</in>
+        <out>12</out>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>12</in>
+        <out>14</out>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>14</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1>
+          <level>1</level>
+          <msg>Use the secondary action (default: R) to use Webelo's extending arms!</msg>
+        </bot1>
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>5</tset>
+      <obs />
+      <connections>
+        <in>4</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>1</tset>
+      <obs />
+      <connections>
+        <in>4</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>1</tset>
+      <obs />
+      <connections>
         <in>4</in>
       </connections>
       <locks>
         <in>2</in>
       </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>8</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
+      <locks>
+        <in>5</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
+      <locks>
+        <in>5</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
+      <locks>
+        <in>5</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
+      <locks>
+        <in>5</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
+      <locks>
+        <in>5</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
+      <locks>
+        <in>5</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>5</in>
+      </connections>
+      <locks>
+        <in>5</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>1</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Plate</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <out>4</out>
+      </connections>
+      <locks>
+        <out>2</out>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
       <tutorial>
         <bot1 />
         <bot2 />
@@ -2833,19 +3180,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -2869,7 +3204,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -2881,7 +3216,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -2893,7 +3228,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -2905,19 +3240,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -2991,232 +3314,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Plate</type>
+      <type>Indicator</type>
       <tset>0</tset>
       <obs />
       <connections>
-        <out>4</out>
+        <in>4</in>
       </connections>
-      <locks>
-        <out>2</out>
-      </locks>
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-  </y>
-  <y>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -3230,7 +3333,6 @@
       <obs />
       <connections>
         <in>3</in>
-        <in>5</in>
       </connections>
       <locks />
       <tutorial>
@@ -3288,7 +3390,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -3300,7 +3402,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -3312,7 +3414,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -3324,7 +3426,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -3336,7 +3438,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -3348,7 +3450,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -3360,10 +3462,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Electrified</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>1</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -3450,10 +3554,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>12</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>3</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -3462,10 +3568,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>11</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>3</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -3474,10 +3582,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>11</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>3</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -3486,10 +3596,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>11</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>3</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -3498,10 +3610,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>11</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>3</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -3510,10 +3624,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>11</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>3</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -3522,10 +3638,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>11</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>3</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -3534,10 +3652,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>11</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>3</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -3584,92 +3704,6 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-  </y>
-  <y>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
       <type>Electrified</type>
       <tset>0</tset>
       <obs />
@@ -3684,9 +3718,9 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
+      <type>Wall</type>
       <tset>0</tset>
-      <obs>Box</obs>
+      <obs />
       <connections />
       <locks />
       <tutorial>
@@ -3695,8 +3729,10 @@
         <bot3 />
       </tutorial>
     </x>
+  </y>
+  <y>
     <x>
-      <type>Floor</type>
+      <type>Wall</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -3722,31 +3758,7 @@
     <x>
       <type>Floor</type>
       <tset>0</tset>
-      <obs>Box</obs>
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
       <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs>Box</obs>
       <connections />
       <locks />
       <tutorial>
@@ -3758,6 +3770,81 @@
     <x>
       <type>Floor</type>
       <tset>1</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2>
+          <level>1</level>
+          <msg>Hob can now hover over up to two obstacles or pits! (Default: E)</msg>
+        </bot2>
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Pit</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Pit</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs>Box</obs>
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
       <obs>Box</obs>
       <connections />
       <locks />
@@ -3780,7 +3867,43 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs>Box</obs>
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Pit</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Pit</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -3804,9 +3927,9 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Floor</type>
       <tset>0</tset>
-      <obs />
+      <obs>Box</obs>
       <connections />
       <locks />
       <tutorial>
@@ -3842,9 +3965,59 @@
       </tutorial>
     </x>
     <x>
+      <type>Plate</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks>
+        <out>6</out>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>9</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>9</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
+      <tset>14</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
       <type>Floor</type>
       <tset>0</tset>
-      <obs>Spawn</obs>
+      <obs>Box</obs>
       <connections />
       <locks />
       <tutorial>
@@ -3854,7 +4027,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Pit</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -3866,7 +4039,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -3878,7 +4051,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -3902,57 +4075,9 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
-      <tset>0</tset>
+      <type>Pit</type>
+      <tset>1</tset>
       <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs>Box</obs>
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs>Box</obs>
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs>Box</obs>
       <connections />
       <locks />
       <tutorial>
@@ -3976,7 +4101,7 @@
     <x>
       <type>Floor</type>
       <tset>1</tset>
-      <obs>Box</obs>
+      <obs />
       <connections />
       <locks />
       <tutorial>
@@ -3998,7 +4123,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -4062,6 +4187,250 @@
       </tutorial>
     </x>
     <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs>Spawn</obs>
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1>
+          <level>0</level>
+          <msg>Use the number keys to select a second bot!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Use the number keys to select a second bot!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Use the number keys to select a second bot!</msg>
+        </bot3>
+      </tutorial>
+    </x>
+    <x>
+      <type>Door</type>
+      <tset>1</tset>
+      <obs />
+      <connections>
+        <in>1</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs>Box</obs>
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Electrified</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <in>16</in>
+      </connections>
+      <locks>
+        <in>6</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Pit</type>
+      <tset>1</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Pit</type>
+      <tset>1</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Charge</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3>
+          <level>1</level>
+          <msg>Hisco can use these Charge tiles to activate any one door or generator at a time! He can only hold this charge for a short time, so hurry!</msg>
+        </bot3>
+      </tutorial>
+    </x>
+    <x>
+      <type>Floor</type>
+      <tset>0</tset>
+      <obs>Box</obs>
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Plate</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <out>2</out>
+      </connections>
+      <locks>
+        <out>1</out>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Source</type>
+      <tset>0</tset>
+      <obs />
+      <connections>
+        <out>16</out>
+      </connections>
+      <locks>
+        <in>1</in>
+      </locks>
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+  </y>
+  <y>
+    <x>
+      <type>Wall</type>
+      <tset>0</tset>
+      <obs />
+      <connections />
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
       <type>Door</type>
       <tset>0</tset>
       <obs />
@@ -4098,10 +4467,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>12</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>2</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -4110,10 +4481,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>11</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>2</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -4122,10 +4495,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>11</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>2</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -4134,34 +4509,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs>Box</obs>
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs>Box</obs>
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>11</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>2</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -4170,10 +4523,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>11</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>2</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -4182,22 +4537,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs>Box</obs>
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>1</tset>
+      <type>Indicator</type>
+      <tset>11</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>2</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -4206,22 +4551,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs>Box</obs>
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>11</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>2</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -4230,10 +4565,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>11</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>2</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -4242,10 +4579,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>11</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>2</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -4254,10 +4593,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>11</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>2</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -4265,181 +4606,13 @@
         <bot3 />
       </tutorial>
     </x>
-  </y>
-  <y>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Indicator</type>
+      <tset>15</tset>
       <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs>Box</obs>
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs>Box</obs>
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs>Box</obs>
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>1</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Floor</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Wall</type>
-      <tset>0</tset>
-      <obs />
-      <connections />
+      <connections>
+        <in>2</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
