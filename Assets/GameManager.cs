@@ -917,6 +917,7 @@ public class GameManager : MonoBehaviour {
 			}
 			
 			List<Obstacle> orderedObs = new List<Obstacle>(gameObs.Count);
+			orderedObs.Add(((Bot1)players[0]).hands);
 			foreach (Obstacle i in gameObs) {
 				int insertAfter = -1;
 				for (int j = 0; j < orderedObs.Capacity; j++) {
