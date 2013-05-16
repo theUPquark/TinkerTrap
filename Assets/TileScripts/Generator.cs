@@ -82,10 +82,12 @@ public class Generator : TileClass, Tile {
 				os.PlayOnce(this.GetType ().Name+tileSet.ToString()+"_on");
 				used = false;
 				powered = true;
+				locked = false;
 			} else if (bat == null && endTime == 0) {
 				os.PlayOnce(this.GetType ().Name+tileSet.ToString()+"_off");
 				used = false;
 				powered = false;
+				locked = true;
 			}
 		}
 		if (powered) {
