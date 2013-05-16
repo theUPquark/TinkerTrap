@@ -10,9 +10,6 @@ public class GameManager : MonoBehaviour {
 	public int numberOfObjects;
 	public GUISkin skin;
 	public Texture2D logoTexture;
-	public Texture2D bot1Texture;
-	public Texture2D bot2Texture;
-	public Texture2D bot3Texture;
 	public Texture2D bot1Blueprint, bot2Blueprint, bot3Blueprint;
 	public Texture2D overlayActive;
 	
@@ -42,6 +39,10 @@ public class GameManager : MonoBehaviour {
 	private bool cheats = false;
 	private double lastClick = 0.0;
 	private bool determineAbility = false;
+	
+	private GameObject bot1Port = OT.CreateObject ("PortraitSprite");
+	private GameObject bot2Port = OT.CreateObject ("PortraitSprite");
+	private GameObject bot3Port = OT.CreateObject ("PortraitSprite");
 	
 	private List<Player> players = new List<Player>();
 	private int activeBot = 1;
@@ -256,19 +257,16 @@ public class GameManager : MonoBehaviour {
 		// Covers entire screen...
 		GUI.BeginGroup (new Rect(0, 0, Screen.width, Screen.height));
 		
-		GUI.Box (new Rect(5+133*(activeBot-1), 5, 133, 261),overlayActive); // Box position emphasises activeBot
+		GUI.Box (new Rect(5+133*(activeBot-1), 5, 133, 133), overlayActive); // Box position emphasises activeBot
 		
-		GUI.Box (new Rect(5, 5, 133, 261), bot1Texture);
-		GUI.Box (new Rect(138, 5, 133, 261), bot2Texture);
-		GUI.Box (new Rect(271, 5, 133, 261), bot3Texture);
-		GUI.Label (new Rect(10, 246, 133, 20), "L: "+players[0].level);
-		GUI.Label (new Rect(5, 266, 133, 20), "1");
+		GUI.Box (new Rect(5, 5, 133, 133), "");
+		GUI.Box (new Rect(138, 5, 133, 133), "");
+		GUI.Box (new Rect(271, 5, 133, 133), "");
+		//GUI.Label (new Rect(10, 246, 133, 20), "L: "+players[0].level);
 		
-		GUI.Label (new Rect(143, 246, 133, 20), "L: "+players[1].level);
-		GUI.Label (new Rect(138, 266, 133, 20), "2");
+		//GUI.Label (new Rect(143, 246, 133, 20), "L: "+players[1].level);
 		
-		GUI.Label (new Rect(276, 246, 133, 20), "L: "+players[2].level);
-		GUI.Label (new Rect(271, 266, 133, 20), "3");
+		//GUI.Label (new Rect(276, 246, 133, 20), "L: "+players[2].level);
 		
 		// Tutorial Message Box
 		if (showMessages && ((TileClass)gameB[players[activeBot-1].onTile()]).messages[activeBot-1].Count > 0) {

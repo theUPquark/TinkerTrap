@@ -20,6 +20,12 @@ public class Bot2 : Player, Obstacle
 		get { return 85; }
 	}
 	
+	public override void update(bool input) {
+		if (!hovering) {
+			base.update (input);
+		}
+	}
+	
 	public void primary(Tile l1, Tile l2, Tile r1, Tile r2)
 	{
 		if (level >= 1 && !hovering) {
@@ -29,6 +35,7 @@ public class Bot2 : Player, Obstacle
 				hoverTargetR = r2.myName();
 				vertLift = 1;
 				hovering = true;
+				os.PlayOnce (this.GetType ().Name + dirStr (currDir)+"_Hover");
 			}
 		}
 	}
