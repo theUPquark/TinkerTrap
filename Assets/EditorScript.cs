@@ -1348,7 +1348,7 @@ public class EditorScript : MonoBehaviour {
 				GUI.Label (new Rect(Screen.width - 197 - 5*printList(queryTile.GetComponent<EditorTile>().locksOut).Length,(32+5)*(tileList.Length/2+obsList.Length/2)+328,50 + 5*printList(queryTile.GetComponent<EditorTile>().locksOut).Length,30),"Out: " + printList(queryTile.GetComponent<EditorTile>().locksOut), "box");
 		}
 		
-		connectionsBox.List(new Rect(Screen.width - 99,(32+5)*(tileList.Length/2+obsList.Length/2)+240,90,30), new GUIContent(connectionEntry.ToString()), consDropdown, activeButton);
+		connectionsBox.List(new Rect(Screen.width - 99,(32+5)*(tileList.Length/2+obsList.Length/2)+240,80,30), new GUIContent(connectionEntry.ToString()), consDropdown, activeButton);
 		
 		if (connectionEntry != int.Parse (consDropdown[connectionsBox.GetSelectedItemIndex()].text)) {
 			conPicked = true;
@@ -1372,7 +1372,7 @@ public class EditorScript : MonoBehaviour {
 			GUI.DrawTexture (new Rect(Screen.width - 147,(32+5)*(tileList.Length/2+obsList.Length/2)+288,141,75),activeSelBox);
 		}
 			
-		locksBox.List(new Rect(Screen.width - 99,(32+5)*(tileList.Length/2+obsList.Length/2)+320,90,30), new GUIContent(lockEntry.ToString()), locksDropdown, activeButton);
+		locksBox.List(new Rect(Screen.width - 99,(32+5)*(tileList.Length/2+obsList.Length/2)+320,80,30), new GUIContent(lockEntry.ToString()), locksDropdown, activeButton);
 		
 		if (lockEntry != int.Parse (locksDropdown[locksBox.GetSelectedItemIndex()].text)) {
 			lockPicked = true;
