@@ -13,7 +13,10 @@ public class GameManager : MonoBehaviour {
 	public Texture2D bot1Texture;
 	public Texture2D bot2Texture;
 	public Texture2D bot3Texture;
+	public Texture2D bot1Blueprint, bot2Blueprint, bot3Blueprint;
 	public Texture2D overlayActive;
+	
+	public GUIStyle buttonStyle;
 	
 	private int mapWidth = 0;
 	private int mapHeight = 0;
@@ -55,12 +58,6 @@ public class GameManager : MonoBehaviour {
 		messagesDisplay.Add(new Dictionary<string, double>());
 		messagesDisplay.Add(new Dictionary<string, double>());
 		messagesDisplay.Add(new Dictionary<string, double>());
-		
-		logoTexture = Resources.Load ("Logo") as Texture2D;
-		bot1Texture = Resources.Load ("overlayB1") as Texture2D;
-		bot2Texture = Resources.Load ("overlayB2") as Texture2D;
-		bot3Texture = Resources.Load ("overlayB3") as Texture2D;
-		overlayActive = Resources.Load ("overlayActive") as Texture2D;
 	}
 	
 	void TopMenu() {
@@ -74,14 +71,14 @@ public class GameManager : MonoBehaviour {
 	   	GUI.Box(new Rect(300-logoTexture.width/2,10,logoTexture.width,logoTexture.height),logoTexture);
 	    ///////main menu buttons
 	    //game start button
-	    if(GUI.Button(new Rect(210, 20+logoTexture.height, 180, 40), "Start game")) {
+	    if(GUI.Button(new Rect(162.5f, 20+logoTexture.height, 275, 75), "Start game", buttonStyle)) {
 			selection = true;
 	    }
-	    if(GUI.Button(new Rect(210, 70+logoTexture.height, 180, 40), "Editor")) {
+	    if(GUI.Button(new Rect(162.5f, 100+logoTexture.height, 275, 75), "Editor", buttonStyle)) {
 			Application.LoadLevel (1);
 	    }
 	    //quit button
-	    if(GUI.Button(new Rect(210, 120+logoTexture.height, 180, 40), "Quit")) {
+	    if(GUI.Button(new Rect(162.5f, 180+logoTexture.height, 275, 75), "Quit", buttonStyle)) {
 	    	Application.Quit();
 	    }
 	   
@@ -96,12 +93,12 @@ public class GameManager : MonoBehaviour {
 	    //the menu background box
 	    GUI.Box(new Rect(0, 0, 300, 200), "");
 		
-		if(GUI.Button(new Rect(55, 100, 180, 40), "New Game")) {
+		if(GUI.Button(new Rect(12.5f, 100, 275, 75), "New Game", buttonStyle)) {
 			// Proceed to SelectionMenu
 			stageSelect = 1;
 		}
 		if (File.Exists(filePath))
-			if(GUI.Button(new Rect(55, 140, 180, 40), "Continue")) {
+			if(GUI.Button(new Rect(12.5f, 180, 275, 75), "Continue", buttonStyle)) {
 				// Grayed out if no save file exisits.
 				// Loads game at last level w/ same bots/updrades
 				if (File.Exists(filePath)) 
@@ -111,7 +108,7 @@ public class GameManager : MonoBehaviour {
 //			
 //			stageSelect = 3;
 //		}
-		if(GUI.Button(new Rect(55, 220, 180, 40), "Back")) {
+		if(GUI.Button(new Rect(12.5f, 260, 275, 75), "Back", buttonStyle)) {
 			selection = false;
 			stageSelect = 0;
 		}
@@ -121,30 +118,18 @@ public class GameManager : MonoBehaviour {
 	}
 	void SelectionMenu() {
 	    //layout start
-	    GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 50, 600, 400));
-	   
-	    //the menu background box
-	    GUI.Box(new Rect(0, 0, 600, 400), "");
+	    GUI.BeginGroup(new Rect(Screen.width/2-450, 50, 900, 800));
 	   
 	    //title
 	    GUI.Label(new Rect(15, 10, 300, 68), "Which robot will you make?");
 		
 	    ///////menu buttons
 	    //selection options
-		string bot1Text = "Webelo";
-		string bot2Text = "Hob";
-		string bot3Text = "Hisco";
-		if (players[0].level > -1)
-			bot1Text = "UPGRADE: Webelo";
-		if (players[1].level > -1)
-			bot2Text = "UPGRADE: Hob";
-		if (players[2].level > -1)
-			bot3Text = "UPGRADE: Hisco";
 		if (!running) {
-			Rect selectBot1 = new Rect(55, 100, 180, 40);
-			Rect selectBot2 = new Rect(55, 150, 180, 40);
-			Rect selectBot3 = new Rect(55, 200, 180, 40);
-		    if(GUI.Button(selectBot1, bot1Text)) {
+			Rect selectBot1 = new Rect(0, 100, 300, 400);
+			Rect selectBot2 = new Rect(300, 100, 300, 400);
+			Rect selectBot3 = new Rect(600, 100, 300, 400);
+		    if(GUI.Button(selectBot1, bot1Blueprint)) {
 				running = true;
 				selection = false;
 				activeBot = 1;
@@ -155,11 +140,11 @@ public class GameManager : MonoBehaviour {
 		    }
 			if (selectBot1.Contains(Event.current.mousePosition)){
 				if (players[0].level == -1)
-					GUI.Label(new Rect(240,100, 200,200),"This robot can push boxes. It has the ability to grab and pull objects.");
+					GUI.Label(new Rect(50,500, 200,200),"This robot can push boxes. It has the ability to grab and pull objects.");
 				else
-					GUI.Label(new Rect(240,100, 200,200),"This upgrade will allow the robot to extend its arms up to 3 tiles.");
+					GUI.Label(new Rect(50,500, 200,200),"This upgrade will allow the robot to extend its arms up to 3 tiles.");
 			}
-		    if(GUI.Button(selectBot2, bot2Text)) {
+		    if(GUI.Button(selectBot2, bot2Blueprint)) {
 				running = true;
 				selection = false;
 				activeBot = 2;
@@ -170,12 +155,12 @@ public class GameManager : MonoBehaviour {
 		    }
 			if (selectBot2.Contains(Event.current.mousePosition)){
 				if (players[1].level == -1)
-					GUI.Label(new Rect(240,100, 200,200),"This robot can not push boxes. It has the ability to charge generators it touches " +
+					GUI.Label(new Rect(350,500, 200,200),"This robot can not push boxes. It has the ability to charge generators it touches " +
 														"and can traverse electrified tiles.");
 				else
-					GUI.Label(new Rect(240,100, 200,200),"Gain the ability to hover over short distances to get over small obstacles and pits.");
+					GUI.Label(new Rect(350,500, 200,200),"Gain the ability to hover over short distances to get over small obstacles and pits.");
 			}
-		    if(GUI.Button(selectBot3, bot3Text)) {
+		    if(GUI.Button(selectBot3, bot3Blueprint)) {
 				running = true;
 				selection = false;
 				activeBot = 3;
@@ -186,13 +171,13 @@ public class GameManager : MonoBehaviour {
 		    }
 			if (selectBot3.Contains(Event.current.mousePosition)){
 				if (players[2].level == -1)
-					GUI.Label(new Rect(240,100, 200,200),"This robot can push boxes. It has the ability to sprint for short periods of time.");
+					GUI.Label(new Rect(650,500, 200,200),"This robot can push boxes. It has the ability to sprint for short periods of time.");
 				else
-					GUI.Label(new Rect(240,100, 200,200),"Upgrade wheel(s) to gain speed on certain tiles and lessen the penalty for pushing objects.");
+					GUI.Label(new Rect(650,500, 200,200),"Upgrade wheel(s) to gain speed on certain tiles and lessen the penalty for pushing objects.");
 			}
 		    //return to main menu
 			if (level == 0)
-		    	if(GUI.Button(new Rect(55, 250, 180, 40), "Return")) {
+		    	if(GUI.Button(new Rect(720, 600, 180, 40), "Return")) {
 //		    		selection = false;
 					stageSelect = 0;
 		    }
@@ -209,7 +194,7 @@ public class GameManager : MonoBehaviour {
 		//the menu background box
 	    GUI.Box(new Rect(0, 50, 300, 300), "You're a winner!");
 		
-		if (GUI.Button (new Rect(55,110,180,40),"Main Menu")) {
+		if (GUI.Button (new Rect(55,110,180,40),"Main Menu", buttonStyle)) {
 			stageSelect = 0;
 			selection = false;
 			level = 0;
@@ -233,30 +218,34 @@ public class GameManager : MonoBehaviour {
 	   
 	    ///////main menu buttons
 	    //game start button
-	    if(GUI.Button(new Rect(55, 60, 180, 40), "Resume Game")) {
+	    if(GUI.Button(new Rect(55, 60, 180, 40), "Resume Game", buttonStyle)) {
 			paused = false;
 	    }
 		//restart level
-		if(GUI.Button(new Rect(55, 110, 180, 40), "Restart Level")) {
+		if(GUI.Button(new Rect(55, 110, 180, 40), "Restart Level", buttonStyle)) {
 			paused = false;
 			ClearLevel();
 			BuildLevel("level"+level);
 	    }
 		//gogo editor
-	    if(GUI.Button(new Rect(55, 160, 180, 40), "Editor")) {
+	    if(GUI.Button(new Rect(55, 160, 180, 40), "Editor", buttonStyle)) {
 			Application.LoadLevel (1);
 	    }
 		//toggle tutorial
 		if (showMessages) {
-			if(GUI.Button(new Rect(55, 210, 180, 40), "Tutorial: On")) {
+			if(GUI.Button(new Rect(55, 210, 180, 40), "Tutorial: On", buttonStyle)) {
 				showMessages = false;		}
 		} else {
-			if(GUI.Button(new Rect(55, 210, 180, 40), "Tutorial: Off")) {
+			if(GUI.Button(new Rect(55, 210, 180, 40), "Tutorial: Off", buttonStyle)) {
 				showMessages = true; 	}
 		}
 	    //quit button
-	    if(GUI.Button(new Rect(55, 260, 180, 40), "Quit")) {
-	    	Application.Quit();
+	    if(GUI.Button(new Rect(55, 260, 180, 40), "Main Menu", buttonStyle)) {
+	    	paused = false;
+			running = false;
+			selection = false;
+			stageSelect = 0;
+			ClearLevel ();
 	    }
 	   
 	    //layout end
