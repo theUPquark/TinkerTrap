@@ -267,11 +267,9 @@
       <tset>0</tset>
       <obs />
       <connections>
-        <in>33</in>
+        <in>35</in>
       </connections>
-      <locks>
-        <in>11</in>
-      </locks>
+      <locks />
       <tutorial>
         <bot1 />
         <bot2 />
@@ -308,9 +306,7 @@
       <type>Plate</type>
       <tset>0</tset>
       <obs />
-      <connections>
-        <out>33</out>
-      </connections>
+      <connections />
       <locks>
         <out>10</out>
       </locks>
@@ -338,7 +334,7 @@
     <x>
       <type>Floor</type>
       <tset>0</tset>
-      <obs />
+      <obs>Battery</obs>
       <connections />
       <locks />
       <tutorial>
@@ -348,13 +344,11 @@
       </tutorial>
     </x>
     <x>
-      <type>Plate</type>
-      <tset>0</tset>
-      <obs>Battery</obs>
+      <type>Floor</type>
+      <tset>1</tset>
+      <obs />
       <connections />
-      <locks>
-        <out>9</out>
-      </locks>
+      <locks />
       <tutorial>
         <bot1 />
         <bot2 />
@@ -471,9 +465,7 @@
       <connections>
         <out>22</out>
       </connections>
-      <locks>
-        <out>11</out>
-      </locks>
+      <locks />
       <tutorial>
         <bot1 />
         <bot2 />
@@ -548,7 +540,7 @@
     </x>
     <x>
       <type>Floor</type>
-      <tset>0</tset>
+      <tset>1</tset>
       <obs />
       <connections />
       <locks />
@@ -627,7 +619,6 @@
         <out>28</out>
       </connections>
       <locks>
-        <in>9</in>
         <in>8</in>
       </locks>
       <tutorial>
@@ -765,7 +756,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
+      <type>Charge</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -905,7 +896,7 @@
     </x>
     <x>
       <type>Floor</type>
-      <tset>0</tset>
+      <tset>1</tset>
       <obs />
       <connections />
       <locks />
@@ -1026,7 +1017,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Plate</type>
+      <type>Wall</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -1157,10 +1148,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Wall</type>
+      <type>Generator</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <out>18</out>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -1199,7 +1192,9 @@
       <connections>
         <out>20</out>
       </connections>
-      <locks />
+      <locks>
+        <out>12</out>
+      </locks>
       <tutorial>
         <bot1 />
         <bot2 />
@@ -1326,7 +1321,6 @@
       <obs />
       <connections>
         <in>19</in>
-        <in>20</in>
       </connections>
       <locks />
       <tutorial>
@@ -1363,12 +1357,10 @@
       </tutorial>
     </x>
     <x>
-      <type>Electrified</type>
+      <type>Wall</type>
       <tset>0</tset>
       <obs />
-      <connections>
-        <in>1</in>
-      </connections>
+      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -1379,7 +1371,7 @@
     <x>
       <type>Floor</type>
       <tset>0</tset>
-      <obs>Battery</obs>
+      <obs />
       <connections />
       <locks />
       <tutorial>
@@ -1401,12 +1393,10 @@
       </tutorial>
     </x>
     <x>
-      <type>Plate</type>
+      <type>Floor</type>
       <tset>0</tset>
-      <obs />
-      <connections>
-        <out>21</out>
-      </connections>
+      <obs>Box</obs>
+      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -1415,11 +1405,15 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
+      <type>Electrified</type>
       <tset>0</tset>
       <obs />
-      <connections />
-      <locks />
+      <connections>
+        <in>1</in>
+      </connections>
+      <locks>
+        <in>12</in>
+      </locks>
       <tutorial>
         <bot1 />
         <bot2 />
@@ -1563,12 +1557,10 @@
       </tutorial>
     </x>
     <x>
-      <type>Indicator</type>
-      <tset>8</tset>
+      <type>Wall</type>
+      <tset>0</tset>
       <obs />
-      <connections>
-        <in>20</in>
-      </connections>
+      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -1578,11 +1570,11 @@
     </x>
     <x>
       <type>Indicator</type>
-      <tset>13</tset>
+      <tset>8</tset>
       <obs />
       <connections>
         <in>19</in>
-        <in>21</in>
+        <in>20</in>
       </connections>
       <locks />
       <tutorial>
@@ -1646,12 +1638,10 @@
       </tutorial>
     </x>
     <x>
-      <type>Indicator</type>
-      <tset>10</tset>
+      <type>Wall</type>
+      <tset>0</tset>
       <obs />
-      <connections>
-        <in>21</in>
-      </connections>
+      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -1809,6 +1799,20 @@
     </x>
     <x>
       <type>Indicator</type>
+      <tset>3</tset>
+      <obs />
+      <connections>
+        <in>20</in>
+      </connections>
+      <locks />
+      <tutorial>
+        <bot1 />
+        <bot2 />
+        <bot3 />
+      </tutorial>
+    </x>
+    <x>
+      <type>Indicator</type>
       <tset>4</tset>
       <obs />
       <connections>
@@ -1823,21 +1827,6 @@
     </x>
     <x>
       <type>Indicator</type>
-      <tset>4</tset>
-      <obs />
-      <connections>
-        <in>21</in>
-        <in>20</in>
-      </connections>
-      <locks />
-      <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
-      </tutorial>
-    </x>
-    <x>
-      <type>Indicator</type>
       <tset>3</tset>
       <obs />
       <connections>
@@ -1856,7 +1845,6 @@
       <tset>3</tset>
       <obs />
       <connections>
-        <in>21</in>
         <in>20</in>
       </connections>
       <locks />
@@ -1871,7 +1859,6 @@
       <tset>3</tset>
       <obs />
       <connections>
-        <in>21</in>
         <in>20</in>
       </connections>
       <locks />
@@ -1886,7 +1873,6 @@
       <tset>3</tset>
       <obs />
       <connections>
-        <in>21</in>
         <in>20</in>
       </connections>
       <locks />
@@ -1898,10 +1884,9 @@
     </x>
     <x>
       <type>Indicator</type>
-      <tset>7</tset>
+      <tset>3</tset>
       <obs />
       <connections>
-        <in>21</in>
         <in>20</in>
       </connections>
       <locks />
@@ -2080,10 +2065,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
+      <type>Indicator</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>21</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -2312,10 +2299,12 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
+      <type>Plate</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <out>21</out>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -3386,9 +3375,18 @@
       <connections />
       <locks />
       <tutorial>
-        <bot1 />
-        <bot2 />
-        <bot3 />
+        <bot1>
+          <level>0</level>
+          <msg>Use the number keys to select a second bot!</msg>
+        </bot1>
+        <bot2>
+          <level>0</level>
+          <msg>Use the number keys to select a second bot!</msg>
+        </bot2>
+        <bot3>
+          <level>0</level>
+          <msg>Use the number keys to select a second bot!</msg>
+        </bot3>
       </tutorial>
     </x>
     <x>
@@ -3993,12 +3991,10 @@
       </tutorial>
     </x>
     <x>
-      <type>Electrified</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
-      <connections>
-        <in>1</in>
-      </connections>
+      <connections />
       <locks />
       <tutorial>
         <bot1 />
@@ -4203,7 +4199,7 @@
     <x>
       <type>Floor</type>
       <tset>1</tset>
-      <obs />
+      <obs>Box</obs>
       <connections />
       <locks />
       <tutorial>
@@ -4297,18 +4293,9 @@
         <out>6</out>
       </locks>
       <tutorial>
-        <bot1>
-          <level>0</level>
-          <msg>Use the number keys to select a second bot!</msg>
-        </bot1>
-        <bot2>
-          <level>0</level>
-          <msg>Use the number keys to select a second bot!</msg>
-        </bot2>
-        <bot3>
-          <level>0</level>
-          <msg>Use the number keys to select a second bot!</msg>
-        </bot3>
+        <bot1 />
+        <bot2 />
+        <bot3 />
       </tutorial>
     </x>
     <x>
@@ -4343,7 +4330,6 @@
       <obs />
       <connections>
         <in>16</in>
-        <in>1</in>
       </connections>
       <locks>
         <in>6</in>
@@ -4449,7 +4435,7 @@
         <bot2 />
         <bot3>
           <level>1</level>
-          <msg>Hisco can use these Charge tiles to activate any one door or generator at a time! He can only hold this charge for a short time, so hurry!</msg>
+          <msg>With his upgrade, Hisco can use these Charge tiles to activate any one door or generator at a time! Just run to it while charged!</msg>
         </bot3>
       </tutorial>
     </x>
