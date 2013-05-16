@@ -6,6 +6,7 @@ public class Charge : Floor, Tile {
 	
 	bool occupied = false;
 	Bot3 refBot3;
+	Generator linkTile;
 	
 	public Charge(int gx, int gy, int tSet) : base(gx, gy, tSet) {
 		os.PlayOnce (this.GetType ().Name+tileSet.ToString ()+"_neut");
@@ -26,18 +27,25 @@ public class Charge : Floor, Tile {
 				occupied = false;
 		}
 	}
-	
+
 	public override void update ()
 	{
 		if (refBot3 != null) {
-		if (occupied || refBot3.level > 0) {
-			refBot3.Charge();
+		if (occupied && refBot3.level > 0)
+			refBot3.ChargeSource = this;
+		if (refBot3.ChargeSource == this)
 			os.PlayOnce (this.GetType ().Name+tileSet.ToString ()+"_link");
-		} else
+		else if (linkTile == null)
 			os.PlayOnce (this.GetType ().Name+tileSet.ToString ()+"_neut");
-		// else if connected to a tile, play "_act"}
-		} else
-			os.PlayOnce (this.GetType ().Name+tileSet.ToString ()+"_neut");
+		else if (linkTile != null)
+			os.PlayOnce (this.GetType ().Name+tileSet.ToString ()+"_act");
+		}
+	}
+	
+	public void setTile(Generator link) {
+		if (linkTile != null)
+			linkTile.removeCharge();
+		linkTile = link;
 	}
 }
 

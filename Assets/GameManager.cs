@@ -875,11 +875,6 @@ public class GameManager : MonoBehaviour {
 							}
 						}
 					}
-					if (p.GetType() == typeof(Bot3)) {
-						Bot3 b3 = (Bot3)p;
-						if (b3.charge > 0)
-							b3.Dissipate();
-					}
 				}
 			}
 		}
