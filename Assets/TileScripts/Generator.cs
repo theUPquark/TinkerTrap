@@ -18,6 +18,7 @@ public class Generator : TileClass, Tile {
 		
 		os.PlayOnce(this.GetType ().Name+tSet.ToString()+"_off");
 		powered = false;
+		locked = true;
 	}
 	
 	public override void interact(Obstacle a)
@@ -62,12 +63,14 @@ public class Generator : TileClass, Tile {
 			if (powered == false) {
 				os.PlayOnce(this.GetType ().Name+tileSet.ToString()+"_on");
 				powered = true;
+				locked = false;
 			}
 			if (Time.time >= endTime) {
 				endTime = 0;
 				botCharge = false;
 				if (bat == null) {
 					powered = false;
+					locked = true;
 					os.PlayOnce(this.GetType ().Name+tileSet.ToString()+"_off");
 				}
 			}

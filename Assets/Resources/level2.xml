@@ -203,7 +203,9 @@
       <connections>
         <out>22</out>
       </connections>
-      <locks />
+      <locks>
+        <out>11</out>
+      </locks>
       <tutorial>
         <bot1 />
         <bot2 />
@@ -240,8 +242,12 @@
       <type>Door</type>
       <tset>0</tset>
       <obs />
-      <connections />
-      <locks />
+      <connections>
+        <in>33</in>
+      </connections>
+      <locks>
+        <in>11</in>
+      </locks>
       <tutorial>
         <bot1 />
         <bot2 />
@@ -264,7 +270,9 @@
       <type>Plate</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <out>33</out>
+      </connections>
       <locks>
         <out>10</out>
       </locks>
@@ -740,8 +748,8 @@
       </tutorial>
     </x>
     <x>
-      <type>Charge</type>
-      <tset>0</tset>
+      <type>Door</type>
+      <tset>1</tset>
       <obs />
       <connections />
       <locks />
@@ -838,7 +846,7 @@
     <x>
       <type>Floor</type>
       <tset>0</tset>
-      <obs />
+      <obs>Spawn</obs>
       <connections />
       <locks />
       <tutorial>
@@ -1032,7 +1040,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
+      <type>Charge</type>
       <tset>0</tset>
       <obs />
       <connections />
@@ -1140,9 +1148,7 @@
       <connections>
         <out>20</out>
       </connections>
-      <locks>
-        <out>7</out>
-      </locks>
+      <locks />
       <tutorial>
         <bot1 />
         <bot2 />
@@ -1549,7 +1555,9 @@
       <type>Electrified</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>1</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -2144,9 +2152,7 @@
       <tset>0</tset>
       <obs />
       <connections />
-      <locks>
-        <in>7</in>
-      </locks>
+      <locks />
       <tutorial>
         <bot1 />
         <bot2 />
@@ -3266,8 +3272,8 @@
   </y>
   <y>
     <x>
-      <type>Wall</type>
-      <tset>0</tset>
+      <type>Door</type>
+      <tset>1</tset>
       <obs />
       <connections />
       <locks />
@@ -3894,7 +3900,9 @@
       <type>Electrified</type>
       <tset>0</tset>
       <obs />
-      <connections />
+      <connections>
+        <in>1</in>
+      </connections>
       <locks />
       <tutorial>
         <bot1 />
@@ -3965,13 +3973,11 @@
       </tutorial>
     </x>
     <x>
-      <type>Plate</type>
+      <type>Floor</type>
       <tset>0</tset>
       <obs />
       <connections />
-      <locks>
-        <out>6</out>
-      </locks>
+      <locks />
       <tutorial>
         <bot1 />
         <bot2 />
@@ -4187,11 +4193,13 @@
       </tutorial>
     </x>
     <x>
-      <type>Floor</type>
+      <type>Plate</type>
       <tset>0</tset>
-      <obs>Spawn</obs>
+      <obs />
       <connections />
-      <locks />
+      <locks>
+        <out>6</out>
+      </locks>
       <tutorial>
         <bot1>
           <level>0</level>
@@ -4239,6 +4247,7 @@
       <obs />
       <connections>
         <in>16</in>
+        <in>1</in>
       </connections>
       <locks>
         <in>6</in>
@@ -4431,7 +4440,7 @@
       </tutorial>
     </x>
     <x>
-      <type>Door</type>
+      <type>Wall</type>
       <tset>0</tset>
       <obs />
       <connections />
