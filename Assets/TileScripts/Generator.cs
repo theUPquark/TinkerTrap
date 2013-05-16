@@ -7,7 +7,7 @@ public class Generator : TileClass, Tile {
 	private Battery bat = null;
 	private bool botCharge = false;
 	private double endTime = 0.0;
-	private Bot3 b3;
+	private Charge chargeTile = null;
 	
 	public AudioClip audioPowered;
 	
@@ -31,12 +31,13 @@ public class Generator : TileClass, Tile {
 			botCharge = true;
 			endTime = Time.time+8;
 		} else if (a.GetType() == typeof(Bot3)) {
-			b3 = (Bot3)a;
-			if (b3.charge > 0) {
-				b3.charged = this;
-				b3.charge = 0.0;
-//				botCharge = true;
-//			endTime = Time.time+8;
+			Bot3 b3 = (Bot3)a;
+			if (b3.ChargeSource != null) {
+				if (chargeTile == null) {
+					b3.ChargeSource.setTile (this);
+					chargeTile = b3.ChargeSource;
+					b3.ChargeSource = null;
+				}
 			}
 		}
 	}
@@ -49,19 +50,24 @@ public class Generator : TileClass, Tile {
 		}
 	}
 	
+	public void removeCharge() {
+		chargeTile = null;
+	}
+	
 	public override void act(List<Obstacle> objs) {
-		if (b3 != null && b3.charged == this) {
+		if (chargeTile != null || used) {
 			if (powered == false) {
 				os.PlayOnce(this.GetType ().Name+tileSet.ToString()+"_on");
 				powered = true;
+				locked = false;
 			}
-		} else {
+		} else if (botCharge == false) {
 			if (powered == true) {
 				powered = false;
-					os.PlayOnce(this.GetType ().Name+tileSet.ToString()+"_off");
+				locked = true;
+				os.PlayOnce(this.GetType ().Name+tileSet.ToString()+"_off");
 			}
-		}
-		if (botCharge == true) {
+		} else if (botCharge == true) {
 			if (powered == false) {
 				os.PlayOnce(this.GetType ().Name+tileSet.ToString()+"_on");
 				powered = true;
@@ -75,17 +81,6 @@ public class Generator : TileClass, Tile {
 					locked = true;
 					os.PlayOnce(this.GetType ().Name+tileSet.ToString()+"_off");
 				}
-			}
-		}
-		if (used) {
-			if (!powered && bat.charging(this)) {
-				os.PlayOnce(this.GetType ().Name+tileSet.ToString()+"_on");
-				used = false;
-				powered = true;
-			} else if (bat == null && endTime == 0) {
-				os.PlayOnce(this.GetType ().Name+tileSet.ToString()+"_off");
-				used = false;
-				powered = false;
 			}
 		}
 		if (powered) {
