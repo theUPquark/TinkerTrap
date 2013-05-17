@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour {
 		messagesDisplay.Add(new Dictionary<string, double>());
 		messagesDisplay.Add(new Dictionary<string, double>());
 		
-		overlayAbility = Resources.Load("overlayAbility") as Texture2D;
+		overlayAbility = Resources.Load("overlayActive") as Texture2D;
 		
 		bot1Port = OT.CreateObject ("PortraitSprite");
 		bot2Port = OT.CreateObject ("PortraitSprite");
