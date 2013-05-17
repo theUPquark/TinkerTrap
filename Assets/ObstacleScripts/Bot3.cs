@@ -36,6 +36,75 @@ public class Bot3 : Player, Obstacle
 		get { return 63; }
 	}
 	
+	public override void update(bool input) {
+		if (moving || moveIntro) {
+			if (!input) {
+				stopping = true;
+			}
+		}
+		if (moveTry && input)
+			stopping = false;
+		if (!os.isPlaying || os.animationFrameset.Equals (this.GetType ().Name + dirStr (animDir)+"_Charged_MvStop") || os.animationFrameset.Equals (this.GetType ().Name + dirStr (animDir)+"_Charged_Idle") ||
+			os.animationFrameset.Equals (this.GetType ().Name + dirStr (animDir)+"_Charged_Move") || os.animationFrameset.Equals (this.GetType ().Name + dirStr (animDir)+"_MvStop") ||
+			os.animationFrameset.Equals (this.GetType ().Name + dirStr (animDir)+"_Idle") || os.animationFrameset.Equals (this.GetType ().Name + dirStr (animDir)+"_Move")) {
+			animPlay = false;
+			string suffix = "";
+			string dirAnim = dirStr(currDir);
+			if (turning) {
+				if (idle) {
+					if (animDir == currDir-1 || animDir == currDir+3)
+						suffix = "TurnRtSt";
+					else if (animDir == currDir+1 || animDir == currDir-3)
+						suffix = "TurnLftSt";
+					else if (Math.Abs (animDir-currDir) == 2)
+						suffix = "TurnRvSt";
+				} else {
+					if (animDir == currDir-1 || animDir == currDir+3)
+						suffix = "TurnRtMv";
+					else if (animDir == currDir+1 || animDir == currDir-3)
+						suffix = "TurnLftMv";
+					else if (Math.Abs (animDir-currDir) == 2)
+						suffix = "TurnRvMv";
+				}
+				dirAnim = dirStr(animDir);
+				if (os.isPlaying)
+					animDir = currDir;
+				turning = false;
+			} else if (stopping) {
+				if (!os.isPlaying) {
+					if (!playstop && !idle) {
+						suffix = "MvStop";
+						animDir = currDir;
+						playstop = true;
+					} else {
+						suffix = "Idle";
+						animDir = currDir;
+						stopping = false;
+						idle = true;
+						playstop = false;
+					}
+				}
+			} else if (moveTry) {
+				if (idle) {
+					suffix = "MvInt";
+					animDir = currDir;
+					idle = false;
+				} else if (!os.isPlaying) {
+					suffix = "Move";
+					animDir = currDir;
+					moving = true;
+				}
+				moveTry = false;
+			}
+			if (suffix != "") {
+				if (chargeTile != null)
+					os.PlayOnce (this.GetType ().Name + dirAnim +"_Charged_"+suffix);
+				else
+					os.PlayOnce (this.GetType ().Name + dirAnim +"_"+suffix);
+			}
+		}
+	}
+	
 	public Charge ChargeSource {
 		get { return chargeTile; }
 		set { chargeTile = value; }

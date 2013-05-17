@@ -10,9 +10,6 @@ public class GameManager : MonoBehaviour {
 	public int numberOfObjects;
 	public GUISkin skin;
 	public Texture2D logoTexture;
-	public Texture2D bot1Texture;
-	public Texture2D bot2Texture;
-	public Texture2D bot3Texture;
 	public Texture2D bot1Blueprint, bot2Blueprint, bot3Blueprint;
 	public Texture2D overlayActive;
 	
@@ -43,6 +40,13 @@ public class GameManager : MonoBehaviour {
 	private double lastClick = 0.0;
 	private bool determineAbility = false;
 	
+	private GameObject bot1Port;
+	private GameObject bot2Port;
+	private GameObject bot3Port;
+	private OTAnimatingSprite bot1PSp;
+	private OTAnimatingSprite bot2PSp;
+	private OTAnimatingSprite bot3PSp;
+	
 	private List<Player> players = new List<Player>();
 	private int activeBot = 1;
 	private List<KeyCode> activeInputs = new List<KeyCode>();
@@ -58,6 +62,17 @@ public class GameManager : MonoBehaviour {
 		messagesDisplay.Add(new Dictionary<string, double>());
 		messagesDisplay.Add(new Dictionary<string, double>());
 		messagesDisplay.Add(new Dictionary<string, double>());
+		
+		
+		bot1Port = OT.CreateObject ("PortraitSprite");
+		bot2Port = OT.CreateObject ("PortraitSprite");
+		bot3Port = OT.CreateObject ("PortraitSprite");
+		bot1PSp = bot1Port.GetComponent<OTAnimatingSprite>();
+		bot2PSp = bot2Port.GetComponent<OTAnimatingSprite>();
+		bot3PSp = bot3Port.GetComponent<OTAnimatingSprite>();
+		bot1PSp.visible = false;
+		bot2PSp.visible = false;
+		bot3PSp.visible = false;
 	}
 	
 	void TopMenu() {
@@ -256,19 +271,13 @@ public class GameManager : MonoBehaviour {
 		// Covers entire screen...
 		GUI.BeginGroup (new Rect(0, 0, Screen.width, Screen.height));
 		
-		GUI.Box (new Rect(5+133*(activeBot-1), 5, 133, 261),overlayActive); // Box position emphasises activeBot
+		//GUI.DrawTexture (new Rect(5+133*(activeBot-1), 5, 133, 133), overlayActive); // Box position emphasises activeBot
 		
-		GUI.Box (new Rect(5, 5, 133, 261), bot1Texture);
-		GUI.Box (new Rect(138, 5, 133, 261), bot2Texture);
-		GUI.Box (new Rect(271, 5, 133, 261), bot3Texture);
-		GUI.Label (new Rect(10, 246, 133, 20), "L: "+players[0].level);
-		GUI.Label (new Rect(5, 266, 133, 20), "1");
+		//GUI.Label (new Rect(10, 246, 133, 20), "L: "+players[0].level);
 		
-		GUI.Label (new Rect(143, 246, 133, 20), "L: "+players[1].level);
-		GUI.Label (new Rect(138, 266, 133, 20), "2");
+		//GUI.Label (new Rect(143, 246, 133, 20), "L: "+players[1].level);
 		
-		GUI.Label (new Rect(276, 246, 133, 20), "L: "+players[2].level);
-		GUI.Label (new Rect(271, 266, 133, 20), "3");
+		//GUI.Label (new Rect(276, 246, 133, 20), "L: "+players[2].level);
 		
 		// Tutorial Message Box
 		if (showMessages && ((TileClass)gameB[players[activeBot-1].onTile()]).messages[activeBot-1].Count > 0) {
@@ -562,6 +571,12 @@ public class GameManager : MonoBehaviour {
 	
 	void OnGUI () {
 		if (!running) {
+			bot1PSp.Stop();
+			bot1PSp.visible = true;
+			bot2PSp.Stop();
+			bot2PSp.visible = true;
+			bot3PSp.Stop();
+			bot3PSp.visible = true;
 			//load GUI skin
 		    GUI.skin = skin;
 			
@@ -591,6 +606,7 @@ public class GameManager : MonoBehaviour {
 	void Update() {
 		if (running && !selection) {
 			if (!paused) {
+				
 				// Auto-complete level
 				if (Input.GetKey(KeyCode.G) && Input.GetKey(KeyCode.O)) {
 					refFinish.SkipLevel();
@@ -679,6 +695,7 @@ public class GameManager : MonoBehaviour {
 	void FixedUpdate() {
 		
 		if (running && !selection) {
+			// Bot Selection Overlay
 			if (!paused) {
 				bool movement = false;
 				if (!players[activeBot-1].inAction() && !players[activeBot-1].onActiveElec) {
@@ -876,6 +893,43 @@ public class GameManager : MonoBehaviour {
 						}
 					}
 				}
+			}
+			if (players[0].level >= 0)
+				bot1PSp.visible = true;
+			else
+				bot1PSp.visible = false;
+			if (players[1].level >= 0)
+				bot2PSp.visible = true;
+			else
+				bot2PSp.visible = false;
+			if (players[2].level >= 0)
+				bot3PSp.visible = true;
+			else
+				bot3PSp.visible = false;
+			
+			Vector3 topCorner = camera.ScreenToWorldPoint (new Vector3(5, Screen.height-5, 0));
+			bot1PSp.position = new Vector2(topCorner.x, topCorner.y);
+			bot2PSp.position = new Vector2(topCorner.x+128+5, topCorner.y);
+			bot3PSp.position = new Vector2(topCorner.x+256+10, topCorner.y);
+			bot1PSp.depth = -998;
+			bot2PSp.depth = -998;
+			bot3PSp.depth = -998;
+			
+			if (activeBot == 1) {
+				if (!bot1PSp.isPlaying)
+					bot1PSp.PlayLoop ("Bot1");
+				bot2PSp.PlayOnce ("Bot2");
+				bot3PSp.PlayOnce ("Bot3");
+			} else if (activeBot == 2) {
+				bot1PSp.PlayOnce ("Bot1");
+				if (!bot2PSp.isPlaying)
+					bot2PSp.PlayLoop ("Bot2");
+				bot3PSp.PlayOnce ("Bot3");
+			} else {
+				bot1PSp.PlayOnce ("Bot1");
+				bot2PSp.PlayOnce ("Bot2");
+				if (!bot3PSp.isPlaying)
+					bot3PSp.PlayLoop ("Bot3");
 			}
 		}
 	}
