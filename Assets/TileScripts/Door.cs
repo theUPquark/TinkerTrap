@@ -44,7 +44,7 @@ public class Door : TileClass, Tile {
 		} else if (!used && open) {
 			os.PlayOnceBackward("Door"+tileSet.ToString ());
 			open = false;
-			delayTime = Time.time + .6f;
+			delayTime = Time.time + .45f;
 		}
 	}
 }
