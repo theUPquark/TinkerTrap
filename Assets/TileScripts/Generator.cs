@@ -29,7 +29,7 @@ public class Generator : TileClass, Tile {
 			bat.charge(this);
 		} else if (a.GetType () == typeof(Bot2)) {
 			botCharge = true;
-			endTime = Time.time+8;
+			endTime = Time.time+9;
 		} else if (a.GetType() == typeof(Bot3)) {
 			Bot3 b3 = (Bot3)a;
 			if (b3.ChargeSource != null) {
