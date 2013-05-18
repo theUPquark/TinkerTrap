@@ -90,10 +90,15 @@ public class GameManager : MonoBehaviour {
 	    //game start button
 	    if(GUI.Button(new Rect(162.5f, 20+logoTexture.height, 275, 75), "Start game", buttonStyle)) {
 			selection = true;
+			stageSelect = 0;
 	    }
-	    if(GUI.Button(new Rect(162.5f, 100+logoTexture.height, 275, 75), "Editor", buttonStyle)) {
-			Application.LoadLevel (1);
+		if(GUI.Button(new Rect(162.5f, 100+logoTexture.height, 275, 75), "Controls", buttonStyle)) {
+			selection = true;
+			stageSelect = 4;
 	    }
+//	    if(GUI.Button(new Rect(162.5f, 100+logoTexture.height, 275, 75), "Editor", buttonStyle)) {
+//			Application.LoadLevel (1);
+//	    }
 	    //quit button
 	    if(GUI.Button(new Rect(162.5f, 180+logoTexture.height, 275, 75), "Quit", buttonStyle)) {
 	    	Application.Quit();
@@ -103,6 +108,22 @@ public class GameManager : MonoBehaviour {
 	    GUI.EndGroup();
 	}
 	
+	void ControlsMenu() {
+		//layout
+		GUI.BeginGroup(new Rect(Screen.width / 2 - 350, 50, 700, 600));
+		
+		GUI.Label (new Rect(0,0,300,500),"Keyboard Controls\n\nMovement\n Forward: \tW / UpArrow\n Back: \t\t\tS / DownArrow\n Left: \t\t\tA / LeftArrow\n Right: \t\t\tD / RightArrow\n\n" +
+			"Abilities\n Primary: \tE\n Secondary: \tR");
+		
+		GUI.Label (new Rect(400,0,300,500),"Mouse Controls\n\nMovement\n Hold the left mouse button down on the screen in the direction you want to travel.\n\n\n" +
+			"Abilities\n Primary: Click once on the robot\n Secondary: Double-click on the robot");
+		
+		if (GUI.Button(new Rect(200,500,300,80),"Back",buttonStyle)) {
+			selection = false;
+		}
+		
+		GUI.EndGroup();
+	}
 	void StageSelectMenu() {
 		//layout start
 	    GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 50, 300, 400));
@@ -596,6 +617,8 @@ public class GameManager : MonoBehaviour {
 					LoadFromSave();
 				else if (stageSelect == 3)
 					VictoryMenu();
+				else if (stageSelect == 4)
+					ControlsMenu();
 			} else //Goto Main Menu
 			    TopMenu();
 		} else if (paused) {
