@@ -17,12 +17,12 @@ public class Bot3 : Player, Obstacle
 	public double leftXPos2;
 	public double rightXPos2;
 	
-	public AudioClip audioDash;
+	public AudioSource audioDash;
 	
 	public Bot3 ()
 	{
-		audioDash = Resources.Load ("propel") as AudioClip;
-		gfx.AddComponent<AudioSource>().clip = audioDash;
+		audioDash = gfx.AddComponent<AudioSource>();
+		audioDash.clip = Resources.Load ("propel") as AudioClip;
 	}
 	
 	public Bot3 (double x, double y)

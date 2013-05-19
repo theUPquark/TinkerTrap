@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour {
 	public Texture2D bot1Blueprint, bot2Blueprint, bot3Blueprint;
 	public Texture2D overlayActive;
 	public Texture2D overlayAbility;
+	public Texture2D[] introImages = new Texture2D[7];
+	public Texture2D[] outroImages = new Texture2D[3];
 	
 	public GUIStyle buttonStyle;
 	
@@ -28,6 +30,9 @@ public class GameManager : MonoBehaviour {
 	private List<Obstacle> gameObs = new List<Obstacle>();
 	private List<Dictionary<string, double>> messagesDisplay = new List<Dictionary<string, double>>(3);
 	
+	private bool playIntro = true;
+	private float introLoc = 0;
+	private float vicTime;
 	private bool running = false;
 	private bool selection = false;
 	private int stageSelect = 0;
@@ -50,7 +55,7 @@ public class GameManager : MonoBehaviour {
 	
 	private List<Player> players = new List<Player>();
 	private int activeBot = 1;
-	private List<KeyCode> activeInputs = new List<KeyCode>();
+//	private List<KeyCode> activeInputs = new List<KeyCode>();
 	
 	void Start () {
 		Time.fixedDeltaTime = 1/30f;
@@ -86,13 +91,14 @@ public class GameManager : MonoBehaviour {
 	   
 	    //title
 	   	GUI.Box(new Rect(300-logoTexture.width/2,10,logoTexture.width,logoTexture.height),logoTexture);
+		GUI.Label (new Rect(300-130,10+logoTexture.height, 260, 30), "By Jeremy Rimpo & Trunk");
 	    ///////main menu buttons
 	    //game start button
-	    if(GUI.Button(new Rect(162.5f, 20+logoTexture.height, 275, 75), "Start game", buttonStyle)) {
+	    if(GUI.Button(new Rect(162.5f, 50+logoTexture.height, 275, 75), "Start game", buttonStyle)) {
 			selection = true;
 			stageSelect = 0;
 	    }
-		if(GUI.Button(new Rect(162.5f, 100+logoTexture.height, 275, 75), "Controls", buttonStyle)) {
+		if(GUI.Button(new Rect(162.5f, 130+logoTexture.height, 275, 75), "Controls & About", buttonStyle)) {
 			selection = true;
 			stageSelect = 4;
 	    }
@@ -100,7 +106,7 @@ public class GameManager : MonoBehaviour {
 //			Application.LoadLevel (1);
 //	    }
 	    //quit button
-	    if(GUI.Button(new Rect(162.5f, 180+logoTexture.height, 275, 75), "Quit", buttonStyle)) {
+	    if(GUI.Button(new Rect(162.5f, 210+logoTexture.height, 275, 75), "Quit", buttonStyle)) {
 	    	Application.Quit();
 	    }
 	   
@@ -112,13 +118,15 @@ public class GameManager : MonoBehaviour {
 		//layout
 		GUI.BeginGroup(new Rect(Screen.width / 2 - 350, 50, 700, 600));
 		
-		GUI.Label (new Rect(0,0,300,500),"Keyboard Controls\n\nMovement\n Forward: \tW / UpArrow\n Back: \t\t\tS / DownArrow\n Left: \t\t\tA / LeftArrow\n Right: \t\t\tD / RightArrow\n\n" +
+		GUI.Label (new Rect(0,0,300,300),"Keyboard Controls\n\nMovement\n Forward: \tW / UpArrow\n Back: \t\t\tS / DownArrow\n Left: \t\t\tA / LeftArrow\n Right: \t\t\tD / RightArrow\n\n" +
 			"Abilities\n Primary: \tE\n Secondary: \tR");
 		
-		GUI.Label (new Rect(400,0,300,500),"Mouse Controls\n\nMovement\n Hold the left mouse button down on the screen in the direction you want to travel.\n\n\n" +
+		GUI.Label (new Rect(400,0,300,300),"Mouse Controls\n\nMovement\n Hold the left mouse button down on the screen in the direction you want to travel.\n\n\n" +
 			"Abilities\n Primary: Click once on the robot\n Secondary: Double-click on the robot");
 		
-		if (GUI.Button(new Rect(200,500,300,80),"Back",buttonStyle)) {
+		GUI.Label (new Rect (0, 330, 600, 80), "Designed, Programmed, and Illustrated by Jeremy Rimpo. Additional Programming by Jeremy Trunk. See more about the making of at http://www.unabridgedillusions.com !");
+		
+		if (GUI.Button(new Rect(200,420,300,80),"Back",buttonStyle)) {
 			selection = false;
 		}
 		
@@ -231,12 +239,26 @@ public class GameManager : MonoBehaviour {
 	
 	void VictoryMenu() {
 		//layout start
-	    GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 50, 300, 400));
+	    GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height));
+		
+		float frameTimer = (Time.time-vicTime)%15;
+		float frameNum = frameTimer/5;
+		int currFrame = (int)frameNum;
+		/*Color[] c = outroImages[currFrame].GetPixels();
+		for (int i = 0; i < c.Length; i++) {
+			if ((Time.time-vicTime)%5 <= 2.5)
+				c[i].a = ((Time.time-vicTime)%2.5f/2.5f);
+			else
+				c[i].a = ((-((Time.time-vicTime)%2.5f/2.5f))+1);
+		}
+		outroImages[currFrame].SetPixels (c);*/
+		
+		GUI.DrawTexture (new Rect(Screen.width/2-400, Screen.height/2-300,800,600),outroImages[currFrame]);
 		
 		//the menu background box
-	    GUI.Box(new Rect(0, 50, 300, 300), "You're a winner!");
+	    GUI.Box(new Rect(Screen.width/2-300, 50, 600, 60), "You found the control room and escaped!");
 		
-		if (GUI.Button (new Rect(55,110,180,40),"Main Menu", buttonStyle)) {
+		if (GUI.Button (new Rect(Screen.width/2-137.5f,545,275,75),"Main Menu", buttonStyle)) {
 			stageSelect = 0;
 			selection = false;
 			level = 0;
@@ -270,9 +292,9 @@ public class GameManager : MonoBehaviour {
 			BuildLevel("level"+level);
 	    }
 		//gogo editor
-	    if(GUI.Button(new Rect(55, 160, 180, 40), "Editor", buttonStyle)) {
+	    /*if(GUI.Button(new Rect(55, 160, 180, 40), "Editor", buttonStyle)) {
 			Application.LoadLevel (1);
-	    }
+	    }*/
 		//toggle tutorial
 		if (showMessages) {
 			if(GUI.Button(new Rect(55, 210, 180, 40), "Tutorial: On", buttonStyle)) {
@@ -426,6 +448,7 @@ public class GameManager : MonoBehaviour {
 		}
 		// Check if next level exists
 		if (Resources.Load("level"+(level+1)) == null) {
+			vicTime = Time.time;
 			stageSelect = 3;
 		}
 	}
@@ -603,7 +626,18 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void OnGUI () {
-		if (!running) {
+		if (playIntro && introLoc > -810*7) {
+			introLoc-=1;
+			GUI.BeginGroup (new Rect(0, 0, Screen.width, Screen.height));
+			for (int i = 0; i < introImages.Length; i++) {
+				GUI.DrawTexture (new Rect(introLoc+810*i, Screen.height/2-300, 800, 600), introImages[i]);
+			}
+			GUI.Box (new Rect(Screen.width/2, 0, 200,30), "Hit Esc or Spacebar to Skip");
+			GUI.EndGroup ();
+			if (Input.GetKey (KeyCode.Escape) || Input.GetKey (KeyCode.Space))
+				playIntro = false;
+		} else if (!running) {
+			
 			bot1PSp.Stop();
 			bot1PSp.visible = false;
 			bot2PSp.Stop();
@@ -750,7 +784,6 @@ public class GameManager : MonoBehaviour {
 						double locX = Input.mousePosition.x - Screen.width/2;
 						double locY = Input.mousePosition.y - Screen.height/2;
 						
-						Debug.Log("X = "+locX+", Y = "+locY);
 						if (!(Math.Abs(mouseLocation.x-64 - players[activeBot-1].xiso) < 64 && Math.Abs(mouseLocation.y-64 - players[activeBot-1].yiso) < 64)) {
 							if (locX > 0 && locY > 0)
 								moveChar(players[activeBot-1],speed,0,-1);

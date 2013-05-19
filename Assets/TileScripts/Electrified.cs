@@ -9,9 +9,13 @@ public class Electrified : Floor, Tile {
 	private double onTime = 0.0;
 	private double onDelay = 0.75;
 	
+	public AudioSource elecSound;
+	
 	public Electrified(int gx, int gy, int tSet) : base(gx, gy, tSet)
 	{
 		os.PlayLoop ("Electrified"+tSet.ToString()+"_off");
+		elecSound = gfx.AddComponent<AudioSource>();
+		elecSound.clip = (AudioClip) Resources.Load ("electric_arc");
 	}
 	
 	public override bool walkable(Obstacle b)
@@ -60,12 +64,16 @@ public class Electrified : Floor, Tile {
 	
 	public override void act(List<Obstacle> objs) {
 		switch (on) {
-			case true:
-				os.PlayLoop ("Electrified"+tileSet.ToString()+"_on");
-				break;
-			case false:
-				os.PlayLoop ("Electrified"+tileSet.ToString()+"_off");
-				break;
+		case true:
+			os.PlayLoop ("Electrified"+tileSet.ToString()+"_on");
+			if (!elecSound.isPlaying)
+				elecSound.Play ();
+			break;
+		case false:
+			os.PlayLoop ("Electrified"+tileSet.ToString()+"_off");
+			if (elecSound.isPlaying)
+				elecSound.Stop ();
+			break;
 		}
 		/*bool occupied = false;
 		foreach (Obstacle i in objs)	
