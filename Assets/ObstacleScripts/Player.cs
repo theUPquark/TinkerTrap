@@ -4,7 +4,8 @@ using UnityEngine;
 
 public abstract class Player : ObstacleClass, Obstacle
 {
-	public int currDir, animDir;
+	public int currDir = -1;
+	public int animDir = -1;
 	protected bool animPlay = false;
 	protected bool moveIntro = false;
 	protected bool moveTry = false;
@@ -38,7 +39,7 @@ public abstract class Player : ObstacleClass, Obstacle
 	public virtual void setDir(int dir)
 	{
 		int startDir = currDir;
-		if (animDir == null)
+		if (animDir == -1)
 			animDir = dir;
 		else
 			moveTry = true;

@@ -13,14 +13,14 @@ public class Bot1 : Player, Obstacle
 	public const int STEP_SIZE = 10;
 	public Hands hands;
 	public Obstacle grabbed;
-	public AudioClip audioGrab;
+	public AudioSource audioGrab;
 	
 	public Bot1 ()
 	{
 		hands = new Hands(this);
 		
-		audioGrab = Resources.Load ("clank") as AudioClip;
-		gfx.AddComponent<AudioSource>().clip = audioGrab;
+		audioGrab = gfx.AddComponent<AudioSource>();
+		audioGrab.clip = Resources.Load ("clank") as AudioClip;
 	}
 	
 	public Bot1 (double x, double y)
