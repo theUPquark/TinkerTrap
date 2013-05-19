@@ -600,11 +600,11 @@ public class GameManager : MonoBehaviour {
 	void OnGUI () {
 		if (!running) {
 			bot1PSp.Stop();
-			bot1PSp.visible = true;
+			bot1PSp.visible = false;
 			bot2PSp.Stop();
-			bot2PSp.visible = true;
+			bot2PSp.visible = false;
 			bot3PSp.Stop();
-			bot3PSp.visible = true;
+			bot3PSp.visible = false;
 			//load GUI skin
 		    GUI.skin = skin;
 			
@@ -927,6 +927,19 @@ public class GameManager : MonoBehaviour {
 					}
 				}
 			}
+		}
+	}
+	
+	// Standard Unity Late Update, occurs after Update
+	// Using this to redraw tile depths after positions are adjusted in the main Update
+	// Also moves the GameManager object to remain centered on the player, which moves the child camera as well
+	
+	void LateUpdate() {
+		if (running) {
+			OTSprite p = players[activeBot-1].gfx.GetComponent<OTSprite>();
+			Vector3 posUp = new Vector3(p.position.x, p.position.y, transform.localPosition.z);
+			transform.localPosition = posUp;
+			
 			if (players[0].level >= 0)
 				bot1PSp.visible = true;
 			else
@@ -964,18 +977,6 @@ public class GameManager : MonoBehaviour {
 				if (!bot3PSp.isPlaying)
 					bot3PSp.PlayLoop ("Bot3");
 			}
-		}
-	}
-	
-	// Standard Unity Late Update, occurs after Update
-	// Using this to redraw tile depths after positions are adjusted in the main Update
-	// Also moves the GameManager object to remain centered on the player, which moves the child camera as well
-	
-	void LateUpdate() {
-		if (running) {
-			OTSprite p = players[activeBot-1].gfx.GetComponent<OTSprite>();
-			Vector3 posUp = new Vector3(p.position.x, p.position.y, transform.localPosition.z);
-			transform.localPosition = posUp;
 			
 			// Do round 2 of Tile updates. Initial 'update' method called in Update();
 			foreach (Tile t in gameB.Values) {
