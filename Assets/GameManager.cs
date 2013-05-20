@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour {
 	private List<Obstacle> gameObs = new List<Obstacle>();
 	private List<Dictionary<string, double>> messagesDisplay = new List<Dictionary<string, double>>(3);
 	
-	private bool playIntro = true;
 	private float introLoc = Screen.width;
 	private float timeTracker;
 	private float vicTime;
@@ -86,29 +85,37 @@ public class GameManager : MonoBehaviour {
 	
 	void TopMenu() {
 	    //layout start
-	    GUI.BeginGroup(new Rect(Screen.width / 2 - 300, 50, 600, 600));
-	   
+	    GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height));
+		
+		//bgimages
+		introLoc-=(Time.time-timeTracker)*120;
+		timeTracker = Time.time;
+		for (int i = 0; i < introImages.Length; i++) {
+			GUI.DrawTexture (new Rect(introLoc+810*i, Screen.height/2-300, 800, 600), introImages[i]);
+		}
+		if (introLoc < -810*7)
+			introLoc = Screen.width;
 	    //the menu background box
-	    GUI.Box(new Rect(0, 0, 300, 200), "");
+		GUI.Box(new Rect(Screen.width/2-logoTexture.width/2-10, 0, logoTexture.width+20, Screen.height), "");
 	   
 	    //title
-	   	GUI.Box(new Rect(300-logoTexture.width/2,10,logoTexture.width,logoTexture.height),logoTexture);
-		GUI.Label (new Rect(300-130,10+logoTexture.height, 260, 30), "By Jeremy Rimpo & Trunk");
+	   	GUI.DrawTexture(new Rect(Screen.width/2-logoTexture.width/2,10,logoTexture.width,logoTexture.height),logoTexture);
+		GUI.Label (new Rect(Screen.width/2-130,10+logoTexture.height, 260, 30), "By Jeremy Rimpo & Trunk");
 	    ///////main menu buttons
 	    //game start button
-	    if(GUI.Button(new Rect(162.5f, 50+logoTexture.height, 275, 75), "Start game", buttonStyle)) {
+	    if(GUI.Button(new Rect(Screen.width/2-137.5f, 50+logoTexture.height, 275, 75), "Start game", buttonStyle)) {
 			selection = true;
 			stageSelect = 0;
 	    }
-		if(GUI.Button(new Rect(162.5f, 130+logoTexture.height, 275, 75), "Controls & About", buttonStyle)) {
+		if(GUI.Button(new Rect(Screen.width/2-137.5f, 130+logoTexture.height, 275, 75), "Controls & About", buttonStyle)) {
 			selection = true;
 			stageSelect = 4;
 	    }
-//	    if(GUI.Button(new Rect(162.5f, 100+logoTexture.height, 275, 75), "Editor", buttonStyle)) {
+//	    if(GUI.Button(new Rect(Screen.width/2-137.5f, 100+logoTexture.height, 275, 75), "Editor", buttonStyle)) {
 //			Application.LoadLevel (1);
 //	    }
 	    //quit button
-	    if(GUI.Button(new Rect(162.5f, 210+logoTexture.height, 275, 75), "Quit", buttonStyle)) {
+	    if(GUI.Button(new Rect(Screen.width/2-137.5f, 210+logoTexture.height, 275, 75), "Quit", buttonStyle)) {
 	    	Application.Quit();
 	    }
 	   
@@ -629,7 +636,7 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void OnGUI () {
-		if (playIntro && introLoc > -810*7) {
+		/*if (playIntro && introLoc > -810*7) {
 			introLoc-=(Time.time-timeTracker)*120;
 			timeTracker = Time.time;
 			GUI.BeginGroup (new Rect(0, 0, Screen.width, Screen.height));
@@ -640,7 +647,7 @@ public class GameManager : MonoBehaviour {
 			GUI.EndGroup ();
 			if (Input.GetKey (KeyCode.Escape) || Input.GetKey (KeyCode.Space))
 				playIntro = false;
-		} else if (!running) {
+		} else */if (!running) {
 			
 			bot1PSp.Stop();
 			bot1PSp.visible = false;
@@ -677,6 +684,11 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void Update() {
+		
+		if (!Screen.fullScreen || Screen.width != Screen.resolutions[Screen.resolutions.Length-1].width ||
+			Screen.height != Screen.resolutions[Screen.resolutions.Length-1].height)
+			Screen.SetResolution (Screen.resolutions[Screen.resolutions.Length-1].width, Screen.resolutions[Screen.resolutions.Length-1].height, true);
+		
 		if (running && !selection) {
 			if (!paused) {
 				
