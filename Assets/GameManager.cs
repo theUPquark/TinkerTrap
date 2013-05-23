@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
 	private Dictionary<int, List<Tile>> gameLocksOut = new Dictionary<int, List<Tile>>();
 	private Dictionary<int, List<Tile>> gameLocksIn = new Dictionary<int, List<Tile>>();
 	private List<Obstacle> gameObs = new List<Obstacle>();
-	private List<Dictionary<string, double>> messagesDisplay = new List<Dictionary<string, double>>(3);
+	private List<Dictionary<string, bool>> messagesDisplay = new List<Dictionary<string, bool>>(3);
 	
 	private float introLoc = Screen.width;
 	private float timeTracker;
@@ -66,9 +66,9 @@ public class GameManager : MonoBehaviour {
 		
 //		camera.GetComponent<AudioListener>().enabled = false;
 		
-		messagesDisplay.Add(new Dictionary<string, double>());
-		messagesDisplay.Add(new Dictionary<string, double>());
-		messagesDisplay.Add(new Dictionary<string, double>());
+		messagesDisplay.Add(new Dictionary<string, bool>());
+		messagesDisplay.Add(new Dictionary<string, bool>());
+		messagesDisplay.Add(new Dictionary<string, bool>());
 		
 		overlayAbility = Resources.Load("overlayActive") as Texture2D;
 		
@@ -350,20 +350,20 @@ public class GameManager : MonoBehaviour {
 			foreach (KeyValuePair<int,string> kvp in ((TileClass)gameB[players[activeBot-1].onTile()]).messages[activeBot-1]) {
 				if (players[activeBot-1].level >= kvp.Key){
 					if (!curTile.msgsRead[activeBot-1].ContainsKey(kvp.Key)){
-						curTile.msgsRead[activeBot-1].Add(kvp.Key,Time.time);
+						curTile.msgsRead[activeBot-1].Add(kvp.Key,true);
 						if (!messagesDisplay[activeBot-1].ContainsKey(kvp.Value))
-							messagesDisplay[activeBot-1].Add(kvp.Value, Time.time);
+							messagesDisplay[activeBot-1].Add(kvp.Value, true);
 					}
 				}
 			}
 		}
 		if (showMessages && messagesDisplay[activeBot-1].Count > 0) {
 			int step = 0;
-			List<KeyValuePair<string,double>> tempVals = new List<KeyValuePair<string, double>>(messagesDisplay[activeBot-1]);
-			foreach (KeyValuePair<string,double> kvp in tempVals) {
-				if (kvp.Value > Time.time-30) {
+			List<KeyValuePair<string,bool>> tempVals = new List<KeyValuePair<string, bool>>(messagesDisplay[activeBot-1]);
+			foreach (KeyValuePair<string,bool> kvp in tempVals) {
+				if (kvp.Value == true) {
 					if (GUI.Button(new Rect(Screen.width-(Screen.width/3)-5,55 + step,290,kvp.Key.Length/2), "")) { 	//Change if text extends past box
-						messagesDisplay[activeBot-1][kvp.Key] = Time.time-30;
+						messagesDisplay[activeBot-1][kvp.Key] = false;
 					}
 					GUI.Label(new Rect(Screen.width-(Screen.width/3),52 + step,290,70), kvp.Key);
 					step += kvp.Key.Length/2;																	//Change if there is overlapping
@@ -632,7 +632,7 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 		if (!messagesDisplay[activeBot-1].ContainsKey("These messages can be removed early by clicking on them. Or turned off from the paused screen."))
-			messagesDisplay[activeBot-1].Add("These messages can be removed early by clicking on them. Or turned off from the paused screen.",Time.time);
+			messagesDisplay[activeBot-1].Add("These messages can be removed early by clicking on them. Or turned off from the paused screen.",true);
 	}
 	
 	void OnGUI () {
@@ -1305,7 +1305,7 @@ public class GameManager : MonoBehaviour {
 	// Move char handles all Obstacle movement. Currently this only means the player, but it is designed to pass a final speed backwards.
 	// This is so that Obstacles can chain movement and reduce speed depending on the number of stacked Obstacles being pushed.
 	
-	private double moveChar(Obstacle tob, double speed, int dirx, int diry)
+	public double moveChar(Obstacle tob, double speed, int dirx, int diry)
 	{
 		
 		double baseSpeed = tob.getSpeed (speed);
