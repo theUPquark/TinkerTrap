@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour {
 	private bool cheats = false;
 	private double lastClick = 0.0;
 	private bool determineAbility = false;
+	private double timeoutCounter = 0.0;
+	private const double TIMEOUT_LIMIT = 90.0;
 	
 	private GameObject bot1Port;
 	private GameObject bot2Port;
@@ -153,6 +155,7 @@ public class GameManager : MonoBehaviour {
 			stageSelect = 1;
 			//Reset to defaults
 			level = 0;
+			showMessages = true;
 			foreach (Player p in players)
 				p.level = -1;
 		}
@@ -633,6 +636,7 @@ public class GameManager : MonoBehaviour {
 		}
 		if (!messagesDisplay[activeBot-1].ContainsKey("These messages can be removed early by clicking on them. Or turned off from the paused screen."))
 			messagesDisplay[activeBot-1].Add("These messages can be removed early by clicking on them. Or turned off from the paused screen.",true);
+		timeoutCounter = Time.time;
 	}
 	
 	void OnGUI () {
@@ -776,6 +780,7 @@ public class GameManager : MonoBehaviour {
 			if (Input.GetKeyDown(KeyCode.Escape))
 			{
 				paused = !paused;
+				timeoutCounter = Time.time;
 			}
 		}
 	}
@@ -980,6 +985,25 @@ public class GameManager : MonoBehaviour {
 						}
 					}
 				}
+				if (movement) {
+					timeoutCounter = Time.time;
+				} else if (Time.time > timeoutCounter+TIMEOUT_LIMIT) {
+					//Return to Main Menu
+					paused = false;
+					running = false;
+					selection = false;
+					stageSelect = 0;
+					ClearLevel ();
+				}
+			} else {
+				if (Time.time > timeoutCounter+TIMEOUT_LIMIT*2) {
+					//Return to Main Menu
+					paused = false;
+					running = false;
+					selection = false;
+					stageSelect = 0;
+					ClearLevel ();
+				}
 			}
 		}
 	}
@@ -1136,6 +1160,7 @@ public class GameManager : MonoBehaviour {
 	// if so, grab it!
 	
 	private void DoPrimary() {
+		timeoutCounter = Time.time;
 		if (players[activeBot-1].GetType() == typeof(Bot2)) {
 			Tile left1 = FacingTile (true,1);
 			Tile left2 = FacingTile (true,2);
@@ -1201,7 +1226,7 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	private void DoSecondary() {
-		Debug.Log ("Secondary");
+		timeoutCounter = Time.time;
 		if (players[activeBot-1].GetType() == typeof(Bot1)){
 			Bot1 b1 = (Bot1)players[activeBot-1];
 			b1.secondary();
