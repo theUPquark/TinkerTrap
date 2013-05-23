@@ -11,6 +11,8 @@ public class Pit : Floor, Tile {
 		if (b.GetType() == typeof(Bot2))
 			if (((Bot2)b).inAction())
 				return true;
+		if (b.GetType() == typeof(Hands))
+			return true;
 		return false;
 	}
 }

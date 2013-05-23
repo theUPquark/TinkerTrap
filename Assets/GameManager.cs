@@ -730,7 +730,7 @@ public class GameManager : MonoBehaviour {
 				// Scan for player interaction. This probably needs updating for different bot abilites.
 				
 				if (Input.GetKeyDown(KeyCode.Space))
-				{	interact();	}
+				{	DoObsReset();	}
 				
 				// Bot selection... eventually this will only be if you have multiple robots active! (Remove comment below)
 				if (!players[activeBot-1].inAction()) {
@@ -1231,6 +1231,53 @@ public class GameManager : MonoBehaviour {
 			Bot1 b1 = (Bot1)players[activeBot-1];
 			b1.secondary();
 			
+		}
+	}
+	
+	private void DoObsReset() {
+		timeoutCounter = Time.time;
+		getMyCorners(players[activeBot-1], players[activeBot-1].posX, players[activeBot-1].posY);
+		foreach (Obstacle iob in gameObs) {
+			if (!iob.GetType().IsSubclassOf(typeof(Player))) {
+				switch(players[activeBot-1].currDir) {
+				case 0:
+					getMyCorners (iob,iob.posX,iob.posY+5);
+					if ( players[activeBot-1].upYPos < iob.downYPos && players[activeBot-1].downYPos > iob.upYPos &&
+						players[activeBot-1].leftXPos < iob.rightXPos && players[activeBot-1].rightXPos > iob.leftXPos) {
+						if (TileClear(iob.spawnLoc))
+							players[activeBot-1].ResetTargetObstacle(iob);
+						return;
+					}
+					break;
+				case 1:
+					getMyCorners (iob,iob.posX-5,iob.posY);
+					if ( players[activeBot-1].rightXPos > iob.leftXPos && players[activeBot-1].leftXPos < iob.rightXPos &&
+						players[activeBot-1].upYPos < iob.downYPos && players[activeBot-1].downYPos > iob.upYPos) {
+						if (TileClear(iob.spawnLoc))
+							players[activeBot-1].ResetTargetObstacle(iob);
+						return;
+					}
+					break;
+				case 2:
+					getMyCorners (iob,iob.posX,iob.posY-5);
+					if ( players[activeBot-1].downYPos > iob.upYPos && players[activeBot-1].upYPos < iob.downYPos &&
+						players[activeBot-1].leftXPos < iob.rightXPos && players[activeBot-1].rightXPos > iob.leftXPos) {
+						if (TileClear(iob.spawnLoc))
+							players[activeBot-1].ResetTargetObstacle(iob);
+						return;
+					}
+					break;
+				case 3:
+					getMyCorners (iob,iob.posX+5,iob.posY);
+					if ( players[activeBot-1].leftXPos < iob.rightXPos && players[activeBot-1].rightXPos > iob.leftXPos &&
+						players[activeBot-1].upYPos < iob.downYPos && players[activeBot-1].downYPos > iob.upYPos) {
+						if (TileClear(iob.spawnLoc))
+							players[activeBot-1].ResetTargetObstacle(iob);
+						return;
+					}
+					break;
+				}
+			}
 		}
 	}
 	
