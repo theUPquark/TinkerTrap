@@ -975,8 +975,7 @@ public class GameManager : MonoBehaviour {
 										}
 										b1.extendDist = b1.extendDist + 10 - mov;
 										if (mov == 0) {
-											b1.grabbed = null;
-											b1.grabbing = false;
+											b1.Release();
 										}
 									} 
 								} 	
@@ -1241,7 +1240,7 @@ public class GameManager : MonoBehaviour {
 			if (!iob.GetType().IsSubclassOf(typeof(Player))) {
 				switch(players[activeBot-1].currDir) {
 				case 0:
-					getMyCorners (iob,iob.posX,iob.posY+5);
+					getMyCorners (iob,iob.posX,iob.posY+10);
 					if ( players[activeBot-1].upYPos < iob.downYPos && players[activeBot-1].downYPos > iob.upYPos &&
 						players[activeBot-1].leftXPos < iob.rightXPos && players[activeBot-1].rightXPos > iob.leftXPos) {
 						if (TileClear(iob.spawnLoc))
@@ -1250,7 +1249,7 @@ public class GameManager : MonoBehaviour {
 					}
 					break;
 				case 1:
-					getMyCorners (iob,iob.posX-5,iob.posY);
+					getMyCorners (iob,iob.posX-10,iob.posY);
 					if ( players[activeBot-1].rightXPos > iob.leftXPos && players[activeBot-1].leftXPos < iob.rightXPos &&
 						players[activeBot-1].upYPos < iob.downYPos && players[activeBot-1].downYPos > iob.upYPos) {
 						if (TileClear(iob.spawnLoc))
@@ -1259,7 +1258,7 @@ public class GameManager : MonoBehaviour {
 					}
 					break;
 				case 2:
-					getMyCorners (iob,iob.posX,iob.posY-5);
+					getMyCorners (iob,iob.posX,iob.posY-10);
 					if ( players[activeBot-1].downYPos > iob.upYPos && players[activeBot-1].upYPos < iob.downYPos &&
 						players[activeBot-1].leftXPos < iob.rightXPos && players[activeBot-1].rightXPos > iob.leftXPos) {
 						if (TileClear(iob.spawnLoc))
@@ -1268,7 +1267,7 @@ public class GameManager : MonoBehaviour {
 					}
 					break;
 				case 3:
-					getMyCorners (iob,iob.posX+5,iob.posY);
+					getMyCorners (iob,iob.posX+10,iob.posY);
 					if ( players[activeBot-1].leftXPos < iob.rightXPos && players[activeBot-1].rightXPos > iob.leftXPos &&
 						players[activeBot-1].upYPos < iob.downYPos && players[activeBot-1].downYPos > iob.upYPos) {
 						if (TileClear(iob.spawnLoc))
