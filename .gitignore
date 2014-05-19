@@ -31,3 +31,5 @@ Library/ScriptAssemblies/CompilationCompleted.txt
 *.userprefs
 
 save.xml
+
+Temp/*
